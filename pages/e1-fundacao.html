@@ -1,0 +1,1273 @@
+<!-- E1 - Setup & Fundamentos: O setup que 95% ignora -->
+
+    <!-- ============================================
+         HERO HEADER
+         ============================================ -->
+    <header class="hero">
+        <div class="hero-badge">Encontro 1 &bull; AIOS Fundamentals</div>
+        <h1>A Fita de Lucy<br><span>Setup & Fundamentos</span></h1>
+        <p>Sem memoria, voce recomeca todo dia. Com CLAUDE.md, voce lembra de tudo. Vamos configurar seu ambiente completo e criar a primeira memoria do seu projeto.</p>
+    </header>
+
+    <div class="content">
+
+        <!-- ============================================
+             OS SELECTOR (global)
+             ============================================ -->
+        <div class="os-selector">
+            <span class="os-selector-label">Seu sistema:</span>
+            <button class="os-tab active" data-os="mac" onclick="setOS('mac')">macOS</button>
+            <button class="os-tab" data-os="cmd" onclick="setOS('cmd')">Windows CMD</button>
+            <button class="os-tab" data-os="ps" onclick="setOS('ps')">PowerShell</button>
+        </div>
+
+        <!-- ============================================
+             STACK 0: INSTALAÇÃO DO CLAUDE CODE
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Stack 0 &mdash; Pre-Requisito</div>
+            <h2 class="section-title">Instalando o Claude Code</h2>
+            <p class="section-desc">1 comando. Zero dependencias. Funciona em Mac, Windows e Linux. Sem Node.js. Sem downloads manuais.</p>
+
+            <div style="margin-bottom: 1.5rem; padding: 1rem 1.25rem; background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.15); border-radius: var(--radius-md); font-size: 0.85rem; color: var(--color-text-secondary);">
+                <strong style="color: var(--color-accent-green);">Novidade 2026:</strong> Claude Code agora tem <strong style="color: var(--color-text-primary);">instalador nativo</strong>. Nao precisa de Node.js, npm, nem nenhuma dependencia. O comando abaixo baixa e instala tudo automaticamente.
+            </div>
+
+            <div class="terminal animate-in delay-1">
+                <div class="terminal-bar">
+                    <div class="terminal-dot red"></div>
+                    <div class="terminal-dot yellow"></div>
+                    <div class="terminal-dot green"></div>
+                    <span class="terminal-title">Instalar Claude Code</span>
+                </div>
+                <div class="terminal-body">
+                    <!-- Step 1: Install (macOS / Linux / WSL) -->
+                    <div class="terminal-cmd os-visible" data-os="mac" data-cmd="curl -fsSL https://claude.ai/install.sh | bash">
+                        <div class="cmd-left">
+                            <span class="cmd-label">1.</span>
+                            <span class="prompt">$</span>
+                            <span class="cmd-text">curl -fsSL https://claude.ai/install.sh | bash</span>
+                            <span class="cmd-desc">Instalar (tambem funciona em Linux/WSL)</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+                    <!-- Step 1: Install (Windows CMD) -->
+                    <div class="terminal-cmd" data-os="cmd" data-cmd="curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd">
+                        <div class="cmd-left">
+                            <span class="cmd-label">1.</span>
+                            <span class="prompt">&gt;</span>
+                            <span class="cmd-text">curl -fsSL https://claude.ai/install.cmd -o install.cmd &amp;&amp; install.cmd</span>
+                            <span class="cmd-desc">Instalar</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+                    <!-- Step 1: Install (PowerShell) -->
+                    <div class="terminal-cmd" data-os="ps" data-cmd="irm https://claude.ai/install.ps1 | iex">
+                        <div class="cmd-left">
+                            <span class="cmd-label">1.</span>
+                            <span class="prompt">PS&gt;</span>
+                            <span class="cmd-text">irm https://claude.ai/install.ps1 | iex</span>
+                            <span class="cmd-desc">Instalar</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+                    <div class="terminal-output-row" style="color: var(--color-accent-green);">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Claude Code instalado com sucesso
+                    </div>
+
+                    <!-- Step 2: Verify -->
+                    <div class="terminal-cmd" data-cmd="claude doctor">
+                        <div class="cmd-left">
+                            <span class="cmd-label">2.</span>
+                            <span class="prompt">$</span>
+                            <span class="cmd-text">claude doctor</span>
+                            <span class="cmd-desc">Verificar se instalou certo</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+                    <div class="terminal-output-row">Mostra versao, tipo de instalacao e problemas potenciais</div>
+
+                    <!-- Step 3: First run -->
+                    <div class="terminal-cmd" data-cmd="claude">
+                        <div class="cmd-left">
+                            <span class="cmd-label">3.</span>
+                            <span class="prompt">$</span>
+                            <span class="cmd-text">claude</span>
+                            <span class="cmd-desc">Abrir pela primeira vez</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+                    <div class="terminal-output-row">Abre o browser para login. Use sua conta Claude Pro, Max ou Teams.</div>
+                </div>
+            </div>
+
+            <!-- Alternativas de instalacao -->
+            <div style="margin-top: 1.5rem; padding: 1.5rem; background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+                <h4 style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-text-muted); margin-bottom: 1rem;">Alternativas de Instalacao</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div style="padding: 1rem; background: rgba(255,255,255,0.03); border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                        <div style="font-size: 0.75rem; font-weight: 700; color: var(--color-accent-gold); margin-bottom: 0.5rem;">Homebrew (Mac / Linux)</div>
+                        <code class="code-inline" style="font-size: 0.8rem;">brew install --cask claude-code</code>
+                    </div>
+                    <div style="padding: 1rem; background: rgba(255,255,255,0.03); border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                        <div style="font-size: 0.75rem; font-weight: 700; color: var(--color-info, var(--color-accent-purple-light)); margin-bottom: 0.5rem;">WinGet (Windows)</div>
+                        <code class="code-inline" style="font-size: 0.8rem;">winget install Anthropic.ClaudeCode</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Requisitos minimos -->
+            <div style="margin-top: 1.5rem; padding: 1.5rem; background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border);">
+                <h4 style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-text-muted); margin-bottom: 1rem;">Requisitos Minimos</h4>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
+                    <div style="padding: 1rem; background: rgba(255,255,255,0.03); border-radius: var(--radius-md); border: 1px solid var(--color-border); text-align: center;">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">&#63743;</div>
+                        <div style="font-size: 0.75rem; font-weight: 700; color: var(--color-text-primary); margin-bottom: 0.25rem;">macOS</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted);">13.0+ (Ventura)</div>
+                    </div>
+                    <div style="padding: 1rem; background: rgba(255,255,255,0.03); border-radius: var(--radius-md); border: 1px solid var(--color-border); text-align: center;">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">&#8862;</div>
+                        <div style="font-size: 0.75rem; font-weight: 700; color: var(--color-text-primary); margin-bottom: 0.25rem;">Windows</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted);">10 (1809+) ou 11</div>
+                    </div>
+                    <div style="padding: 1rem; background: rgba(255,255,255,0.03); border-radius: var(--radius-md); border: 1px solid var(--color-border); text-align: center;">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">&#128039;</div>
+                        <div style="font-size: 0.75rem; font-weight: 700; color: var(--color-text-primary); margin-bottom: 0.25rem;">Linux</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted);">Ubuntu 20.04+</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 1.5rem; padding: 1rem 1.25rem; background: var(--color-bg-card); border-radius: var(--radius-lg); border-left: 4px solid var(--color-accent-gold);">
+                <strong style="color: var(--color-accent-gold);">Dica:</strong>
+                <p style="margin-top: 0.5rem; color: var(--color-text-secondary);">O instalador nativo atualiza automaticamente em background. Voce nunca mais precisa se preocupar com versao. Para forcar update manual: <code class="code-inline">claude update</code></p>
+            </div>
+        </section>
+
+        <!-- ============================================
+             EFEITO UOU: 10 PROMPTS POS-INSTALACAO
+             ============================================ -->
+        <style>
+            .prompt-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-top: 1.5rem; }
+            .prompt-card { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; transition: border-color 0.2s, box-shadow 0.2s; }
+            .prompt-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+            .prompt-card .prompt-text { background: rgba(0,0,0,0.3); border: 1px solid var(--color-border); border-radius: var(--radius-sm); padding: 0.75rem; font-size: 0.7rem; line-height: 1.5; color: var(--color-text-secondary); white-space: pre-wrap; margin: 0; font-family: var(--font-mono); }
+            .prompt-card-icon { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+            @media (max-width: 1200px) { .prompt-grid { grid-template-columns: repeat(3, 1fr); } }
+            @media (max-width: 768px)  { .prompt-grid { grid-template-columns: repeat(2, 1fr); } }
+            @media (max-width: 480px)  { .prompt-grid { grid-template-columns: 1fr; } }
+        </style>
+        <section class="flow-section">
+            <div class="section-label">Efeito UOU &mdash; Pos-Instalacao</div>
+            <h2 class="section-title">10 Coisas que Voce Ja Pode Construir</h2>
+            <p class="section-desc">Claude Code instalado? Escolha um card, copie o prompt, cole no terminal e veja a magia. Cada um gera um projeto completo rodando no seu navegador.</p>
+
+            <div class="prompt-grid">
+
+                <!-- Card 1: Jogo Snake -->
+                <div class="prompt-card" onmouseover="this.style.borderColor='var(--color-accent-gold)'" onmouseout="this.style.borderColor='var(--color-border)'">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div class="prompt-card-icon" style="background: rgba(209,255,0,0.12); border: 1px solid rgba(209,255,0,0.25); color: var(--color-accent-gold);">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="11" x2="10" y2="11"/><line x1="8" y1="9" x2="8" y2="13"/><line x1="15" y1="12" x2="15.01" y2="12"/><line x1="18" y1="10" x2="18.01" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 0.85rem; color: var(--color-text-primary);">Jogo Snake</div>
+                            <div style="font-size: 0.7rem; color: var(--color-text-muted);">Jogo classico jogavel</div>
+                        </div>
+                    </div>
+                    <div style="flex: 1;">
+                        <pre class="prompt-text">Crie um jogo da cobrinha (Snake) completo em um unico arquivo HTML. Use Canvas, controles com setas do teclado, placar, game over com botao de reiniciar. Visual dark mode com cores neon. Depois de criar o arquivo, inicie um servidor local com "python3 -m http.server 8000" e me diga para abrir http://localhost:8000 no navegador.</pre>
+                    </div>
+                    <button class="cmd-copy" onclick="copyPromptCard(this)" style="width: 100%; padding: 0.5rem; border-radius: var(--radius-sm); font-size: 0.75rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar Prompt</button>
+                </div>
+
+                <!-- Card 2: Chuva Matrix -->
+                <div class="prompt-card" onmouseover="this.style.borderColor='var(--color-accent-green)'" onmouseout="this.style.borderColor='var(--color-border)'">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div class="prompt-card-icon" style="background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.25); color: var(--color-accent-green);">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 0.85rem; color: var(--color-text-primary);">Chuva Matrix</div>
+                            <div style="font-size: 0.7rem; color: var(--color-text-muted);">Animacao estilo hacker</div>
+                        </div>
+                    </div>
+                    <div style="flex: 1;">
+                        <pre class="prompt-text">Crie uma animacao estilo Matrix em um unico arquivo HTML. Letras verdes caindo pela tela toda usando Canvas, fullscreen, fundo preto. Adicione efeito de fade nas letras e velocidades aleatorias. Depois de criar o arquivo, inicie um servidor local com "python3 -m http.server 8001" e me diga para abrir http://localhost:8001 no navegador.</pre>
+                    </div>
+                    <button class="cmd-copy" onclick="copyPromptCard(this)" style="width: 100%; padding: 0.5rem; border-radius: var(--radius-sm); font-size: 0.75rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar Prompt</button>
+                </div>
+
+                <!-- Card 3: Landing Page -->
+                <div class="prompt-card" onmouseover="this.style.borderColor='var(--color-accent-purple)'" onmouseout="this.style.borderColor='var(--color-border)'">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div class="prompt-card-icon" style="background: rgba(0,153,255,0.12); border: 1px solid rgba(0,153,255,0.25); color: var(--color-accent-purple-light);">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 0.85rem; color: var(--color-text-primary);">Landing Page</div>
+                            <div style="font-size: 0.7rem; color: var(--color-text-muted);">Site profissional pro seu projeto</div>
+                        </div>
+                    </div>
+                    <div style="flex: 1;">
+                        <pre class="prompt-text">Leia meu CLAUDE.md e crie uma landing page profissional para o meu projeto. Unico arquivo HTML com hero section, 3 features, depoimentos fake e CTA. Visual moderno dark mode com gradientes. Responsivo. Depois de criar, inicie um servidor local com "python3 -m http.server 8002" e me diga para abrir http://localhost:8002 no navegador.</pre>
+                    </div>
+                    <button class="cmd-copy" onclick="copyPromptCard(this)" style="width: 100%; padding: 0.5rem; border-radius: var(--radius-sm); font-size: 0.75rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar Prompt</button>
+                </div>
+
+                <!-- Card 4: Cartao Digital -->
+                <div class="prompt-card" onmouseover="this.style.borderColor='var(--color-accent-gold)'" onmouseout="this.style.borderColor='var(--color-border)'">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div class="prompt-card-icon" style="background: rgba(209,255,0,0.12); border: 1px solid rgba(209,255,0,0.25); color: var(--color-accent-gold);">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 0.85rem; color: var(--color-text-primary);">Cartao Digital</div>
+                            <div style="font-size: 0.7rem; color: var(--color-text-muted);">Cartao de visita animado</div>
+                        </div>
+                    </div>
+                    <div style="flex: 1;">
+                        <pre class="prompt-text">Leia meu CLAUDE.md e crie um cartao de visita digital animado em um unico arquivo HTML. Centralizado na tela, com meu nome, meu projeto, efeito de flip 3D no hover e visual premium dark mode com borda dourada. Depois de criar, inicie um servidor local com "python3 -m http.server 8003" e me diga para abrir http://localhost:8003 no navegador.</pre>
+                    </div>
+                    <button class="cmd-copy" onclick="copyPromptCard(this)" style="width: 100%; padding: 0.5rem; border-radius: var(--radius-sm); font-size: 0.75rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar Prompt</button>
+                </div>
+
+                <!-- Card 5: Relogio Neon -->
+                <div class="prompt-card" onmouseover="this.style.borderColor='var(--color-accent-green)'" onmouseout="this.style.borderColor='var(--color-border)'">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div class="prompt-card-icon" style="background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.25); color: var(--color-accent-green);">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 0.85rem; color: var(--color-text-primary);">Relogio Neon</div>
+                            <div style="font-size: 0.7rem; color: var(--color-text-muted);">Relogio cyberpunk animado</div>
+                        </div>
+                    </div>
+                    <div style="flex: 1;">
+                        <pre class="prompt-text">Crie um relogio digital fullscreen em um unico arquivo HTML. Visual cyberpunk neon com glow, fundo escuro, mostra hora, minutos e segundos atualizando em tempo real. Adicione a data por extenso embaixo. Efeito de brilho pulsante. Depois de criar, inicie um servidor local com "python3 -m http.server 8004" e me diga para abrir http://localhost:8004 no navegador.</pre>
+                    </div>
+                    <button class="cmd-copy" onclick="copyPromptCard(this)" style="width: 100%; padding: 0.5rem; border-radius: var(--radius-sm); font-size: 0.75rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar Prompt</button>
+                </div>
+
+                <!-- Card 6: Quiz Interativo -->
+                <div class="prompt-card" onmouseover="this.style.borderColor='var(--color-accent-purple)'" onmouseout="this.style.borderColor='var(--color-border)'">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div class="prompt-card-icon" style="background: rgba(0,153,255,0.12); border: 1px solid rgba(0,153,255,0.25); color: var(--color-accent-purple-light);">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 0.85rem; color: var(--color-text-primary);">Quiz Interativo</div>
+                            <div style="font-size: 0.7rem; color: var(--color-text-muted);">Perguntas com placar</div>
+                        </div>
+                    </div>
+                    <div style="flex: 1;">
+                        <pre class="prompt-text">Crie um quiz interativo em um unico arquivo HTML com 10 perguntas de cultura geral. Multipla escolha, feedback visual (verde certo, vermelho errado), barra de progresso, placar final com mensagem personalizada. Visual dark mode moderno. Depois de criar, inicie um servidor local com "python3 -m http.server 8005" e me diga para abrir http://localhost:8005 no navegador.</pre>
+                    </div>
+                    <button class="cmd-copy" onclick="copyPromptCard(this)" style="width: 100%; padding: 0.5rem; border-radius: var(--radius-sm); font-size: 0.75rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar Prompt</button>
+                </div>
+
+                <!-- Card 7: Jogo da Memoria -->
+                <div class="prompt-card" onmouseover="this.style.borderColor='var(--color-accent-gold)'" onmouseout="this.style.borderColor='var(--color-border)'">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div class="prompt-card-icon" style="background: rgba(209,255,0,0.12); border: 1px solid rgba(209,255,0,0.25); color: var(--color-accent-gold);">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 0.85rem; color: var(--color-text-primary);">Jogo da Memoria</div>
+                            <div style="font-size: 0.7rem; color: var(--color-text-muted);">Encontre os pares</div>
+                        </div>
+                    </div>
+                    <div style="flex: 1;">
+                        <pre class="prompt-text">Crie um jogo da memoria em um unico arquivo HTML. Grid 4x4 com 8 pares de icones, animacao de flip nas cartas, contador de tentativas, mensagem de vitoria com confetti CSS. Visual dark mode elegante. Depois de criar, inicie um servidor local com "python3 -m http.server 8006" e me diga para abrir http://localhost:8006 no navegador.</pre>
+                    </div>
+                    <button class="cmd-copy" onclick="copyPromptCard(this)" style="width: 100%; padding: 0.5rem; border-radius: var(--radius-sm); font-size: 0.75rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar Prompt</button>
+                </div>
+
+                <!-- Card 8: Gerador de Frases -->
+                <div class="prompt-card" onmouseover="this.style.borderColor='var(--color-accent-green)'" onmouseout="this.style.borderColor='var(--color-border)'">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div class="prompt-card-icon" style="background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.25); color: var(--color-accent-green);">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 0.85rem; color: var(--color-text-primary);">Gerador de Frases</div>
+                            <div style="font-size: 0.7rem; color: var(--color-text-muted);">Frases aleatorias animadas</div>
+                        </div>
+                    </div>
+                    <div style="flex: 1;">
+                        <pre class="prompt-text">Crie um gerador de frases motivacionais em um unico arquivo HTML. Banco com 50 frases inspiradoras. Botao grande no centro que ao clicar mostra uma frase aleatoria com animacao de fade-in. Visual minimalista dark mode com tipografia grande e elegante. Depois de criar, inicie um servidor local com "python3 -m http.server 8007" e me diga para abrir http://localhost:8007 no navegador.</pre>
+                    </div>
+                    <button class="cmd-copy" onclick="copyPromptCard(this)" style="width: 100%; padding: 0.5rem; border-radius: var(--radius-sm); font-size: 0.75rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar Prompt</button>
+                </div>
+
+                <!-- Card 9: Dashboard Pessoal -->
+                <div class="prompt-card" onmouseover="this.style.borderColor='var(--color-accent-purple)'" onmouseout="this.style.borderColor='var(--color-border)'">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div class="prompt-card-icon" style="background: rgba(0,153,255,0.12); border: 1px solid rgba(0,153,255,0.25); color: var(--color-accent-purple-light);">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 0.85rem; color: var(--color-text-primary);">Dashboard Pessoal</div>
+                            <div style="font-size: 0.7rem; color: var(--color-text-muted);">Painel com relogio e tarefas</div>
+                        </div>
+                    </div>
+                    <div style="flex: 1;">
+                        <pre class="prompt-text">Leia meu CLAUDE.md e crie um dashboard pessoal em um unico arquivo HTML. Inclua: relogio em tempo real, saudacao com meu nome, lista de tarefas com checkbox (salvando em localStorage), bloco de notas rapidas e data de hoje. Layout em grid, visual dark mode profissional. Depois de criar, inicie um servidor local com "python3 -m http.server 8008" e me diga para abrir http://localhost:8008 no navegador.</pre>
+                    </div>
+                    <button class="cmd-copy" onclick="copyPromptCard(this)" style="width: 100%; padding: 0.5rem; border-radius: var(--radius-sm); font-size: 0.75rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar Prompt</button>
+                </div>
+
+                <!-- Card 10: Portfolio Pessoal -->
+                <div class="prompt-card" onmouseover="this.style.borderColor='var(--color-accent-gold)'" onmouseout="this.style.borderColor='var(--color-border)'">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div class="prompt-card-icon" style="background: rgba(209,255,0,0.12); border: 1px solid rgba(209,255,0,0.25); color: var(--color-accent-gold);">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 0.85rem; color: var(--color-text-primary);">Portfolio Pessoal</div>
+                            <div style="font-size: 0.7rem; color: var(--color-text-muted);">Seu site pessoal completo</div>
+                        </div>
+                    </div>
+                    <div style="flex: 1;">
+                        <pre class="prompt-text">Leia meu CLAUDE.md e crie um portfolio pessoal em um unico arquivo HTML. Secoes: hero com meu nome e bio, sobre mim, habilidades com barras de progresso animadas, secao de projetos com cards e rodape com contato. Scroll suave, animacoes ao aparecer, visual dark mode premium. Depois de criar, inicie um servidor local com "python3 -m http.server 8009" e me diga para abrir http://localhost:8009 no navegador.</pre>
+                    </div>
+                    <button class="cmd-copy" onclick="copyPromptCard(this)" style="width: 100%; padding: 0.5rem; border-radius: var(--radius-sm); font-size: 0.75rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar Prompt</button>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 1.25rem; padding: 1rem 1.25rem; background: rgba(209,255,0,0.06); border: 1px solid rgba(209,255,0,0.15); border-radius: var(--radius-md); font-size: 0.85rem; color: var(--color-text-secondary);">
+                <strong style="color: var(--color-accent-gold);">Como funciona:</strong> Copie o prompt, cole no Claude Code e aceite as acoes. Claude cria o arquivo e sobe um servidor local. Abra o link no navegador e veja o resultado. Para parar o servidor: <code class="code-inline">Ctrl+C</code> no terminal.
+            </div>
+        </section>
+
+        <!-- ============================================
+             STACK 1: TERMINAL BASICO
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Stack 1</div>
+            <h2 class="section-title">Terminal Basico: Onde Voce Esta?</h2>
+            <p class="section-desc">Do nascimento a morte de uma pasta. 4 comandos. Ciclo completo.</p>
+
+            <div class="terminal animate-in delay-1">
+                <div class="terminal-bar">
+                    <div class="terminal-dot red"></div>
+                    <div class="terminal-dot yellow"></div>
+                    <div class="terminal-dot green"></div>
+                    <span class="terminal-title">Terminal &mdash; Do nascimento a morte</span>
+                </div>
+                <div class="terminal-body">
+                    <div style="padding: 0.5rem 1rem 0.25rem;">
+                        <span class="comment"># Do nascimento a morte de uma pasta:</span>
+                    </div>
+
+                    <!-- CMD 1: mkdir (nascimento) -->
+                    <div class="terminal-cmd" data-cmd="mkdir meu-projeto-aios">
+                        <div class="cmd-left">
+                            <span class="cmd-label">1.</span>
+                            <span class="prompt">$</span>
+                            <span class="cmd-text">mkdir meu-projeto-aios</span>
+                            <span class="cmd-desc">Nascimento &mdash; criar a pasta</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+
+                    <!-- CMD 2: cd (vida) -->
+                    <div class="terminal-cmd" data-cmd="cd meu-projeto-aios">
+                        <div class="cmd-left">
+                            <span class="cmd-label">2.</span>
+                            <span class="prompt">$</span>
+                            <span class="cmd-text">cd meu-projeto-aios</span>
+                            <span class="cmd-desc">Vida &mdash; entrar e trabalhar</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+                    <div class="terminal-output-row" style="color: var(--color-accent-green);">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        voce esta dentro do seu projeto
+                    </div>
+
+                    <!-- CMD 3: cd .. (sair) -->
+                    <div class="terminal-cmd" data-cmd="cd ..">
+                        <div class="cmd-left">
+                            <span class="cmd-label">3.</span>
+                            <span class="prompt">$</span>
+                            <span class="cmd-text">cd ..</span>
+                            <span class="cmd-desc">Sair primeiro (nao da pra deletar de dentro)</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+
+                    <!-- CMD 4: rm (morte) -->
+                    <div class="terminal-cmd os-visible" data-os="mac" data-cmd="rm -rf meu-projeto-aios">
+                        <div class="cmd-left">
+                            <span class="cmd-label">4.</span>
+                            <span class="prompt">$</span>
+                            <span class="cmd-text">rm -rf meu-projeto-aios</span>
+                            <span class="cmd-desc">Morte &mdash; deletar pasta e tudo dentro</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+                    <div class="terminal-cmd" data-os="cmd" data-cmd="rmdir /s /q meu-projeto-aios">
+                        <div class="cmd-left">
+                            <span class="cmd-label">4.</span>
+                            <span class="prompt">&gt;</span>
+                            <span class="cmd-text">rmdir /s /q meu-projeto-aios</span>
+                            <span class="cmd-desc">Morte &mdash; deletar pasta e tudo dentro</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+                    <div class="terminal-cmd" data-os="ps" data-cmd="Remove-Item -Recurse -Force meu-projeto-aios">
+                        <div class="cmd-left">
+                            <span class="cmd-label">4.</span>
+                            <span class="prompt">PS&gt;</span>
+                            <span class="cmd-text">Remove-Item -Recurse -Force meu-projeto-aios</span>
+                            <span class="cmd-desc">Morte &mdash; deletar pasta e tudo dentro</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+                    <div class="terminal-output-row" style="color: var(--color-error, #ef4444);">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                        meu-projeto-aios deletado. Nasceu, viveu, morreu. Ciclo completo.
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: var(--color-bg-card); border-radius: var(--radius-lg); border-left: 4px solid var(--color-accent-gold);">
+                <strong style="color: var(--color-accent-gold);">Realidade:</strong>
+                <p style="margin-top: 0.5rem; color: var(--color-text-secondary);">Terminal parece assustador porque voce nao usa todo dia. Depois de 40 minutos fazendo isso, virou automatico. Como dirigir.</p>
+            </div>
+        </section>
+
+        <!-- ============================================
+             STACK 2: INTERFACE CLAUDE CODE
+             ============================================ -->
+        <section class="analogy-section">
+            <div class="section-label">Stack 2</div>
+            <h2 class="section-title">Interface do Claude Code</h2>
+            <p class="section-desc">Claude Code e uma ferramenta de <strong>terminal</strong>. Nao tem janelas, menus visuais nem sidebar. E voce conversando com uma IA direto na linha de comando.</p>
+
+            <div class="analogy-grid">
+                <!-- Headers -->
+                <div class="analogy-header casa">
+                    <div class="analogy-header-icon">
+                        <span class="icon">
+                            <svg viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                        </span>
+                    </div>
+                    <h3>O Que Voce Ve</h3>
+                    <p>As areas do terminal</p>
+                </div>
+                <div class="analogy-header aios">
+                    <div class="analogy-header-icon">
+                        <span class="icon">
+                            <svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg>
+                        </span>
+                    </div>
+                    <h3>Pra Que Serve</h3>
+                    <p>A funcao de cada area</p>
+                </div>
+
+                <!-- Prompt -->
+                <div class="analogy-divider">
+                    <span class="analogy-divider-badge">Area 1</span>
+                    <span class="analogy-divider-text">Prompt (onde voce digita)</span>
+                </div>
+                <div class="analogy-cell casa">
+                    <div class="analogy-cell-title">
+                        <span class="icon"><svg viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg></span>
+                        Linha de Comando
+                    </div>
+                    <div class="analogy-details">
+                        <p>O cursor piscando no final da tela. Voce digita em <strong>linguagem natural</strong> &mdash; como se estivesse mandando mensagem.</p>
+                    </div>
+                </div>
+                <div class="analogy-cell aios">
+                    <div class="analogy-cell-title">
+                        <span class="icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+                        Como Usar
+                    </div>
+                    <div class="analogy-details">
+                        <p>Descreva o que quer. Claude entende contexto. <strong>"Crie um arquivo README"</strong> funciona. Nao precisa saber programar.</p>
+                    </div>
+                </div>
+
+                <!-- Response -->
+                <div class="analogy-divider">
+                    <span class="analogy-divider-badge">Area 2</span>
+                    <span class="analogy-divider-text">Resposta do Claude (fluxo de texto)</span>
+                </div>
+                <div class="analogy-cell casa">
+                    <div class="analogy-cell-title">
+                        <span class="icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+                        Conversa no Terminal
+                    </div>
+                    <div class="analogy-details">
+                        <p>Claude responde direto no terminal. Texto, codigo, explicacoes &mdash; tudo rola pra cima conforme a conversa avanca.</p>
+                    </div>
+                </div>
+                <div class="analogy-cell aios">
+                    <div class="analogy-cell-title">
+                        <span class="icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                        O Que Aparece
+                    </div>
+                    <div class="analogy-details">
+                        <p>Claude mostra o que vai fazer, pede permissao, e executa. Voce ve cada arquivo lido, editado ou criado <strong>em tempo real</strong>.</p>
+                    </div>
+                </div>
+
+                <!-- Permission -->
+                <div class="analogy-divider">
+                    <span class="analogy-divider-badge">Area 3</span>
+                    <span class="analogy-divider-text">Permissoes (aceitar ou negar)</span>
+                </div>
+                <div class="analogy-cell casa">
+                    <div class="analogy-cell-title">
+                        <span class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+                        Controle de Permissoes
+                    </div>
+                    <div class="analogy-details">
+                        <p>Quando Claude quer executar um comando ou editar um arquivo, ele <strong>para e pergunta</strong>. Voce aprova com <code class="code-inline">y</code> ou nega com <code class="code-inline">n</code>.</p>
+                    </div>
+                </div>
+                <div class="analogy-cell aios">
+                    <div class="analogy-cell-title">
+                        <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+                        Voce e o Piloto
+                    </div>
+                    <div class="analogy-details">
+                        <p>Claude <strong>nao executa nada</strong> sem sua aprovacao. Cada acao &mdash; ler arquivo, editar codigo, rodar comando &mdash; ele para e pergunta. Voce decide: <code class="code-inline">y</code> (sim) ou <code class="code-inline">n</code> (nao).</p>
+                        <p style="margin-top: 0.75rem;">Quer modo <strong>autonomo (YOLO)</strong>? Abra o Claude assim:</p>
+                        <div style="margin-top: 0.5rem; padding: 0.6rem 0.8rem; background: rgba(0,0,0,0.3); border-radius: var(--radius-md); font-family: var(--font-mono); font-size: 0.8rem; color: var(--color-accent-gold);">
+                            $ claude --dangerously-skip-permissions
+                        </div>
+                        <p style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--color-text-muted);">Nesse modo, Claude executa tudo sozinho sem perguntar. Use quando confiar no que pediu.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: var(--color-bg-card); border-radius: var(--radius-lg); border-left: 4px solid var(--color-accent-purple);">
+                <strong style="color: var(--color-accent-purple);">Realidade:</strong>
+                <p style="margin-top: 0.5rem; color: var(--color-text-secondary);">Claude Code nao tem janelas bonitas. E um terminal. Texto puro. Mas e justamente por isso que e <strong>poderoso</strong> &mdash; ele le, edita e cria arquivos direto no seu sistema, sem intermediarios. Voce ta aprendendo a <strong>viver dentro do terminal</strong>.</p>
+            </div>
+
+            <!-- Slash Commands essenciais -->
+            <h3 style="margin-top: 2.5rem; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem;">Comandos Essenciais (Slash Commands)</h3>
+            <p style="color: var(--color-text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">Dentro do Claude Code, digite <code class="code-inline">/</code> para ver o menu. Esses 6 voce usa no dia 1:</p>
+
+            <div class="terminal animate-in delay-2">
+                <div class="terminal-bar">
+                    <div class="terminal-dot red"></div>
+                    <div class="terminal-dot yellow"></div>
+                    <div class="terminal-dot green"></div>
+                    <span class="terminal-title">Claude Code &mdash; Slash Commands</span>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-cmd" data-cmd="/help">
+                        <div class="cmd-left">
+                            <span class="cmd-label">1.</span>
+                            <span class="prompt">&gt;</span>
+                            <span class="cmd-text">/help</span>
+                            <span class="cmd-desc">Mostra todos os comandos disponiveis</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+                    <div class="terminal-cmd" data-cmd="/init">
+                        <div class="cmd-left">
+                            <span class="cmd-label">2.</span>
+                            <span class="prompt">&gt;</span>
+                            <span class="cmd-text">/init</span>
+                            <span class="cmd-desc">Cria o CLAUDE.md no projeto (a fita de Lucy)</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+                    <div class="terminal-cmd" data-cmd="/status">
+                        <div class="cmd-left">
+                            <span class="cmd-label">3.</span>
+                            <span class="prompt">&gt;</span>
+                            <span class="cmd-text">/status</span>
+                            <span class="cmd-desc">Versao, modelo, conta conectada</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+                    <div class="terminal-cmd" data-cmd="/clear">
+                        <div class="cmd-left">
+                            <span class="cmd-label">4.</span>
+                            <span class="prompt">&gt;</span>
+                            <span class="cmd-text">/clear</span>
+                            <span class="cmd-desc">Limpa a conversa (fresh start)</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+                    <div class="terminal-cmd" data-cmd="/exit">
+                        <div class="cmd-left">
+                            <span class="cmd-label">5.</span>
+                            <span class="prompt">&gt;</span>
+                            <span class="cmd-text">/exit</span>
+                            <span class="cmd-desc">Sai do Claude Code</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+                    <div class="terminal-cmd" data-cmd="! ls -la">
+                        <div class="cmd-left">
+                            <span class="cmd-label">6.</span>
+                            <span class="prompt">&gt;</span>
+                            <span class="cmd-text">! ls -la</span>
+                            <span class="cmd-desc">Roda comando bash direto (prefixo !)</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             STACK 3: A FITA DE LUCY (CLAUDE.MD)
+             ============================================ -->
+        <section class="analogy-section">
+            <div class="section-label">Stack 3 &mdash; O Momento Central</div>
+            <h2 class="section-title">A Fita de Lucy (.claude/CLAUDE.md)</h2>
+            <p class="section-desc">A metafora que muda tudo. Por que CLAUDE.md e a decisao mais importante do seu projeto.</p>
+
+            <div class="analogy-grid">
+                <!-- Headers -->
+                <div class="analogy-header casa">
+                    <div class="analogy-header-icon">
+                        <span class="icon">
+                            <svg viewBox="0 0 24 24"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg>
+                        </span>
+                    </div>
+                    <h3>Lucy (Memento)</h3>
+                    <p>O filme</p>
+                </div>
+                <div class="analogy-header aios">
+                    <div class="analogy-header-icon">
+                        <span class="icon">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><line x1="2" y1="20" x2="22" y2="20"/><path d="M12 16v4"/></svg>
+                        </span>
+                    </div>
+                    <h3>Claude Code</h3>
+                    <p>Seu projeto</p>
+                </div>
+
+                <!-- O Problema -->
+                <div class="analogy-divider">
+                    <span class="analogy-divider-badge">O Problema</span>
+                    <span class="analogy-divider-text">Sem memoria, todo dia e o primeiro dia</span>
+                </div>
+                <div class="analogy-cell casa">
+                    <div class="analogy-cell-title">
+                        <span class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+                        Lucy Sem Anotacoes
+                    </div>
+                    <div class="analogy-details">
+                        <ul>
+                            <li>Acorda sem lembrar de nada</li>
+                            <li>Nao sabe quem e</li>
+                            <li>Nao sabe onde esta</li>
+                            <li>Nao sabe quem e John (marido)</li>
+                            <li><strong>Todo dia e o PRIMEIRO dia</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="analogy-cell aios">
+                    <div class="analogy-cell-title">
+                        <span class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg></span>
+                        Claude Sem CLAUDE.md
+                    </div>
+                    <div class="analogy-details">
+                        <ul>
+                            <li>Acorda a cada conversa nova</li>
+                            <li>Esqueceu de quem voce e</li>
+                            <li>Esqueceu do seu projeto</li>
+                            <li>Esqueceu de como voce pensa</li>
+                            <li><strong>E como encontrar um ESTRANHO toda vez</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- A Solucao -->
+                <div class="analogy-divider">
+                    <span class="analogy-divider-badge">A Solucao</span>
+                    <span class="analogy-divider-text">Criar a memoria permanente</span>
+                </div>
+                <div class="analogy-cell casa">
+                    <div class="analogy-cell-title">
+                        <span class="icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+                        Lucy Com Fita Cassete
+                    </div>
+                    <div class="analogy-details">
+                        <ul>
+                            <li>Deixa anotacoes, fitas, post-its</li>
+                            <li>Acorda e rele tudo</li>
+                            <li>LEMBRA quem e</li>
+                            <li>LEMBRA o que fazer</li>
+                            <li><strong>A fita e a memoria que ela nao tem</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="analogy-cell aios">
+                    <div class="analogy-cell-title">
+                        <span class="icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+                        Claude Com CLAUDE.md
+                    </div>
+                    <div class="analogy-details">
+                        <ul>
+                            <li>Acorda e le o CLAUDE.md</li>
+                            <li>LEMBRA quem voce e</li>
+                            <li>LEMBRA como voce trabalha</li>
+                            <li>LEMBRA o que voce quer</li>
+                            <li><strong>CLAUDE.md e a fita cassete do seu projeto</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal: Como criar -->
+            <div class="terminal animate-in delay-2" style="margin-top: 2rem;">
+                <div class="terminal-bar">
+                    <div class="terminal-dot red"></div>
+                    <div class="terminal-dot yellow"></div>
+                    <div class="terminal-dot green"></div>
+                    <span class="terminal-title">Terminal &mdash; Criar CLAUDE.md</span>
+                </div>
+                <div class="terminal-body">
+                    <!-- CMD 1: mkdir -p .claude (differs) -->
+                    <div class="terminal-cmd os-visible" data-os="mac" data-cmd="mkdir -p .claude">
+                        <div class="cmd-left">
+                            <span class="cmd-label">1.</span>
+                            <span class="prompt">$</span>
+                            <span class="cmd-text">mkdir -p .claude</span>
+                            <span class="cmd-desc">Criar a pasta .claude/</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+                    <div class="terminal-cmd" data-os="cmd" data-cmd="mkdir .claude">
+                        <div class="cmd-left">
+                            <span class="cmd-label">1.</span>
+                            <span class="prompt">&gt;</span>
+                            <span class="cmd-text">mkdir .claude</span>
+                            <span class="cmd-desc">Criar a pasta .claude/</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+                    <div class="terminal-cmd" data-os="ps" data-cmd="mkdir .claude">
+                        <div class="cmd-left">
+                            <span class="cmd-label">1.</span>
+                            <span class="prompt">PS&gt;</span>
+                            <span class="cmd-text">mkdir .claude</span>
+                            <span class="cmd-desc">Criar a pasta .claude/</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+
+                    <!-- CMD 2: touch / create file (differs) -->
+                    <div class="terminal-cmd os-visible" data-os="mac" data-cmd="touch .claude/CLAUDE.md">
+                        <div class="cmd-left">
+                            <span class="cmd-label">2.</span>
+                            <span class="prompt">$</span>
+                            <span class="cmd-text">touch .claude/CLAUDE.md</span>
+                            <span class="cmd-desc">Criar o arquivo</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+                    <div class="terminal-cmd" data-os="cmd" data-cmd="type nul > .claude\CLAUDE.md">
+                        <div class="cmd-left">
+                            <span class="cmd-label">2.</span>
+                            <span class="prompt">&gt;</span>
+                            <span class="cmd-text">type nul &gt; .claude\CLAUDE.md</span>
+                            <span class="cmd-desc">Criar o arquivo</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+                    <div class="terminal-cmd" data-os="ps" data-cmd="New-Item .claude\CLAUDE.md">
+                        <div class="cmd-left">
+                            <span class="cmd-label">2.</span>
+                            <span class="prompt">PS&gt;</span>
+                            <span class="cmd-text">New-Item .claude\CLAUDE.md</span>
+                            <span class="cmd-desc">Criar o arquivo</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+
+                    <div style="padding: 0.75rem 1rem; margin-top: 0.5rem;">
+                        <span class="comment"># Agora abra o CLAUDE.md e escreva:</span><br>
+                        <span class="highlight">  # Meu Projeto</span><br>
+                        <span class="highlight">  Meu nome e [Seu Nome].</span><br>
+                        <span class="highlight">  Sou um Duck Stacker.</span><br>
+                        <span class="highlight">  Estou criando um projeto com AIOS.</span><br>
+                        <span class="highlight">  Prefiro resultados. Prefiro velocidade.</span>
+                    </div>
+
+                    <div class="terminal-output-row" style="color: var(--color-accent-green); margin-top: 0.5rem;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Claude nunca mais vai esquecer de quem voce e.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             OUTPUT REAL: TABELA DE COMANDOS
+             ============================================ -->
+        <section class="bootstrap-section">
+            <div class="section-label">Output Real</div>
+            <h2 class="section-title">Todos os Comandos do E1</h2>
+            <p class="section-desc">Referencia rapida. Copie e cole direto no terminal.</p>
+
+            <table class="bootstrap-table">
+                <thead>
+                    <tr>
+                        <th>Stack</th>
+                        <th>Comando</th>
+                        <th>O Que Faz</th>
+                        <th>Nota</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="category-cell cat-infra" rowspan="3">Instalacao</td>
+                        <td class="tool-name"><code class="code-inline">curl ... | bash</code></td>
+                        <td>Instala Claude Code</td>
+                        <td class="req-recomendado">CMD: <code class="code-inline">curl ... install.cmd</code> &middot; PS: <code class="code-inline">irm ... | iex</code></td>
+                    </tr>
+                    <tr>
+                        <td class="tool-name"><code class="code-inline">claude doctor</code></td>
+                        <td>Verifica instalacao</td>
+                        <td class="req-sim">Igual em todos</td>
+                    </tr>
+                    <tr class="cat-separator">
+                        <td class="tool-name"><code class="code-inline">claude</code></td>
+                        <td>Abre Claude Code</td>
+                        <td class="req-sim">Igual em todos</td>
+                    </tr>
+
+                    <tr>
+                        <td class="category-cell cat-essential" rowspan="4">Terminal</td>
+                        <td class="tool-name"><code class="code-inline">mkdir nome</code></td>
+                        <td>Nascimento &mdash; cria pasta</td>
+                        <td class="req-sim">Igual em todos</td>
+                    </tr>
+                    <tr>
+                        <td class="tool-name"><code class="code-inline">cd pasta</code></td>
+                        <td>Vida &mdash; entra na pasta</td>
+                        <td class="req-sim">Igual em todos</td>
+                    </tr>
+                    <tr>
+                        <td class="tool-name"><code class="code-inline">cd ..</code></td>
+                        <td>Sair &mdash; volta um nivel</td>
+                        <td class="req-sim">Igual em todos</td>
+                    </tr>
+                    <tr class="cat-separator">
+                        <td class="tool-name"><code class="code-inline">rm -rf pasta</code></td>
+                        <td>Morte &mdash; deleta tudo</td>
+                        <td class="req-recomendado">CMD: <code class="code-inline">rmdir /s /q</code> &middot; PS: <code class="code-inline">Remove-Item -Recurse -Force</code></td>
+                    </tr>
+
+                    <tr>
+                        <td class="category-cell cat-quality" rowspan="2">CLAUDE.md</td>
+                        <td class="tool-name"><code class="code-inline">mkdir -p .claude</code></td>
+                        <td>Cria pasta .claude</td>
+                        <td class="req-recomendado">CMD/PS: <code class="code-inline">mkdir .claude</code> (sem -p)</td>
+                    </tr>
+                    <tr class="cat-separator">
+                        <td class="tool-name"><code class="code-inline">touch .claude/CLAUDE.md</code></td>
+                        <td>Cria a memoria</td>
+                        <td class="req-recomendado">CMD: <code class="code-inline">type nul &gt;</code> &middot; PS: <code class="code-inline">New-Item</code></td>
+                    </tr>
+
+                    <tr>
+                        <td class="category-cell cat-infra" rowspan="6">Slash Commands</td>
+                        <td class="tool-name"><code class="code-inline">/help</code></td>
+                        <td>Lista comandos</td>
+                        <td class="req-sim">Dentro do Claude Code</td>
+                    </tr>
+                    <tr>
+                        <td class="tool-name"><code class="code-inline">/init</code></td>
+                        <td>Cria CLAUDE.md</td>
+                        <td class="req-sim">Dentro do Claude Code</td>
+                    </tr>
+                    <tr>
+                        <td class="tool-name"><code class="code-inline">/status</code></td>
+                        <td>Info da sessao</td>
+                        <td class="req-sim">Dentro do Claude Code</td>
+                    </tr>
+                    <tr>
+                        <td class="tool-name"><code class="code-inline">/clear</code></td>
+                        <td>Limpa conversa</td>
+                        <td class="req-sim">Dentro do Claude Code</td>
+                    </tr>
+                    <tr>
+                        <td class="tool-name"><code class="code-inline">/exit</code></td>
+                        <td>Sai do Claude Code</td>
+                        <td class="req-sim">Dentro do Claude Code</td>
+                    </tr>
+                    <tr>
+                        <td class="tool-name"><code class="code-inline">! comando</code></td>
+                        <td>Bash direto</td>
+                        <td class="req-recomendado">Prefixo <code class="code-inline">!</code> + comando</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- ============================================
+             KEY INSIGHT
+             ============================================ -->
+        <div class="insight-card">
+            <h4>
+                <span class="icon" style="color:var(--color-accent-gold)"><svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
+                Insight da Aula
+            </h4>
+            <p><strong>Claude sem CLAUDE.md = Lucy sem anotacoes.</strong><br>
+            Comeca do zero toda vez. Sem memoria. Sem identidade.<br><br>
+            <strong>Claude com CLAUDE.md = Lucy com fita cassete.</strong><br>
+            Acorda, assiste, LEMBRA. Sabe quem e. Sabe o que fazer.<br><br>
+            Voce nao ta criando "um arquivo". Voce ta criando a <strong>MEMORIA PERMANENTE</strong> do seu projeto. Isso muda TUDO.</p>
+        </div>
+
+        <!-- ============================================
+             EXERCÍCIOS PRÁTICOS
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Mao na Massa</div>
+            <h2 class="section-title">Exercicios Praticos</h2>
+            <p class="section-desc">Teoria sem pratica e amnesia. Faca os 2 exercicios abaixo. Cada um leva menos de 10 minutos.</p>
+
+            <!-- EXERCÍCIO 1: Claude Code -->
+            <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 2rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.25); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-weight: 800; font-size: 0.9rem; color: var(--color-accent-green);">1</span>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.1rem; font-weight: 700;">Claude Code: Primeiro Contato</h3>
+                        <p style="font-size: 0.8rem; color: var(--color-text-muted);">Objetivo: explorar a interface e os slash commands essenciais</p>
+                    </div>
+                </div>
+
+                <div class="terminal">
+                    <div class="terminal-bar">
+                        <div class="terminal-dot red"></div>
+                        <div class="terminal-dot yellow"></div>
+                        <div class="terminal-dot green"></div>
+                        <span class="terminal-title">Exercicio 1 &mdash; Dentro do Claude Code</span>
+                    </div>
+                    <div class="terminal-body">
+                        <span class="comment"># Abra o Claude Code na pasta do seu projeto</span><br><br>
+
+                        <div class="terminal-cmd" data-cmd="claude">
+                            <div class="cmd-left">
+                                <span class="cmd-label">1.</span>
+                                <span class="prompt">$</span>
+                                <span class="cmd-text">claude</span>
+                                <span class="cmd-desc">Abrir o Claude Code</span>
+                            </div>
+                            <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                        </div>
+
+                        <span class="comment"># Agora voce esta DENTRO do Claude Code. Teste esses comandos:</span><br><br>
+
+                        <div class="terminal-cmd" data-cmd="/help">
+                            <div class="cmd-left">
+                                <span class="cmd-label">2.</span>
+                                <span class="prompt">&gt;</span>
+                                <span class="cmd-text">/help</span>
+                                <span class="cmd-desc">Ver todos os comandos disponiveis</span>
+                            </div>
+                            <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                        </div>
+
+                        <div class="terminal-cmd" data-cmd="/status">
+                            <div class="cmd-left">
+                                <span class="cmd-label">3.</span>
+                                <span class="prompt">&gt;</span>
+                                <span class="cmd-text">/status</span>
+                                <span class="cmd-desc">Versao, modelo, conta conectada</span>
+                            </div>
+                            <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                        </div>
+
+                        <div class="terminal-cmd" data-cmd="! pwd">
+                            <div class="cmd-left">
+                                <span class="cmd-label">4.</span>
+                                <span class="prompt">&gt;</span>
+                                <span class="cmd-text">! pwd</span>
+                                <span class="cmd-desc">Rodar bash direto de dentro do Claude</span>
+                            </div>
+                            <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                        </div>
+
+                        <span class="comment"># Agora fale com o Claude em linguagem natural:</span><br><br>
+
+                        <div class="terminal-cmd" data-cmd="Oi Claude, me diz: em que pasta estamos agora?">
+                            <div class="cmd-left">
+                                <span class="cmd-label">5.</span>
+                                <span class="prompt">&gt;</span>
+                                <span class="cmd-text">Oi Claude, me diz: em que pasta estamos agora?</span>
+                            </div>
+                            <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                        </div>
+
+                        <div class="terminal-cmd" data-cmd="/clear">
+                            <div class="cmd-left">
+                                <span class="cmd-label">6.</span>
+                                <span class="prompt">&gt;</span>
+                                <span class="cmd-text">/clear</span>
+                                <span class="cmd-desc">Limpar a conversa (fresh start)</span>
+                            </div>
+                            <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                        </div>
+
+                        <div class="terminal-output-row" style="color: var(--color-accent-green);">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            Resultado esperado: voce sabe onde cada comando esta e o que faz
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1rem; padding: 1rem 1.25rem; background: rgba(0,153,255,0.06); border: 1px solid rgba(0,153,255,0.15); border-radius: var(--radius-md); font-size: 0.85rem; color: var(--color-text-secondary);">
+                    <strong style="color: var(--color-accent-purple-light);">Nota:</strong> Nao saia do Claude Code ainda! Voce vai precisar dele pro exercicio 2.
+                </div>
+            </div>
+
+            <!-- EXERCÍCIO 2: CLAUDE.md -->
+            <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 2rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(0,153,255,0.12); border: 1px solid rgba(0,153,255,0.25); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-weight: 800; font-size: 0.9rem; color: var(--color-accent-purple-light);">2</span>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.1rem; font-weight: 700;">CLAUDE.md: Escreva sua Fita de Lucy</h3>
+                        <p style="font-size: 0.8rem; color: var(--color-text-muted);">Objetivo: criar a memoria permanente do seu projeto e testar se funciona</p>
+                    </div>
+                </div>
+
+                <div class="terminal">
+                    <div class="terminal-bar">
+                        <div class="terminal-dot red"></div>
+                        <div class="terminal-dot yellow"></div>
+                        <div class="terminal-dot green"></div>
+                        <span class="terminal-title">Exercicio 2 &mdash; A Fita de Lucy</span>
+                    </div>
+                    <div class="terminal-body">
+                        <span class="comment"># Ainda dentro do Claude Code, cole o prompt abaixo.</span><br>
+                        <span class="comment"># Troque apenas o que esta entre [COLCHETES].</span><br><br>
+
+                        <div style="position: relative; padding: 0.75rem 1rem; margin-bottom: 1rem; background: rgba(0,0,0,0.2); border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                            <button class="cmd-copy" onclick="copyPromptBlock(this)" style="position: absolute; top: 0.5rem; right: 0.5rem; z-index: 2;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar Tudo</button>
+                            <pre style="white-space: pre-wrap; font-size: 0.8rem; line-height: 1.6; color: var(--color-text-secondary); padding-right: 5rem; margin: 0;">Configure meu ambiente de trabalho. Eu sou iniciante total, nunca programei.
+
+Meu nome: <span style="color: var(--color-accent-gold);">[SEU NOME]</span>
+Meu projeto: <span style="color: var(--color-accent-gold);">[DESCREVA EM 1 FRASE O QUE QUER CONSTRUIR]</span>
+
+Faca o seguinte:
+1. Detecte meu sistema operacional automaticamente
+2. Crie a pasta .claude/ se nao existir
+3. Crie o arquivo .claude/CLAUDE.md com minhas informacoes
+
+O CLAUDE.md deve conter:
+- Quem sou eu (nome, projeto, OS, nivel iniciante)
+- Regras: sempre responda em portugues, explique de forma simples, avise antes de deletar arquivos, mostre comandos do meu OS
+- Meu progresso no Cohort (checklist E1 e E2)
+- Tabela de comandos que ja aprendi (terminal + slash commands)
+- Espaco para anotacoes
+
+Depois de criar, me mostre o conteudo do arquivo.</pre>
+                        </div>
+
+                        <span class="comment"># Depois que Claude criar, verifique:</span><br><br>
+
+                        <div class="terminal-cmd os-visible" data-os="mac" data-cmd="! cat .claude/CLAUDE.md">
+                            <div class="cmd-left">
+                                <span class="cmd-label">2.</span>
+                                <span class="prompt">&gt;</span>
+                                <span class="cmd-text">! cat .claude/CLAUDE.md</span>
+                                <span class="cmd-desc">Ver o conteudo da fita</span>
+                            </div>
+                            <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                        </div>
+                        <div class="terminal-cmd" data-os="cmd" data-cmd="! type .claude\CLAUDE.md">
+                            <div class="cmd-left">
+                                <span class="cmd-label">2.</span>
+                                <span class="prompt">&gt;</span>
+                                <span class="cmd-text">! type .claude\CLAUDE.md</span>
+                                <span class="cmd-desc">Ver o conteudo da fita</span>
+                            </div>
+                            <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                        </div>
+                        <div class="terminal-cmd" data-os="ps" data-cmd="! Get-Content .claude\CLAUDE.md">
+                            <div class="cmd-left">
+                                <span class="cmd-label">2.</span>
+                                <span class="prompt">&gt;</span>
+                                <span class="cmd-text">! Get-Content .claude\CLAUDE.md</span>
+                                <span class="cmd-desc">Ver o conteudo da fita</span>
+                            </div>
+                            <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                        </div>
+
+                        <span class="comment"># Agora o teste da verdade: feche e reabra</span><br><br>
+
+                        <div class="terminal-cmd" data-cmd="/exit">
+                            <div class="cmd-left">
+                                <span class="cmd-label">3.</span>
+                                <span class="prompt">&gt;</span>
+                                <span class="cmd-text">/exit</span>
+                                <span class="cmd-desc">Sair do Claude Code</span>
+                            </div>
+                            <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                        </div>
+
+                        <div class="terminal-cmd" data-cmd="claude">
+                            <div class="cmd-left">
+                                <span class="cmd-label">4.</span>
+                                <span class="prompt">$</span>
+                                <span class="cmd-text">claude</span>
+                                <span class="cmd-desc">Reabrir (nova sessao)</span>
+                            </div>
+                            <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                        </div>
+
+                        <div class="terminal-cmd" data-cmd="Quem sou eu? O que estou construindo?">
+                            <div class="cmd-left">
+                                <span class="cmd-label">5.</span>
+                                <span class="prompt">&gt;</span>
+                                <span class="cmd-text">Quem sou eu? O que estou construindo?</span>
+                                <span class="cmd-desc">Teste de memoria</span>
+                            </div>
+                            <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                        </div>
+
+                        <div class="terminal-output-row" style="color: var(--color-accent-green);">
+                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            Resultado esperado: Claude cita seu nome, seu projeto e suas preferencias
+                        </div>
+                        <div class="terminal-output-row" style="color: var(--color-accent-gold);">
+                            Se ele lembrou &mdash; a fita de Lucy esta funcionando. Parabens.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             CHECKPOINT FINAL
+             ============================================ -->
+        <div class="yolo-banner">
+            <div class="yolo-icon">
+                <span class="icon">
+                    <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </span>
+            </div>
+            <div class="yolo-content">
+                <h3>Checkpoint Final</h3>
+                <p>Valide cada item antes de seguir para o E2:</p>
+                <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <button class="checkpoint-item" onclick="toggleCheck(this)">
+                        <span class="checkpoint-box">
+                            <svg class="checkpoint-unchecked" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/></svg>
+                            <svg class="checkpoint-checked" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><polyline points="9 12 11.5 14.5 16 9"/></svg>
+                        </span>
+                        <span class="checkpoint-label">Claude Code: instalado e funcionando?</span>
+                    </button>
+                    <button class="checkpoint-item" onclick="toggleCheck(this)">
+                        <span class="checkpoint-box">
+                            <svg class="checkpoint-unchecked" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/></svg>
+                            <svg class="checkpoint-checked" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><polyline points="9 12 11.5 14.5 16 9"/></svg>
+                        </span>
+                        <span class="checkpoint-label">Terminal: navego, crio pastas e sei onde estou?</span>
+                    </button>
+                    <button class="checkpoint-item" onclick="toggleCheck(this)">
+                        <span class="checkpoint-box">
+                            <svg class="checkpoint-unchecked" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/></svg>
+                            <svg class="checkpoint-checked" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><polyline points="9 12 11.5 14.5 16 9"/></svg>
+                        </span>
+                        <span class="checkpoint-label">Slash commands: /help, /status, /clear, /init, /exit?</span>
+                    </button>
+                    <button class="checkpoint-item" onclick="toggleCheck(this)">
+                        <span class="checkpoint-box">
+                            <svg class="checkpoint-unchecked" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/></svg>
+                            <svg class="checkpoint-checked" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><polyline points="9 12 11.5 14.5 16 9"/></svg>
+                        </span>
+                        <span class="checkpoint-label">CLAUDE.md: criado e Claude lembra de mim na sessao nova?</span>
+                    </button>
+                    <button class="checkpoint-item" onclick="toggleCheck(this)">
+                        <span class="checkpoint-box">
+                            <svg class="checkpoint-unchecked" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/></svg>
+                            <svg class="checkpoint-checked" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><polyline points="9 12 11.5 14.5 16 9"/></svg>
+                        </span>
+                        <span class="checkpoint-label">Exercicios 1 e 2: todos completos?</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final message -->
+        <div style="margin-top: 2rem; padding: 2rem; background: var(--color-bg-card); border-radius: var(--radius-lg); border: 1px solid var(--color-border); text-align: center;">
+            <p style="color: var(--color-accent-gold); font-size: 1.1rem; font-weight: 600;">Voce nao e mais usuario. Voce e piloto.</p>
+            <p style="color: var(--color-accent-gold); margin-top: 0.5rem;">E Claude nunca mais vai esquecer de quem voce e.</p>
+        </div>
+
+        <!-- Gamification: Interactive scenarios -->
+        <div class="scenario-slot" data-page="e1-fundacao"></div>
+
+    </div>
+
+<script>
+/* OS Switching — exposed to window for onclick handlers (Router wraps in IIFE) */
+var currentOS = 'mac';
+window.setOS = function(os) {
+    currentOS = os;
+    document.querySelectorAll('.os-tab').forEach(function(t) { t.classList.toggle('active', t.dataset.os === os); });
+    document.querySelectorAll('.terminal-cmd[data-os]').forEach(function(cmd) {
+        cmd.classList.toggle('os-visible', cmd.dataset.os === os);
+    });
+};
+
+/* Checkpoint toggle */
+window.toggleCheck = function(btn) {
+    btn.classList.toggle('checked');
+};
+
+/* Copy full prompt block */
+window.copyPromptBlock = function(btn) {
+    var pre = btn.closest('.terminal-body').querySelector('pre');
+    var text = pre.textContent || pre.innerText;
+    navigator.clipboard.writeText(text).then(function() {
+        btn.classList.add('copied');
+        btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Copiado!';
+        setTimeout(function() {
+            btn.classList.remove('copied');
+            btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar Tudo';
+        }, 1500);
+    });
+};
+
+/* Copy prompt card text */
+window.copyPromptCard = function(btn) {
+    var pre = btn.closest('.prompt-card').querySelector('.prompt-text');
+    var text = pre.textContent || pre.innerText;
+    navigator.clipboard.writeText(text).then(function() {
+        btn.classList.add('copied');
+        btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Copiado!';
+        setTimeout(function() {
+            btn.classList.remove('copied');
+            btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar Prompt';
+        }, 1500);
+    });
+};
+
+/* Copy to clipboard */
+window.copyCmd = function(btn) {
+    var cmd = btn.closest('.terminal-cmd').dataset.cmd;
+    navigator.clipboard.writeText(cmd).then(function() {
+        btn.classList.add('copied');
+        btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Copiado!';
+        setTimeout(function() {
+            btn.classList.remove('copied');
+            btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar';
+        }, 1500);
+    });
+};
+</script>

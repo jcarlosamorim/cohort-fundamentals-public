@@ -1,0 +1,358 @@
+<!-- E5 - A Cadeia de Comando -->
+
+    <!-- ============================================
+         HERO HEADER
+         ============================================ -->
+    <header class="hero">
+        <div class="hero-badge">Encontro 5 &bull; Por Que PRD E a Alma</div>
+        <h1>Planta Baixa de um Predio.<br><span>Sem blueprint, nao se constroi.</span></h1>
+        <p>Sem PRD, voce pede pra IA adivinhar o que voce quer. Com PRD, voce entrega um mapa completo. Essa aula mostra a cadeia que separa software que funciona de software que morre.</p>
+    </header>
+
+    <div class="content">
+
+        <!-- ============================================
+             SECAO 1: A Cadeia
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">O Mapa</div>
+            <h2 class="section-title">A Cadeia Completa &mdash; 7 Elos</h2>
+            <p class="section-desc">Todo software que funciona seguiu essa cadeia. Todo software que deu errado pulou algum elo. Cada elo tem um agente AIOS responsavel.</p>
+
+            <!-- Chain flowchart — horizontal 7 steps -->
+            <div style="display: flex; align-items: stretch; gap: 0; margin-bottom: 2rem; overflow-x: auto; padding-bottom: 0.5rem;">
+
+                <!-- Step 1: PRD -->
+                <div style="flex: 1; min-width: 120px; background: rgba(209,255,0,0.06); border: 1px solid var(--color-accent-gold-30); border-radius: var(--radius-lg); padding: 1.25rem 0.75rem; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--color-accent-gold-10); display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--color-accent-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    </div>
+                    <div style="font-family: var(--font-mono); font-weight: 800; font-size: 0.8rem; color: var(--color-accent-gold); margin-bottom: 0.25rem;">PRD</div>
+                    <div style="font-size: 0.6rem; color: var(--color-text-muted); line-height: 1.4; margin-bottom: 0.5rem;">O Que + Por Que</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.55rem; color: var(--color-accent-gold); background: rgba(209,255,0,0.08); border: 1px solid rgba(209,255,0,0.2); padding: 0.2rem 0.5rem; border-radius: 999px; white-space: nowrap;">/AIOS:agents:pm</div>
+                </div>
+
+                <!-- Arrow -->
+                <div style="display: flex; align-items: center; padding: 0 0.1rem; flex-shrink: 0;">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--color-text-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.4;"><polyline points="9 18 15 12 9 6"/></svg>
+                </div>
+
+                <!-- Step 2: Architecture -->
+                <div style="flex: 1; min-width: 120px; background: rgba(0,153,255,0.06); border: 1px solid rgba(0,153,255,0.25); border-radius: var(--radius-lg); padding: 1.25rem 0.75rem; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--color-accent-purple-10); display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#33ADFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <div style="font-family: var(--font-mono); font-weight: 800; font-size: 0.8rem; color: #33ADFF; margin-bottom: 0.25rem;">Architecture</div>
+                    <div style="font-size: 0.6rem; color: var(--color-text-muted); line-height: 1.4; margin-bottom: 0.5rem;">Como</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.55rem; color: #33ADFF; background: rgba(0,153,255,0.08); border: 1px solid rgba(0,153,255,0.2); padding: 0.2rem 0.5rem; border-radius: 999px; white-space: nowrap;">/AIOS:agents:architect</div>
+                </div>
+
+                <!-- Arrow -->
+                <div style="display: flex; align-items: center; padding: 0 0.1rem; flex-shrink: 0;">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--color-text-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.4;"><polyline points="9 18 15 12 9 6"/></svg>
+                </div>
+
+                <!-- Step 3: Stories -->
+                <div style="flex: 1; min-width: 120px; background: rgba(56,189,248,0.06); border: 1px solid rgba(56,189,248,0.25); border-radius: var(--radius-lg); padding: 1.25rem 0.75rem; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(56,189,248,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                    </div>
+                    <div style="font-family: var(--font-mono); font-weight: 800; font-size: 0.8rem; color: #38BDF8; margin-bottom: 0.25rem;">Stories</div>
+                    <div style="font-size: 0.6rem; color: var(--color-text-muted); line-height: 1.4; margin-bottom: 0.5rem;">Tarefas</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.55rem; color: #38BDF8; background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.2); padding: 0.2rem 0.5rem; border-radius: 999px; white-space: nowrap;">/AIOS:agents:sm</div>
+                </div>
+
+                <!-- Arrow -->
+                <div style="display: flex; align-items: center; padding: 0 0.1rem; flex-shrink: 0;">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--color-text-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.4;"><polyline points="9 18 15 12 9 6"/></svg>
+                </div>
+
+                <!-- Step 4: Validacao 1 (PO) -->
+                <div style="flex: 1; min-width: 120px; background: rgba(251,191,36,0.06); border: 1px solid rgba(251,191,36,0.25); border-radius: var(--radius-lg); padding: 1.25rem 0.75rem; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(251,191,36,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#FBBF24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div style="font-family: var(--font-mono); font-weight: 800; font-size: 0.75rem; color: #FBBF24; margin-bottom: 0.25rem;">Validacao 1</div>
+                    <div style="font-size: 0.6rem; color: var(--color-text-muted); line-height: 1.4; margin-bottom: 0.5rem;">Aprovacao</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.55rem; color: #FBBF24; background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.2); padding: 0.2rem 0.5rem; border-radius: 999px; white-space: nowrap;">/AIOS:agents:po</div>
+                </div>
+
+                <!-- Arrow -->
+                <div style="display: flex; align-items: center; padding: 0 0.1rem; flex-shrink: 0;">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--color-text-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.4;"><polyline points="9 18 15 12 9 6"/></svg>
+                </div>
+
+                <!-- Step 5: Code -->
+                <div style="flex: 1; min-width: 120px; background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.25); border-radius: var(--radius-lg); padding: 1.25rem 0.75rem; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(34,197,94,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
+                    <div style="font-family: var(--font-mono); font-weight: 800; font-size: 0.8rem; color: #22c55e; margin-bottom: 0.25rem;">Code</div>
+                    <div style="font-size: 0.6rem; color: var(--color-text-muted); line-height: 1.4; margin-bottom: 0.5rem;">Construcao</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.55rem; color: #22c55e; background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2); padding: 0.2rem 0.5rem; border-radius: 999px; white-space: nowrap;">/AIOS:agents:dev</div>
+                </div>
+
+                <!-- Arrow -->
+                <div style="display: flex; align-items: center; padding: 0 0.1rem; flex-shrink: 0;">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--color-text-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.4;"><polyline points="9 18 15 12 9 6"/></svg>
+                </div>
+
+                <!-- Step 6: Validacao 2 (QA) -->
+                <div style="flex: 1; min-width: 120px; background: rgba(249,115,22,0.06); border: 1px solid rgba(249,115,22,0.25); border-radius: var(--radius-lg); padding: 1.25rem 0.75rem; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(249,115,22,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#f97316" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                    </div>
+                    <div style="font-family: var(--font-mono); font-weight: 800; font-size: 0.75rem; color: #f97316; margin-bottom: 0.25rem;">Validacao 2</div>
+                    <div style="font-size: 0.6rem; color: var(--color-text-muted); line-height: 1.4; margin-bottom: 0.5rem;">Qualidade</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.55rem; color: #f97316; background: rgba(249,115,22,0.08); border: 1px solid rgba(249,115,22,0.2); padding: 0.2rem 0.5rem; border-radius: 999px; white-space: nowrap;">/AIOS:agents:qa</div>
+                </div>
+
+                <!-- Arrow -->
+                <div style="display: flex; align-items: center; padding: 0 0.1rem; flex-shrink: 0;">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--color-text-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.4;"><polyline points="9 18 15 12 9 6"/></svg>
+                </div>
+
+                <!-- Step 7: Deploy -->
+                <div style="flex: 1; min-width: 120px; background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.25rem 0.75rem; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--color-text-secondary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <div style="font-family: var(--font-mono); font-weight: 800; font-size: 0.8rem; color: var(--color-text-secondary); margin-bottom: 0.25rem;">Deploy</div>
+                    <div style="font-size: 0.6rem; color: var(--color-text-muted); line-height: 1.4; margin-bottom: 0.5rem;">Entrega</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.55rem; color: var(--color-text-secondary); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); padding: 0.2rem 0.5rem; border-radius: 999px; white-space: nowrap;">/AIOS:agents:devops</div>
+                </div>
+            </div>
+
+            <!-- Insight card -->
+            <div style="background: rgba(209,255,0,0.05); border: 1px solid var(--color-accent-gold-30); border-radius: var(--radius-lg); padding: 1.25rem;">
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--color-accent-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.85rem; color: var(--color-accent-gold); margin-bottom: 0.3rem;">Planta Baixa</div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.7;">Pular qualquer elo dessa cadeia e como construir sem planta: pode ate ficar de pe, mas vai cair na primeira chuva. O PRD e o elo mais importante porque define <strong style="color: var(--color-text-secondary);">TUDO</strong> que vem depois.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO 2: Por Que a IA Precisa de PRD
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">O Problema</div>
+            <h2 class="section-title">A IA Nao Le Sua Mente</h2>
+            <p class="section-desc">Sem PRD, voce esta pedindo pro Claude adivinhar o que voce quer. E adivinhacao gera retrabalho.</p>
+
+            <!-- Side-by-side comparison grid -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+
+                <!-- LEFT: Sem PRD -->
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-lg); overflow: hidden; opacity: 0.75;">
+                    <!-- Label -->
+                    <div style="padding: 0.75rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; gap: 0.5rem;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                        <span style="font-weight: 800; font-size: 0.75rem; color: #EF4444; text-transform: uppercase; letter-spacing: 0.08em;">Sem PRD</span>
+                    </div>
+                    <!-- Terminal sim -->
+                    <div style="background: #0D1117; padding: 1rem; font-family: var(--font-mono); font-size: 0.65rem; line-height: 2; color: #8B949E;">
+                        <div><span style="color: #6A737D;">voce:</span> <span style="color: #A5D6FF;">Faz um app de prospeccao</span></div>
+                        <div>&nbsp;</div>
+                        <div><span style="color: #6A737D;">claude:</span> <span style="color: #8B949E;">OK, vou criar...</span></div>
+                        <div style="color: #6A737D; font-style: italic;">&nbsp;&nbsp;// inventa tudo na hora</div>
+                        <div style="color: #6A737D; font-style: italic;">&nbsp;&nbsp;// sem perguntar nada</div>
+                        <div style="color: #6A737D; font-style: italic;">&nbsp;&nbsp;// sem contexto do negocio</div>
+                        <div>&nbsp;</div>
+                        <div style="color: #EF4444;">&nbsp;&nbsp;&#x2717; app generico</div>
+                        <div style="color: #EF4444;">&nbsp;&nbsp;&#x2717; sem integracao</div>
+                        <div style="color: #EF4444;">&nbsp;&nbsp;&#x2717; sem dados reais</div>
+                        <div style="color: #EF4444;">&nbsp;&nbsp;&#x2717; retrabalho garantido</div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Com PRD -->
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(34,197,94,0.25); border-radius: var(--radius-lg); overflow: hidden;">
+                    <!-- Label -->
+                    <div style="padding: 0.75rem 1rem; border-bottom: 1px solid rgba(34,197,94,0.15); display: flex; align-items: center; gap: 0.5rem;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span style="font-weight: 800; font-size: 0.75rem; color: #22c55e; text-transform: uppercase; letter-spacing: 0.08em;">Com PRD</span>
+                    </div>
+                    <!-- Terminal sim -->
+                    <div style="background: #0D1117; padding: 1rem; font-family: var(--font-mono); font-size: 0.65rem; line-height: 2; color: #8B949E;">
+                        <div><span style="color: #22c55e;">voce:</span> <span style="color: #A5D6FF;">@pm Preciso de um sistema de prospeccao usando Apify</span></div>
+                        <div>&nbsp;</div>
+                        <div><span style="color: #38BDF8;">@pm (Morgan):</span> <span style="color: #6A737D;">Seguindo template PRD...</span></div>
+                        <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; 15 perguntas estruturadas</span></div>
+                        <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; ICP definido</span></div>
+                        <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; Stack validada</span></div>
+                        <div>&nbsp;</div>
+                        <div style="color: #4ADE80;">&nbsp;&nbsp;&#x2713; PRD com 47 decisoes documentadas</div>
+                        <div style="color: #4ADE80;">&nbsp;&nbsp;&#x2713; Scope IN/OUT definido</div>
+                        <div style="color: #4ADE80;">&nbsp;&nbsp;&#x2713; NFRs especificados</div>
+                        <div style="color: #4ADE80;">&nbsp;&nbsp;&#x2713; Zero adivinhacao</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Callout: the math -->
+            <div style="background: rgba(209,255,0,0.05); border: 1px solid var(--color-accent-gold-30); border-radius: var(--radius-lg); padding: 1.25rem;">
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--color-accent-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.85rem; color: var(--color-accent-gold); margin-bottom: 0.3rem;">A Conta</div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.7;">
+                            <strong style="color: var(--color-text-secondary);">30 minutos</strong> fazendo PRD com o @pm evitam <strong style="color: var(--color-text-secondary);">3 dias</strong> refazendo codigo. A IA e poderosa, mas sem direcao ela inventa. Com PRD, ela executa.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO 3: O Projeto — Prospect Hunter
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">O Caso Real</div>
+            <h2 class="section-title">Prospect Hunter &mdash; Seu Projeto do Cohort</h2>
+            <p class="section-desc">Nas proximas aulas, voce vai construir um sistema real de prospeccao automatizada. Mas primeiro, precisa entender O QUE vai construir.</p>
+
+            <!-- Problem statement -->
+            <div style="background: rgba(239,68,68,0.04); border: 1px solid rgba(239,68,68,0.2); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.85rem; color: #EF4444; margin-bottom: 0.3rem;">O Problema</div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.7;">Buscar prospects manualmente leva horas. Voce pesquisa no Google, copia dados, organiza em planilha, e repete tudo de novo no dia seguinte. Voce precisa de um sistema que faz isso automaticamente.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solution stack — 4 cards in a row -->
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; margin-bottom: 1.5rem;">
+                <!-- Apify -->
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(249,115,22,0.25); border-radius: var(--radius-lg); padding: 1rem; text-align: center;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(249,115,22,0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.6rem;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#f97316" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                    </div>
+                    <div style="font-family: var(--font-mono); font-weight: 800; font-size: 0.75rem; color: #f97316; margin-bottom: 0.2rem;">Apify</div>
+                    <div style="font-size: 0.6rem; color: var(--color-text-muted);">Scraping</div>
+                </div>
+                <!-- Claude Code -->
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(0,153,255,0.25); border-radius: var(--radius-lg); padding: 1rem; text-align: center;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--color-accent-purple-10); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.6rem;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#33ADFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                    </div>
+                    <div style="font-family: var(--font-mono); font-weight: 800; font-size: 0.75rem; color: #33ADFF; margin-bottom: 0.2rem;">Claude Code</div>
+                    <div style="font-size: 0.6rem; color: var(--color-text-muted);">Orquestracao</div>
+                </div>
+                <!-- Supabase -->
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(34,197,94,0.25); border-radius: var(--radius-lg); padding: 1rem; text-align: center;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(34,197,94,0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.6rem;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                    </div>
+                    <div style="font-family: var(--font-mono); font-weight: 800; font-size: 0.75rem; color: #22c55e; margin-bottom: 0.2rem;">Supabase</div>
+                    <div style="font-size: 0.6rem; color: var(--color-text-muted);">Armazenamento</div>
+                </div>
+                <!-- Vercel -->
+                <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1rem; text-align: center;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.6rem;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--color-text-secondary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 19.8h20L12 2z"/></svg>
+                    </div>
+                    <div style="font-family: var(--font-mono); font-weight: 800; font-size: 0.75rem; color: var(--color-text-secondary); margin-bottom: 0.2rem;">Vercel</div>
+                    <div style="font-size: 0.6rem; color: var(--color-text-muted);">Deploy</div>
+                </div>
+            </div>
+
+            <!-- Teaser box -->
+            <div style="background: rgba(0,153,255,0.04); border: 1px dashed rgba(0,153,255,0.25); border-radius: var(--radius-lg); padding: 1.25rem;">
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#33ADFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.85rem; color: #33ADFF; margin-bottom: 0.3rem;">Proximo Passo: E6</div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.7;">No E6, voce vai criar o <strong style="color: var(--color-text-secondary);">PRD completo</strong> desse projeto usando o <code style="background: rgba(255,255,255,0.06); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.65rem;">@pm</code>. Hoje, entenda <strong style="color: var(--color-text-secondary);">POR QUE</strong> isso importa.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO 4: O Que Acontece Sem PRD
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">O Alerta</div>
+            <h2 class="section-title">5 Projetos Que Morreram Sem PRD</h2>
+            <p class="section-desc">Nao e teoria. E o que acontece quando voce pula a fase de planejamento.</p>
+
+            <!-- 5 failure mode cards -->
+            <div style="display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 2rem;">
+
+                <!-- 1 -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 0.85rem 1rem;">
+                    <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(239,68,68,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 800; color: #EF4444;">1</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary); margin-bottom: 0.15rem;">&ldquo;Fiz um app e ninguem usou&rdquo;</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6;">Nao definiu persona/ICP. Construiu para um publico que nao existe. O PRD pergunta <strong style="color: var(--color-text-secondary);">PARA QUEM</strong> antes de perguntar O QUE.</div>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 0.85rem 1rem;">
+                    <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(239,68,68,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 800; color: #EF4444;">2</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary); margin-bottom: 0.15rem;">&ldquo;O Claude inventou features que eu nao pedi&rdquo;</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6;">Sem Scope IN/OUT. A IA nao sabe o que NAO fazer a menos que voce diga. O PRD define limites claros.</div>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 0.85rem 1rem;">
+                    <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(239,68,68,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 800; color: #EF4444;">3</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary); margin-bottom: 0.15rem;">&ldquo;Gastei 3 dias e tive que refazer tudo&rdquo;</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6;">Sem architecture decision. Escolheu a stack errada, o banco errado, a estrutura errada. O PRD alimenta a arquitetura ANTES do codigo.</div>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 0.85rem 1rem;">
+                    <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(239,68,68,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 800; color: #EF4444;">4</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary); margin-bottom: 0.15rem;">&ldquo;Funciona no meu PC mas nao em producao&rdquo;</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6;">Sem NFRs definidos. Performance, seguranca, escalabilidade &mdash; nada foi pensado. O PRD documenta requisitos nao-funcionais que salvam o deploy.</div>
+                    </div>
+                </div>
+
+                <!-- 5 -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 0.85rem 1rem;">
+                    <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(239,68,68,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 800; color: #EF4444;">5</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary); margin-bottom: 0.15rem;">&ldquo;O codigo ficou uma bagunca&rdquo;</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6;">Sem stories estruturadas. Tudo virou uma massa de codigo sem separacao. O PRD gera stories organizadas que o @dev executa uma por vez, com clareza.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final insight card -->
+            <div style="background: rgba(209,255,0,0.05); border: 1px solid var(--color-accent-gold-30); border-radius: var(--radius-lg); padding: 1.25rem;">
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--color-accent-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.85rem; color: var(--color-accent-gold); margin-bottom: 0.3rem;">A Regra de Ouro</div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.7;">
+                            Nenhum desses 5 problemas e tecnico. Todos sao problemas de <strong style="color: var(--color-text-secondary);">planejamento</strong>. A cadeia PRD &rarr; Architecture &rarr; Stories &rarr; Code existe exatamente pra impedir que isso aconteca com voce.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>

@@ -1,0 +1,653 @@
+<!-- E2 - Criando o Proprio AIOS -->
+
+    <header class="hero">
+        <div class="hero-badge">Encontro 2 &bull; Nivel 3</div>
+        <h1>Criando o Proprio<br><span>AIOS</span></h1>
+        <p>O AIOS e um sistema com <strong style="color: var(--color-accent-gold);">13 agentes especializados</strong> que trabalham juntos como uma empresa de tecnologia completa. Voce ja conheceu o Gage. Agora vai conhecer todos.</p>
+    </header>
+
+    <div class="content">
+
+        <!-- ============================================
+             BLOCO 1: Os 13 Agentes do AIOS
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">O Time Completo</div>
+            <h2 class="section-title">Os 13 Agentes do AIOS</h2>
+            <p class="section-desc">Cada agente tem um nome, uma especialidade e um papel claro. Juntos, eles cobrem <strong style="color: var(--color-text-primary);">todo o ciclo de desenvolvimento de software</strong>.</p>
+
+            <!-- Agents grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+
+                <!-- 1. Orion - AIOS Master -->
+                <div style="background: var(--color-bg-card); border: 2px solid var(--color-accent-gold-30); border-radius: var(--radius-xl); padding: 1.25rem; display: flex; gap: 0.85rem; align-items: start;">
+                    <div style="width: 38px; height: 38px; border-radius: var(--radius-md); background: rgba(209,255,0,0.12); border: 1px solid var(--color-accent-gold-30); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--color-accent-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <div style="min-width: 0;">
+                        <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.2rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: var(--color-accent-gold);">Orion</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-text-muted); background: rgba(209,255,0,0.08); padding: 0.1rem 0.35rem; border-radius: 3px;">master</span>
+                        </div>
+                        <div style="font-size: 0.68rem; font-weight: 600; color: var(--color-text-secondary); margin-bottom: 0.3rem;">Orquestrador do Framework</div>
+                        <div style="font-size: 0.65rem; color: var(--color-text-muted); line-height: 1.5;">Coordena todos os agentes, cria e modifica componentes do framework</div>
+                    </div>
+                </div>
+
+                <!-- 2. Morgan - PM -->
+                <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 1.25rem; display: flex; gap: 0.85rem; align-items: start;">
+                    <div style="width: 38px; height: 38px; border-radius: var(--radius-md); background: rgba(0,153,255,0.1); border: 1px solid rgba(0,153,255,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#0099FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                    </div>
+                    <div style="min-width: 0;">
+                        <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.2rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: var(--color-text-primary);">Morgan</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.04); padding: 0.1rem 0.35rem; border-radius: 3px;">pm</span>
+                        </div>
+                        <div style="font-size: 0.68rem; font-weight: 600; color: var(--color-text-secondary); margin-bottom: 0.3rem;">Product Manager</div>
+                        <div style="font-size: 0.65rem; color: var(--color-text-muted); line-height: 1.5;">PRDs, epics, estrategia de produto e roadmap</div>
+                    </div>
+                </div>
+
+                <!-- 3. Pax - PO -->
+                <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 1.25rem; display: flex; gap: 0.85rem; align-items: start;">
+                    <div style="width: 38px; height: 38px; border-radius: var(--radius-md); background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+                    </div>
+                    <div style="min-width: 0;">
+                        <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.2rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: var(--color-text-primary);">Pax</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.04); padding: 0.1rem 0.35rem; border-radius: 3px;">po</span>
+                        </div>
+                        <div style="font-size: 0.68rem; font-weight: 600; color: var(--color-text-secondary); margin-bottom: 0.3rem;">Product Owner</div>
+                        <div style="font-size: 0.65rem; color: var(--color-text-muted); line-height: 1.5;">Backlog, priorizacao, criterios de aceitacao e refinamento</div>
+                    </div>
+                </div>
+
+                <!-- 4. River - SM -->
+                <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 1.25rem; display: flex; gap: 0.85rem; align-items: start;">
+                    <div style="width: 38px; height: 38px; border-radius: var(--radius-md); background: rgba(20,184,166,0.1); border: 1px solid rgba(20,184,166,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#14b8a6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div style="min-width: 0;">
+                        <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.2rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: var(--color-text-primary);">River</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.04); padding: 0.1rem 0.35rem; border-radius: 3px;">sm</span>
+                        </div>
+                        <div style="font-size: 0.68rem; font-weight: 600; color: var(--color-text-secondary); margin-bottom: 0.3rem;">Scrum Master</div>
+                        <div style="font-size: 0.65rem; color: var(--color-text-muted); line-height: 1.5;">User stories, sprint planning, backlog grooming</div>
+                    </div>
+                </div>
+
+                <!-- 5. Aria - Architect -->
+                <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 1.25rem; display: flex; gap: 0.85rem; align-items: start;">
+                    <div style="width: 38px; height: 38px; border-radius: var(--radius-md); background: rgba(244,114,182,0.1); border: 1px solid rgba(244,114,182,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#f472b6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </div>
+                    <div style="min-width: 0;">
+                        <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.2rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: var(--color-text-primary);">Aria</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.04); padding: 0.1rem 0.35rem; border-radius: 3px;">architect</span>
+                        </div>
+                        <div style="font-size: 0.68rem; font-weight: 600; color: var(--color-text-secondary); margin-bottom: 0.3rem;">Arquiteta de Sistemas</div>
+                        <div style="font-size: 0.65rem; color: var(--color-text-muted); line-height: 1.5;">Arquitetura, stack tecnologico, API design, seguranca</div>
+                    </div>
+                </div>
+
+                <!-- 6. Dex - Dev -->
+                <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 1.25rem; display: flex; gap: 0.85rem; align-items: start;">
+                    <div style="width: 38px; height: 38px; border-radius: var(--radius-md); background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
+                    <div style="min-width: 0;">
+                        <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.2rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: var(--color-text-primary);">Dex</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.04); padding: 0.1rem 0.35rem; border-radius: 3px;">dev</span>
+                        </div>
+                        <div style="font-size: 0.68rem; font-weight: 600; color: var(--color-text-secondary); margin-bottom: 0.3rem;">Full Stack Developer</div>
+                        <div style="font-size: 0.65rem; color: var(--color-text-muted); line-height: 1.5;">Implementacao, debugging, refactoring, testes</div>
+                    </div>
+                </div>
+
+                <!-- 7. Gage - DevOps (JA USAMOS) -->
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(34,197,94,0.3); border-radius: var(--radius-xl); padding: 1.25rem; display: flex; gap: 0.85rem; align-items: start; position: relative;">
+                    <div style="position: absolute; top: 0.5rem; right: 0.65rem; font-family: var(--font-mono); font-size: 0.5rem; color: #22c55e; background: rgba(34,197,94,0.1); padding: 0.15rem 0.4rem; border-radius: 3px; border: 1px solid rgba(34,197,94,0.2);">JA USAMOS</div>
+                    <div style="width: 38px; height: 38px; border-radius: var(--radius-md); background: rgba(249,115,22,0.1); border: 1px solid rgba(249,115,22,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#f97316" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                    </div>
+                    <div style="min-width: 0;">
+                        <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.2rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: var(--color-text-primary);">Gage</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.04); padding: 0.1rem 0.35rem; border-radius: 3px;">devops</span>
+                        </div>
+                        <div style="font-size: 0.68rem; font-weight: 600; color: var(--color-text-secondary); margin-bottom: 0.3rem;">DevOps &amp; Infra</div>
+                        <div style="font-size: 0.65rem; color: var(--color-text-muted); line-height: 1.5;">Git, deploy, CI/CD, gestao de repositorios e ambiente</div>
+                    </div>
+                </div>
+
+                <!-- 8. Quinn - QA -->
+                <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 1.25rem; display: flex; gap: 0.85rem; align-items: start;">
+                    <div style="width: 38px; height: 38px; border-radius: var(--radius-md); background: rgba(234,179,8,0.1); border: 1px solid rgba(234,179,8,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#eab308" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div style="min-width: 0;">
+                        <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.2rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: var(--color-text-primary);">Quinn</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.04); padding: 0.1rem 0.35rem; border-radius: 3px;">qa</span>
+                        </div>
+                        <div style="font-size: 0.68rem; font-weight: 600; color: var(--color-text-secondary); margin-bottom: 0.3rem;">Quality Assurance</div>
+                        <div style="font-size: 0.65rem; color: var(--color-text-muted); line-height: 1.5;">Testes, quality gates, revisao de codigo, avaliacao de risco</div>
+                    </div>
+                </div>
+
+                <!-- 9. Atlas - Analyst -->
+                <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 1.25rem; display: flex; gap: 0.85rem; align-items: start;">
+                    <div style="width: 38px; height: 38px; border-radius: var(--radius-md); background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#6366f1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </div>
+                    <div style="min-width: 0;">
+                        <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.2rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: var(--color-text-primary);">Atlas</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.04); padding: 0.1rem 0.35rem; border-radius: 3px;">analyst</span>
+                        </div>
+                        <div style="font-size: 0.68rem; font-weight: 600; color: var(--color-text-secondary); margin-bottom: 0.3rem;">Business Analyst</div>
+                        <div style="font-size: 0.65rem; color: var(--color-text-muted); line-height: 1.5;">Pesquisa de mercado, analise competitiva, brainstorming</div>
+                    </div>
+                </div>
+
+                <!-- 10. Dara - Data Engineer -->
+                <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 1.25rem; display: flex; gap: 0.85rem; align-items: start;">
+                    <div style="width: 38px; height: 38px; border-radius: var(--radius-md); background: rgba(6,182,212,0.1); border: 1px solid rgba(6,182,212,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                    </div>
+                    <div style="min-width: 0;">
+                        <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.2rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: var(--color-text-primary);">Dara</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.04); padding: 0.1rem 0.35rem; border-radius: 3px;">data-engineer</span>
+                        </div>
+                        <div style="font-size: 0.68rem; font-weight: 600; color: var(--color-text-secondary); margin-bottom: 0.3rem;">Database Architect</div>
+                        <div style="font-size: 0.65rem; color: var(--color-text-muted); line-height: 1.5;">Schema, migrations, RLS policies, queries otimizadas</div>
+                    </div>
+                </div>
+
+                <!-- 11. Uma - UX Design Expert -->
+                <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 1.25rem; display: flex; gap: 0.85rem; align-items: start;">
+                    <div style="width: 38px; height: 38px; border-radius: var(--radius-md); background: rgba(236,72,153,0.1); border: 1px solid rgba(236,72,153,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#ec4899" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="0.5" fill="#ec4899"/><circle cx="17.5" cy="10.5" r="0.5" fill="#ec4899"/><circle cx="8.5" cy="7.5" r="0.5" fill="#ec4899"/><circle cx="6.5" cy="12.5" r="0.5" fill="#ec4899"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+                    </div>
+                    <div style="min-width: 0;">
+                        <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.2rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: var(--color-text-primary);">Uma</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.04); padding: 0.1rem 0.35rem; border-radius: 3px;">ux-design-expert</span>
+                        </div>
+                        <div style="font-size: 0.68rem; font-weight: 600; color: var(--color-text-secondary); margin-bottom: 0.3rem;">UX/UI Designer</div>
+                        <div style="font-size: 0.65rem; color: var(--color-text-muted); line-height: 1.5;">User research, wireframes, design system, componentes</div>
+                    </div>
+                </div>
+
+                <!-- 12. Craft - Squad Creator -->
+                <div style="background: var(--color-bg-card); border: 2px solid var(--color-accent-purple-30); border-radius: var(--radius-xl); padding: 1.25rem; display: flex; gap: 0.85rem; align-items: start; position: relative;">
+                    <div style="position: absolute; top: 0.5rem; right: 0.65rem; font-family: var(--font-mono); font-size: 0.5rem; color: var(--color-accent-purple-light); background: rgba(0,153,255,0.1); padding: 0.15rem 0.4rem; border-radius: 3px; border: 1px solid var(--color-accent-purple-30);">VAMOS INSTALAR</div>
+                    <div style="width: 38px; height: 38px; border-radius: var(--radius-md); background: rgba(0,153,255,0.1); border: 1px solid rgba(0,153,255,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#0099FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    </div>
+                    <div style="min-width: 0;">
+                        <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.2rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: var(--color-text-primary);">Craft</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.04); padding: 0.1rem 0.35rem; border-radius: 3px;">squad-creator</span>
+                        </div>
+                        <div style="font-size: 0.68rem; font-weight: 600; color: var(--color-text-secondary); margin-bottom: 0.3rem;">Squad Creator</div>
+                        <div style="font-size: 0.65rem; color: var(--color-text-muted); line-height: 1.5;">Cria, valida e publica squads customizados no padrao AIOS</div>
+                    </div>
+                </div>
+
+                <!-- 13. AIOS Developer -->
+                <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 1.25rem; display: flex; gap: 0.85rem; align-items: start;">
+                    <div style="width: 38px; height: 38px; border-radius: var(--radius-md); background: rgba(255,255,255,0.04); border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--color-text-secondary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    </div>
+                    <div style="min-width: 0;">
+                        <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.2rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: var(--color-text-primary);">Core</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.04); padding: 0.1rem 0.35rem; border-radius: 3px;">aios-developer</span>
+                        </div>
+                        <div style="font-size: 0.68rem; font-weight: 600; color: var(--color-text-secondary); margin-bottom: 0.3rem;">AIOS Framework Developer</div>
+                        <div style="font-size: 0.65rem; color: var(--color-text-muted); line-height: 1.5;">Evolucao do proprio framework, tasks, templates, regras</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============================================
+             BLOCO 2: Instalando o Squad Creator
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Mao na Massa</div>
+            <h2 class="section-title">Instalando o Squad Creator</h2>
+            <p class="section-desc">Agora que voce conhece o time, vamos usar o <strong style="color: var(--color-accent-gold);">Orion (aios-master)</strong> para instalar o primeiro expansion pack: <strong style="color: var(--color-accent-purple-light);">Squad Creator PRO</strong>.</p>
+
+            <!-- Step 1: Download -->
+            <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 1.5rem; margin-bottom: 1.25rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(209,255,0,0.12); border: 1px solid var(--color-accent-gold-30); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: var(--color-accent-gold);">1</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.95rem; color: var(--color-text-primary);">Baixe o Squad Creator PRO</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); margin-top: 0.15rem;">Va em Downloads e baixe o arquivo <code style="background: rgba(255,255,255,0.06); padding: 0.1rem 0.35rem; border-radius: 3px; font-size: 0.65rem;">squad-creator</code></div>
+                    </div>
+                </div>
+                <div style="background: rgba(209,255,0,0.04); border: 1px dashed var(--color-accent-gold-30); border-radius: var(--radius-lg); padding: 1rem 1.25rem; display: flex; align-items: center; gap: 0.75rem;">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--color-accent-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary);">squad-creator</div>
+                        <div style="font-size: 0.65rem; color: var(--color-text-muted);">Expansion Pack &mdash; disponivel na area de Downloads do cohort</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Activate aios-master -->
+            <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 1.5rem; margin-bottom: 1.25rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(209,255,0,0.12); border: 1px solid var(--color-accent-gold-30); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: var(--color-accent-gold);">2</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.95rem; color: var(--color-text-primary);">Ative o Orion (aios-master)</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); margin-top: 0.15rem;">No terminal, digite <code style="background: rgba(255,255,255,0.06); padding: 0.1rem 0.35rem; border-radius: 3px; font-size: 0.65rem;">/mast</code> e o autocomplete mostra o caminho completo</div>
+                    </div>
+                </div>
+
+                <!-- Terminal: /mast autocomplete -->
+                <div style="background: #2B2B2B; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.04); background: rgba(255,255,255,0.02);">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #ef4444; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #eab308; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #22c55e; opacity: 0.7;"></div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: var(--color-text-muted); margin-left: 0.35rem;">claude-code</span>
+                    </div>
+                    <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.8rem; line-height: 2;">
+                        <div><span style="color: var(--color-text-muted);">$</span> <span style="color: var(--color-text-primary); font-weight: 600;">/mast</span><span style="color: #64748b; font-style: italic;"> &larr; comece a digitar</span></div>
+                        <div style="padding-left: 1rem; margin-top: 0.25rem;">
+                            <div style="background: rgba(209,255,0,0.08); border: 1px solid var(--color-accent-gold-30); border-radius: 4px; padding: 0.3rem 0.6rem; display: inline-block;">
+                                <span style="color: var(--color-accent-gold); font-weight: 600;">/AIOS:agents:aios-master</span>
+                            </div>
+                            <span style="color: #64748b; font-size: 0.7rem; margin-left: 0.5rem;">&larr; clique Enter</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Install command -->
+            <div style="background: var(--color-bg-card); border: 2px solid var(--color-accent-gold-30); border-radius: var(--radius-xl); padding: 1.5rem; margin-bottom: 2rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(209,255,0,0.12); border: 1px solid var(--color-accent-gold-30); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: var(--color-accent-gold);">3</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.95rem; color: var(--color-text-primary);">Cole o comando de instalacao</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); margin-top: 0.15rem;">Copie e cole no terminal onde o Orion esta ativo</div>
+                    </div>
+                </div>
+
+                <!-- Terminal: install command -->
+                <div style="background: #2B2B2B; border: 2px solid var(--color-accent-gold-30); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 0 25px rgba(209,255,0,0.06);">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1rem; border-bottom: 1px solid rgba(209,255,0,0.15); background: rgba(209,255,0,0.03);">
+                        <div style="display: flex; gap: 0.4rem;">
+                            <div style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444; opacity: 0.8;"></div>
+                            <div style="width: 10px; height: 10px; border-radius: 50%; background: #eab308; opacity: 0.8;"></div>
+                            <div style="width: 10px; height: 10px; border-radius: 50%; background: #22c55e; opacity: 0.8;"></div>
+                        </div>
+                        <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-gold); margin-left: 0.5rem;">aios-master (Orion)</span>
+                        <button id="e2c-copy-install" style="margin-left: auto; background: rgba(209,255,0,0.1); border: 1px solid var(--color-accent-gold-30); border-radius: 4px; padding: 0.25rem 0.6rem; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; transition: all 0.15s;" onmouseover="this.style.background='rgba(209,255,0,0.2)'" onmouseout="this.style.background='rgba(209,255,0,0.1)'">
+                            <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="var(--color-accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                            <span style="font-family: var(--font-mono); font-size: 0.55rem; color: var(--color-accent-gold);">Copiar</span>
+                        </button>
+                    </div>
+                    <div style="padding: 1.25rem;">
+                        <div style="display: flex; align-items: baseline; gap: 0.5rem;">
+                            <span style="color: var(--color-accent-green); font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600;">$</span>
+                            <code style="font-family: var(--font-mono); font-size: 0.8rem; color: #fef08a; letter-spacing: 0.01em; word-break: break-all;">Instale o squad-creator que esta em downloads/squad creator premium, adicionando inclusive os slashs "/" para ativa-lo.</code>
+                        </div>
+                        <div style="display: flex; align-items: baseline; gap: 0.5rem; margin-top: 0.5rem;">
+                            <span style="color: var(--color-accent-green); font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600;">!</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.72rem; color: #94a3b8; letter-spacing: 0.01em;">Use Claude Opus 4.6 para instalar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What happens next -->
+            <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1rem 1.25rem; display: flex; align-items: start; gap: 0.75rem;">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--color-text-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.15rem;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                <p style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">O Orion vai copiar os arquivos, registrar os agentes e criar os comandos <code style="background: rgba(255,255,255,0.06); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.65rem;">/SquadCreator:*</code> automaticamente. Acompanhe o progresso no terminal.</p>
+            </div>
+        </section>
+
+        <!-- ============================================
+             BLOCO 2B: Instalacao Manual de Squads
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Modo Avancado</div>
+            <h2 class="section-title">Como Instalar um Squad Manualmente</h2>
+            <p class="section-desc">Se preferir instalar um squad sem o Orion, basta seguir este <strong style="color: var(--color-accent-gold);">processo em 3 passos</strong>.</p>
+
+            <!-- Step 1: Colocar na pasta -->
+            <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 1.5rem; margin-bottom: 1.25rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(209,255,0,0.12); border: 1px solid var(--color-accent-gold-30); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: var(--color-accent-gold);">1</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.95rem; color: var(--color-text-primary);">Colocar o squad na pasta squads/</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); margin-top: 0.15rem;">O squad precisa ter esta estrutura minima</div>
+                    </div>
+                </div>
+
+                <!-- File tree -->
+                <div style="background: #2B2B2B; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.04); background: rgba(255,255,255,0.02);">
+                        <div style="display: flex; gap: 0.35rem;">
+                            <div style="width: 8px; height: 8px; border-radius: 50%; background: #ef4444; opacity: 0.7;"></div>
+                            <div style="width: 8px; height: 8px; border-radius: 50%; background: #eab308; opacity: 0.7;"></div>
+                            <div style="width: 8px; height: 8px; border-radius: 50%; background: #22c55e; opacity: 0.7;"></div>
+                        </div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.1em;">Estrutura</span>
+                    </div>
+                    <div style="padding: 1rem 1.25rem; font-family: var(--font-mono); font-size: 0.75rem; line-height: 1.9; color: var(--color-text-secondary);">
+                        <div><span style="color: var(--color-accent-gold);">squads/{nome-do-squad}/</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: var(--color-text-muted);">&#9500;&#9472;&#9472;</span> <span style="color: #fef08a;">config.yaml</span> <span style="color: #64748b; font-size: 0.62rem; margin-left: 0.5rem;">OBRIGATORIO &mdash; define nome e slashPrefix</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: var(--color-text-muted);">&#9500;&#9472;&#9472;</span> <span style="color: #93c5fd;">agents/</span> <span style="color: #64748b; font-size: 0.62rem; margin-left: 0.5rem;">Agentes (.md)</span></div>
+                        <div style="padding-left: 2rem;"><span style="color: var(--color-text-muted);">&#9500;&#9472;&#9472;</span> <span style="color: var(--color-text-secondary);">agent-chief.md</span></div>
+                        <div style="padding-left: 2rem;"><span style="color: var(--color-text-muted);">&#9492;&#9472;&#9472;</span> <span style="color: var(--color-text-secondary);">outro-agent.md</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: var(--color-text-muted);">&#9500;&#9472;&#9472;</span> <span style="color: #93c5fd;">tasks/</span> <span style="color: #64748b; font-size: 0.62rem; margin-left: 0.5rem;">Tasks (.md)</span></div>
+                        <div style="padding-left: 2rem;"><span style="color: var(--color-text-muted);">&#9492;&#9472;&#9472;</span> <span style="color: var(--color-text-secondary);">minha-task.md</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: var(--color-text-muted);">&#9492;&#9472;&#9472;</span> <span style="color: #93c5fd;">workflows/</span> <span style="color: #64748b; font-size: 0.62rem; margin-left: 0.5rem;">Workflows (.yaml) &mdash; opcional</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Rodar o sync -->
+            <div style="background: var(--color-bg-card); border: 2px solid var(--color-accent-gold-30); border-radius: var(--radius-xl); padding: 1.5rem; margin-bottom: 1.25rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(209,255,0,0.12); border: 1px solid var(--color-accent-gold-30); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: var(--color-accent-gold);">2</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.95rem; color: var(--color-text-primary);">Rodar o sync para gerar os slash commands</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); margin-top: 0.15rem;">Este comando cria os <code style="background: rgba(255,255,255,0.06); padding: 0.1rem 0.35rem; border-radius: 3px; font-size: 0.65rem;">/NomeDoSquad:*</code> no Claude Code</div>
+                    </div>
+                </div>
+
+                <!-- Terminal: sync command -->
+                <div style="background: #2B2B2B; border: 2px solid var(--color-accent-gold-30); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 0 25px rgba(209,255,0,0.06);">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1rem; border-bottom: 1px solid rgba(209,255,0,0.15); background: rgba(209,255,0,0.03);">
+                        <div style="display: flex; gap: 0.4rem;">
+                            <div style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444; opacity: 0.8;"></div>
+                            <div style="width: 10px; height: 10px; border-radius: 50%; background: #eab308; opacity: 0.8;"></div>
+                            <div style="width: 10px; height: 10px; border-radius: 50%; background: #22c55e; opacity: 0.8;"></div>
+                        </div>
+                        <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-gold); margin-left: 0.5rem;">Terminal</span>
+                        <button class="e2c-copy-sync" style="margin-left: auto; background: rgba(209,255,0,0.1); border: 1px solid var(--color-accent-gold-30); border-radius: 4px; padding: 0.25rem 0.6rem; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; transition: all 0.15s;" onmouseover="this.style.background='rgba(209,255,0,0.2)'" onmouseout="this.style.background='rgba(209,255,0,0.1)'">
+                            <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="var(--color-accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                            <span style="font-family: var(--font-mono); font-size: 0.55rem; color: var(--color-accent-gold);">Copiar</span>
+                        </button>
+                    </div>
+                    <div style="padding: 1.25rem;">
+                        <div style="display: flex; align-items: baseline; gap: 0.5rem;">
+                            <span style="color: var(--color-accent-green); font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600;">$</span>
+                            <code style="font-family: var(--font-mono); font-size: 0.8rem; color: #fef08a; letter-spacing: 0.01em; word-break: break-all;">python squads/squad-creator-pro/scripts/sync-ide-command.py squad {nome-do-squad}</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Testar -->
+            <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 1.5rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(209,255,0,0.12); border: 1px solid var(--color-accent-gold-30); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: var(--color-accent-gold);">3</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.95rem; color: var(--color-text-primary);">Testar os comandos</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); margin-top: 0.15rem;">Abra o Claude Code e digite <code style="background: rgba(255,255,255,0.06); padding: 0.1rem 0.35rem; border-radius: 3px; font-size: 0.65rem;">/NomeDoSquad:</code> para ver os comandos gerados</div>
+                    </div>
+                </div>
+
+                <!-- Terminal: test -->
+                <div style="background: #2B2B2B; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.04); background: rgba(255,255,255,0.02);">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #ef4444; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #eab308; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #22c55e; opacity: 0.7;"></div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: var(--color-text-muted); margin-left: 0.35rem;">claude-code</span>
+                    </div>
+                    <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.8rem; line-height: 2;">
+                        <div><span style="color: var(--color-text-muted);">$</span> <span style="color: var(--color-text-primary); font-weight: 600;">/NomeDoSquad:</span><span style="color: #64748b; font-style: italic;"> &larr; autocomplete mostra os comandos</span></div>
+                        <div style="padding-left: 1rem; margin-top: 0.25rem;">
+                            <div style="color: #22c55e; font-size: 0.72rem;">agents:agent-chief</div>
+                            <div style="color: #22c55e; font-size: 0.72rem;">tasks:minha-task</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Info callout -->
+            <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1rem 1.25rem; display: flex; align-items: start; gap: 0.75rem;">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--color-text-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.15rem;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                <p style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">Este metodo e util quando voce recebe um squad como <code style="background: rgba(255,255,255,0.06); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.65rem;">.zip</code> ou cria um do zero. O Orion (metodo automatico) faz exatamente estes passos por voce.</p>
+            </div>
+        </section>
+
+        <!-- ============================================
+             BLOCO 3: Descobrindo a Zona de Genialidade
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Autoconhecimento</div>
+            <h2 class="section-title">Descobrindo a Zona de Genialidade</h2>
+            <p class="section-desc">Antes de construir qualquer coisa, voce precisa saber <strong style="color: var(--color-accent-gold);">onde voce brilha</strong>. A Zona de Genialidade e o conceito criado por Gay Hendricks que identifica a interseccao entre o que voce <strong style="color: var(--color-text-primary);">ama fazer</strong>, o que faz com <strong style="color: var(--color-text-primary);">facilidade natural</strong> e o que gera <strong style="color: var(--color-text-primary);">impacto real</strong>.</p>
+
+            <!-- Explanation card -->
+            <div style="background: linear-gradient(135deg, rgba(209,255,0,0.06) 0%, rgba(0,153,255,0.06) 100%); border: 1px solid var(--color-accent-gold-30); border-radius: var(--radius-xl); padding: 1.5rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 1rem;">
+                    <div style="width: 38px; height: 38px; border-radius: 50%; background: rgba(209,255,0,0.12); border: 1px solid var(--color-accent-gold-30); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--color-accent-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <div style="font-weight: 800; font-size: 0.95rem; color: var(--color-text-primary);">As 4 Zonas de Gay Hendricks</div>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.75rem;">
+                    <!-- Zona de Incompetencia -->
+                    <div style="background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.15); border-radius: var(--radius-lg); padding: 0.85rem;">
+                        <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;">
+                            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                            <span style="font-weight: 700; font-size: 0.72rem; color: #ef4444;">Incompetencia</span>
+                        </div>
+                        <p style="font-size: 0.62rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">Coisas que outros fazem melhor. Delegue sem culpa.</p>
+                    </div>
+                    <!-- Zona de Competencia -->
+                    <div style="background: rgba(234,179,8,0.06); border: 1px solid rgba(234,179,8,0.15); border-radius: var(--radius-lg); padding: 0.85rem;">
+                        <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;">
+                            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#eab308" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                            <span style="font-weight: 700; font-size: 0.72rem; color: #eab308;">Competencia</span>
+                        </div>
+                        <p style="font-size: 0.62rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">Voce faz bem, mas nao melhor que a media. Nao diferencia.</p>
+                    </div>
+                    <!-- Zona de Excelencia -->
+                    <div style="background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.15); border-radius: var(--radius-lg); padding: 0.85rem;">
+                        <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;">
+                            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span style="font-weight: 700; font-size: 0.72rem; color: #3b82f6;">Excelencia</span>
+                        </div>
+                        <p style="font-size: 0.62rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">A armadilha dourada. Voce e muito bom, mas nao e o seu genio.</p>
+                    </div>
+                    <!-- Zona de Genialidade -->
+                    <div style="background: rgba(209,255,0,0.08); border: 2px solid var(--color-accent-gold-30); border-radius: var(--radius-lg); padding: 0.85rem;">
+                        <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.35rem;">
+                            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="var(--color-accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <span style="font-weight: 700; font-size: 0.72rem; color: var(--color-accent-gold);">Genialidade</span>
+                        </div>
+                        <p style="font-size: 0.62rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">Onde voce perde a nocao do tempo. Seu talento unico. <strong style="color: var(--color-accent-gold);">E aqui que queremos chegar.</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why this matters callout -->
+            <div style="background: rgba(0,153,255,0.04); border-left: 3px solid var(--color-accent-purple-light); border-radius: 0 var(--radius-lg) var(--radius-lg) 0; padding: 1rem 1.25rem; margin-bottom: 1.5rem; display: flex; align-items: start; gap: 0.65rem;">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--color-accent-purple-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.15rem;"><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><circle cx="12" cy="12" r="10"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <p style="font-size: 0.75rem; color: var(--color-text-secondary); line-height: 1.6; margin: 0;"><strong style="color: var(--color-text-primary);">Por que isso importa?</strong> Quando voce constroi um negocio a partir da sua zona de genialidade, o trabalho flui naturalmente. Voce nao precisa de motivacao &mdash; precisa apenas de clareza sobre <em>onde</em> o seu genio mora.</p>
+            </div>
+
+            <!-- Step 1: Download -->
+            <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 1.5rem; margin-bottom: 1.25rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(209,255,0,0.12); border: 1px solid var(--color-accent-gold-30); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: var(--color-accent-gold);">1</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.95rem; color: var(--color-text-primary);">Baixe o Zona de Genialidade</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); margin-top: 0.15rem;">Va em Downloads e baixe o arquivo <code style="background: rgba(255,255,255,0.06); padding: 0.1rem 0.35rem; border-radius: 3px; font-size: 0.65rem;">zona-genialidade</code></div>
+                    </div>
+                </div>
+                <a href="../downloads/zona-genialidade.zip" download style="text-decoration: none; display: block;">
+                    <div style="background: rgba(209,255,0,0.04); border: 1px dashed var(--color-accent-gold-30); border-radius: var(--radius-lg); padding: 1rem 1.25rem; display: flex; align-items: center; gap: 0.75rem; transition: all 0.15s;" onmouseover="this.style.background='rgba(209,255,0,0.08)';this.style.borderColor='var(--color-accent-gold)'" onmouseout="this.style.background='rgba(209,255,0,0.04)';this.style.borderColor='var(--color-accent-gold-30)'">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--color-accent-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        <div>
+                            <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary);">zona-genialidade.zip</div>
+                            <div style="font-size: 0.65rem; color: var(--color-text-muted);">Expansion Pack &mdash; Clique para baixar</div>
+                        </div>
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="var(--color-accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: auto; opacity: 0.6;"><polyline points="6 9 12 15 18 9"/></svg>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Step 2: Activate aios-master -->
+            <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 1.5rem; margin-bottom: 1.25rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(209,255,0,0.12); border: 1px solid var(--color-accent-gold-30); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: var(--color-accent-gold);">2</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.95rem; color: var(--color-text-primary);">Ative o Orion (aios-master)</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); margin-top: 0.15rem;">No terminal, digite <code style="background: rgba(255,255,255,0.06); padding: 0.1rem 0.35rem; border-radius: 3px; font-size: 0.65rem;">/mast</code> e o autocomplete mostra o caminho completo</div>
+                    </div>
+                </div>
+
+                <!-- Terminal: /mast autocomplete -->
+                <div style="background: #2B2B2B; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.04); background: rgba(255,255,255,0.02);">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #ef4444; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #eab308; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #22c55e; opacity: 0.7;"></div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: var(--color-text-muted); margin-left: 0.35rem;">claude-code</span>
+                    </div>
+                    <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.8rem; line-height: 2;">
+                        <div><span style="color: var(--color-text-muted);">$</span> <span style="color: var(--color-text-primary); font-weight: 600;">/mast</span><span style="color: #64748b; font-style: italic;"> &larr; comece a digitar</span></div>
+                        <div style="padding-left: 1rem; margin-top: 0.25rem;">
+                            <div style="background: rgba(209,255,0,0.08); border: 1px solid var(--color-accent-gold-30); border-radius: 4px; padding: 0.3rem 0.6rem; display: inline-block;">
+                                <span style="color: var(--color-accent-gold); font-weight: 600;">/AIOS:agents:aios-master</span>
+                            </div>
+                            <span style="color: #64748b; font-size: 0.7rem; margin-left: 0.5rem;">&larr; clique Enter</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Install command -->
+            <div style="background: var(--color-bg-card); border: 2px solid var(--color-accent-gold-30); border-radius: var(--radius-xl); padding: 1.5rem; margin-bottom: 1.25rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(209,255,0,0.12); border: 1px solid var(--color-accent-gold-30); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: var(--color-accent-gold);">3</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.95rem; color: var(--color-text-primary);">Cole o comando de instalacao</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); margin-top: 0.15rem;">Copie e cole no terminal onde o Orion esta ativo</div>
+                    </div>
+                </div>
+
+                <!-- Terminal: install command -->
+                <div style="background: #2B2B2B; border: 2px solid var(--color-accent-gold-30); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 0 25px rgba(209,255,0,0.06);">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1rem; border-bottom: 1px solid rgba(209,255,0,0.15); background: rgba(209,255,0,0.03);">
+                        <div style="display: flex; gap: 0.4rem;">
+                            <div style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444; opacity: 0.8;"></div>
+                            <div style="width: 10px; height: 10px; border-radius: 50%; background: #eab308; opacity: 0.8;"></div>
+                            <div style="width: 10px; height: 10px; border-radius: 50%; background: #22c55e; opacity: 0.8;"></div>
+                        </div>
+                        <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-gold); margin-left: 0.5rem;">aios-master (Orion)</span>
+                        <button id="e2c-copy-zona" style="margin-left: auto; background: rgba(209,255,0,0.1); border: 1px solid var(--color-accent-gold-30); border-radius: 4px; padding: 0.25rem 0.6rem; cursor: pointer; display: flex; align-items: center; gap: 0.35rem; transition: all 0.15s;" onmouseover="this.style.background='rgba(209,255,0,0.2)'" onmouseout="this.style.background='rgba(209,255,0,0.1)'">
+                            <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="var(--color-accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                            <span style="font-family: var(--font-mono); font-size: 0.55rem; color: var(--color-accent-gold);">Copiar</span>
+                        </button>
+                    </div>
+                    <div style="padding: 1.25rem;">
+                        <div style="display: flex; align-items: baseline; gap: 0.5rem;">
+                            <span style="color: var(--color-accent-green); font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600;">$</span>
+                            <code style="font-family: var(--font-mono); font-size: 0.8rem; color: #fef08a; letter-spacing: 0.01em; word-break: break-all;">Instale o zona-genialidade que esta em downloads/zona-genialidade adicionando inclusive os slashs "/" para ativa-lo</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: Discover together -->
+            <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 1.5rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(209,255,0,0.12); border: 1px solid var(--color-accent-gold-30); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: var(--color-accent-gold);">4</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.95rem; color: var(--color-text-primary);">Descubra sua Zona de Genialidade</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); margin-top: 0.15rem;">Apos a instalacao, vamos explorar juntos</div>
+                    </div>
+                </div>
+
+                <!-- Terminal: start command -->
+                <div style="background: #2B2B2B; border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.04); background: rgba(255,255,255,0.02);">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #ef4444; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #eab308; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #22c55e; opacity: 0.7;"></div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: var(--color-text-muted); margin-left: 0.35rem;">claude-code</span>
+                    </div>
+                    <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.8rem; line-height: 2;">
+                        <div><span style="color: var(--color-text-muted);">$</span> <span style="color: var(--color-text-primary); font-weight: 600;">/Zona</span><span style="color: #64748b; font-style: italic;"> &larr; comece a digitar</span></div>
+                        <div style="padding-left: 1rem; margin-top: 0.25rem;">
+                            <div style="background: rgba(209,255,0,0.08); border: 1px solid var(--color-accent-gold-30); border-radius: 4px; padding: 0.3rem 0.6rem; display: inline-block;">
+                                <span style="color: var(--color-accent-gold); font-weight: 600;">/ZonaGenialidade:tasks:start</span>
+                            </div>
+                            <span style="color: #64748b; font-size: 0.7rem; margin-left: 0.5rem;">&larr; clique Enter</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: rgba(34,197,94,0.04); border: 1px solid rgba(34,197,94,0.15); border-radius: var(--radius-lg); padding: 1rem 1.25rem; display: flex; align-items: start; gap: 0.65rem;">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.15rem;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <p style="font-size: 0.75rem; color: var(--color-text-secondary); line-height: 1.6; margin: 0;">O assessment vai te guiar por uma serie de perguntas sobre suas habilidades, paixoes e experiencias. No final, voce tera um <strong style="color: var(--color-accent-gold);">blueprint personalizado</strong> da sua zona de genialidade &mdash; e saberemos exatamente como direcionar o seu AIOS.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Copy-to-clipboard -->
+    <script>
+    (function() {
+        function setupCopy(id, cmd) {
+            var btn = document.getElementById(id);
+            if (!btn) return;
+            btn.addEventListener('click', function() {
+                var label = btn.querySelector('span:last-child');
+                function done() {
+                    if (label) { var p = label.textContent; label.textContent = 'Copiado!'; label.style.color = 'var(--color-accent-green)'; setTimeout(function() { label.textContent = p; label.style.color = ''; }, 1500); }
+                }
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(cmd).then(done);
+                } else {
+                    var ta = document.createElement('textarea'); ta.value = cmd; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+                    done();
+                }
+            });
+        }
+        setupCopy('e2c-copy-install', 'Instale o squad-creator que esta em downloads/squad creator premium, adicionando inclusive os slashs "/" para ativa-lo.');
+        setupCopy('e2c-copy-zona', 'Instale o zona-genialidade que esta em downloads/zona-genialidade adicionando inclusive os slashs "/" para ativa-lo');
+    })();
+    </script>

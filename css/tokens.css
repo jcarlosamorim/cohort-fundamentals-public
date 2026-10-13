@@ -1,0 +1,286 @@
+/* ==========================================================================
+   AIOS Cohort Fundamentals - Design Tokens
+   SINGLE SOURCE OF TRUTH — AIOX Main (Lime) Theme
+   Mapped from AIOX Brandbook: Dark Cockpit Edition / Kinetic Limon
+   ========================================================================== */
+
+:root {
+  /* ------------------------------------------------------------
+     1. Background Colors (AIOX Dark Cockpit)
+     ------------------------------------------------------------ */
+  --color-bg-primary: #050505;
+  --color-bg-secondary: #0F0F11;
+  --color-bg-card: #1C1E19;
+  --color-bg-card-hover: #252520;
+  --color-bg-elevated: #1C1E19;
+
+  /* ------------------------------------------------------------
+     2. Accent Colors (Kinetic Limon + AIOX Blue)
+     ------------------------------------------------------------ */
+  --color-accent-primary: #D1FF00;
+  --color-accent-primary-light: #E0FF4D;
+  --color-accent-blue: #0099FF;
+  --color-accent-blue-light: #33ADFF;
+  --color-accent-green: #22C55E;
+  --color-accent-flare: #ED4609;
+
+  /* Legacy aliases — old gold/purple map to lime/blue */
+  --color-accent-gold: var(--color-accent-primary);
+  --color-accent-gold-light: var(--color-accent-primary-light);
+  --color-accent-purple: var(--color-accent-blue);
+  --color-accent-purple-light: var(--color-accent-blue-light);
+  --color-accent-teal: #134E4A;
+
+  /* ------------------------------------------------------------
+     3. Semantic / Status Colors
+     ------------------------------------------------------------ */
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+  --color-info: #0099FF;
+
+  /* ------------------------------------------------------------
+     4. Theme-Specific Colors
+     ------------------------------------------------------------ */
+  --color-amber: #F59E0B;
+  --color-pink: #EC4899;
+  --color-pink-light: #F9A8D4;
+  --color-blue-light: #93C5FD;
+
+  /* ------------------------------------------------------------
+     5. Text Colors (AIOX Cream palette)
+     ------------------------------------------------------------ */
+  --color-text-primary: rgb(244, 244, 232);
+  --color-text-secondary: rgba(244, 244, 232, 0.7);
+  --color-text-muted: rgba(244, 244, 232, 0.4);
+
+  /* ------------------------------------------------------------
+     6. Border Colors (AIOX subtle borders)
+     ------------------------------------------------------------ */
+  --color-border: rgba(156, 156, 156, 0.15);
+  --color-border-light: rgba(156, 156, 156, 0.24);
+
+  /* ------------------------------------------------------------
+     7. Terminal Colors (Dark Cockpit)
+     ------------------------------------------------------------ */
+  --terminal-bg: #0D1117;
+  --terminal-border: #30363D;
+  --terminal-header: #161B22;
+  --terminal-text: #8B949E;
+  --terminal-text-bright: rgb(244, 244, 232);
+  --terminal-comment: #6A737D;
+  --terminal-dot-red: #FF5F56;
+  --terminal-dot-yellow: #FFBD2E;
+  --terminal-dot-green: #27C93F;
+  --terminal-separator: #21262D;
+
+  /* ------------------------------------------------------------
+     8. Typography (AIOX Brandbook fonts)
+     ------------------------------------------------------------ */
+  --font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Space Grotesk', 'Manrope', -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SFMono-Regular', ui-monospace, monospace;
+
+  /* ------------------------------------------------------------
+     9. Border Radius
+     ------------------------------------------------------------ */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.25rem;
+
+  /* ------------------------------------------------------------
+     10. Shadows (Lime glow)
+     ------------------------------------------------------------ */
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 30px rgba(209, 255, 0, 0.15);
+  --shadow-glow-gold: var(--shadow-glow);
+
+  /* ------------------------------------------------------------
+     11. Accent Opacity Variants
+     ------------------------------------------------------------ */
+
+  /* Primary (Lime) variants */
+  --color-accent-primary-10: rgba(209, 255, 0, 0.1);
+  --color-accent-primary-15: rgba(209, 255, 0, 0.15);
+  --color-accent-primary-20: rgba(209, 255, 0, 0.2);
+  --color-accent-primary-25: rgba(209, 255, 0, 0.25);
+  --color-accent-primary-30: rgba(209, 255, 0, 0.3);
+  --color-accent-primary-40: rgba(209, 255, 0, 0.4);
+  --color-accent-primary-50: rgba(209, 255, 0, 0.5);
+
+  /* Legacy gold aliases → lime */
+  --color-accent-gold-10: var(--color-accent-primary-10);
+  --color-accent-gold-15: var(--color-accent-primary-15);
+  --color-accent-gold-20: var(--color-accent-primary-20);
+  --color-accent-gold-30: var(--color-accent-primary-30);
+  --color-accent-gold-50: var(--color-accent-primary-50);
+
+  /* Blue variants (replaces purple) */
+  --color-accent-blue-10: rgba(0, 153, 255, 0.1);
+  --color-accent-blue-15: rgba(0, 153, 255, 0.15);
+  --color-accent-blue-20: rgba(0, 153, 255, 0.2);
+  --color-accent-blue-30: rgba(0, 153, 255, 0.3);
+
+  /* Legacy purple aliases → blue */
+  --color-accent-purple-10: var(--color-accent-blue-10);
+  --color-accent-purple-15: var(--color-accent-blue-15);
+  --color-accent-purple-20: var(--color-accent-blue-20);
+  --color-accent-purple-30: var(--color-accent-blue-30);
+
+  /* Green variants */
+  --color-accent-green-10: rgba(34, 197, 94, 0.1);
+  --color-accent-green-20: rgba(34, 197, 94, 0.2);
+  --color-accent-green-30: rgba(34, 197, 94, 0.3);
+
+  /* Info / Blue variants */
+  --color-info-10: rgba(0, 153, 255, 0.1);
+  --color-info-20: rgba(0, 153, 255, 0.2);
+
+  /* Danger / Red variants */
+  --color-danger-10: rgba(239, 68, 68, 0.1);
+  --color-danger-20: rgba(239, 68, 68, 0.2);
+
+  /* Warning / Yellow variants */
+  --color-warning-10: rgba(234, 179, 8, 0.1);
+  --color-warning-20: rgba(234, 179, 8, 0.2);
+
+  /* Amber variants */
+  --color-amber-10: rgba(245, 158, 11, 0.1);
+  --color-amber-20: rgba(245, 158, 11, 0.2);
+
+  /* Pink variants */
+  --color-pink-10: rgba(236, 72, 153, 0.1);
+  --color-pink-20: rgba(236, 72, 153, 0.2);
+
+  /* Thinker (cyan) variants */
+  --color-thinker: #06B6D4;
+  --color-thinker-10: rgba(6, 182, 212, 0.1);
+  --color-thinker-20: rgba(6, 182, 212, 0.2);
+
+  /* Maker (amber) variants */
+  --color-maker: #F59E0B;
+  --color-maker-10: rgba(245, 158, 11, 0.1);
+  --color-maker-20: rgba(245, 158, 11, 0.2);
+
+  /* White / text overlay variants */
+  --color-white-5: rgba(244, 244, 232, 0.05);
+  --color-white-10: rgba(244, 244, 232, 0.1);
+  --color-white-20: rgba(244, 244, 232, 0.2);
+
+  /* Black overlay variants */
+  --color-black-40: rgba(0, 0, 0, 0.4);
+  --color-black-50: rgba(0, 0, 0, 0.5);
+  --color-black-60: rgba(0, 0, 0, 0.6);
+
+  /* ------------------------------------------------------------
+     12. Motion (AIOX easing)
+     ------------------------------------------------------------ */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 0.2s;
+  --dur-medium: 0.4s;
+  --dur-slow: 0.7s;
+}
+
+/* ==========================================================================
+   Light Theme — auto-detect via prefers-color-scheme
+   AIOX Cream-based light palette
+   ========================================================================== */
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    /* 1. Background Colors */
+    --color-bg-primary: #F4F4E8;
+    --color-bg-secondary: #EAEADE;
+    --color-bg-card: #FFFFFF;
+    --color-bg-card-hover: #F9F9F0;
+    --color-bg-elevated: #FFFFFF;
+
+    /* 5. Text Colors */
+    --color-text-primary: #1A1A18;
+    --color-text-secondary: #4A4A42;
+    --color-text-muted: #73736B;
+
+    /* 6. Border Colors */
+    --color-border: rgba(100, 100, 80, 0.15);
+    --color-border-light: rgba(100, 100, 80, 0.24);
+
+    /* 7. Terminal Colors */
+    --terminal-bg: #F6F8F0;
+    --terminal-border: #D0D7C8;
+    --terminal-header: #EDEFE6;
+    --terminal-text: #57604A;
+    --terminal-text-bright: #1A1A18;
+    --terminal-comment: #6E7761;
+    --terminal-separator: #D8DED0;
+
+    /* 10. Shadows — lighter for light backgrounds */
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
+    --shadow-glow: 0 0 30px rgba(160, 200, 0, 0.15);
+    --shadow-glow-gold: var(--shadow-glow);
+
+    /* 11. Overlay variants inverted */
+    --color-white-5: rgba(0, 0, 0, 0.03);
+    --color-white-10: rgba(0, 0, 0, 0.06);
+    --color-white-20: rgba(0, 0, 0, 0.1);
+
+    --color-black-40: rgba(0, 0, 0, 0.25);
+    --color-black-50: rgba(0, 0, 0, 0.35);
+    --color-black-60: rgba(0, 0, 0, 0.45);
+  }
+}
+
+/* ==========================================================================
+   Manual override: force light theme via data-theme="light"
+   ========================================================================== */
+
+:root[data-theme="light"] {
+  /* 1. Background Colors */
+  --color-bg-primary: #F4F4E8;
+  --color-bg-secondary: #EAEADE;
+  --color-bg-card: #FFFFFF;
+  --color-bg-card-hover: #F9F9F0;
+  --color-bg-elevated: #FFFFFF;
+
+  /* 5. Text Colors */
+  --color-text-primary: #1A1A18;
+  --color-text-secondary: #4A4A42;
+  --color-text-muted: #73736B;
+
+  /* 6. Border Colors */
+  --color-border: rgba(100, 100, 80, 0.15);
+  --color-border-light: rgba(100, 100, 80, 0.24);
+
+  /* 7. Terminal Colors */
+  --terminal-bg: #F6F8F0;
+  --terminal-border: #D0D7C8;
+  --terminal-header: #EDEFE6;
+  --terminal-text: #57604A;
+  --terminal-text-bright: #1A1A18;
+  --terminal-comment: #6E7761;
+  --terminal-separator: #D8DED0;
+
+  /* 10. Shadows */
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 30px rgba(160, 200, 0, 0.15);
+  --shadow-glow-gold: var(--shadow-glow);
+
+  /* 11. Overlay variants */
+  --color-white-5: rgba(0, 0, 0, 0.03);
+  --color-white-10: rgba(0, 0, 0, 0.06);
+  --color-white-20: rgba(0, 0, 0, 0.1);
+
+  --color-black-40: rgba(0, 0, 0, 0.25);
+  --color-black-50: rgba(0, 0, 0, 0.35);
+  --color-black-60: rgba(0, 0, 0, 0.45);
+}
+
+/* Manual override: force dark — original :root values apply */
+:root[data-theme="dark"] {
+  /* Dark values are the defaults in :root — this selector exists for specificity */
+}

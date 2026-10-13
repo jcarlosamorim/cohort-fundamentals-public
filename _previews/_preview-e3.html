@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview - E3 Anatomia de um Squad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/gamification.css">
+    <style>
+        body {
+            margin: 0;
+            background: var(--color-bg-primary);
+            font-family: var(--font-family);
+            color: var(--color-text-primary);
+        }
+        .preview-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="preview-wrapper">
+        <div id="page-content"></div>
+    </div>
+    <script>
+        // Clear all saved progress on every page load (hard refresh = fresh start)
+        localStorage.removeItem('gam_completed');
+
+        // Minimal Persistence stub for standalone preview
+        const Persistence = {
+            isScenarioCompleted: (id) => {
+                try { return JSON.parse(localStorage.getItem('gam_completed') || '{}')[id] || false; } catch { return false; }
+            },
+            saveScenarioResult: (id, page, passed) => {
+                try { const d = JSON.parse(localStorage.getItem('gam_completed') || '{}'); d[id] = passed; localStorage.setItem('gam_completed', JSON.stringify(d)); } catch {}
+            }
+        };
+        // Minimal Router stub
+        const Router = { onNavigate: () => {} };
+    </script>
+    <script src="../js/gamification.js"></script>
+    <script>
+        fetch('e3-anatomia-squad.html')
+            .then(r => r.text())
+            .then(html => {
+                document.getElementById('page-content').innerHTML = html;
+                Gamification.init();
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,683 @@
+<!-- E7 - Criando sua Primeira Task AIOS -->
+
+    <!-- ============================================
+         HERO HEADER
+         ============================================ -->
+    <header class="hero">
+        <div class="hero-badge">Encontro 7 &bull; Criando sua Primeira Task AIOS</div>
+        <h1>Voce nao usa o AIOS.<br>Voce <span>estende.</span></h1>
+        <p>Hoje voce vai criar um mini-projeto com stories, descobrir que o AIOS nao tem uma peca importante, criar essa peca do zero, integrar no agente e executar. Do gap ao funcionando &mdash; ao vivo.</p>
+    </header>
+
+    <div class="content">
+
+        <!-- ============================================
+             SECAO 1: CRIAR MINI-PROJETO COM STORIES
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Bloco 1 &mdash; Hands-On</div>
+            <h2 class="section-title">Criando um Mini-Projeto com Stories</h2>
+            <p class="section-desc">Antes de falar de waves e tasks, precisamos de materia-prima: um projeto com stories que tenham dependencias entre si. Vamos criar o epic "Cardapio Digital" com 3 stories rapidas.</p>
+
+            <!-- Project concept -->
+            <div style="margin-bottom: 1.5rem; padding: 1.25rem; background: rgba(0,153,255,0.06); border: 1px solid rgba(0,153,255,0.25); border-radius: var(--radius-lg);">
+                <div style="font-weight: 800; font-size: 0.85rem; color: var(--color-text-primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0099FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    O Projeto: Cardapio Digital
+                </div>
+                <p style="font-size: 0.75rem; color: var(--color-text-secondary); line-height: 1.6; margin: 0 0 1rem;">Um cardapio de restaurante que carrega dados de um JSON e renderiza no HTML. Simples, mas com dependencias reais entre as partes.</p>
+
+                <!-- 3 Stories visual -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem;">
+
+                    <!-- Story 1.1 -->
+                    <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <div style="width: 24px; height: 24px; border-radius: 50%; background: rgba(34,197,94,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <span style="font-size: 0.6rem; font-weight: 800; color: #22C55E;">1.1</span>
+                            </div>
+                            <span style="font-weight: 700; font-size: 0.75rem; color: var(--color-text-primary);">Dados do Cardapio</span>
+                        </div>
+                        <p style="font-size: 0.65rem; color: var(--color-text-muted); margin: 0; line-height: 1.5;">Criar o arquivo JSON com itens, precos e categorias.</p>
+                        <div style="margin-top: 0.5rem; font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-green);">dependencies: []</div>
+                    </div>
+
+                    <!-- Story 1.2 -->
+                    <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <div style="width: 24px; height: 24px; border-radius: 50%; background: rgba(34,197,94,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <span style="font-size: 0.6rem; font-weight: 800; color: #22C55E;">1.2</span>
+                            </div>
+                            <span style="font-weight: 700; font-size: 0.75rem; color: var(--color-text-primary);">Layout HTML + CSS</span>
+                        </div>
+                        <p style="font-size: 0.65rem; color: var(--color-text-muted); margin: 0; line-height: 1.5;">Criar a estrutura visual do cardapio com HTML e CSS.</p>
+                        <div style="margin-top: 0.5rem; font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-green);">dependencies: []</div>
+                    </div>
+
+                    <!-- Story 1.3 -->
+                    <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <div style="width: 24px; height: 24px; border-radius: 50%; background: rgba(239,168,48,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <span style="font-size: 0.6rem; font-weight: 800; color: #EFA830;">1.3</span>
+                            </div>
+                            <span style="font-weight: 700; font-size: 0.75rem; color: var(--color-text-primary);">JavaScript &mdash; Renderizacao</span>
+                        </div>
+                        <p style="font-size: 0.65rem; color: var(--color-text-muted); margin: 0; line-height: 1.5;">Ler o JSON e renderizar os itens no HTML.</p>
+                        <div style="margin-top: 0.5rem; font-family: var(--font-mono); font-size: 0.6rem; color: #EFA830;">dependencies: [1.1, 1.2]</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insight: dependencies -->
+            <div style="padding: 1rem 1.25rem; background: rgba(209,255,0,0.06); border-left: 3px solid var(--color-accent-gold); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin-bottom: 1.5rem;">
+                <div style="font-weight: 800; font-size: 0.8rem; color: var(--color-accent-gold); margin-bottom: 0.35rem;">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Repare nas dependencias
+                </div>
+                <p style="font-size: 0.75rem; color: var(--color-text-secondary); line-height: 1.6; margin: 0;">Story 1.1 e 1.2 nao dependem de nada &mdash; podem ser feitas ao mesmo tempo. Mas 1.3 depende de AMBAS (precisa do JSON e do HTML pra funcionar). Isso cria uma relacao que vamos explorar com waves.</p>
+            </div>
+
+            <!-- Terminal: Create stories -->
+            <h3 style="font-size: 0.85rem; font-weight: 800; color: var(--color-text-primary); margin-bottom: 0.75rem;">Criando as stories com o AIOS Master:</h3>
+
+            <div class="terminal animate-in">
+                <div class="terminal-bar">
+                    <div class="terminal-dot red"></div>
+                    <div class="terminal-dot yellow"></div>
+                    <div class="terminal-dot green"></div>
+                    <span class="terminal-title">Criar Stories do Cardapio Digital</span>
+                </div>
+                <div class="terminal-body">
+                    <!-- Step 1: Activate aios-master -->
+                    <div class="terminal-cmd" data-cmd="/AIOS:agents:aios-master">
+                        <div class="cmd-left">
+                            <span class="cmd-label">1.</span>
+                            <span class="prompt">$</span>
+                            <span class="cmd-text">/AIOS:agents:aios-master</span>
+                            <span class="cmd-desc">Ativar o AIOS Master (Orion)</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+                    <div class="terminal-output-row" style="color: var(--color-accent-green);">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Orion (Orchestrator) ready. Let's orchestrate!
+                    </div>
+
+                    <!-- Step 2: Create stories -->
+                    <div class="terminal-cmd" data-cmd="Crie 3 stories rapidas para o epic Cardapio Digital em docs/stories/epics/cardapio-digital/:
+
+Story 1.1 - Dados do Cardapio: Criar arquivo cardapio.json com itens, precos e categorias. dependencies: []
+
+Story 1.2 - Layout HTML + CSS: Criar index.html e style.css com a estrutura visual do cardapio. dependencies: []
+
+Story 1.3 - JavaScript Renderizacao: Criar script.js que le o JSON e renderiza os itens no HTML. dependencies: [1.1, 1.2]
+
+Use o formato .story.md padrao do AIOS.">
+                        <div class="cmd-left" style="flex-direction: column; align-items: flex-start;">
+                            <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-text-secondary); white-space: pre-wrap; line-height: 1.6;">Crie 3 stories rapidas para o epic Cardapio Digital...
+
+<span style="color: var(--color-text-muted); font-size: 0.65rem;">(clique em Copiar para ver o prompt completo)</span></span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)" style="align-self: flex-start; margin-top: 0.25rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What you should see -->
+            <div style="margin-top: 1rem; padding: 1rem 1.25rem; background: rgba(34,197,94,0.06); border-left: 3px solid rgba(34,197,94,0.4); border-radius: 0 var(--radius-md) var(--radius-md) 0;">
+                <div style="font-weight: 800; font-size: 0.8rem; color: var(--color-accent-green); margin-bottom: 0.35rem;">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Resultado esperado
+                </div>
+                <p style="font-size: 0.75rem; color: var(--color-text-secondary); line-height: 1.6; margin: 0;">3 arquivos <code style="background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; font-size: 0.7rem;">.story.md</code> criados em <code style="background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; font-size: 0.7rem;">docs/stories/epics/cardapio-digital/</code>. Cada um com titulo, descricao, acceptance criteria e o campo <strong>dependencies</strong>.</p>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO 2: ANATOMIA DE UMA TASK
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Bloco 2 &mdash; Teoria</div>
+            <h2 class="section-title">Anatomia de uma Task AIOS</h2>
+            <p class="section-desc">Tudo que um agente faz de util esta dentro de uma task. Tasks sao os blocos de construcao do AIOS &mdash; instrucoes executaveis que qualquer agente pode consumir.</p>
+
+            <!-- Where tasks live -->
+            <div style="margin-bottom: 1.5rem; padding: 1.25rem; background: rgba(0,153,255,0.06); border: 1px solid rgba(0,153,255,0.25); border-radius: var(--radius-lg);">
+                <div style="font-weight: 800; font-size: 0.85rem; color: var(--color-text-primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0099FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                    Onde moram as tasks?
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--color-text-secondary); line-height: 2; padding-left: 0.5rem;">
+                    <div><span style="color: var(--color-text-muted);">.aios-core/</span></div>
+                    <div style="padding-left: 1rem;"><span style="color: var(--color-text-muted);">development/</span></div>
+                    <div style="padding-left: 2rem;"><span style="color: #0099FF; font-weight: 700;">tasks/</span> <span style="color: var(--color-text-muted); font-size: 0.65rem;">&larr; TODAS as tasks moram aqui</span></div>
+                    <div style="padding-left: 3rem;">create-doc.md</div>
+                    <div style="padding-left: 3rem;">execute-epic-plan.md</div>
+                    <div style="padding-left: 3rem;">qa-gate.md</div>
+                    <div style="padding-left: 3rem; color: var(--color-accent-green); font-weight: 700;">create-wave-map.md <span style="font-size: 0.65rem; color: var(--color-text-muted);">&larr; vamos criar essa!</span></div>
+                </div>
+            </div>
+
+            <!-- Task structure breakdown -->
+            <h3 style="font-size: 0.9rem; font-weight: 800; color: var(--color-text-primary); margin-bottom: 1rem;">Estrutura de uma Task (Formato AIOX V1.0)</h3>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; margin-bottom: 1.5rem;">
+
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(0,153,255,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <span style="font-size: 0.7rem; font-weight: 800; color: #0099FF;">1</span>
+                        </div>
+                        <span style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary);">Task Definition</span>
+                    </div>
+                    <p style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">Nome, responsavel, entrada (o que recebe), saida (o que produz). Formato YAML.</p>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(0,153,255,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <span style="font-size: 0.7rem; font-weight: 800; color: #0099FF;">2</span>
+                        </div>
+                        <span style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary);">Pre/Post-Conditions</span>
+                    </div>
+                    <p style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">O que precisa existir ANTES, e o que deve ser verdade DEPOIS. Sao os gates de qualidade.</p>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(0,153,255,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <span style="font-size: 0.7rem; font-weight: 800; color: #0099FF;">3</span>
+                        </div>
+                        <span style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary);">Acceptance Criteria</span>
+                    </div>
+                    <p style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">Checklist objetiva: a task so esta DONE quando todos esses criterios forem verdade.</p>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(0,153,255,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <span style="font-size: 0.7rem; font-weight: 800; color: #0099FF;">4</span>
+                        </div>
+                        <span style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary);">Execution Body</span>
+                    </div>
+                    <p style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">O algoritmo passo-a-passo. O que o agente realmente FAZ quando executa a task.</p>
+                </div>
+            </div>
+
+            <!-- Insight: Agent ↔ Task relationship -->
+            <div style="padding: 1rem 1.25rem; background: rgba(209,255,0,0.06); border-left: 3px solid var(--color-accent-gold); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin-bottom: 0;">
+                <div style="font-weight: 800; font-size: 0.8rem; color: var(--color-accent-gold); margin-bottom: 0.35rem;">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    Como um agente "sabe" que a task existe?
+                </div>
+                <p style="font-size: 0.75rem; color: var(--color-text-secondary); line-height: 1.6; margin: 0;">Cada agente tem uma secao <code style="background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; font-size: 0.7rem;">dependencies.tasks</code> no seu arquivo de definicao. Quando voce adiciona o nome de uma task nessa lista, o agente passa a ter acesso a ela. Sem esse registro, a task existe mas o agente nao sabe.</p>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO 3: O GAP DO WAVE MAP
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Bloco 3 &mdash; Identificando o Gap</div>
+            <h2 class="section-title">Temos stories com dependencias. E agora?</h2>
+            <p class="section-desc">Voce acabou de criar 3 stories. Duas podem ser feitas em paralelo, uma depende das outras. O AIOS tem regras que DIZEM pra trabalhar em waves &mdash; mas nao tem a peca que GERA o plano. Esse e o gap.</p>
+
+            <!-- Compare grid: What exists vs What's missing -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+
+                <!-- EXISTS -->
+                <div style="background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.2); border-radius: var(--radius-lg); padding: 1.25rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#22C55E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span style="font-weight: 800; font-size: 0.8rem; color: #22C55E;">O que JA existe</span>
+                    </div>
+                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: var(--color-text-secondary); line-height: 2;">
+                        <li style="padding-left: 1rem; border-left: 2px solid rgba(34,197,94,0.2);">Regras de Wave Development</li>
+                        <li style="padding-left: 1rem; border-left: 2px solid rgba(34,197,94,0.2);">wave-development.md (regras)</li>
+                        <li style="padding-left: 1rem; border-left: 2px solid rgba(34,197,94,0.2);">execute-epic-plan.md (consome waves)</li>
+                        <li style="padding-left: 1rem; border-left: 2px solid rgba(34,197,94,0.2);">Nossas 3 stories com deps</li>
+                    </ul>
+                </div>
+
+                <!-- MISSING -->
+                <div style="background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.2); border-radius: var(--radius-lg); padding: 1.25rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                        <span style="font-weight: 800; font-size: 0.8rem; color: #EF4444;">O que FALTA</span>
+                    </div>
+                    <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.75rem; color: var(--color-text-secondary); line-height: 2;">
+                        <li style="padding-left: 1rem; border-left: 2px solid rgba(239,68,68,0.2);">Task que GERA o wave-map.yaml</li>
+                        <li style="padding-left: 1rem; border-left: 2px solid rgba(239,68,68,0.2);">Comando *wave-map no agente</li>
+                        <li style="padding-left: 1rem; border-left: 2px solid rgba(239,68,68,0.2);">Prompts prontos por terminal</li>
+                        <li style="padding-left: 1rem; border-left: 2px solid rgba(239,68,68,0.2);">Deteccao automatica de deps</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Wave visual explanation -->
+            <div style="margin-bottom: 1.5rem; padding: 1.25rem; background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: var(--radius-lg);">
+                <div style="font-weight: 800; font-size: 0.85rem; color: var(--color-text-primary); margin-bottom: 1rem;">O que o wave-map faz:</div>
+
+                <div style="display: flex; align-items: stretch; gap: 0; overflow-x: auto; padding-bottom: 0.5rem;">
+
+                    <!-- Step 1: Ler Stories -->
+                    <div style="flex: 1; min-width: 120px; background: rgba(0,153,255,0.06); border: 1px solid rgba(0,153,255,0.25); border-radius: var(--radius-lg); padding: 1rem 0.75rem; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                        <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(0,153,255,0.12); display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem;">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#33ADFF" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-weight: 800; font-size: 0.65rem; color: #33ADFF;">Ler Stories</div>
+                        <div style="font-size: 0.55rem; color: var(--color-text-muted);">Extrair deps</div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; padding: 0 0.1rem;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--color-text-muted)" stroke-width="2" style="opacity: 0.4;"><polyline points="9 18 15 12 9 6"/></svg></div>
+
+                    <!-- Step 2: Montar Grafo -->
+                    <div style="flex: 1; min-width: 120px; background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1rem 0.75rem; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                        <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem;">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--color-text-secondary)" stroke-width="1.5"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-weight: 800; font-size: 0.65rem; color: var(--color-text-secondary);">Montar Grafo</div>
+                        <div style="font-size: 0.55rem; color: var(--color-text-muted);">Topological sort</div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; padding: 0 0.1rem;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--color-text-muted)" stroke-width="2" style="opacity: 0.4;"><polyline points="9 18 15 12 9 6"/></svg></div>
+
+                    <!-- Step 3: Agrupar Waves -->
+                    <div style="flex: 1; min-width: 120px; background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1rem 0.75rem; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                        <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem;">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--color-text-secondary)" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-weight: 800; font-size: 0.65rem; color: var(--color-text-secondary);">Agrupar</div>
+                        <div style="font-size: 0.55rem; color: var(--color-text-muted);">Waves paralelas</div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; padding: 0 0.1rem;"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--color-text-muted)" stroke-width="2" style="opacity: 0.4;"><polyline points="9 18 15 12 9 6"/></svg></div>
+
+                    <!-- Step 4: Gerar YAML -->
+                    <div style="flex: 1; min-width: 120px; background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.25); border-radius: var(--radius-lg); padding: 1rem 0.75rem; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                        <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(34,197,94,0.12); display: flex; align-items: center; justify-content: center; margin-bottom: 0.5rem;">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#22C55E" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-weight: 800; font-size: 0.65rem; color: #22C55E;">wave-map.yaml</div>
+                        <div style="font-size: 0.55rem; color: var(--color-text-muted);">+ prompts</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insight box -->
+            <div style="padding: 1rem 1.25rem; background: rgba(209,255,0,0.06); border-left: 3px solid var(--color-accent-gold); border-radius: 0 var(--radius-md) var(--radius-md) 0;">
+                <div style="font-weight: 800; font-size: 0.8rem; color: var(--color-accent-gold); margin-bottom: 0.35rem;">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                    Mentalidade de Dono
+                </div>
+                <p style="font-size: 0.75rem; color: var(--color-text-secondary); line-height: 1.6; margin: 0;">Voce nao precisa esperar alguem criar a peca que falta. Identificou o gap? Cria a task, integra no agente, e pronto &mdash; o framework agora faz o que voce precisava. Isso e ser dono do AIOS.</p>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO 4: CRIAR A TASK AO VIVO
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Bloco 4 &mdash; Hands-On</div>
+            <h2 class="section-title">Criando a Task: create-wave-map.md</h2>
+            <p class="section-desc">Abra o Claude Code no seu projeto e cole o prompt abaixo. Ele vai criar o arquivo da task, editar o agente para adicionar o comando *wave-map, e registrar no AIOS Master.</p>
+
+            <!-- Big prompt card -->
+            <div style="background: linear-gradient(135deg, rgba(0,153,255,0.06), rgba(209,255,0,0.06)); border: 1px solid rgba(0,153,255,0.25); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 1.5rem;">
+
+                <!-- Header -->
+                <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem;">
+                    <div style="width: 36px; height: 36px; border-radius: 10px; background: rgba(0,153,255,0.12); border: 1px solid rgba(0,153,255,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#0099FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                    </div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.9rem; color: var(--color-text-primary);">Prompt de Instalacao</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted);">Cole no Claude Code para criar a task + integrar nos agentes</div>
+                    </div>
+                </div>
+
+                <!-- Step 1: Open Claude Code -->
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; padding: 0.75rem; background: rgba(255,255,255,0.03); border-radius: var(--radius-md);">
+                    <div style="width: 24px; height: 24px; border-radius: 50%; background: rgba(0,153,255,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+                        <span style="font-size: 0.65rem; font-weight: 800; color: #0099FF;">1</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary);">Abra o terminal no seu projeto</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); margin-top: 0.25rem;">cd ~/mmos && claude</div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Paste prompt -->
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; padding: 0.75rem; background: rgba(255,255,255,0.03); border-radius: var(--radius-md);">
+                    <div style="width: 24px; height: 24px; border-radius: 50%; background: rgba(0,153,255,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+                        <span style="font-size: 0.65rem; font-weight: 800; color: #0099FF;">2</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary);">Cole o prompt abaixo inteiro</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); margin-top: 0.25rem;">Copie tudo de uma vez. O Claude vai criar 1 arquivo e editar 2.</div>
+                    </div>
+                </div>
+
+                <!-- The prompt box -->
+                <div class="terminal animate-in">
+                    <div class="terminal-bar">
+                        <div class="terminal-dot red"></div>
+                        <div class="terminal-dot yellow"></div>
+                        <div class="terminal-dot green"></div>
+                        <span class="terminal-title">Prompt: Instalar Task create-wave-map</span>
+                    </div>
+                    <div class="terminal-body" style="max-height: 300px; overflow-y: auto;">
+                        <div class="terminal-cmd" data-cmd="Preciso que voce crie uma nova task no AIOS e integre nos agentes. Siga exatamente as instrucoes abaixo.
+
+## 1. CRIAR ARQUIVO: .aios-core/development/tasks/create-wave-map.md
+
+A task deve seguir o formato AIOX V1.0 (mesmo padrao de execute-epic-plan.md) com:
+
+- Execution Modes: YOLO (auto-detecta deps) e Interactive (confirma waves)
+- Task Definition YAML: task createWaveMap(), responsavel Morgan (PM), entrada epic_path, saida wave-map.yaml
+- Pre-Conditions: epic_path deve existir com 2+ stories (.story.md)
+- Post-Conditions: wave-map.yaml gerado, sem ciclos, cada story em 1 wave
+- Acceptance Criteria: stories sem deps na mesma wave, prompts com formato /AIOS:agents:dev
+
+Corpo (Task Execution) com 6 passos:
+1. Descobrir Stories — Glob *.story.md, extrair id, title, dependencies
+2. Validar Dependencies — verificar que deps existem, detectar ciclos (topological sort)
+3. Agrupar em Waves — topological layering: stories sem deps pendentes = mesma wave
+4. Atribuir Terminais — letras A, B, C por wave
+5. Gerar wave-map.yaml — YAML com waves, stories, gates, terminal_prompts
+6. Exibir Resumo — wave map visual + instrucoes de execucao
+
+## 2. EDITAR: .claude/commands/AIOS/agents/pm.md
+
+2a. Adicionar comando wave-map na secao commands (apos execute-epic, antes de gather-requirements):
+  name: wave-map, args: '{epic-path} [--output=path]', visibility: [full, quick]
+
+2b. Adicionar create-wave-map.md na secao dependencies.tasks (apos execute-epic-plan.md)
+
+2c. Adicionar na secao Quick Commands > Epic Management:
+  *wave-map {epic-path} - Generate wave-map with parallel execution plan
+
+## 3. EDITAR: .claude/commands/AIOS/agents/aios-master.md
+
+3a. Adicionar create-wave-map.md na secao dependencies.tasks (ordem alfabetica, apos execute-checklist.md)
+
+## VERIFICACAO FINAL
+Confirme que os YAMLs estao validos e mostre resumo do que foi criado/editado.">
+                            <div class="cmd-left" style="flex-direction: column; align-items: flex-start;">
+                                <span style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-text-secondary); white-space: pre-wrap; line-height: 1.6;">Preciso que voce crie uma nova task no AIOS e integre nos agentes...
+
+<span style="color: var(--color-text-muted); font-size: 0.65rem;">(clique em Copiar para ver o prompt completo)</span></span>
+                            </div>
+                            <button class="cmd-copy" onclick="copyCmd(this)" style="align-self: flex-start; margin-top: 0.25rem;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Wait -->
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem; margin-top: 1rem; padding: 0.75rem; background: rgba(255,255,255,0.03); border-radius: var(--radius-md);">
+                    <div style="width: 24px; height: 24px; border-radius: 50%; background: rgba(34,197,94,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+                        <span style="font-size: 0.65rem; font-weight: 800; color: #22C55E;">3</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary);">Aguarde e aceite as permissoes</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); margin-top: 0.25rem;">O Claude vai pedir permissao para criar/editar arquivos. Aceite cada uma.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What gets created/edited -->
+            <h3 style="font-size: 0.85rem; font-weight: 800; color: var(--color-text-primary); margin-bottom: 0.75rem;">O que o prompt faz (3 arquivos):</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; margin-bottom: 0;">
+
+                <div style="background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.2); border-radius: var(--radius-md); padding: 1rem;">
+                    <div style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; color: #22C55E; margin-bottom: 0.35rem;">CRIA</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-text-secondary); word-break: break-all;">.aios-core/development/tasks/create-wave-map.md</div>
+                </div>
+
+                <div style="background: rgba(0,153,255,0.06); border: 1px solid rgba(0,153,255,0.2); border-radius: var(--radius-md); padding: 1rem;">
+                    <div style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; color: #0099FF; margin-bottom: 0.35rem;">EDITA</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-text-secondary); word-break: break-all;">.claude/commands/AIOS/agents/pm.md</div>
+                </div>
+
+                <div style="background: rgba(0,153,255,0.06); border: 1px solid rgba(0,153,255,0.2); border-radius: var(--radius-md); padding: 1rem;">
+                    <div style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; color: #0099FF; margin-bottom: 0.35rem;">EDITA</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-text-secondary); word-break: break-all;">.claude/commands/AIOS/agents/aios-master.md</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO 5: INTEGRAR NO AGENTE
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Bloco 5 &mdash; Entendendo a Integracao</div>
+            <h2 class="section-title">Como a task se conecta ao agente</h2>
+            <p class="section-desc">Criar o arquivo da task e so metade. Para o agente "saber" que ela existe, precisamos de 3 conexoes no arquivo do agente.</p>
+
+            <!-- 3 connection points -->
+            <div style="margin-bottom: 1.5rem;">
+
+                <!-- Connection 1 -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1rem; padding: 1rem; background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(0,153,255,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-size: 0.75rem; font-weight: 800; color: #0099FF;">A</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.8rem; color: var(--color-text-primary);">Comando na secao <code style="background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; font-size: 0.7rem;">commands:</code></div>
+                        <p style="font-size: 0.7rem; color: var(--color-text-muted); margin: 0.25rem 0 0;">Adiciona <code style="background: rgba(255,255,255,0.08); padding: 1px 4px; border-radius: 3px; font-size: 0.65rem;">*wave-map</code> na lista de comandos do agente. E o que o usuario digita.</p>
+                    </div>
+                </div>
+
+                <!-- Connection 2 -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1rem; padding: 1rem; background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(0,153,255,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-size: 0.75rem; font-weight: 800; color: #0099FF;">B</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.8rem; color: var(--color-text-primary);">Dependencia na secao <code style="background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; font-size: 0.7rem;">dependencies.tasks:</code></div>
+                        <p style="font-size: 0.7rem; color: var(--color-text-muted); margin: 0.25rem 0 0;">Registra o arquivo da task na lista de dependencias. Sem isso, o agente nao carrega o conteudo.</p>
+                    </div>
+                </div>
+
+                <!-- Connection 3 -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start; padding: 1rem; background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(0,153,255,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-size: 0.75rem; font-weight: 800; color: #0099FF;">C</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.8rem; color: var(--color-text-primary);">Entrada no <code style="background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; font-size: 0.7rem;">Quick Commands</code></div>
+                        <p style="font-size: 0.7rem; color: var(--color-text-muted); margin: 0.25rem 0 0;">Documenta o comando na secao de referencia rapida. Aparece quando o usuario digita <code style="background: rgba(255,255,255,0.08); padding: 1px 4px; border-radius: 3px; font-size: 0.65rem;">*help</code>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visual: Result -->
+            <div style="padding: 1rem 1.25rem; background: rgba(34,197,94,0.06); border-left: 3px solid rgba(34,197,94,0.4); border-radius: 0 var(--radius-md) var(--radius-md) 0;">
+                <div style="font-weight: 800; font-size: 0.8rem; color: var(--color-accent-green); margin-bottom: 0.35rem;">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Resultado
+                </div>
+                <p style="font-size: 0.75rem; color: var(--color-text-secondary); line-height: 1.6; margin: 0;">Depois da integracao, voce ativa o PM com <code style="background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; font-size: 0.7rem;">/AIOS:agents:pm</code> e digita <code style="background: rgba(255,255,255,0.08); padding: 2px 6px; border-radius: 4px; font-size: 0.7rem;">*wave-map docs/stories/epics/cardapio-digital</code>. O agente vai ler as stories, montar as waves e gerar o YAML com prompts prontos pra copiar.</p>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO 6: EXECUTAR E VALIDAR
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Bloco 6 &mdash; Execucao</div>
+            <h2 class="section-title">Executando o *wave-map</h2>
+            <p class="section-desc">Com a task instalada, vamos testar nas nossas stories do Cardapio Digital. Ative o PM e execute o comando *wave-map.</p>
+
+            <!-- Terminal: Execution -->
+            <div class="terminal animate-in">
+                <div class="terminal-bar">
+                    <div class="terminal-dot red"></div>
+                    <div class="terminal-dot yellow"></div>
+                    <div class="terminal-dot green"></div>
+                    <span class="terminal-title">Executar wave-map</span>
+                </div>
+                <div class="terminal-body">
+                    <!-- Step 1: Activate PM -->
+                    <div class="terminal-cmd" data-cmd="/AIOS:agents:pm">
+                        <div class="cmd-left">
+                            <span class="cmd-label">1.</span>
+                            <span class="prompt">$</span>
+                            <span class="cmd-text">/AIOS:agents:pm</span>
+                            <span class="cmd-desc">Ativar o agente PM (Morgan)</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+                    <div class="terminal-output-row" style="color: var(--color-accent-green);">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:4px"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        Morgan (PM) ready. Let's ship!
+                    </div>
+
+                    <!-- Step 2: Wave Map -->
+                    <div class="terminal-cmd" data-cmd="*wave-map docs/stories/epics/cardapio-digital">
+                        <div class="cmd-left">
+                            <span class="cmd-label">2.</span>
+                            <span class="prompt">$</span>
+                            <span class="cmd-text">*wave-map docs/stories/epics/cardapio-digital</span>
+                            <span class="cmd-desc">Gerar wave-map para o nosso epic</span>
+                        </div>
+                        <button class="cmd-copy" onclick="copyCmd(this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example output -->
+            <h3 style="font-size: 0.85rem; font-weight: 800; color: var(--color-text-primary); margin: 1.5rem 0 0.75rem;">Exemplo de saida:</h3>
+
+            <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1.5rem;">
+                <pre style="margin: 0; font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-text-secondary); line-height: 1.8; white-space: pre-wrap; overflow-x: auto;"><span style="color: var(--color-accent-gold); font-weight: 800;">=== Wave Map Gerado ===</span>
+Epic: Cardapio Digital
+Stories: 3 em 2 waves
+Arquivo: docs/stories/epics/cardapio-digital/wave-map.yaml
+
+<span style="color: #0099FF; font-weight: 700;">Wave 1</span> (2 stories, paralela):
+  Terminal A &rarr; Story 1.1: Dados do Cardapio
+  Terminal B &rarr; Story 1.2: Layout HTML + CSS
+
+<span style="color: #0099FF; font-weight: 700;">Wave 2</span> (1 story):
+  Terminal A &rarr; Story 1.3: JavaScript &mdash; Renderizacao
+
+<span style="color: var(--color-accent-gold);">---</span>
+<span style="color: var(--color-accent-gold); font-weight: 700;">COMO EXECUTAR:</span>
+
+Wave 1 &mdash; Abra 2 terminais simultaneamente:
+
+  Terminal A &rarr; claude
+  Cole: /AIOS:agents:dev Implemente a Story 1.1 em modo YOLO.
+
+  Terminal B &rarr; claude
+  Cole: /AIOS:agents:dev Implemente a Story 1.2 em modo YOLO.
+
+Aguarde ambas completarem, depois:
+
+Wave 2 &mdash; Abra 1 terminal:
+  Terminal A &rarr; claude
+  Cole: /AIOS:agents:dev Implemente a Story 1.3 em modo YOLO.</pre>
+            </div>
+
+            <!-- Wave visual -->
+            <div style="margin-bottom: 1.5rem; padding: 1.25rem; background: rgba(0,153,255,0.04); border: 1px solid rgba(0,153,255,0.15); border-radius: var(--radius-lg);">
+                <div style="font-weight: 800; font-size: 0.8rem; color: var(--color-text-primary); margin-bottom: 1rem;">Visualizacao das Waves:</div>
+                <pre style="margin: 0; font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-text-secondary); line-height: 1.8;"><span style="color: #0099FF;">Wave 1 (paralela):</span>             <span style="color: #0099FF;">Wave 2:</span>
+&#9500;&#9472;&#9472; Terminal A &rarr; Story 1.1    &#9500;&#9472;&#9472; Terminal A &rarr; Story 1.3
+&#9492;&#9472;&#9472; Terminal B &rarr; Story 1.2
+         <span style="color: var(--color-accent-gold);">&darr;</span> (ambas concluidas)
+              Wave 2 inicia</pre>
+            </div>
+
+            <!-- Final insight -->
+            <div style="padding: 1rem 1.25rem; background: rgba(209,255,0,0.06); border-left: 3px solid var(--color-accent-gold); border-radius: 0 var(--radius-md) var(--radius-md) 0;">
+                <div style="font-weight: 800; font-size: 0.8rem; color: var(--color-accent-gold); margin-bottom: 0.35rem;">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: -2px; margin-right: 4px;"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    O Poder do Wave Development
+                </div>
+                <p style="font-size: 0.75rem; color: var(--color-text-secondary); line-height: 1.6; margin: 0;">Com wave-map, voce nao executa 3 stories em sequencia (3x o tempo). Voce executa 2 em paralelo + 1 depois. Em vez de 3 horas, termina em 2. Com epics maiores (10+ stories), a diferenca e brutal &mdash; o paralelismo pode cortar o tempo pela metade.</p>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO FINAL: RECAPITULACAO
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Recap</div>
+            <h2 class="section-title">O que voce aprendeu hoje</h2>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.75rem; margin-bottom: 1.5rem;">
+
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1rem; text-align: center;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(34,197,94,0.12); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#22C55E" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    </div>
+                    <div style="font-weight: 800; font-size: 0.75rem; color: var(--color-text-primary); margin-bottom: 0.25rem;">Stories</div>
+                    <div style="font-size: 0.6rem; color: var(--color-text-muted);">Criar stories com dependencies reais</div>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1rem; text-align: center;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(0,153,255,0.12); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0099FF" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    </div>
+                    <div style="font-weight: 800; font-size: 0.75rem; color: var(--color-text-primary); margin-bottom: 0.25rem;">Anatomia</div>
+                    <div style="font-size: 0.6rem; color: var(--color-text-muted);">Task = instrucao executavel com inputs e outputs</div>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1rem; text-align: center;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(239,68,68,0.12); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#EF4444" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    </div>
+                    <div style="font-weight: 800; font-size: 0.75rem; color: var(--color-text-primary); margin-bottom: 0.25rem;">Gaps</div>
+                    <div style="font-size: 0.6rem; color: var(--color-text-muted);">Identificar o que falta e criar a peca</div>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1rem; text-align: center;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(0,153,255,0.12); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0099FF" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
+                    <div style="font-weight: 800; font-size: 0.75rem; color: var(--color-text-primary); margin-bottom: 0.25rem;">Integrar</div>
+                    <div style="font-size: 0.6rem; color: var(--color-text-muted);">Conectar task no agente via dependencies</div>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1rem; text-align: center;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(209,255,0,0.12); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#D1FF00" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <div style="font-weight: 800; font-size: 0.75rem; color: var(--color-text-primary); margin-bottom: 0.25rem;">Mentalidade</div>
+                    <div style="font-size: 0.6rem; color: var(--color-text-muted);">Voce nao usa o AIOS. Voce ESTENDE.</div>
+                </div>
+            </div>
+
+            <!-- Next steps -->
+            <div style="padding: 1rem 1.25rem; background: rgba(0,153,255,0.06); border: 1px solid rgba(0,153,255,0.2); border-radius: var(--radius-lg);">
+                <div style="font-weight: 800; font-size: 0.85rem; color: var(--color-text-primary); margin-bottom: 0.5rem;">Proximo Encontro: A Fabrica &mdash; Projeto Final</div>
+                <p style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">No E8 voce vai juntar tudo: PRD, stories, wave-map, agentes paralelos. Um projeto completo do zero ao deploy, usando todas as pecas que aprendeu.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+    function copyCmd(btn) {
+        var container = btn.closest('.terminal-cmd');
+        var text = container ? container.getAttribute('data-cmd') : '';
+        if (!text) {
+            var cmdText = container ? container.querySelector('.cmd-text') : null;
+            text = cmdText ? cmdText.textContent.trim() : '';
+        }
+        if (!text) return;
+        navigator.clipboard.writeText(text).then(function() {
+            var original = btn.innerHTML;
+            btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Copiado!';
+            btn.style.color = '#22c55e';
+            btn.style.borderColor = 'rgba(34,197,94,0.4)';
+            setTimeout(function() {
+                btn.innerHTML = original;
+                btn.style.color = '';
+                btn.style.borderColor = '';
+            }, 2000);
+        });
+    }
+    </script>

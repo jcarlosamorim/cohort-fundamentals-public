@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maker Sprint 72h — Desafio Filtro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/tokens.css">
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-family);
+      background: var(--color-bg-primary);
+      color: var(--color-text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── Layout ── */
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* ── Header ── */
+    .challenge-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-top: 1rem;
+    }
+
+    .challenge-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--color-maker-10);
+      border: 1px solid var(--color-maker-20);
+      color: var(--color-maker);
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+    }
+
+    .challenge-header h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(135deg, var(--color-maker) 0%, #FBBF24 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .challenge-header .subtitle {
+      color: var(--color-text-secondary);
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* ── Timer Banner ── */
+    .timer-banner {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .timer-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--color-maker-10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .timer-icon svg { width: 20px; height: 20px; color: var(--color-maker); }
+
+    .timer-text {
+      flex: 1;
+    }
+
+    .timer-text strong {
+      display: block;
+      font-size: 0.95rem;
+      color: var(--color-text-primary);
+    }
+
+    .timer-text span {
+      font-size: 0.82rem;
+      color: var(--color-text-muted);
+    }
+
+    /* ── Form Sections ── */
+    .form-section {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-section-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      color: var(--color-text-primary);
+    }
+
+    .form-section-desc {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── Form Fields ── */
+    .field {
+      margin-bottom: 1.5rem;
+    }
+
+    .field:last-child {
+      margin-bottom: 0;
+    }
+
+    .field label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .field label .required {
+      color: var(--color-danger);
+      margin-left: 2px;
+    }
+
+    .field .hint {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--color-text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.7rem 0.9rem;
+      background: var(--color-bg-primary);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-sm);
+      color: var(--color-text-primary);
+      font-family: var(--font-family);
+      font-size: 0.9rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--color-maker);
+      box-shadow: 0 0 0 3px var(--color-maker-10);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23A3A3A3' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+      padding-right: 2.5rem;
+    }
+
+    /* ── Checkbox Grid (Tools) ── */
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.5rem;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.55rem 0.75rem;
+      background: var(--color-bg-primary);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 0.85rem;
+    }
+
+    .checkbox-item:hover {
+      border-color: var(--color-border-light);
+      background: var(--color-bg-card-hover);
+    }
+
+    .checkbox-item.checked {
+      border-color: var(--color-maker);
+      background: var(--color-maker-10);
+    }
+
+    .checkbox-item input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--color-maker);
+      cursor: pointer;
+    }
+
+    /* ── Commitment Slider ── */
+    .slider-container {
+      position: relative;
+    }
+
+    .slider-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    .slider-labels span {
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+    }
+
+    input[type="range"] {
+      width: 100%;
+      height: 6px;
+      appearance: none;
+      background: var(--color-border);
+      border-radius: 3px;
+      outline: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--color-maker);
+      cursor: pointer;
+      border: 2px solid var(--color-bg-primary);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .slider-value {
+      text-align: center;
+      margin-top: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--color-maker);
+      font-family: var(--font-mono);
+    }
+
+    /* ── Toggle (72h) ── */
+    .toggle-group {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .toggle-option {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem;
+      background: var(--color-bg-primary);
+      border: 2px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .toggle-option:hover {
+      border-color: var(--color-border-light);
+    }
+
+    .toggle-option.selected {
+      border-color: var(--color-maker);
+      background: var(--color-maker-10);
+      color: var(--color-maker);
+    }
+
+    .toggle-option input { display: none; }
+
+    /* ── Submit ── */
+    .submit-section {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.9rem 2.5rem;
+      background: linear-gradient(135deg, var(--color-maker) 0%, #FBBF24 100%);
+      color: #000;
+      border: none;
+      border-radius: var(--radius-md);
+      font-family: var(--font-family);
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 0.02em;
+    }
+
+    .btn-submit:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px var(--color-maker-20);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .btn-submit svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .submit-note {
+      margin-top: 0.75rem;
+      font-size: 0.78rem;
+      color: var(--color-text-muted);
+    }
+
+    /* ── Success State ── */
+    .success-card {
+      display: none;
+      text-align: center;
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-accent-green-20);
+      border-radius: var(--radius-lg);
+      padding: 3rem 2rem;
+    }
+
+    .success-card.visible { display: block; }
+
+    .success-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1.5rem;
+      background: var(--color-accent-green-10);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .success-icon svg {
+      width: 32px;
+      height: 32px;
+      color: var(--color-accent-green);
+    }
+
+    .success-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .success-card p {
+      color: var(--color-text-secondary);
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    /* ── Error ── */
+    .field-error {
+      color: var(--color-danger);
+      font-size: 0.78rem;
+      margin-top: 0.3rem;
+      display: none;
+    }
+
+    .field.has-error input,
+    .field.has-error select,
+    .field.has-error textarea {
+      border-color: var(--color-danger);
+    }
+
+    .field.has-error .field-error { display: block; }
+
+    /* ── Toast ── */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--color-danger);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+      font-weight: 500;
+      z-index: 1000;
+      transition: transform 0.3s ease;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .toast.visible { transform: translateX(-50%) translateY(0); }
+    .toast.success { background: var(--color-accent-green); }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      .page { padding: 1.5rem 1rem 3rem; }
+      .challenge-header h1 { font-size: 1.7rem; }
+      .form-section { padding: 1.25rem; }
+      .checkbox-grid { grid-template-columns: 1fr; }
+      .toggle-group { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- Header -->
+    <header class="challenge-header">
+      <div class="challenge-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+        Maker Sprint Challenge
+      </div>
+      <h1>Desafio Maker 72h</h1>
+      <p class="subtitle">Prove que voce e um maker de verdade. 72 horas. 1 entrega real. Sem desculpas.</p>
+    </header>
+
+    <!-- Timer Banner -->
+    <div class="timer-banner">
+      <div class="timer-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+      </div>
+      <div class="timer-text">
+        <strong>Fase 1: Filtro de Intencao</strong>
+        <span>Responda as perguntas abaixo para se candidatar ao desafio</span>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <form id="maker-form" novalidate>
+
+      <!-- Section 1: Dados -->
+      <div class="form-section">
+        <h2 class="form-section-title">Seus Dados</h2>
+        <p class="form-section-desc">Precisamos saber quem voce e para entrar em contato</p>
+
+        <div class="field">
+          <label>Nome completo <span class="required">*</span></label>
+          <input type="text" id="name" required placeholder="Seu nome">
+          <div class="field-error">Preencha seu nome</div>
+        </div>
+
+        <div class="field">
+          <label>E-mail <span class="required">*</span></label>
+          <input type="email" id="email" required placeholder="seu@email.com">
+          <div class="field-error">Informe um e-mail valido</div>
+        </div>
+
+        <div class="field">
+          <label>WhatsApp</label>
+          <span class="hint">Opcional, mas facilita a comunicacao durante o sprint</span>
+          <input type="tel" id="phone" placeholder="(11) 99999-9999">
+        </div>
+      </div>
+
+      <!-- Section 2: Disponibilidade -->
+      <div class="form-section">
+        <h2 class="form-section-title">Disponibilidade</h2>
+        <p class="form-section-desc">Makers precisam de tempo para executar. Seja honesto.</p>
+
+        <div class="field">
+          <label>Quantas horas por semana voce pode dedicar? <span class="required">*</span></label>
+          <select id="hours_per_week" required>
+            <option value="">Selecione...</option>
+            <option value="5">Ate 5 horas</option>
+            <option value="10">5 a 10 horas</option>
+            <option value="20">10 a 20 horas</option>
+            <option value="30">20 a 30 horas</option>
+            <option value="40">30+ horas (full-time)</option>
+          </select>
+          <div class="field-error">Selecione sua disponibilidade</div>
+        </div>
+
+        <div class="field">
+          <label>Voce pode comecar o desafio nas proximas 72 horas? <span class="required">*</span></label>
+          <div class="toggle-group" id="available-toggle">
+            <label class="toggle-option" data-value="true">
+              <input type="radio" name="available_72h" value="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              Sim, estou pronto
+            </label>
+            <label class="toggle-option" data-value="false">
+              <input type="radio" name="available_72h" value="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="15" y1="9" x2="9" y2="15"/>
+                <line x1="9" y1="9" x2="15" y2="15"/>
+              </svg>
+              Nao neste momento
+            </label>
+          </div>
+          <div class="field-error">Selecione uma opcao</div>
+        </div>
+      </div>
+
+      <!-- Section 3: Ferramentas -->
+      <div class="form-section">
+        <h2 class="form-section-title">Ferramentas e Habilidades</h2>
+        <p class="form-section-desc">Quais ferramentas voce ja sabe usar? Marque todas que se aplicam.</p>
+
+        <div class="field">
+          <label>Ferramentas que domino</label>
+          <div class="checkbox-grid" id="tools-grid">
+            <label class="checkbox-item">
+              <input type="checkbox" value="claude-code"> Claude Code
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" value="cursor"> Cursor
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" value="chatgpt"> ChatGPT
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" value="canva"> Canva
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" value="figma"> Figma
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" value="notion"> Notion
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" value="n8n"> n8n / Make
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" value="supabase"> Supabase
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" value="vercel"> Vercel / Netlify
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" value="git"> Git / GitHub
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" value="html-css"> HTML / CSS
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" value="javascript"> JavaScript
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Outras ferramentas</label>
+          <span class="hint">Algo que nao esta na lista acima?</span>
+          <input type="text" id="tools_other" placeholder="Ex: Midjourney, Zapier, Python...">
+        </div>
+      </div>
+
+      <!-- Section 4: Perfil Maker -->
+      <div class="form-section">
+        <h2 class="form-section-title">Perfil Maker</h2>
+        <p class="form-section-desc">Queremos entender seu perfil de execucao.</p>
+
+        <div class="field">
+          <label>Qual o seu papel preferido em um time? <span class="required">*</span></label>
+          <select id="preferred_role" required>
+            <option value="">Selecione...</option>
+            <option value="executor">Executor — recebo a tarefa e entrego</option>
+            <option value="builder">Builder — construo do zero, autonomo</option>
+            <option value="both">Os dois — depende do contexto</option>
+            <option value="unsure">Ainda nao sei</option>
+          </select>
+          <div class="field-error">Selecione seu papel preferido</div>
+        </div>
+
+        <div class="field">
+          <label>Qual a maior coisa que voce ja construiu? <span class="required">*</span></label>
+          <span class="hint">Pode ser um site, um app, uma automacao, um projeto pessoal... qualquer coisa.</span>
+          <textarea id="biggest_build" required placeholder="Descreva o que voce construiu, mesmo que simples..."></textarea>
+          <div class="field-error">Conte sobre algo que voce ja construiu</div>
+        </div>
+
+        <div class="field">
+          <label>Nivel de comprometimento <span class="required">*</span></label>
+          <span class="hint">De 1 (vou tentar) a 10 (vou entregar custe o que custar)</span>
+          <div class="slider-container">
+            <div class="slider-labels">
+              <span>1 — Vou tentar</span>
+              <span>10 — Vou entregar</span>
+            </div>
+            <input type="range" id="commitment_level" min="1" max="10" value="5">
+            <div class="slider-value" id="commitment-display">5</div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Por que voce quer participar deste desafio? <span class="required">*</span></label>
+          <span class="hint">Seja direto. Nao existe resposta errada.</span>
+          <textarea id="motivation" required placeholder="O que te motiva a participar?"></textarea>
+          <div class="field-error">Conte sua motivacao</div>
+        </div>
+      </div>
+
+      <!-- Submit -->
+      <div class="submit-section">
+        <button type="submit" class="btn-submit" id="btn-submit">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+          </svg>
+          Enviar Candidatura
+        </button>
+        <p class="submit-note">Voce recebera um e-mail com o briefing do sprint em ate 24h</p>
+      </div>
+
+    </form>
+
+    <!-- Success State -->
+    <div class="success-card" id="success-card">
+      <div class="success-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+      </div>
+      <h2>Candidatura Enviada!</h2>
+      <p>Recebemos sua candidatura. Vamos analisar seu perfil e entrar em contato em ate 24 horas com o briefing do sprint.</p>
+    </div>
+
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/js/config.js"></script>
+  <script>
+    (function() {
+      // ── Supabase Client ──
+      const sb = window.supabase.createClient(Config.SUPABASE_URL, Config.SUPABASE_ANON_KEY);
+
+      // ── DOM ──
+      const form = document.getElementById('maker-form');
+      const btnSubmit = document.getElementById('btn-submit');
+      const successCard = document.getElementById('success-card');
+      const toastEl = document.getElementById('toast');
+      const commitmentSlider = document.getElementById('commitment_level');
+      const commitmentDisplay = document.getElementById('commitment-display');
+
+      // ── Slider ──
+      commitmentSlider.addEventListener('input', function() {
+        commitmentDisplay.textContent = this.value;
+      });
+
+      // ── Checkbox Toggle ──
+      document.querySelectorAll('.checkbox-item').forEach(function(item) {
+        item.addEventListener('click', function(e) {
+          if (e.target.tagName === 'INPUT') return;
+          var cb = item.querySelector('input[type="checkbox"]');
+          cb.checked = !cb.checked;
+          item.classList.toggle('checked', cb.checked);
+        });
+        item.querySelector('input').addEventListener('change', function() {
+          item.classList.toggle('checked', this.checked);
+        });
+      });
+
+      // ── 72h Toggle ──
+      document.querySelectorAll('.toggle-option').forEach(function(opt) {
+        opt.addEventListener('click', function() {
+          document.querySelectorAll('.toggle-option').forEach(function(o) {
+            o.classList.remove('selected');
+          });
+          opt.classList.add('selected');
+          opt.querySelector('input').checked = true;
+        });
+      });
+
+      // ── Validation ──
+      function validate() {
+        var valid = true;
+        var fields = [
+          { id: 'name', check: function(v) { return v.trim().length > 0; } },
+          { id: 'email', check: function(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); } },
+          { id: 'hours_per_week', check: function(v) { return v !== ''; } },
+          { id: 'preferred_role', check: function(v) { return v !== ''; } },
+          { id: 'biggest_build', check: function(v) { return v.trim().length > 0; } },
+          { id: 'motivation', check: function(v) { return v.trim().length > 0; } }
+        ];
+
+        fields.forEach(function(f) {
+          var el = document.getElementById(f.id);
+          var field = el.closest('.field');
+          if (!f.check(el.value)) {
+            field.classList.add('has-error');
+            valid = false;
+          } else {
+            field.classList.remove('has-error');
+          }
+        });
+
+        // 72h toggle
+        var available = document.querySelector('input[name="available_72h"]:checked');
+        var toggleField = document.getElementById('available-toggle').closest('.field');
+        if (!available) {
+          toggleField.classList.add('has-error');
+          valid = false;
+        } else {
+          toggleField.classList.remove('has-error');
+        }
+
+        return valid;
+      }
+
+      // ── Toast ──
+      function showToast(msg, type) {
+        toastEl.textContent = msg;
+        toastEl.className = 'toast' + (type === 'success' ? ' success' : '');
+        toastEl.classList.add('visible');
+        setTimeout(function() { toastEl.classList.remove('visible'); }, 4000);
+      }
+
+      // ── Submit ──
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        if (!validate()) {
+          showToast('Preencha todos os campos obrigatorios', 'error');
+          var firstError = document.querySelector('.field.has-error');
+          if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+
+        btnSubmit.disabled = true;
+        btnSubmit.innerHTML = '<svg class="spinner" viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="31.4" stroke-dashoffset="10"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="0.8s" repeatCount="indefinite"/></circle></svg> Enviando...';
+
+        // Collect tools
+        var tools = [];
+        document.querySelectorAll('#tools-grid input[type="checkbox"]:checked').forEach(function(cb) {
+          tools.push(cb.value);
+        });
+
+        var data = {
+          name: document.getElementById('name').value.trim(),
+          email: document.getElementById('email').value.trim().toLowerCase(),
+          phone: document.getElementById('phone').value.trim() || null,
+          hours_per_week: parseInt(document.getElementById('hours_per_week').value),
+          tools_known: tools,
+          tools_other: document.getElementById('tools_other').value.trim() || null,
+          commitment_level: parseInt(commitmentSlider.value),
+          motivation: document.getElementById('motivation').value.trim(),
+          available_72h: document.querySelector('input[name="available_72h"]:checked').value === 'true',
+          biggest_build: document.getElementById('biggest_build').value.trim(),
+          preferred_role: document.getElementById('preferred_role').value
+        };
+
+        try {
+          var result = await sb.from('maker_challenge').insert([data]);
+
+          if (result.error) throw result.error;
+
+          form.style.display = 'none';
+          document.querySelector('.timer-banner').style.display = 'none';
+          successCard.classList.add('visible');
+          showToast('Candidatura enviada com sucesso!', 'success');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        } catch (err) {
+          console.error('Erro ao enviar:', err);
+          showToast('Erro ao enviar. Tente novamente.', 'error');
+          btnSubmit.disabled = false;
+          btnSubmit.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg> Enviar Candidatura';
+        }
+      });
+
+    })();
+  </script>
+</body>
+</html>

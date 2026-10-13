@@ -1,0 +1,699 @@
+<!-- E3 - Anatomia de um Squad: Estrutura Padrao -->
+
+    <!-- ============================================
+         HERO HEADER
+         ============================================ -->
+    <header class="hero">
+        <div class="hero-badge">Encontro 3 &bull; Estrutura de um Squad</div>
+        <h1>Cada squad e uma<br><span>equipe completa de obra.</span></h1>
+        <p>Antes de construir qualquer coisa, voce precisa entender as pecas. Vamos abrir o capo de um squad e comparar com algo que voce ja conhece: uma equipe de reforma.</p>
+    </header>
+
+    <div class="content">
+
+        <!-- ============================================
+             BLOCO 0: A Metafora
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">A Metafora</div>
+            <h2 class="section-title">Squad = Equipe de Reforma</h2>
+            <p class="section-desc">Imagine que voce contratou uma equipe completa para reformar sua casa. Tem eletricista, encanador, pedreiro, pintor. Cada um sabe o que fazer, tem suas ferramentas e segue um cronograma. Um <strong style="color: var(--color-accent-gold);">squad de IA funciona exatamente assim</strong>.</p>
+
+            <!-- Side by side intro cards -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                <div style="background: linear-gradient(135deg, rgba(249,115,22,0.06) 0%, rgba(234,179,8,0.04) 100%); border: 1px solid rgba(249,115,22,0.2); border-radius: var(--radius-xl); padding: 1.5rem; text-align: center;">
+                    <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(249,115,22,0.1); border: 1px solid rgba(249,115,22,0.25); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#f97316" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </div>
+                    <div style="font-weight: 800; font-size: 1rem; color: var(--color-text-primary); margin-bottom: 0.25rem;">Equipe de Reforma</div>
+                    <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.5;">Profissionais, ordens de servico, cronograma, vistoria, manuais</div>
+                </div>
+                <div style="background: linear-gradient(135deg, rgba(0,153,255,0.06) 0%, rgba(209,255,0,0.04) 100%); border: 1px solid rgba(0,153,255,0.2); border-radius: var(--radius-xl); padding: 1.5rem; text-align: center;">
+                    <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(0,153,255,0.1); border: 1px solid rgba(0,153,255,0.25); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#0099FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    </div>
+                    <div style="font-weight: 800; font-size: 1rem; color: var(--color-text-primary); margin-bottom: 0.25rem;">Squad de IA</div>
+                    <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.5;">Agentes, tasks, workflows, checklists, templates, data, skills</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-bottom: 1.5rem;">
+                <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.03); border: 1px solid var(--color-border); border-radius: 999px; padding: 0.4rem 1.2rem;">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="var(--color-accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                    <span style="font-family: var(--font-mono); font-size: 0.65rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.1em;">8 pecas lado a lado</span>
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="var(--color-accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PECA 1: config.yaml
+             ============================================ -->
+        <section class="flow-section">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--color-accent-gold-10); border: 2px solid var(--color-accent-gold-30); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: var(--color-accent-gold);">1</span>
+                </div>
+                <div>
+                    <div style="font-weight: 800; font-size: 1.1rem; color: var(--color-text-primary);">config.yaml</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-gold); text-transform: uppercase; letter-spacing: 0.08em;">Configuracao Central</div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(249,115,22,0.2); border-radius: var(--radius-xl); padding: 1.25rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#f97316" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        <span style="font-weight: 700; font-size: 0.75rem; color: #f97316; text-transform: uppercase; letter-spacing: 0.08em;">Na Reforma</span>
+                    </div>
+                    <div style="font-weight: 700; font-size: 0.9rem; color: var(--color-text-primary); margin-bottom: 0.4rem;">Contrato + Planta da Obra</div>
+                    <p style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">Define o escopo da reforma, quem faz o que, orcamento, prazos. Sem contrato, cada profissional faz o que acha melhor &mdash; e a obra vira caos.</p>
+                </div>
+                <div style="background: var(--color-bg-card); border: 1px solid var(--color-accent-gold-30); border-radius: var(--radius-xl); padding: 1.25rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--color-accent-gold)" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                        <span style="font-weight: 700; font-size: 0.75rem; color: var(--color-accent-gold); text-transform: uppercase; letter-spacing: 0.08em;">No Squad</span>
+                    </div>
+                    <div style="font-weight: 700; font-size: 0.9rem; color: var(--color-text-primary); margin-bottom: 0.4rem;">config.yaml</div>
+                    <p style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">Define nome do squad, quais agentes existem, tiers, routing de requests, e quais workflows estao disponiveis. E o cerebro central.</p>
+                </div>
+            </div>
+
+            <!-- POR DENTRO: config.yaml -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div style="background: rgba(249,115,22,0.03); border: 1px dashed rgba(249,115,22,0.15); border-radius: var(--radius-lg); padding: 1.25rem;">
+                    <div style="font-family: var(--font-mono); font-size: 0.6rem; color: #f97316; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;">O Contrato diz:</div>
+                    <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.8;">
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Nome da obra:</span> Reforma Apt 301</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Equipe:</span> Joao (eletricista), Maria (pintora)</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Servicos:</span> troca de fiacao, pintura geral</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Cronograma:</span> semana 1 eletrica, semana 2 pintura</div>
+                        <div><span style="color: var(--color-text-secondary);">Regras:</span> nao mexer na estrutura</div>
+                    </div>
+                </div>
+                <div style="background: #0D1117; border: 1px solid var(--color-accent-gold-30); border-radius: var(--radius-lg); overflow: hidden;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(209,255,0,0.15); background: rgba(209,255,0,0.03);">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: var(--color-accent-gold); margin-left: 0.4rem;">config.yaml</span>
+                    </div>
+                    <div style="padding: 1rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 1.9; color: #8B949E;">
+                        <div><span style="color: #33ADFF;">name:</span> <span style="color: #A5D6FF;">copywriter-os</span></div>
+                        <div><span style="color: #33ADFF;">version:</span> <span style="color: #A5D6FF;">"2.0.0"</span></div>
+                        <div><span style="color: #33ADFF;">description:</span> <span style="color: #A5D6FF;">|</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: #A5D6FF;">Squad de copy persuasiva</span></div>
+                        <div>&nbsp;</div>
+                        <div><span style="color: #33ADFF;">agents:</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: #6A737D;">-</span> <span style="color: #A5D6FF;">copy-chief</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: #6A737D;">-</span> <span style="color: #A5D6FF;">gary-halbert</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: #6A737D;">-</span> <span style="color: #A5D6FF;">david-ogilvy</span></div>
+                        <div>&nbsp;</div>
+                        <div><span style="color: #33ADFF;">tasks:</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: #6A737D;">-</span> <span style="color: #A5D6FF;">create-sales-page</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: #6A737D;">-</span> <span style="color: #A5D6FF;">write-copy</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PECA 2: agents/
+             ============================================ -->
+        <section class="flow-section">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(0,153,255,0.1); border: 2px solid rgba(0,153,255,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: #0099FF;">2</span>
+                </div>
+                <div>
+                    <div style="font-weight: 800; font-size: 1.1rem; color: var(--color-text-primary);">agents/</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.6rem; color: #0099FF; text-transform: uppercase; letter-spacing: 0.08em;">Os Especialistas</div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(249,115,22,0.2); border-radius: var(--radius-xl); padding: 1.25rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#f97316" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                        <span style="font-weight: 700; font-size: 0.75rem; color: #f97316; text-transform: uppercase; letter-spacing: 0.08em;">Na Reforma</span>
+                    </div>
+                    <div style="font-weight: 700; font-size: 0.9rem; color: var(--color-text-primary); margin-bottom: 0.4rem;">Os Profissionais</div>
+                    <p style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">Eletricista, encanador, pedreiro, pintor. Cada um com especialidade, ferramentas proprias e anos de experiencia.</p>
+                </div>
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(0,153,255,0.3); border-radius: var(--radius-xl); padding: 1.25rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#0099FF" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                        <span style="font-weight: 700; font-size: 0.75rem; color: #0099FF; text-transform: uppercase; letter-spacing: 0.08em;">No Squad</span>
+                    </div>
+                    <div style="font-weight: 700; font-size: 0.9rem; color: var(--color-text-primary); margin-bottom: 0.4rem;">System Prompts dos Agentes</div>
+                    <p style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">Cada arquivo <code style="background: rgba(255,255,255,0.06); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.65rem;">.md</code> define a persona completa: nome, papel, estilo, comandos e comportamento.</p>
+                </div>
+            </div>
+
+            <!-- POR DENTRO: agents/ -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div style="background: rgba(249,115,22,0.03); border: 1px dashed rgba(249,115,22,0.15); border-radius: var(--radius-lg); padding: 1.25rem;">
+                    <div style="font-family: var(--font-mono); font-size: 0.6rem; color: #f97316; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;">Ficha do Eletricista:</div>
+                    <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.8;">
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Nome:</span> Joao Carlos</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Funcao:</span> Eletricista Senior</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Especialidade:</span> Fiacao residencial</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Ferramentas:</span> Multimetro, alicate</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Estilo:</span> Meticuloso, segue normas</div>
+                        <div><span style="color: var(--color-text-secondary);">Sabe fazer:</span> Trocar fiacao, instalar disjuntor</div>
+                    </div>
+                </div>
+                <div style="background: #0D1117; border: 1px solid rgba(0,153,255,0.3); border-radius: var(--radius-lg); overflow: hidden;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(0,153,255,0.15); background: rgba(0,153,255,0.03);">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #33ADFF; margin-left: 0.4rem;">agents/gary-halbert.md</span>
+                    </div>
+                    <div style="padding: 1rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 1.9; color: #8B949E;">
+                        <div><span style="color: #33ADFF;">agent:</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: #33ADFF;">name:</span> <span style="color: #A5D6FF;">Gary Halbert</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: #33ADFF;">id:</span> <span style="color: #A5D6FF;">gary-halbert</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: #33ADFF;">title:</span> <span style="color: #A5D6FF;">Direct Response Legend</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: #33ADFF;">icon:</span> <span style="color: #A5D6FF;">"&#x1F451;"</span></div>
+                        <div>&nbsp;</div>
+                        <div><span style="color: #33ADFF;">persona:</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: #33ADFF;">role:</span> <span style="color: #A5D6FF;">Master Copywriter</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: #33ADFF;">style:</span> <span style="color: #A5D6FF;">Direto, provocador</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: #33ADFF;">capabilities:</span></div>
+                        <div style="padding-left: 2rem;"><span style="color: #6A737D;">-</span> <span style="color: #A5D6FF;">Headlines matadoras</span></div>
+                        <div style="padding-left: 2rem;"><span style="color: #6A737D;">-</span> <span style="color: #A5D6FF;">Sales letters</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PECA 3: tasks/
+             ============================================ -->
+        <section class="flow-section">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(34,197,94,0.1); border: 2px solid rgba(34,197,94,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: #22c55e;">3</span>
+                </div>
+                <div>
+                    <div style="font-weight: 800; font-size: 1.1rem; color: var(--color-text-primary);">tasks/</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.6rem; color: #22c55e; text-transform: uppercase; letter-spacing: 0.08em;">Tarefas Executaveis</div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(249,115,22,0.2); border-radius: var(--radius-xl); padding: 1.25rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#f97316" stroke-width="1.5"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+                        <span style="font-weight: 700; font-size: 0.75rem; color: #f97316; text-transform: uppercase; letter-spacing: 0.08em;">Na Reforma</span>
+                    </div>
+                    <div style="font-weight: 700; font-size: 0.9rem; color: var(--color-text-primary); margin-bottom: 0.4rem;">Ordens de Servico</div>
+                    <p style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">"Trocar fiacao do quarto." "Instalar box do banheiro." Cada OS diz exatamente o que fazer e como saber se ficou certo.</p>
+                </div>
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(34,197,94,0.3); border-radius: var(--radius-xl); padding: 1.25rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#22c55e" stroke-width="1.5"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                        <span style="font-weight: 700; font-size: 0.75rem; color: #22c55e; text-transform: uppercase; letter-spacing: 0.08em;">No Squad</span>
+                    </div>
+                    <div style="font-weight: 700; font-size: 0.9rem; color: var(--color-text-primary); margin-bottom: 0.4rem;">Tasks Executaveis</div>
+                    <p style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">Cada task define inputs, passos e output esperado. Invocada via <code style="background: rgba(255,255,255,0.06); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.65rem;">/Squad:tasks:nome</code>.</p>
+                </div>
+            </div>
+
+            <!-- POR DENTRO: tasks/ -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div style="background: rgba(249,115,22,0.03); border: 1px dashed rgba(249,115,22,0.15); border-radius: var(--radius-lg); padding: 1.25rem;">
+                    <div style="font-family: var(--font-mono); font-size: 0.6rem; color: #f97316; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;">Ordem de Servico:</div>
+                    <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.8;">
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Servico:</span> Trocar fiacao do quarto</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Responsavel:</span> Eletricista</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Material:</span> Fio 2.5mm, disjuntor 20A</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Passo 1:</span> Desligar geral</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Passo 2:</span> Remover fiacao antiga</div>
+                        <div><span style="color: var(--color-text-secondary);">Feito quando:</span> Teste com multimetro OK</div>
+                    </div>
+                </div>
+                <div style="background: #0D1117; border: 1px solid rgba(34,197,94,0.3); border-radius: var(--radius-lg); overflow: hidden;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(34,197,94,0.15); background: rgba(34,197,94,0.03);">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #4ADE80; margin-left: 0.4rem;">tasks/create-sales-page.md</span>
+                    </div>
+                    <div style="padding: 1rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 1.9; color: #8B949E;">
+                        <div><span style="color: #4ADE80;">id:</span> <span style="color: #A5D6FF;">create-sales-page</span></div>
+                        <div><span style="color: #4ADE80;">name:</span> <span style="color: #A5D6FF;">Criar Sales Page</span></div>
+                        <div><span style="color: #4ADE80;">agent:</span> <span style="color: #A5D6FF;">gary-halbert</span></div>
+                        <div><span style="color: #4ADE80;">elicit:</span> <span style="color: #FFA657;">true</span></div>
+                        <div>&nbsp;</div>
+                        <div><span style="color: #6A737D;"># Processo</span></div>
+                        <div><span style="color: #6A737D;">## Passo 1:</span> <span style="color: #A5D6FF;">Coletar avatar</span></div>
+                        <div><span style="color: #6A737D;">## Passo 2:</span> <span style="color: #A5D6FF;">Definir big idea</span></div>
+                        <div><span style="color: #6A737D;">## Passo 3:</span> <span style="color: #A5D6FF;">Escrever headline</span></div>
+                        <div><span style="color: #6A737D;">## Passo 4:</span> <span style="color: #A5D6FF;">Montar body copy</span></div>
+                        <div>&nbsp;</div>
+                        <div><span style="color: #6A737D;"># Saida:</span> <span style="color: #A5D6FF;">sales-page.html</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PECA 4: workflows/
+             ============================================ -->
+        <section class="flow-section">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(59,130,246,0.1); border: 2px solid rgba(59,130,246,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: #3b82f6;">4</span>
+                </div>
+                <div>
+                    <div style="font-weight: 800; font-size: 1.1rem; color: var(--color-text-primary);">workflows/</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.6rem; color: #3b82f6; text-transform: uppercase; letter-spacing: 0.08em;">Fluxos Multi-Passo</div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(249,115,22,0.2); border-radius: var(--radius-xl); padding: 1.25rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#f97316" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        <span style="font-weight: 700; font-size: 0.75rem; color: #f97316; text-transform: uppercase; letter-spacing: 0.08em;">Na Reforma</span>
+                    </div>
+                    <div style="font-weight: 700; font-size: 0.9rem; color: var(--color-text-primary); margin-bottom: 0.4rem;">Cronograma da Obra</div>
+                    <p style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">Primeiro derruba parede &rarr; passa fiacao &rarr; fecha parede &rarr; pinta. A <strong style="color: var(--color-text-secondary);">sequencia importa</strong>.</p>
+                </div>
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(59,130,246,0.3); border-radius: var(--radius-xl); padding: 1.25rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#3b82f6" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                        <span style="font-weight: 700; font-size: 0.75rem; color: #3b82f6; text-transform: uppercase; letter-spacing: 0.08em;">No Squad</span>
+                    </div>
+                    <div style="font-weight: 700; font-size: 0.9rem; color: var(--color-text-primary); margin-bottom: 0.4rem;">Workflows YAML</div>
+                    <p style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">Sequencia de tasks orquestradas com dependencias. E o <strong style="color: var(--color-text-secondary);">piloto automatico</strong> do squad.</p>
+                </div>
+            </div>
+
+            <!-- POR DENTRO: workflows/ -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div style="background: rgba(249,115,22,0.03); border: 1px dashed rgba(249,115,22,0.15); border-radius: var(--radius-lg); padding: 1.25rem;">
+                    <div style="font-family: var(--font-mono); font-size: 0.6rem; color: #f97316; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;">Cronograma da Obra:</div>
+                    <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.8;">
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Fase 1:</span> Demolicao (pedreiro)</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Fase 2:</span> Eletrica (eletricista)</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Fase 3:</span> Hidraulica (encanador)</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Fase 4:</span> Acabamento (pintor)</div>
+                        <div style="margin-top: 0.6rem; padding-top: 0.6rem; border-top: 1px dashed rgba(255,255,255,0.06);"><span style="color: #f97316;">Regra:</span> <span style="color: var(--color-text-secondary);">Fase 2 so comeca quando Fase 1 termina</span></div>
+                    </div>
+                </div>
+                <div style="background: #0D1117; border: 1px solid rgba(59,130,246,0.3); border-radius: var(--radius-lg); overflow: hidden;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(59,130,246,0.15); background: rgba(59,130,246,0.03);">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #60A5FA; margin-left: 0.4rem;">workflows/full-pipeline.yaml</span>
+                    </div>
+                    <div style="padding: 1rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 1.9; color: #8B949E;">
+                        <div><span style="color: #60A5FA;">workflow:</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: #60A5FA;">id:</span> <span style="color: #A5D6FF;">full-pipeline</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: #60A5FA;">type:</span> <span style="color: #A5D6FF;">sequential</span></div>
+                        <div>&nbsp;</div>
+                        <div><span style="color: #60A5FA;">phases:</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: #6A737D;">-</span> <span style="color: #60A5FA;">id:</span> <span style="color: #A5D6FF;">PHASE-1</span></div>
+                        <div style="padding-left: 2rem;"><span style="color: #60A5FA;">name:</span> <span style="color: #A5D6FF;">Research</span></div>
+                        <div style="padding-left: 2rem;"><span style="color: #60A5FA;">tasks:</span></div>
+                        <div style="padding-left: 3rem;"><span style="color: #6A737D;">-</span> <span style="color: #A5D6FF;">avatar-research</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: #6A737D;">-</span> <span style="color: #60A5FA;">id:</span> <span style="color: #A5D6FF;">PHASE-2</span></div>
+                        <div style="padding-left: 2rem;"><span style="color: #60A5FA;">name:</span> <span style="color: #A5D6FF;">Write</span></div>
+                        <div style="padding-left: 2rem;"><span style="color: #60A5FA;">tasks:</span></div>
+                        <div style="padding-left: 3rem;"><span style="color: #6A737D;">-</span> <span style="color: #A5D6FF;">create-sales-page</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PECA 5: checklists/
+             ============================================ -->
+        <section class="flow-section">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(234,179,8,0.1); border: 2px solid rgba(234,179,8,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: #eab308;">5</span>
+                </div>
+                <div>
+                    <div style="font-weight: 800; font-size: 1.1rem; color: var(--color-text-primary);">checklists/</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.6rem; color: #eab308; text-transform: uppercase; letter-spacing: 0.08em;">Validacoes de Qualidade</div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(249,115,22,0.2); border-radius: var(--radius-xl); padding: 1.25rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#f97316" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <span style="font-weight: 700; font-size: 0.75rem; color: #f97316; text-transform: uppercase; letter-spacing: 0.08em;">Na Reforma</span>
+                    </div>
+                    <div style="font-weight: 700; font-size: 0.9rem; color: var(--color-text-primary); margin-bottom: 0.4rem;">Vistoria / Inspecao</div>
+                    <p style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">Tomada funciona? Cano vaza? A vistoria e o <strong style="color: var(--color-text-secondary);">"passa ou nao passa"</strong> antes de entregar.</p>
+                </div>
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(234,179,8,0.3); border-radius: var(--radius-xl); padding: 1.25rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#eab308" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        <span style="font-weight: 700; font-size: 0.75rem; color: #eab308; text-transform: uppercase; letter-spacing: 0.08em;">No Squad</span>
+                    </div>
+                    <div style="font-weight: 700; font-size: 0.9rem; color: var(--color-text-primary); margin-bottom: 0.4rem;">Quality Gates</div>
+                    <p style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">Criterios que o output precisa cumprir. Nao passa? Volta pro agente. Zero gambiarra.</p>
+                </div>
+            </div>
+
+            <!-- POR DENTRO: checklists/ -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div style="background: rgba(249,115,22,0.03); border: 1px dashed rgba(249,115,22,0.15); border-radius: var(--radius-lg); padding: 1.25rem;">
+                    <div style="font-family: var(--font-mono); font-size: 0.6rem; color: #f97316; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;">Vistoria Eletrica:</div>
+                    <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.8;">
+                        <div style="margin-bottom: 0.4rem;"><span style="color: #22c55e;">&#10003;</span> Todas as tomadas funcionam?</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: #22c55e;">&#10003;</span> Disjuntor nao desarma?</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: #22c55e;">&#10003;</span> Fios dentro da norma ABNT?</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: #ef4444;">&#10007;</span> Fio exposto em algum ponto?</div>
+                        <div style="margin-top: 0.6rem; padding-top: 0.6rem; border-top: 1px dashed rgba(255,255,255,0.06);"><span style="color: #f97316;">Veredicto:</span> <span style="color: var(--color-text-secondary);">APROVADO ou REPROVADO</span></div>
+                    </div>
+                </div>
+                <div style="background: #0D1117; border: 1px solid rgba(234,179,8,0.3); border-radius: var(--radius-lg); overflow: hidden;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(234,179,8,0.15); background: rgba(234,179,8,0.03);">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #FACC15; margin-left: 0.4rem;">checklists/copy-quality.md</span>
+                    </div>
+                    <div style="padding: 1rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 1.9; color: #8B949E;">
+                        <div><span style="color: #FACC15;"># Copy Quality Checklist</span></div>
+                        <div>&nbsp;</div>
+                        <div><span style="color: #FACC15;">## Headline</span></div>
+                        <div><span style="color: #4ADE80;">- [x]</span> Tem beneficio claro?</div>
+                        <div><span style="color: #4ADE80;">- [x]</span> Gera curiosidade?</div>
+                        <div><span style="color: #4ADE80;">- [x]</span> Menos de 12 palavras?</div>
+                        <div>&nbsp;</div>
+                        <div><span style="color: #FACC15;">## Body Copy</span></div>
+                        <div><span style="color: #4ADE80;">- [x]</span> Abre com dor do avatar?</div>
+                        <div><span style="color: #EF4444;">- [ ]</span> Tem prova social?</div>
+                        <div><span style="color: #4ADE80;">- [x]</span> CTA claro e direto?</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PECA 6: templates/
+             ============================================ -->
+        <section class="flow-section">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(236,72,153,0.1); border: 2px solid rgba(236,72,153,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: #ec4899;">6</span>
+                </div>
+                <div>
+                    <div style="font-weight: 800; font-size: 1.1rem; color: var(--color-text-primary);">templates/</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.6rem; color: #ec4899; text-transform: uppercase; letter-spacing: 0.08em;">Templates de Output</div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(249,115,22,0.2); border-radius: var(--radius-xl); padding: 1.25rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#f97316" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                        <span style="font-weight: 700; font-size: 0.75rem; color: #f97316; text-transform: uppercase; letter-spacing: 0.08em;">Na Reforma</span>
+                    </div>
+                    <div style="font-weight: 700; font-size: 0.9rem; color: var(--color-text-primary); margin-bottom: 0.4rem;">Catalogo de Acabamentos</div>
+                    <p style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">"Esse e o modelo de azulejo, essa e a cor da parede, esse e o formato do laudo." Garante que tudo sai padronizado.</p>
+                </div>
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(236,72,153,0.3); border-radius: var(--radius-xl); padding: 1.25rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#ec4899" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        <span style="font-weight: 700; font-size: 0.75rem; color: #ec4899; text-transform: uppercase; letter-spacing: 0.08em;">No Squad</span>
+                    </div>
+                    <div style="font-weight: 700; font-size: 0.9rem; color: var(--color-text-primary); margin-bottom: 0.4rem;">Templates de Documento</div>
+                    <p style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">Modelos pre-definidos para outputs: PRDs, briefs, scripts. O agente preenche, nao inventa o formato.</p>
+                </div>
+            </div>
+
+            <!-- POR DENTRO: templates/ -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div style="background: rgba(249,115,22,0.03); border: 1px dashed rgba(249,115,22,0.15); border-radius: var(--radius-lg); padding: 1.25rem;">
+                    <div style="font-family: var(--font-mono); font-size: 0.6rem; color: #f97316; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;">Modelo do Laudo:</div>
+                    <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.8;">
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Titulo:</span> [preencher]</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Data:</span> [preencher]</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Comodos inspecionados:</span> [lista]</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Pendencias:</span> [lista]</div>
+                        <div><span style="color: var(--color-text-secondary);">Assinatura:</span> [responsavel]</div>
+                    </div>
+                </div>
+                <div style="background: #0D1117; border: 1px solid rgba(236,72,153,0.3); border-radius: var(--radius-lg); overflow: hidden;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(236,72,153,0.15); background: rgba(236,72,153,0.03);">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #F472B6; margin-left: 0.4rem;">templates/sales-page-tmpl.md</span>
+                    </div>
+                    <div style="padding: 1rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 1.9; color: #8B949E;">
+                        <div><span style="color: #F472B6;"># {titulo_da_oferta}</span></div>
+                        <div>&nbsp;</div>
+                        <div><span style="color: #F472B6;">## Headline</span></div>
+                        <div><span style="color: #A5D6FF;">{headline_principal}</span></div>
+                        <div>&nbsp;</div>
+                        <div><span style="color: #F472B6;">## Dor do Avatar</span></div>
+                        <div><span style="color: #A5D6FF;">{descricao_do_problema}</span></div>
+                        <div>&nbsp;</div>
+                        <div><span style="color: #F472B6;">## Solucao</span></div>
+                        <div><span style="color: #A5D6FF;">{apresentacao_do_produto}</span></div>
+                        <div>&nbsp;</div>
+                        <div><span style="color: #F472B6;">## CTA</span></div>
+                        <div><span style="color: #A5D6FF;">{chamada_para_acao}</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PECA 7: data/
+             ============================================ -->
+        <section class="flow-section">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(6,182,212,0.1); border: 2px solid rgba(6,182,212,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: #06b6d4;">7</span>
+                </div>
+                <div>
+                    <div style="font-weight: 800; font-size: 1.1rem; color: var(--color-text-primary);">data/</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.6rem; color: #06b6d4; text-transform: uppercase; letter-spacing: 0.08em;">Knowledge Bases</div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(249,115,22,0.2); border-radius: var(--radius-xl); padding: 1.25rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#f97316" stroke-width="1.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        <span style="font-weight: 700; font-size: 0.75rem; color: #f97316; text-transform: uppercase; letter-spacing: 0.08em;">Na Reforma</span>
+                    </div>
+                    <div style="font-weight: 700; font-size: 0.9rem; color: var(--color-text-primary); margin-bottom: 0.4rem;">Manuais Tecnicos + Normas</div>
+                    <p style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">Norma ABNT, manual do fabricante, regras de seguranca. O conhecimento que consultam quando tem duvida.</p>
+                </div>
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(6,182,212,0.3); border-radius: var(--radius-xl); padding: 1.25rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#06b6d4" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                        <span style="font-weight: 700; font-size: 0.75rem; color: #06b6d4; text-transform: uppercase; letter-spacing: 0.08em;">No Squad</span>
+                    </div>
+                    <div style="font-weight: 700; font-size: 0.9rem; color: var(--color-text-primary); margin-bottom: 0.4rem;">Frameworks e DNAs Mentais</div>
+                    <p style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">Bases de conhecimento, frameworks de especialistas, DNAs de voz. A <strong style="color: var(--color-text-secondary);">memoria de longo prazo</strong> do squad.</p>
+                </div>
+            </div>
+
+            <!-- POR DENTRO: data/ -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div style="background: rgba(249,115,22,0.03); border: 1px dashed rgba(249,115,22,0.15); border-radius: var(--radius-lg); padding: 1.25rem;">
+                    <div style="font-family: var(--font-mono); font-size: 0.6rem; color: #f97316; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;">Manual de Referencia:</div>
+                    <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.8;">
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Norma:</span> ABNT NBR 5410</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Assunto:</span> Instalacoes eletricas</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Fio minimo quarto:</span> 2.5mm</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Fio minimo chuveiro:</span> 6.0mm</div>
+                        <div><span style="color: var(--color-text-secondary);">Consultar quando:</span> Definir bitola dos fios</div>
+                    </div>
+                </div>
+                <div style="background: #0D1117; border: 1px solid rgba(6,182,212,0.3); border-radius: var(--radius-lg); overflow: hidden;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(6,182,212,0.15); background: rgba(6,182,212,0.03);">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #22D3EE; margin-left: 0.4rem;">data/copywriting-frameworks.yaml</span>
+                    </div>
+                    <div style="padding: 1rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 1.9; color: #8B949E;">
+                        <div><span style="color: #22D3EE;">aida_framework:</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: #22D3EE;">name:</span> <span style="color: #A5D6FF;">AIDA</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: #22D3EE;">steps:</span></div>
+                        <div style="padding-left: 2rem;"><span style="color: #6A737D;">-</span> <span style="color: #A5D6FF;">Attention</span></div>
+                        <div style="padding-left: 2rem;"><span style="color: #6A737D;">-</span> <span style="color: #A5D6FF;">Interest</span></div>
+                        <div style="padding-left: 2rem;"><span style="color: #6A737D;">-</span> <span style="color: #A5D6FF;">Desire</span></div>
+                        <div style="padding-left: 2rem;"><span style="color: #6A737D;">-</span> <span style="color: #A5D6FF;">Action</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: #22D3EE;">use_when:</span></div>
+                        <div style="padding-left: 2rem;"><span style="color: #A5D6FF;">Sales pages, email</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PECA 8: skills/
+             ============================================ -->
+        <section class="flow-section">
+            <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(249,115,22,0.1); border: 2px solid rgba(249,115,22,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: #f97316;">8</span>
+                </div>
+                <div>
+                    <div style="font-weight: 800; font-size: 1.1rem; color: var(--color-text-primary);">skills/</div>
+                    <div style="font-family: var(--font-mono); font-size: 0.6rem; color: #f97316; text-transform: uppercase; letter-spacing: 0.08em;">Skills Invocaveis</div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(249,115,22,0.2); border-radius: var(--radius-xl); padding: 1.25rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#f97316" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                        <span style="font-weight: 700; font-size: 0.75rem; color: #f97316; text-transform: uppercase; letter-spacing: 0.08em;">Na Reforma</span>
+                    </div>
+                    <div style="font-weight: 700; font-size: 0.9rem; color: var(--color-text-primary); margin-bottom: 0.4rem;">Interfone da Portaria</div>
+                    <p style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">Apertou o botao, chamou o eletricista direto. Sem explicar o projeto de novo. Um toque, servico feito.</p>
+                </div>
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(249,115,22,0.3); border-radius: var(--radius-xl); padding: 1.25rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#f97316" stroke-width="1.5"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                        <span style="font-weight: 700; font-size: 0.75rem; color: #f97316; text-transform: uppercase; letter-spacing: 0.08em;">No Squad</span>
+                    </div>
+                    <div style="font-weight: 700; font-size: 0.9rem; color: var(--color-text-primary); margin-bottom: 0.4rem;">Slash Commands</div>
+                    <p style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">Atalhos <code style="background: rgba(255,255,255,0.06); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.65rem;">/Squad:skill</code> que acionam agente + task em um unico comando.</p>
+                </div>
+            </div>
+
+            <!-- POR DENTRO: skills/ -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                <div style="background: rgba(249,115,22,0.03); border: 1px dashed rgba(249,115,22,0.15); border-radius: var(--radius-lg); padding: 1.25rem;">
+                    <div style="font-family: var(--font-mono); font-size: 0.6rem; color: #f97316; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;">Botao do Interfone:</div>
+                    <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.8;">
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Botao:</span> "Chamar Eletricista"</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">O que faz:</span> Chama o profissional certo</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Ferramentas:</span> Ja leva as ferramentas dele</div>
+                        <div style="margin-bottom: 0.4rem;"><span style="color: var(--color-text-secondary);">Resultado:</span> Servico executado</div>
+                        <div style="margin-top: 0.6rem; padding-top: 0.6rem; border-top: 1px dashed rgba(255,255,255,0.06);"><span style="color: #f97316;">Vantagem:</span> <span style="color: var(--color-text-secondary);">Um toque, zero burocracia</span></div>
+                    </div>
+                </div>
+                <div style="background: #0D1117; border: 1px solid rgba(249,115,22,0.3); border-radius: var(--radius-lg); overflow: hidden;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(249,115,22,0.15); background: rgba(249,115,22,0.03);">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #FB923C; margin-left: 0.4rem;">skills/write-copy.md</span>
+                    </div>
+                    <div style="padding: 1rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 1.9; color: #8B949E;">
+                        <div><span style="color: #6A737D;">---</span></div>
+                        <div><span style="color: #FB923C;">name:</span> <span style="color: #A5D6FF;">write-copy</span></div>
+                        <div><span style="color: #FB923C;">description:</span> <span style="color: #A5D6FF;">|</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: #A5D6FF;">Escrever copy persuasiva</span></div>
+                        <div>&nbsp;</div>
+                        <div><span style="color: #FB923C;">model:</span> <span style="color: #A5D6FF;">sonnet</span></div>
+                        <div><span style="color: #FB923C;">allowed-tools:</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: #6A737D;">-</span> <span style="color: #A5D6FF;">Read</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: #6A737D;">-</span> <span style="color: #A5D6FF;">Write</span></div>
+                        <div style="padding-left: 1rem;"><span style="color: #6A737D;">-</span> <span style="color: #A5D6FF;">Grep</span></div>
+                        <div><span style="color: #6A737D;">---</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             VISAO COMPLETA: File Tree
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Visao Completa</div>
+            <h2 class="section-title">A Arvore de um Squad</h2>
+            <p class="section-desc">Tudo junto. Essa e a estrutura padrao que <strong style="color: var(--color-accent-gold);">todo squad segue</strong> &mdash; do mais simples ao mais complexo.</p>
+
+            <div style="background: #0D1117; border: 2px solid var(--color-accent-gold-30); border-radius: var(--radius-xl); overflow: hidden; box-shadow: 0 0 30px rgba(209,255,0,0.08);">
+                <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.7rem 1rem; border-bottom: 1px solid rgba(209,255,0,0.15); background: rgba(209,255,0,0.03);">
+                    <div style="display: flex; gap: 0.4rem;">
+                        <div style="width: 10px; height: 10px; border-radius: 50%; background: #FF5F56; opacity: 0.8;"></div>
+                        <div style="width: 10px; height: 10px; border-radius: 50%; background: #FFBD2E; opacity: 0.8;"></div>
+                        <div style="width: 10px; height: 10px; border-radius: 50%; background: #27C93F; opacity: 0.8;"></div>
+                    </div>
+                    <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-gold); margin-left: 0.5rem; text-transform: uppercase; letter-spacing: 0.1em;">Anatomia do Squad</span>
+                </div>
+                <div style="padding: 1.5rem; font-family: var(--font-mono); font-size: 0.78rem; line-height: 2.1;">
+                    <div><span style="color: var(--color-accent-gold); font-weight: 700;">squads/{nome-do-squad}/</span></div>
+                    <div style="padding-left: 1.25rem;">
+                        <span style="color: #6A737D;">&#9500;&#9472;&#9472;</span> <span style="color: var(--color-accent-gold); font-weight: 600;">config.yaml</span> <span style="color: #6A737D; font-size: 0.62rem; margin-left: 0.5rem;">Contrato + Planta da Obra</span>
+                    </div>
+                    <div style="padding-left: 1.25rem;">
+                        <span style="color: #6A737D;">&#9500;&#9472;&#9472;</span> <span style="color: #33ADFF; font-weight: 600;">agents/</span> <span style="color: #6A737D; font-size: 0.62rem; margin-left: 0.5rem;">Os Profissionais</span>
+                    </div>
+                    <div style="padding-left: 2.75rem;">
+                        <span style="color: #6A737D;">&#9500;&#9472;&#9472;</span> <span style="color: #8B949E;">mestre-de-obras.md</span> <span style="color: #6A737D; font-size: 0.55rem; margin-left: 0.5rem;">Chief &mdash; coordena o time</span>
+                    </div>
+                    <div style="padding-left: 2.75rem;">
+                        <span style="color: #6A737D;">&#9500;&#9472;&#9472;</span> <span style="color: #8B949E;">eletricista.md</span>
+                    </div>
+                    <div style="padding-left: 2.75rem;">
+                        <span style="color: #6A737D;">&#9492;&#9472;&#9472;</span> <span style="color: #8B949E;">encanador.md</span>
+                    </div>
+                    <div style="padding-left: 1.25rem;">
+                        <span style="color: #6A737D;">&#9500;&#9472;&#9472;</span> <span style="color: #4ADE80; font-weight: 600;">tasks/</span> <span style="color: #6A737D; font-size: 0.62rem; margin-left: 0.5rem;">Ordens de Servico</span>
+                    </div>
+                    <div style="padding-left: 2.75rem;">
+                        <span style="color: #6A737D;">&#9500;&#9472;&#9472;</span> <span style="color: #8B949E;">trocar-fiacao.md</span>
+                    </div>
+                    <div style="padding-left: 2.75rem;">
+                        <span style="color: #6A737D;">&#9492;&#9472;&#9472;</span> <span style="color: #8B949E;">instalar-box.md</span>
+                    </div>
+                    <div style="padding-left: 1.25rem;">
+                        <span style="color: #6A737D;">&#9500;&#9472;&#9472;</span> <span style="color: #60A5FA; font-weight: 600;">workflows/</span> <span style="color: #6A737D; font-size: 0.62rem; margin-left: 0.5rem;">Cronograma da Obra</span>
+                    </div>
+                    <div style="padding-left: 1.25rem;">
+                        <span style="color: #6A737D;">&#9500;&#9472;&#9472;</span> <span style="color: #FACC15; font-weight: 600;">checklists/</span> <span style="color: #6A737D; font-size: 0.62rem; margin-left: 0.5rem;">Vistoria</span>
+                    </div>
+                    <div style="padding-left: 1.25rem;">
+                        <span style="color: #6A737D;">&#9500;&#9472;&#9472;</span> <span style="color: #F472B6; font-weight: 600;">templates/</span> <span style="color: #6A737D; font-size: 0.62rem; margin-left: 0.5rem;">Catalogo de Acabamentos</span>
+                    </div>
+                    <div style="padding-left: 1.25rem;">
+                        <span style="color: #6A737D;">&#9500;&#9472;&#9472;</span> <span style="color: #22D3EE; font-weight: 600;">data/</span> <span style="color: #6A737D; font-size: 0.62rem; margin-left: 0.5rem;">Manuais Tecnicos</span>
+                    </div>
+                    <div style="padding-left: 1.25rem;">
+                        <span style="color: #6A737D;">&#9492;&#9472;&#9472;</span> <span style="color: #FB923C; font-weight: 600;">skills/</span> <span style="color: #6A737D; font-size: 0.62rem; margin-left: 0.5rem;">Interfone da Portaria</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             CENARIOS INTERATIVOS (Gamification)
+             ============================================ -->
+        <div class="scenario-slot" data-page="e3-anatomia-squad"></div>
+
+        <!-- ============================================
+             TAKEAWAY
+             ============================================ -->
+        <section class="flow-section">
+            <div class="insight-card" style="border: 2px solid var(--color-accent-gold-30);">
+                <h4>
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--color-accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    A grande sacada
+                </h4>
+                <p style="font-size: 0.85rem; color: var(--color-text-secondary); line-height: 1.7;">Um squad nao e um monte de arquivos jogados numa pasta. E uma <strong style="color: var(--color-accent-gold);">equipe completa, pronta pra qualquer obra</strong>. Cada peca tem funcao. Tire uma e o sistema falha. Coloque todas e voce tem uma fabrica que roda sozinha.</p>
+                <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <span style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.2rem 0.5rem; border-radius: 3px; background: var(--color-accent-gold-10); color: var(--color-accent-gold); border: 1px solid var(--color-accent-gold-30);">config</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.2rem 0.5rem; border-radius: 3px; background: rgba(0,153,255,0.1); color: #c084fc; border: 1px solid rgba(0,153,255,0.3);">agents</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.2rem 0.5rem; border-radius: 3px; background: rgba(34,197,94,0.1); color: #4ade80; border: 1px solid rgba(34,197,94,0.3);">tasks</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.2rem 0.5rem; border-radius: 3px; background: rgba(59,130,246,0.1); color: #60a5fa; border: 1px solid rgba(59,130,246,0.3);">workflows</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.2rem 0.5rem; border-radius: 3px; background: rgba(234,179,8,0.1); color: #facc15; border: 1px solid rgba(234,179,8,0.3);">checklists</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.2rem 0.5rem; border-radius: 3px; background: rgba(236,72,153,0.1); color: #f472b6; border: 1px solid rgba(236,72,153,0.3);">templates</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.2rem 0.5rem; border-radius: 3px; background: rgba(6,182,212,0.1); color: #22d3ee; border: 1px solid rgba(6,182,212,0.3);">data</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.2rem 0.5rem; border-radius: 3px; background: rgba(249,115,22,0.1); color: #fb923c; border: 1px solid rgba(249,115,22,0.3);">skills</span>
+                </div>
+            </div>
+        </section>
+
+    </div>

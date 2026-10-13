@@ -1,0 +1,140 @@
+<header class="hero">
+    <div class="hero-badge">Recursos &middot; Cohort Fundamentals</div>
+    <h1>Arquivos para <span>Download</span></h1>
+    <p>Kits, templates e ferramentas para acelerar sua jornada com o AIOS Framework.</p>
+</header>
+
+<div class="content">
+    <div class="section-label">Recursos disponíveis</div>
+    <div class="dl-grid" id="dl-grid"></div>
+</div>
+
+<script>
+(async () => {
+    const grid = document.getElementById('dl-grid');
+    if (!grid) return;
+
+    let items = [];
+    try {
+        const res = await fetch('/data/downloads.json');
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        items = await res.json();
+    } catch (e) {
+        grid.innerHTML = '<div class="dl-empty"><svg viewBox="0 0 24 24"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg><p>Nenhum arquivo disponível no momento.</p></div>';
+        return;
+    }
+
+    if (!items.length) {
+        grid.innerHTML = '<div class="dl-empty"><svg viewBox="0 0 24 24"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg><p>Nenhum arquivo disponível no momento.</p></div>';
+        return;
+    }
+
+    const ICONS = {
+        package: '<svg viewBox="0 0 24 24"><line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>',
+        file: '<svg viewBox="0 0 24 24"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>',
+        code: '<svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',
+        book: '<svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>',
+        tool: '<svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
+        folder: '<svg viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>',
+        template: '<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>'
+    };
+
+    items.forEach(item => {
+        const iconSvg = ICONS[item.icon] || ICONS.file;
+        const color = item.color || 'gold';
+
+        const statsHtml = item.stats && item.stats.length
+            ? item.stats.map(s =>
+                `<div class="dl-stat">
+                    <span class="dl-stat__value">${s.value}</span>
+                    <span class="dl-stat__label">${s.label}</span>
+                </div>`
+              ).join('')
+            : '';
+
+        const howToUseHtml = item.howToUse && item.howToUse.length
+            ? `<div class="dl-section" data-section>
+                <button class="dl-section__toggle" type="button">
+                    <span class="dl-section__toggle-left">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                        Como usar
+                    </span>
+                    <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="dl-section__content">
+                    <ol class="dl-section__list">
+                        ${item.howToUse.map(step => '<li>' + step + '</li>').join('')}
+                    </ol>
+                </div>
+               </div>`
+            : '';
+
+        const howToInstallHtml = item.howToInstall && item.howToInstall.length
+            ? `<div class="dl-section" data-section>
+                <button class="dl-section__toggle" type="button">
+                    <span class="dl-section__toggle-left">
+                        <svg viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                        Como instalar
+                    </span>
+                    <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                </button>
+                <div class="dl-section__content">
+                    <ol class="dl-section__list">
+                        ${item.howToInstall.map(step => '<li>' + step + '</li>').join('')}
+                    </ol>
+                </div>
+               </div>`
+            : '';
+
+        const sectionsHtml = (howToUseHtml || howToInstallHtml)
+            ? `<div class="dl-card__sections">${howToUseHtml}${howToInstallHtml}</div>`
+            : '';
+
+        const card = document.createElement('div');
+        card.className = `dl-card dl-card--${color}`;
+        card.innerHTML = `
+            <div class="dl-card__frame"></div>
+            <div class="dl-card__shine"></div>
+
+            <div class="dl-card__top">
+                <div class="dl-card__rating-block">
+                    <span class="dl-card__rating">${item.rating || '??'}</span>
+                    <span class="dl-card__rarity">${item.rarity || item.type}</span>
+                    <span class="dl-card__type-badge">${item.type}</span>
+                </div>
+            </div>
+
+            <div class="dl-card__icon-area">
+                <div class="dl-card__icon-circle">${iconSvg}</div>
+            </div>
+
+            <div class="dl-card__info">
+                <div class="dl-card__title">${item.title}</div>
+                <div class="dl-card__desc">${item.description}</div>
+            </div>
+
+            <div class="dl-card__divider"></div>
+
+            <div class="dl-card__stats">${statsHtml}</div>
+
+            ${sectionsHtml}
+
+            <div class="dl-card__footer">
+                <a class="dl-btn" href="downloads/${item.filename}" download>
+                    <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download
+                </a>
+                <span class="dl-size">${item.size}</span>
+            </div>`;
+
+        grid.appendChild(card);
+    });
+
+    // Toggle sections
+    document.querySelectorAll('[data-section] .dl-section__toggle').forEach(btn => {
+        btn.addEventListener('click', () => {
+            btn.closest('.dl-section').classList.toggle('open');
+        });
+    });
+})().catch(() => {});
+</script>

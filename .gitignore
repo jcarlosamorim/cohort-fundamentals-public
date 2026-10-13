@@ -1,0 +1,19 @@
+node_modules/
+.vercel/
+.env
+.env.*
+!.env.example
+!.env.daemon.example
+coverage/
+*.backup
+*.backup.gz
+*.dump
+.DS_Store
+
+# Private migration handoff files
+.migration/
+banco/
+privado/
+GUIA-DE-TRANSFERENCIA.md
+*transferencia-academia.zip
+*192-alunos.zip

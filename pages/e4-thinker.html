@@ -1,0 +1,519 @@
+<!-- E4 - Fluxo do Thinker -->
+
+    <!-- ============================================
+         HERO HEADER
+         ============================================ -->
+    <header class="hero">
+        <div class="hero-badge">Encontro 4 &bull; Fluxo Thinker</div>
+        <h1>O Fluxo do Thinker.<br><span>Da Visao ao Blueprint.</span></h1>
+        <p>O Thinker nao escreve codigo. Ele transforma uma ideia crua em documentos executaveis que o Maker usa para construir. Aqui voce aprende o fluxo completo: do brief ao sharding.</p>
+    </header>
+
+    <div class="content">
+
+        <!-- ============================================
+             SECTION 1: O Critico Entrou no Salao
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">O Inicio</div>
+            <h2 class="section-title">O Critico Entrou no Salao</h2>
+            <p class="section-desc">O Thinker nao cozinha &mdash; ele define <strong style="color: var(--color-text-secondary);">O QUE</strong> sera cozinhado e <strong style="color: var(--color-text-secondary);">POR QUE</strong>. Antes de qualquer linha de codigo, ele garante que a direcao esta certa.</p>
+
+            <!-- Metaphor card -->
+            <div style="background: rgba(0,153,255,0.04); border: 1px dashed rgba(0,153,255,0.25); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#0099FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.85rem; color: #33ADFF; margin-bottom: 0.3rem;">Na Cozinha: O Critico Gastronomico</div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.7;">
+                            O critico gastronomico nao pega uma panela. Ele analisa o mercado, define o conceito do restaurante, cria o cardapio e estabelece os padroes de qualidade. Sem ele, o chef cozinha sem direcao. Com ele, cada prato tem proposito.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal simulation -->
+            <div style="background: #0D1117; border: 1px solid rgba(0,153,255,0.2); border-radius: var(--radius-lg); overflow: hidden;">
+                <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(0,153,255,0.15); background: rgba(0,153,255,0.03);">
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                    <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #33ADFF; margin-left: 0.4rem;">Terminal &mdash; Thinker vs Sem Processo</span>
+                </div>
+                <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 2; color: #8B949E;">
+                    <div><span style="color: #33ADFF;">voce:</span> <span style="color: #A5D6FF;">Quero criar um app de delivery</span></div>
+                    <div>&nbsp;</div>
+                    <div style="color: #6A737D;">// Sem AIOS:</div>
+                    <div style="color: #6A737D;">// voce: Claude, faz um app de delivery</div>
+                    <div style="color: #6A737D;">// claude: OK, vou criar... [inventa requisitos na hora]</div>
+                    <div>&nbsp;</div>
+                    <div style="color: #4ADE80;">// Com AIOS:</div>
+                    <div><span style="color: #33ADFF;">voce:</span> <span style="color: #A5D6FF;">@pm Preciso planejar um app de delivery</span></div>
+                    <div><span style="color: #38BDF8;">@pm (Morgan):</span> <span style="color: #6A737D;">Seguindo task create-doc.md + template prd-tmpl.yaml</span></div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; Iniciando elicitacao estruturada...</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECTION 2: Passo 1 - O Brief
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Passo 1 de 5</div>
+            <h2 class="section-title">O Brief: A Ideia Vira Documento</h2>
+            <p class="section-desc">Toda grande criacao comeca com um brief. O <strong style="color: #38BDF8;">@pm (Morgan)</strong> faz elicitacao estruturada &mdash; perguntas que voce <strong style="color: var(--color-text-secondary);">NEM SABIA</strong> que precisava responder.</p>
+
+            <!-- Elicitation questions list -->
+            <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 0.75rem 1rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 800; color: #38BDF8; flex-shrink: 0;">01</span>
+                    <span style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.5;">Quem e o publico-alvo? <span style="color: var(--color-text-secondary);">(demografico, psicografico)</span></span>
+                </div>
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 0.75rem 1rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 800; color: #38BDF8; flex-shrink: 0;">02</span>
+                    <span style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.5;">Qual a dor principal que resolve?</span>
+                </div>
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 0.75rem 1rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 800; color: #38BDF8; flex-shrink: 0;">03</span>
+                    <span style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.5;">Qual a oferta? <span style="color: var(--color-text-secondary);">(o que o usuario recebe)</span></span>
+                </div>
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 0.75rem 1rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 800; color: #38BDF8; flex-shrink: 0;">04</span>
+                    <span style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.5;">Quais as metricas de sucesso?</span>
+                </div>
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 0.75rem 1rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 800; color: #38BDF8; flex-shrink: 0;">05</span>
+                    <span style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.5;">Quem sao os concorrentes?</span>
+                </div>
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 0.75rem 1rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 800; color: #38BDF8; flex-shrink: 0;">06</span>
+                    <span style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.5;">Qual o diferencial?</span>
+                </div>
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 0.75rem 1rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 800; color: #38BDF8; flex-shrink: 0;">07</span>
+                    <span style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.5;">Quais as restricoes tecnicas?</span>
+                </div>
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 0.75rem 1rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 800; color: #38BDF8; flex-shrink: 0;">08</span>
+                    <span style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.5;">Qual o prazo e orcamento?</span>
+                </div>
+            </div>
+
+            <!-- Insight box (gold) -->
+            <div style="background: rgba(209,255,0,0.05); border: 1px solid var(--color-accent-gold-30); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--color-accent-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.8rem; color: var(--color-accent-gold); margin-bottom: 0.3rem;">Repara</div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.7;">
+                            Voce iria lembrar de <strong style="color: var(--color-text-secondary);">TODAS</strong> essas perguntas sozinho? O template <code style="background: rgba(255,255,255,0.06); padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.65rem;">prd-tmpl.yaml</code> garante que nada e esquecido. O Thinker nao depende da memoria &mdash; depende do processo.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal simulation -->
+            <div style="background: #0D1117; border: 1px solid rgba(56,189,248,0.2); border-radius: var(--radius-lg); overflow: hidden;">
+                <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(56,189,248,0.15); background: rgba(56,189,248,0.03);">
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                    <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #38BDF8; margin-left: 0.4rem;">Terminal &mdash; @pm Elicitacao Estruturada</span>
+                </div>
+                <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 2; color: #8B949E;">
+                    <div><span style="color: #38BDF8;">@pm (Morgan):</span> <span style="color: #6A737D;">Elicitacao estruturada</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; Publico-alvo?</span></div>
+                    <div><span style="color: #33ADFF;">voce:</span> <span style="color: #A5D6FF;">Pessoas 25-35 que pedem comida por app</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; Dor principal?</span></div>
+                    <div><span style="color: #33ADFF;">voce:</span> <span style="color: #A5D6FF;">Apps existentes cobram taxa alta</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; Diferencial?</span></div>
+                    <div><span style="color: #33ADFF;">voce:</span> <span style="color: #A5D6FF;">Taxa zero para restaurantes pequenos</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #38BDF8;">@pm:</span> <span style="color: #4ADE80;">Contexto capturado. Gerando PRD...</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECTION 3: Passo 2 - O PRD
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Passo 2 de 5</div>
+            <h2 class="section-title">O PRD: O Blueprint do Produto</h2>
+            <p class="section-desc">PRD = Product Requirements Document. E o documento que diz <strong style="color: var(--color-text-secondary);">TUDO</strong> sobre o produto antes de uma unica linha de codigo. E o blueprint do arquiteto.</p>
+
+            <!-- PRD structure as vertical stack cards -->
+            <div style="display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; gap: 0.75rem; align-items: center; background: var(--color-bg-card); border: 1px solid rgba(56,189,248,0.15); border-left: 3px solid #38BDF8; border-radius: var(--radius-md); padding: 0.85rem 1rem;">
+                    <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(56,189,248,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 800; color: #38BDF8;">1</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary);">Overview</div>
+                        <div style="font-size: 0.68rem; color: var(--color-text-muted);">O que e, para quem, por que existe</div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 0.75rem; align-items: center; background: var(--color-bg-card); border: 1px solid rgba(56,189,248,0.15); border-left: 3px solid #38BDF8; border-radius: var(--radius-md); padding: 0.85rem 1rem;">
+                    <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(56,189,248,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 800; color: #38BDF8;">2</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary);">User Stories</div>
+                        <div style="font-size: 0.68rem; color: var(--color-text-muted);">Como usuario, eu quero X para Y</div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 0.75rem; align-items: center; background: var(--color-bg-card); border: 1px solid rgba(56,189,248,0.15); border-left: 3px solid #38BDF8; border-radius: var(--radius-md); padding: 0.85rem 1rem;">
+                    <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(56,189,248,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 800; color: #38BDF8;">3</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary);">Functional Requirements (FR)</div>
+                        <div style="font-size: 0.68rem; color: var(--color-text-muted);">O sistema DEVE fazer X</div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 0.75rem; align-items: center; background: var(--color-bg-card); border: 1px solid rgba(56,189,248,0.15); border-left: 3px solid #38BDF8; border-radius: var(--radius-md); padding: 0.85rem 1rem;">
+                    <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(56,189,248,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 800; color: #38BDF8;">4</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary);">Non-Functional Requirements (NFR)</div>
+                        <div style="font-size: 0.68rem; color: var(--color-text-muted);">Performance, seguranca, escalabilidade</div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 0.75rem; align-items: center; background: var(--color-bg-card); border: 1px solid rgba(56,189,248,0.15); border-left: 3px solid #38BDF8; border-radius: var(--radius-md); padding: 0.85rem 1rem;">
+                    <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(56,189,248,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 800; color: #38BDF8;">5</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary);">Constraints</div>
+                        <div style="font-size: 0.68rem; color: var(--color-text-muted);">Orcamento, prazo, restricoes tecnicas</div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 0.75rem; align-items: center; background: var(--color-bg-card); border: 1px solid rgba(56,189,248,0.15); border-left: 3px solid #38BDF8; border-radius: var(--radius-md); padding: 0.85rem 1rem;">
+                    <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(56,189,248,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 800; color: #38BDF8;">6</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary);">Metrics</div>
+                        <div style="font-size: 0.68rem; color: var(--color-text-muted);">Como medir sucesso</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal simulation -->
+            <div style="background: #0D1117; border: 1px solid rgba(56,189,248,0.2); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(56,189,248,0.15); background: rgba(56,189,248,0.03);">
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                    <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #38BDF8; margin-left: 0.4rem;">Terminal &mdash; @pm PRD Gerado</span>
+                </div>
+                <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 2; color: #8B949E;">
+                    <div><span style="color: #38BDF8;">@pm (Morgan):</span> <span style="color: #6A737D;">PRD gerado usando prd-tmpl.yaml</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #4ADE80;">&nbsp;&nbsp;&#x2713;</span> <span style="color: #A5D6FF;">Overview: App delivery taxa zero</span></div>
+                    <div><span style="color: #4ADE80;">&nbsp;&nbsp;&#x2713;</span> <span style="color: #A5D6FF;">12 User Stories mapeadas</span></div>
+                    <div><span style="color: #4ADE80;">&nbsp;&nbsp;&#x2713;</span> <span style="color: #A5D6FF;">8 Functional Requirements</span></div>
+                    <div><span style="color: #4ADE80;">&nbsp;&nbsp;&#x2713;</span> <span style="color: #A5D6FF;">5 Non-Functional Requirements</span></div>
+                    <div><span style="color: #4ADE80;">&nbsp;&nbsp;&#x2713;</span> <span style="color: #A5D6FF;">Constraints e metricas definidas</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; docs/prd/delivery-app-prd.md</span></div>
+                    <div>&nbsp;</div>
+                    <div style="color: #4ADE80; font-style: italic;">&nbsp;&nbsp;// Nada inventado. Tudo documentado.</div>
+                    <div style="color: #4ADE80; font-style: italic;">&nbsp;&nbsp;// Proximo passo: arquitetura.</div>
+                </div>
+            </div>
+
+            <!-- Scenario containers -->
+            <div class="scenario-container" data-scenario="e4-thinker-sequence-1"></div>
+            <div class="scenario-container" data-scenario="e4-thinker-multiselect-1"></div>
+        </section>
+
+        <!-- ============================================
+             SECTION 4: Passo 3 - Arquitetura
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Passo 3 de 5</div>
+            <h2 class="section-title">O @architect Define a Estrutura</h2>
+            <p class="section-desc">O <strong style="color: #33ADFF;">@architect (Aria)</strong> pega o PRD e transforma em decisoes tecnicas. O Thinker nao precisa entender codigo &mdash; precisa entender que o <strong style="color: var(--color-text-secondary);">PRD dirige TUDO</strong>.</p>
+
+            <!-- Flow: PRD -> @architect -> Architecture doc -->
+            <div style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
+                <div style="background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.2); border-radius: var(--radius-md); padding: 0.5rem 1rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; color: #38BDF8;">PRD</span>
+                </div>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--color-text-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <div style="background: rgba(0,153,255,0.08); border: 1px solid rgba(0,153,255,0.25); border-radius: var(--radius-md); padding: 0.5rem 1rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; color: #33ADFF;">@architect</span>
+                </div>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--color-text-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                <div style="background: rgba(0,153,255,0.08); border: 1px solid rgba(0,153,255,0.25); border-radius: var(--radius-md); padding: 0.5rem 1rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; color: #33ADFF;">arch.md</span>
+                </div>
+            </div>
+
+            <!-- What @architect defines -->
+            <div style="font-weight: 800; font-size: 0.8rem; color: var(--color-text-primary); margin-bottom: 0.75rem;">O que o @architect define:</div>
+            <div style="display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.6;">
+                    <div style="width: 6px; height: 6px; border-radius: 50%; background: #33ADFF; flex-shrink: 0;"></div>
+                    <span><strong style="color: var(--color-text-secondary);">Tech stack</strong> &mdash; qual tecnologia usar</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.6;">
+                    <div style="width: 6px; height: 6px; border-radius: 50%; background: #33ADFF; flex-shrink: 0;"></div>
+                    <span><strong style="color: var(--color-text-secondary);">Componentes</strong> do sistema</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.6;">
+                    <div style="width: 6px; height: 6px; border-radius: 50%; background: #33ADFF; flex-shrink: 0;"></div>
+                    <span><strong style="color: var(--color-text-secondary);">Integracoes</strong> externas</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.6;">
+                    <div style="width: 6px; height: 6px; border-radius: 50%; background: #33ADFF; flex-shrink: 0;"></div>
+                    <span><strong style="color: var(--color-text-secondary);">Estrutura de dados</strong></span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.6;">
+                    <div style="width: 6px; height: 6px; border-radius: 50%; background: #33ADFF; flex-shrink: 0;"></div>
+                    <span><strong style="color: var(--color-text-secondary);">Patterns</strong> de codigo</span>
+                </div>
+            </div>
+
+            <!-- Terminal simulation -->
+            <div style="background: #0D1117; border: 1px solid rgba(0,153,255,0.2); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(0,153,255,0.15); background: rgba(0,153,255,0.03);">
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                    <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #33ADFF; margin-left: 0.4rem;">Terminal &mdash; @architect Arquitetura</span>
+                </div>
+                <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 2; color: #8B949E;">
+                    <div><span style="color: #33ADFF;">voce:</span> <span style="color: #A5D6FF;">@architect Projeta a arquitetura do delivery app</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #33ADFF;">@architect (Aria):</span> <span style="color: #6A737D;">Analisando PRD...</span></div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; Template: front-end-architecture-tmpl.yaml</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; Tech Stack:</span> <span style="color: #A5D6FF;">Next.js + Supabase + Vercel</span></div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; 4 componentes:</span> <span style="color: #A5D6FF;">Auth, Orders, Payments, Admin</span></div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; Integracoes:</span> <span style="color: #A5D6FF;">Stripe, Google Maps API</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #4ADE80;">&nbsp;&nbsp;&#x2713;</span> <span style="color: #A5D6FF;">docs/architecture/delivery-app-arch.md</span></div>
+                    <div>&nbsp;</div>
+                    <div style="color: #33ADFF; font-style: italic;">&nbsp;&nbsp;// Decisoes tecnicas documentadas.</div>
+                    <div style="color: #33ADFF; font-style: italic;">&nbsp;&nbsp;// Nao improvisadas.</div>
+                </div>
+            </div>
+
+            <!-- Scenario container -->
+            <div class="scenario-container" data-scenario="e4-thinker-mc-1"></div>
+        </section>
+
+        <!-- ============================================
+             SECTION 5: Passo 4 - Sharding
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Passo 4 de 5</div>
+            <h2 class="section-title">Sharding: Quebrando em Pedacos Executaveis</h2>
+            <p class="section-desc">O PRD e grande demais para um agente so. O <strong style="color: var(--color-text-secondary);">Sharding</strong> quebra em pedacos que viram stories &mdash; prontas para o Maker executar.</p>
+
+            <!-- Visual: 1 PRD -> shard -> 8 Stories -->
+            <div style="text-align: center; margin-bottom: 1.25rem;">
+                <div style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(56,189,248,0.06); border: 1px solid rgba(56,189,248,0.2); border-radius: var(--radius-lg); padding: 0.6rem 1.2rem; margin-bottom: 0.75rem;">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    <span style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; color: #38BDF8;">1 PRD</span>
+                </div>
+            </div>
+            <div style="text-align: center; margin-bottom: 1.25rem;">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--color-accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                <div style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-gold); text-transform: uppercase; letter-spacing: 0.1em;">*shard-doc</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 1.5rem;">
+                <div style="background: rgba(34,197,94,0.04); border: 1px solid rgba(34,197,94,0.15); border-radius: var(--radius-md); padding: 0.6rem 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.65rem; font-weight: 800; color: #22c55e;">1.1</span>
+                    <span style="font-size: 0.68rem; color: var(--color-text-muted);">Setup + Auth</span>
+                </div>
+                <div style="background: rgba(34,197,94,0.04); border: 1px solid rgba(34,197,94,0.15); border-radius: var(--radius-md); padding: 0.6rem 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.65rem; font-weight: 800; color: #22c55e;">1.2</span>
+                    <span style="font-size: 0.68rem; color: var(--color-text-muted);">Restaurantes</span>
+                </div>
+                <div style="background: rgba(34,197,94,0.04); border: 1px solid rgba(34,197,94,0.15); border-radius: var(--radius-md); padding: 0.6rem 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.65rem; font-weight: 800; color: #22c55e;">1.3</span>
+                    <span style="font-size: 0.68rem; color: var(--color-text-muted);">Catalogo</span>
+                </div>
+                <div style="background: rgba(34,197,94,0.04); border: 1px solid rgba(34,197,94,0.15); border-radius: var(--radius-md); padding: 0.6rem 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.65rem; font-weight: 800; color: #22c55e;">1.4</span>
+                    <span style="font-size: 0.68rem; color: var(--color-text-muted);">Carrinho</span>
+                </div>
+                <div style="background: rgba(34,197,94,0.04); border: 1px solid rgba(34,197,94,0.15); border-radius: var(--radius-md); padding: 0.6rem 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.65rem; font-weight: 800; color: #22c55e;">1.5</span>
+                    <span style="font-size: 0.68rem; color: var(--color-text-muted);">Pagamento</span>
+                </div>
+                <div style="background: rgba(34,197,94,0.04); border: 1px solid rgba(34,197,94,0.15); border-radius: var(--radius-md); padding: 0.6rem 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.65rem; font-weight: 800; color: #22c55e;">1.6</span>
+                    <span style="font-size: 0.68rem; color: var(--color-text-muted);">Tracking</span>
+                </div>
+                <div style="background: rgba(34,197,94,0.04); border: 1px solid rgba(34,197,94,0.15); border-radius: var(--radius-md); padding: 0.6rem 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.65rem; font-weight: 800; color: #22c55e;">1.7</span>
+                    <span style="font-size: 0.68rem; color: var(--color-text-muted);">Painel Admin</span>
+                </div>
+                <div style="background: rgba(34,197,94,0.04); border: 1px solid rgba(34,197,94,0.15); border-radius: var(--radius-md); padding: 0.6rem 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.65rem; font-weight: 800; color: #22c55e;">1.8</span>
+                    <span style="font-size: 0.68rem; color: var(--color-text-muted);">Deploy</span>
+                </div>
+            </div>
+
+            <!-- Terminal simulation -->
+            <div style="background: #0D1117; border: 1px solid rgba(34,197,94,0.2); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(34,197,94,0.15); background: rgba(34,197,94,0.03);">
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                    <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #4ADE80; margin-left: 0.4rem;">Terminal &mdash; @pm Sharding</span>
+                </div>
+                <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 2; color: #8B949E;">
+                    <div><span style="color: #33ADFF;">voce:</span> <span style="color: #A5D6FF;">@pm Faca o sharding do PRD</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #38BDF8;">@pm (Morgan):</span> <span style="color: #6A737D;">Executando *shard-doc...</span></div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; Analisando 12 user stories e 8 FRs</span></div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; Agrupando por dominio...</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #4ADE80;">&nbsp;&nbsp;&#x2713;</span> <span style="color: #A5D6FF;">Story 1.1: Setup + Autenticacao</span></div>
+                    <div><span style="color: #4ADE80;">&nbsp;&nbsp;&#x2713;</span> <span style="color: #A5D6FF;">Story 1.2: Cadastro de Restaurantes</span></div>
+                    <div><span style="color: #4ADE80;">&nbsp;&nbsp;&#x2713;</span> <span style="color: #A5D6FF;">Story 1.3: Catalogo de Produtos</span></div>
+                    <div><span style="color: #4ADE80;">&nbsp;&nbsp;&#x2713;</span> <span style="color: #A5D6FF;">Story 1.4: Carrinho + Checkout</span></div>
+                    <div><span style="color: #4ADE80;">&nbsp;&nbsp;&#x2713;</span> <span style="color: #A5D6FF;">Story 1.5: Integracao Pagamento</span></div>
+                    <div><span style="color: #4ADE80;">&nbsp;&nbsp;&#x2713;</span> <span style="color: #A5D6FF;">Story 1.6: Tracking de Pedido</span></div>
+                    <div><span style="color: #4ADE80;">&nbsp;&nbsp;&#x2713;</span> <span style="color: #A5D6FF;">Story 1.7: Painel Admin</span></div>
+                    <div><span style="color: #4ADE80;">&nbsp;&nbsp;&#x2713;</span> <span style="color: #A5D6FF;">Story 1.8: Deploy + Monitoramento</span></div>
+                    <div>&nbsp;</div>
+                    <div style="color: #4ADE80; font-style: italic;">&nbsp;&nbsp;// 8 stories prontas para o Maker.</div>
+                    <div style="color: #4ADE80; font-style: italic;">&nbsp;&nbsp;// Cada uma executavel independente.</div>
+                </div>
+            </div>
+
+            <!-- Insight box (green) -->
+            <div style="background: rgba(34,197,94,0.05); border: 1px solid var(--color-accent-green-20); border-radius: var(--radius-lg); padding: 1.25rem;">
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--color-accent-green)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.8rem; color: var(--color-accent-green); margin-bottom: 0.3rem;">Onde Thinker e Maker se encontram</div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.7;">
+                            Aqui e onde Maker e Thinker se encontram. O Thinker cria o PRD e faz o sharding. O Maker pega as stories e executa o SDC. Um alimenta o outro.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECTION 6: O Ciclo Completo
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Passo 5 de 5</div>
+            <h2 class="section-title">O Spec Pipeline Completo</h2>
+            <p class="section-desc">O fluxo completo do Thinker em 5 passos. Da ideia crua ao blueprint executavel.</p>
+
+            <!-- Visual flow diagram (vertical, numbered step cards) -->
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+
+                <!-- Step 1: @pm - Elicitacao -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(56,189,248,0.1); border: 2px solid rgba(56,189,248,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: #38BDF8;">1</span>
+                    </div>
+                    <div style="flex: 1; background: var(--color-bg-card); border: 1px solid rgba(56,189,248,0.15); border-radius: var(--radius-lg); padding: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: #38BDF8;">@pm (Morgan)</span>
+                            <span style="font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.05); padding: 0.15rem 0.5rem; border-radius: 4px;">Elicitacao + Brief</span>
+                        </div>
+                        <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">= Pesquisa de mercado</div>
+                    </div>
+                </div>
+
+                <!-- Step 2: @pm - PRD -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(56,189,248,0.1); border: 2px solid rgba(56,189,248,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: #38BDF8;">2</span>
+                    </div>
+                    <div style="flex: 1; background: var(--color-bg-card); border: 1px solid rgba(56,189,248,0.15); border-radius: var(--radius-lg); padding: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: #38BDF8;">@pm (Morgan)</span>
+                            <span style="font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.05); padding: 0.15rem 0.5rem; border-radius: 4px;">PRD completo</span>
+                        </div>
+                        <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">= Cardapio definido</div>
+                    </div>
+                </div>
+
+                <!-- Step 3: @architect - Arquitetura -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(0,153,255,0.1); border: 2px solid rgba(0,153,255,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: #0099FF;">3</span>
+                    </div>
+                    <div style="flex: 1; background: var(--color-bg-card); border: 1px solid rgba(0,153,255,0.15); border-radius: var(--radius-lg); padding: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: #33ADFF;">@architect (Aria)</span>
+                            <span style="font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.05); padding: 0.15rem 0.5rem; border-radius: 4px;">Arquitetura tecnica</span>
+                        </div>
+                        <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">= Projeto do restaurante</div>
+                    </div>
+                </div>
+
+                <!-- Step 4: @pm - Sharding -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(34,197,94,0.1); border: 2px solid rgba(34,197,94,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: #22c55e;">4</span>
+                    </div>
+                    <div style="flex: 1; background: var(--color-bg-card); border: 1px solid rgba(34,197,94,0.15); border-radius: var(--radius-lg); padding: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: #22c55e;">@pm (Morgan)</span>
+                            <span style="font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.05); padding: 0.15rem 0.5rem; border-radius: 4px;">Sharding em stories</span>
+                        </div>
+                        <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">= Receitas individuais</div>
+                    </div>
+                </div>
+
+                <!-- Step 5: Entrega -> Maker -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--color-accent-gold-10); border: 2px solid var(--color-accent-gold-30); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: var(--color-accent-gold);">5</span>
+                    </div>
+                    <div style="flex: 1; background: var(--color-bg-card); border: 1px solid var(--color-accent-gold-20); border-radius: var(--radius-lg); padding: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: var(--color-accent-gold);">Entrega &#x2192; Maker</span>
+                            <span style="font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.05); padding: 0.15rem 0.5rem; border-radius: 4px;">Stories prontas para SDC</span>
+                        </div>
+                        <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">= Fichas tecnicas pro chef</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gold accent insight card -->
+            <div style="background: rgba(209,255,0,0.05); border: 1px solid var(--color-accent-gold-30); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--color-accent-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.8rem; color: var(--color-accent-gold); margin-bottom: 0.3rem;">O Ponto-Chave</div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.7;">
+                            O Thinker nao precisa escrever <strong style="color: var(--color-text-secondary);">UMA linha de codigo</strong>. Ele usa o AIOS para transformar visao em documentos executaveis. O Maker pega esses documentos e constroi. Cada um no que e melhor.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scenario container -->
+            <div class="scenario-container" data-scenario="e4-thinker-branching-1"></div>
+        </section>
+
+        <!-- ============================================
+             SECTION 7: CLOSING
+             ============================================ -->
+        <section class="flow-section" style="text-align: center; padding: 3rem 1.5rem;">
+            <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--color-text-primary); margin-bottom: 0.5rem; line-height: 1.3;">Da visao ao blueprint.<br>Com processo.</h2>
+            <p style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.7; max-width: 480px; margin: 0 auto;">
+                O Thinker planeja. O Maker constroi. O AIOS conecta os dois.<br>
+                <span style="color: var(--color-text-secondary);">Na proxima aula: Por Que PRD E a Alma.</span>
+            </p>
+        </section>
+
+    </div>

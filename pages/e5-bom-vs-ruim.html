@@ -1,0 +1,482 @@
+<!-- E5 - PRD Bom vs PRD Ruim -->
+
+    <!-- ============================================
+         HERO HEADER
+         ============================================ -->
+    <header class="hero">
+        <div class="hero-badge">Encontro 5 &bull; Por Que PRD E a Alma</div>
+        <h1>Receita completa vs "coloca farinha e da um jeito".<br><span>A diferenca entre um projeto que funciona e um que morre.</span></h1>
+        <p>Todo projeto que falha tem algo em comum: comecou sem um PRD decente. Aqui voce vai ver, lado a lado, o que separa um documento que guia do caos total.</p>
+    </header>
+
+    <div class="content">
+
+        <!-- ============================================
+             SECAO 1: A Anatomia de um PRD Bom
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">O Padrao Ouro</div>
+            <h2 class="section-title">10 Secoes de um PRD Que Funciona</h2>
+            <p class="section-desc">Um PRD bom responde TODAS as perguntas antes que alguem precise perguntar. Veja as secoes obrigatorias do template AIOS.</p>
+
+            <!-- 10 numbered cards -->
+            <div style="display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 2rem;">
+
+                <!-- 1. Problem Statement -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid rgba(209,255,0,0.15); border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(209,255,0,0.1); border: 2px solid rgba(209,255,0,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 800; color: var(--color-accent-gold);">1</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary);">Problem Statement</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6; margin-top: 0.2rem;">Qual dor resolve? Para quem? Se voce nao sabe responder isso em 1 frase, o projeto ja comecou errado.</div>
+                    </div>
+                </div>
+
+                <!-- 2. Solution Overview -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid rgba(209,255,0,0.15); border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(209,255,0,0.1); border: 2px solid rgba(209,255,0,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 800; color: var(--color-accent-gold);">2</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary);">Solution Overview</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6; margin-top: 0.2rem;">O que o sistema faz em 1 paragrafo. Se precisa de 3 paginas pra explicar, o escopo esta grande demais.</div>
+                    </div>
+                </div>
+
+                <!-- 3. User Persona / ICP -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid rgba(192,132,252,0.15); border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(0,153,255,0.1); border: 2px solid rgba(0,153,255,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 800; color: #0099FF;">3</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary);">User Persona / ICP</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6; margin-top: 0.2rem;">Quem vai usar? Idade, dor, desejo. Quanto mais especifico, melhor o Claude entende o contexto.</div>
+                    </div>
+                </div>
+
+                <!-- 4. Functional Requirements -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid rgba(56,189,248,0.15); border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(56,189,248,0.1); border: 2px solid rgba(56,189,248,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 800; color: #38BDF8;">4</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary);">Functional Requirements (FRs)</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6; margin-top: 0.2rem;">Lista de TUDO que o sistema FAZ. Cada FR vira uma task de desenvolvimento. Sem FRs = sem roadmap.</div>
+                    </div>
+                </div>
+
+                <!-- 5. Non-Functional Requirements -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid rgba(56,189,248,0.15); border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(56,189,248,0.1); border: 2px solid rgba(56,189,248,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 800; color: #38BDF8;">5</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary);">Non-Functional Requirements (NFRs)</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6; margin-top: 0.2rem;">Performance, seguranca, limites. O sistema funciona, mas aguenta 1000 usuarios ao mesmo tempo?</div>
+                    </div>
+                </div>
+
+                <!-- 6. Scope IN / OUT -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid rgba(34,197,94,0.15); border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(34,197,94,0.1); border: 2px solid rgba(34,197,94,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 800; color: #22c55e;">6</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary);">Scope IN / OUT</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6; margin-top: 0.2rem;">O que FAZ parte e o que NAO faz. O Scope OUT e tao importante quanto o IN &mdash; ele impede feature creep.</div>
+                    </div>
+                </div>
+
+                <!-- 7. Tech Stack -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid rgba(34,197,94,0.15); border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(34,197,94,0.1); border: 2px solid rgba(34,197,94,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 800; color: #22c55e;">7</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary);">Tech Stack</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6; margin-top: 0.2rem;">Quais tecnologias e por que. "Next.js porque precisa de SSR para SEO" &mdash; nao "Next.js porque todo mundo usa".</div>
+                    </div>
+                </div>
+
+                <!-- 8. Integrations -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid rgba(249,115,22,0.15); border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(249,115,22,0.1); border: 2px solid rgba(249,115,22,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 800; color: #f97316;">8</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary);">Integrations</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6; margin-top: 0.2rem;">APIs externas, tokens, autenticacao. Cada integracao precisa de: endpoint, auth method, rate limit, fallback.</div>
+                    </div>
+                </div>
+
+                <!-- 9. Data Model -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid rgba(249,115,22,0.15); border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(249,115,22,0.1); border: 2px solid rgba(249,115,22,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 800; color: #f97316;">9</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary);">Data Model</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6; margin-top: 0.2rem;">Que dados armazena e onde. Tabelas, campos, relacoes. Sem isso, o banco muda 5 vezes durante o dev.</div>
+                    </div>
+                </div>
+
+                <!-- 10. Success Metrics -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid rgba(209,255,0,0.15); border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(209,255,0,0.1); border: 2px solid rgba(209,255,0,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 800; color: var(--color-accent-gold);">10</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary);">Success Metrics</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6; margin-top: 0.2rem;">Como saber se deu certo? Numeros concretos: "50 leads/dia", "tempo de resposta < 200ms", "NPS > 8".</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Example Box: Prospect Hunter -->
+            <div style="background: rgba(209,255,0,0.04); border: 1px solid var(--color-accent-gold-30); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--color-accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    <span style="font-weight: 800; font-size: 0.8rem; color: var(--color-accent-gold); text-transform: uppercase; letter-spacing: 0.08em;">Exemplo Real: Prospect Hunter</span>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <div style="background: #0D1117; border: 1px solid rgba(209,255,0,0.2); border-radius: var(--radius-md); padding: 1rem;">
+                        <div style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-gold); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Problem Statement</div>
+                        <div style="font-family: var(--font-mono); font-size: 0.68rem; color: #8B949E; line-height: 1.8;">Prospectar clientes manualmente consome 4h/dia e gera leads desqualificados. O processo atual depende de busca manual no Instagram, sem criterio de qualificacao.</div>
+                    </div>
+                    <div style="background: #0D1117; border: 1px solid rgba(209,255,0,0.2); border-radius: var(--radius-md); padding: 1rem;">
+                        <div style="font-family: var(--font-mono); font-size: 0.6rem; color: #0099FF; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">User Persona / ICP</div>
+                        <div style="font-family: var(--font-mono); font-size: 0.68rem; color: #8B949E; line-height: 1.8;">Dono de agencia digital, 25-45 anos, fatura 20-100k/mes, precisa de leads B2B qualificados, nao tem equipe de SDR dedicada.</div>
+                    </div>
+                    <div style="background: #0D1117; border: 1px solid rgba(209,255,0,0.2); border-radius: var(--radius-md); padding: 1rem;">
+                        <div style="font-family: var(--font-mono); font-size: 0.6rem; color: #f97316; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Integration</div>
+                        <div style="font-family: var(--font-mono); font-size: 0.68rem; color: #8B949E; line-height: 1.8;">Apify API (token auth), Actor: apify/instagram-scraper<br>Rate limit: 100 requests/hora | Fallback: retry com backoff exponencial</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO 2: A Anatomia de um PRD Ruim
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">O Anti-Padrao</div>
+            <h2 class="section-title">Quando o PRD Mata o Projeto</h2>
+            <p class="section-desc">Um PRD ruim e pior que nenhum PRD &mdash; ele da a ilusao de planejamento enquanto esconde buracos fatais.</p>
+
+            <!-- Bad PRD examples -->
+            <div style="display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem;">
+
+                <!-- Bad: Problem -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: rgba(239,68,68,0.03); border: 1px solid rgba(239,68,68,0.2); border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(239,68,68,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </div>
+                    <div style="flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem;">
+                            <span style="font-weight: 700; font-size: 0.75rem; color: var(--color-text-primary);">Problem Statement</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.55rem; padding: 0.1rem 0.4rem; border-radius: 3px; background: rgba(239,68,68,0.1); color: #ef4444; font-weight: 700;">VAGO</span>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 0.68rem; color: #ef4444; opacity: 0.7; text-decoration: line-through; margin-bottom: 0.3rem;">"Quero um app legal"</div>
+                        <div style="font-size: 0.65rem; color: var(--color-text-muted); line-height: 1.5;">Nao define a dor, nao define o publico, nao define o resultado esperado. O Claude vai inventar tudo.</div>
+                    </div>
+                </div>
+
+                <!-- Bad: ICP -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: rgba(239,68,68,0.03); border: 1px solid rgba(239,68,68,0.2); border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(239,68,68,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </div>
+                    <div style="flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem;">
+                            <span style="font-weight: 700; font-size: 0.75rem; color: var(--color-text-primary);">User Persona / ICP</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.55rem; padding: 0.1rem 0.4rem; border-radius: 3px; background: rgba(239,68,68,0.1); color: #ef4444; font-weight: 700;">GENERICO</span>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 0.68rem; color: #ef4444; opacity: 0.7; text-decoration: line-through; margin-bottom: 0.3rem;">"Todo mundo"</div>
+                        <div style="font-size: 0.65rem; color: var(--color-text-muted); line-height: 1.5;">Quem e "todo mundo"? Quando voce constroi pra todos, nao resolve o problema de ninguem.</div>
+                    </div>
+                </div>
+
+                <!-- Bad: FRs -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: rgba(239,68,68,0.03); border: 1px solid rgba(239,68,68,0.2); border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(239,68,68,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </div>
+                    <div style="flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem;">
+                            <span style="font-weight: 700; font-size: 0.75rem; color: var(--color-text-primary);">Functional Requirements</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.55rem; padding: 0.1rem 0.4rem; border-radius: 3px; background: rgba(239,68,68,0.1); color: #ef4444; font-weight: 700;">CIRCULAR</span>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 0.68rem; color: #ef4444; opacity: 0.7; text-decoration: line-through; margin-bottom: 0.3rem;">"O app faz tudo que precisa"</div>
+                        <div style="font-size: 0.65rem; color: var(--color-text-muted); line-height: 1.5;">Isso nao diz NADA. O que e "tudo"? Sem lista explicita, cada pessoa entende diferente. O Claude tambem.</div>
+                    </div>
+                </div>
+
+                <!-- Bad: Scope -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: rgba(239,68,68,0.03); border: 1px solid rgba(239,68,68,0.2); border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(239,68,68,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </div>
+                    <div style="flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem;">
+                            <span style="font-weight: 700; font-size: 0.75rem; color: var(--color-text-primary);">Scope</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.55rem; padding: 0.1rem 0.4rem; border-radius: 3px; background: rgba(239,68,68,0.1); color: #ef4444; font-weight: 700;">AUSENTE</span>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 0.68rem; color: #ef4444; opacity: 0.7; text-decoration: line-through; margin-bottom: 0.3rem;">(Nao definido)</div>
+                        <div style="font-size: 0.65rem; color: var(--color-text-muted); line-height: 1.5;">Sem scope, o projeto cresce infinitamente. O Claude vai adicionar features que voce nao pediu. E voce nao vai saber onde parar.</div>
+                    </div>
+                </div>
+
+                <!-- Bad: Tech Stack -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: rgba(239,68,68,0.03); border: 1px solid rgba(239,68,68,0.2); border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(239,68,68,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </div>
+                    <div style="flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem;">
+                            <span style="font-weight: 700; font-size: 0.75rem; color: var(--color-text-primary);">Tech Stack</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.55rem; padding: 0.1rem 0.4rem; border-radius: 3px; background: rgba(239,68,68,0.1); color: #ef4444; font-weight: 700;">DELEGADO</span>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 0.68rem; color: #ef4444; opacity: 0.7; text-decoration: line-through; margin-bottom: 0.3rem;">"O que o Claude escolher"</div>
+                        <div style="font-size: 0.65rem; color: var(--color-text-muted); line-height: 1.5;">Voce esta deixando o Claude decidir a arquitetura do SEU projeto. Ele pode escolher algo que voce nao sabe manter.</div>
+                    </div>
+                </div>
+
+                <!-- Bad: Integrations -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: rgba(239,68,68,0.03); border: 1px solid rgba(239,68,68,0.2); border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="width: 28px; height: 28px; border-radius: 50%; background: rgba(239,68,68,0.1); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                    </div>
+                    <div style="flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.3rem;">
+                            <span style="font-weight: 700; font-size: 0.75rem; color: var(--color-text-primary);">Integrations</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.55rem; padding: 0.1rem 0.4rem; border-radius: 3px; background: rgba(239,68,68,0.1); color: #ef4444; font-weight: 700;">ADIADO</span>
+                        </div>
+                        <div style="font-family: var(--font-mono); font-size: 0.68rem; color: #ef4444; opacity: 0.7; text-decoration: line-through; margin-bottom: 0.3rem;">"Depois a gente ve"</div>
+                        <div style="font-size: 0.65rem; color: var(--color-text-muted); line-height: 1.5;">Quando "depois" chegar, voce descobre que precisa de token, auth, rate limit, e o codigo inteiro precisa mudar.</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO 3: Lado a Lado
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">A Comparacao</div>
+            <h2 class="section-title">Prospect Hunter: Bom vs Ruim</h2>
+            <p class="section-desc">O mesmo projeto. Duas abordagens. Resultados completamente diferentes.</p>
+
+            <!-- Two-column comparison -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+
+                <!-- LEFT: PRD Ruim -->
+                <div>
+                    <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.5rem;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                        <span style="font-weight: 800; font-size: 0.75rem; color: #ef4444; text-transform: uppercase; letter-spacing: 0.08em;">PRD Ruim</span>
+                    </div>
+                    <div style="background: #0D1117; border: 1px solid rgba(239,68,68,0.25); border-radius: var(--radius-lg); overflow: hidden;">
+                        <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(239,68,68,0.15); background: rgba(239,68,68,0.03);">
+                            <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                            <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                            <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                            <span style="font-family: var(--font-mono); font-size: 0.5rem; color: #ef4444; margin-left: 0.3rem;">prd-ruim.md</span>
+                        </div>
+                        <div style="padding: 1rem; font-family: var(--font-mono); font-size: 0.62rem; line-height: 1.9; color: #6A737D;">
+                            <div style="color: #A5D6FF;"># Prospect Hunter</div>
+                            <div>&nbsp;</div>
+                            <div>Quero um sistema que busca</div>
+                            <div>leads no Instagram.</div>
+                            <div>&nbsp;</div>
+                            <div>Usa Apify pra isso.</div>
+                            <div>&nbsp;</div>
+                            <div>Salva os dados em algum lugar.</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 0.5rem; font-size: 0.6rem; color: var(--color-text-muted); line-height: 1.5; padding: 0.5rem; background: rgba(239,68,68,0.04); border-radius: var(--radius-md);">
+                        <strong style="color: #ef4444;">3 linhas.</strong> Zero detalhe de auth, data model, scope, persona. O Claude vai adivinhar tudo.
+                    </div>
+                </div>
+
+                <!-- RIGHT: PRD Bom -->
+                <div>
+                    <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.5rem;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span style="font-weight: 800; font-size: 0.75rem; color: #22c55e; text-transform: uppercase; letter-spacing: 0.08em;">PRD Bom</span>
+                    </div>
+                    <div style="background: #0D1117; border: 1px solid rgba(34,197,94,0.25); border-radius: var(--radius-lg); overflow: hidden;">
+                        <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(34,197,94,0.15); background: rgba(34,197,94,0.03);">
+                            <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                            <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                            <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                            <span style="font-family: var(--font-mono); font-size: 0.5rem; color: #22c55e; margin-left: 0.3rem;">prd-bom.md</span>
+                        </div>
+                        <div style="padding: 1rem; font-family: var(--font-mono); font-size: 0.62rem; line-height: 1.9; color: #8B949E;">
+                            <div style="color: #A5D6FF;"># Prospect Hunter</div>
+                            <div>&nbsp;</div>
+                            <div style="color: #33ADFF;">## Problem</div>
+                            <div>Prospectar clientes B2B</div>
+                            <div>manualmente consome 4h/dia...</div>
+                            <div>&nbsp;</div>
+                            <div style="color: #33ADFF;">## ICP</div>
+                            <div>Donos de agencias digitais,</div>
+                            <div>25-45 anos, 20-100k/mes...</div>
+                            <div>&nbsp;</div>
+                            <div style="color: #33ADFF;">## Integrations</div>
+                            <div><span style="color: #4ADE80;">-</span> Apify: Actor instagram-scraper</div>
+                            <div><span style="color: #4ADE80;">-</span> Auth: API Token via env APIFY_TOKEN</div>
+                            <div><span style="color: #4ADE80;">-</span> Rate limit: 100 req/hora</div>
+                            <div>&nbsp;</div>
+                            <div style="color: #33ADFF;">## Data Model</div>
+                            <div><span style="color: #4ADE80;">-</span> leads: name, handle, followers,</div>
+                            <div>&nbsp;&nbsp;bio, email, score</div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 0.5rem; font-size: 0.6rem; color: var(--color-text-muted); line-height: 1.5; padding: 0.5rem; background: rgba(34,197,94,0.04); border-radius: var(--radius-md);">
+                        <strong style="color: #22c55e;">Cada decisao ja tomada.</strong> O Claude sabe exatamente o que construir, com que, e os limites.
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Why this matters callout -->
+            <div style="background: rgba(209,255,0,0.05); border: 1px solid var(--color-accent-gold-30); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--color-accent-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.8rem; color: var(--color-accent-gold); margin-bottom: 0.3rem;">Por Que Isso Importa</div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.7;">
+                            O PRD ruim tem <strong style="color: var(--color-text-secondary);">3 linhas</strong> e parece rapido. O PRD bom tem <strong style="color: var(--color-text-secondary);">47 decisoes</strong> e parece trabalhoso. Mas o ruim gera 20 horas de retrabalho. O bom gera um projeto que funciona de primeira. <strong style="color: var(--color-text-secondary);">O trabalho e o mesmo &mdash; a questao e QUANDO voce faz.</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO 4: Os 7 Erros Fatais
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Os Erros</div>
+            <h2 class="section-title">7 Erros Que Matam Projetos Antes de Comecar</h2>
+            <p class="section-desc">Se voce reconhecer algum desses no seu projeto, pare e conserte ANTES de escrever codigo.</p>
+
+            <div style="display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 2rem;">
+
+                <!-- Error 1: FATAL — Sem persona -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid rgba(239,68,68,0.2); border-left: 3px solid #ef4444; border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: var(--color-text-muted);">1</span>
+                        <span style="font-family: var(--font-mono); font-size: 0.5rem; font-weight: 800; padding: 0.15rem 0.4rem; border-radius: 3px; background: rgba(239,68,68,0.15); color: #ef4444; letter-spacing: 0.05em;">FATAL</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary); margin-bottom: 0.2rem;">Sem persona definida</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6;">Voce constroi pra ninguem. Sem saber QUEM usa, toda decisao de UX, copy e funcionalidade e um chute no escuro.</div>
+                    </div>
+                </div>
+
+                <!-- Error 2: FATAL — Scope infinito -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid rgba(239,68,68,0.2); border-left: 3px solid #ef4444; border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: var(--color-text-muted);">2</span>
+                        <span style="font-family: var(--font-mono); font-size: 0.5rem; font-weight: 800; padding: 0.15rem 0.4rem; border-radius: 3px; background: rgba(239,68,68,0.15); color: #ef4444; letter-spacing: 0.05em;">FATAL</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary); margin-bottom: 0.2rem;">Scope infinito</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6;">O projeto nunca termina. Sem Scope OUT, cada "e se a gente adicionasse..." vira uma nova feature. O projeto cresce ate morrer.</div>
+                    </div>
+                </div>
+
+                <!-- Error 3: CRITICO — Sem NFRs -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid rgba(249,115,22,0.2); border-left: 3px solid #f97316; border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: var(--color-text-muted);">3</span>
+                        <span style="font-family: var(--font-mono); font-size: 0.5rem; font-weight: 800; padding: 0.15rem 0.4rem; border-radius: 3px; background: rgba(249,115,22,0.15); color: #f97316; letter-spacing: 0.05em;">CRITICO</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary); margin-bottom: 0.2rem;">Sem NFRs</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6;">Funciona no teste, quebra em producao. Sem limites de performance, seguranca e escalabilidade, voce so descobre o problema quando esta ao vivo.</div>
+                    </div>
+                </div>
+
+                <!-- Error 4: CRITICO — Integracoes vagas -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid rgba(249,115,22,0.2); border-left: 3px solid #f97316; border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: var(--color-text-muted);">4</span>
+                        <span style="font-family: var(--font-mono); font-size: 0.5rem; font-weight: 800; padding: 0.15rem 0.4rem; border-radius: 3px; background: rgba(249,115,22,0.15); color: #f97316; letter-spacing: 0.05em;">CRITICO</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary); margin-bottom: 0.2rem;">Integracoes vagas</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6;">Descobre na hora que precisa de token, auth, rate limit. O dev para no meio do codigo pra pesquisar API docs. Horas perdidas.</div>
+                    </div>
+                </div>
+
+                <!-- Error 5: ALTO — Requisitos ambiguos -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid rgba(234,179,8,0.2); border-left: 3px solid #eab308; border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: var(--color-text-muted);">5</span>
+                        <span style="font-family: var(--font-mono); font-size: 0.5rem; font-weight: 800; padding: 0.15rem 0.4rem; border-radius: 3px; background: rgba(234,179,8,0.15); color: #eab308; letter-spacing: 0.05em;">ALTO</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary); margin-bottom: 0.2rem;">Requisitos ambiguos</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6;">Cada pessoa entende diferente. "O sistema deve ser rapido" &mdash; rapido e 100ms ou 5s? Sem numero, sem acordo.</div>
+                    </div>
+                </div>
+
+                <!-- Error 6: ALTO — Sem success metrics -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid rgba(234,179,8,0.2); border-left: 3px solid #eab308; border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: var(--color-text-muted);">6</span>
+                        <span style="font-family: var(--font-mono); font-size: 0.5rem; font-weight: 800; padding: 0.15rem 0.4rem; border-radius: 3px; background: rgba(234,179,8,0.15); color: #eab308; letter-spacing: 0.05em;">ALTO</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary); margin-bottom: 0.2rem;">Sem success metrics</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6;">Nunca sabe se deu certo. O projeto "termina" mas ninguem sabe se atingiu o objetivo. Sem metrica, sem aprendizado.</div>
+                    </div>
+                </div>
+
+                <!-- Error 7: MEDIO — Sem data model -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid rgba(56,189,248,0.2); border-left: 3px solid #38BDF8; border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.25rem; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: var(--color-text-muted);">7</span>
+                        <span style="font-family: var(--font-mono); font-size: 0.5rem; font-weight: 800; padding: 0.15rem 0.4rem; border-radius: 3px; background: rgba(56,189,248,0.15); color: #38BDF8; letter-spacing: 0.05em;">MEDIO</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary); margin-bottom: 0.2rem;">Sem data model</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6;">Muda o banco 5 vezes. Sem definir tabelas e campos antes, cada nova feature reestrutura tudo. Migracao vira pesadelo.</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============================================
+             KEY INSIGHT
+             ============================================ -->
+        <div class="insight-card">
+            <h4>
+                <span class="icon" style="color:var(--color-accent-gold)"><svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
+                Insight da Aula
+            </h4>
+            <p>O PRD nao e burocracia. E a diferenca entre pedir "faz um app" e entregar um blueprint com <strong>47 decisoes ja tomadas</strong>.<br><br>
+            Cada decisao no PRD e uma decisao que voce <strong>NAO precisa tomar durante o desenvolvimento</strong>. E uma pergunta que o Claude <strong>NAO precisa adivinhar</strong>.<br><br>
+            Receita completa = prato perfeito.<br>
+            "Coloca farinha e da um jeito" = desastre garantido.</p>
+        </div>
+
+        <!-- ============================================
+             CLOSING
+             ============================================ -->
+        <section class="flow-section" style="text-align: center; padding: 3rem 1.5rem;">
+            <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--color-text-primary); margin-bottom: 0.5rem; line-height: 1.3;">Receita completa.<br>Resultado previsivel.</h2>
+            <p style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.7; max-width: 480px; margin: 0 auto;">
+                O PRD e a alma do seu projeto. Sem ele, voce esta construindo no escuro.<br>
+                <span style="color: var(--color-text-secondary);">Agora voce sabe como separar um PRD bom de um ruim.</span>
+            </p>
+        </section>
+
+    </div>

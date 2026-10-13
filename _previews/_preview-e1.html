@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview E1 - Fundacao</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/tokens.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <style>
+        body { background: var(--color-bg-primary); color: var(--color-text-primary); }
+    </style>
+</head>
+<body>
+    <div id="page-content"></div>
+    <script>
+        fetch('e1-fundacao.html')
+            .then(r => r.text())
+            .then(html => {
+                document.getElementById('page-content').innerHTML = html;
+                // Run inline scripts
+                document.querySelectorAll('#page-content script').forEach(s => {
+                    var ns = document.createElement('script');
+                    ns.textContent = s.textContent;
+                    document.body.appendChild(ns);
+                });
+                // Init OS selector
+                if (typeof setOS === 'function') setOS('mac');
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+QUIZ DE CERTIFICACAO — AIOS COHORT FUNDAMENTALS (E1 a E8)
+==========================================================
+
+Responda 8 perguntas de multipla escolha — uma por encontro.
+Acerte pelo menos 6 (75%) para obter seu certificado de conclusao.
+
+----------------------------------------------------------
+
+PERGUNTA 1 — Encontro 1: Setup & Fundamentos
+
+Qual arquivo garante que o Claude Code "lembre" do contexto do seu projeto entre sessoes?
+
+A) package.json
+B) CLAUDE.md
+C) .gitignore
+D) config.yaml
+
+----------------------------------------------------------
+
+PERGUNTA 2 — Encontro 2: Liberdade e Empoderamento
+
+Qual e a formula de transferencia de conhecimento apresentada no Encontro 2?
+
+A) Input + Output = Resultado
+B) Emissor x Canal x Receptor
+C) Dados + Modelo = Insight
+D) Prompt + Contexto = Resposta
+
+----------------------------------------------------------
+
+PERGUNTA 3 — Encontro 3: Squad e Vida
+
+No Encontro 3, um squad de IA e comparado a qual tipo de equipe?
+
+A) Time de futebol
+B) Orquestra musical
+C) Equipe de reforma de casa
+D) Equipe medica de cirurgia
+
+----------------------------------------------------------
+
+PERGUNTA 4 — Encontro 4: Maker ou Thinker
+
+Qual e a principal diferenca entre o perfil Maker e o Thinker no AIOS?
+
+A) Maker usa Windows, Thinker usa Mac
+B) Maker abre o terminal e constroi, Thinker planeja e documenta
+C) Maker trabalha sozinho, Thinker trabalha em equipe
+D) Maker usa Python, Thinker usa JavaScript
+
+----------------------------------------------------------
+
+PERGUNTA 5 — Encontro 5: PRD e a Alma
+
+No caso Boeing 737 MAX do Encontro 5, qual foi a causa raiz dos dois desastres que mataram 346 pessoas?
+
+A) Falha mecanica no motor
+B) Erro de pilotagem
+C) Documentacao omitida sobre o sistema MCAS
+D) Condicoes climaticas adversas
+
+----------------------------------------------------------
+
+PERGUNTA 6 — Encontro 6: Transformando o Velho em Novo
+
+Qual processo do AIOS e usado para mapear e profissionalizar um projeto existente de vibecoding?
+
+A) Greenfield Discovery
+B) Brownfield Discovery
+C) Code Review Automatizado
+D) Sprint Planning
+
+----------------------------------------------------------
+
+PERGUNTA 7 — Encontro 7: Primeira Task AIOS
+
+No Encontro 7, qual e o primeiro passo antes de criar uma task AIOS do zero?
+
+A) Escrever o codigo da task
+B) Fazer deploy na Vercel
+C) Criar um mini-projeto com stories e identificar o gap
+D) Configurar o pipeline de CI/CD
+
+----------------------------------------------------------
+
+PERGUNTA 8 — Encontro 8: A Fabrica — Projeto Final
+
+Quais sao as 8 pecas que compoem a estrutura completa de um squad AIOS?
+
+A) HTML, CSS, JS, API, DB, Auth, Deploy, Tests
+B) config.yaml, agents, tasks, workflows, checklists, templates, data, skills
+C) Frontend, Backend, Database, Cache, Queue, Storage, CDN, DNS
+D) PRD, Epic, Story, Task, Test, Review, Deploy, Monitor
+
+----------------------------------------------------------
+
+GABARITO
+
+1) B    2) B    3) C    4) B    5) C    6) B    7) C    8) B
+
+Nota minima para certificado: 6 acertos (75%)

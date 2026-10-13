@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vincular WhatsApp — AIOS Cohort Fundamentals</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #050505;
+      --bg2: #0F0F11;
+      --card: #1C1E19;
+      --border: rgba(156, 156, 156, 0.15);
+      --gold: #D1FF00;
+      --green: #22C55E;
+      --red: #EF4444;
+      --text: rgb(244, 244, 232);
+      --text2: rgba(244, 244, 232, 0.7);
+      --muted: rgba(244, 244, 232, 0.4);
+      --mono: 'IBM Plex Mono', monospace;
+      --sans: 'Manrope', -apple-system, sans-serif;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* ── Header ────────────────────────────────────── */
+    .header {
+      text-align: center;
+      padding: 2.5rem 0 2rem;
+    }
+
+    .header__badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: rgba(209,255,0,0.1);
+      border: 1px solid rgba(209,255,0,0.2);
+      border-radius: 100px;
+      padding: 0.3rem 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .header h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .header p {
+      color: var(--text2);
+      font-size: 0.95rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* ── Search ────────────────────────────────────── */
+    .search-box {
+      position: relative;
+      margin-bottom: 1rem;
+    }
+
+    .search-box svg {
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      pointer-events: none;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.7rem 0.75rem 0.7rem 2.5rem;
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      color: var(--text);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .search-input::placeholder { color: var(--muted); }
+    .search-input:focus { border-color: var(--gold); }
+
+    /* ── Stats bar ─────────────────────────────────── */
+    .stats {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .stats span strong {
+      color: var(--text2);
+      font-weight: 600;
+    }
+
+    .stats .done { color: var(--green); }
+
+    /* ── List ──────────────────────────────────────── */
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 240px 80px;
+      gap: 0.75rem;
+      align-items: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 0.6rem 0.85rem;
+      transition: border-color 0.15s;
+    }
+
+    .row:hover { border-color: #3A3A3A; }
+    .row--saved { border-color: rgba(34,197,94,0.25); }
+
+    .row__email {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--text);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .row__input {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--text);
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 0.35rem;
+      padding: 0.4rem 0.5rem;
+      outline: none;
+      width: 100%;
+      transition: border-color 0.15s;
+    }
+
+    .row__input::placeholder { color: var(--muted); font-size: 0.75rem; }
+    .row__input:focus { border-color: var(--gold); }
+    .row__input--saved {
+      border-color: rgba(34,197,94,0.3);
+      background: rgba(34,197,94,0.05);
+    }
+
+    /* ── Phone group ──────────────────────────────── */
+    .phone-group {
+      display: flex;
+      position: relative;
+      min-width: 0;
+    }
+
+    .country-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      padding: 0.4rem 0.4rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-right: none;
+      border-radius: 0.35rem 0 0 0.35rem;
+      cursor: pointer;
+      white-space: nowrap;
+      font-size: 0.8rem;
+      color: var(--text2);
+      font-family: var(--mono);
+      transition: border-color 0.15s;
+      flex-shrink: 0;
+    }
+
+    .country-btn:hover { border-color: var(--gold); }
+    .country-btn .flag { font-size: 1rem; line-height: 1; }
+    .country-btn .dial { font-size: 0.7rem; }
+    .country-btn .chevron {
+      width: 0; height: 0;
+      border-left: 3px solid transparent;
+      border-right: 3px solid transparent;
+      border-top: 4px solid var(--muted);
+      margin-left: 0.1rem;
+    }
+
+    .country-btn--saved {
+      border-color: rgba(34,197,94,0.3);
+      background: rgba(34,197,94,0.05);
+      pointer-events: none;
+    }
+
+    .phone-group .row__input {
+      border-radius: 0 0.35rem 0.35rem 0;
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* ── Country dropdown ─────────────────────────── */
+    .country-dropdown {
+      position: fixed;
+      width: 260px;
+      max-height: 280px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      z-index: 999;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .country-dropdown.open { display: flex; }
+
+    .country-search {
+      width: 100%;
+      padding: 0.55rem 0.65rem;
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      color: var(--text);
+      background: var(--bg2);
+      border: none;
+      border-bottom: 1px solid var(--border);
+      outline: none;
+    }
+
+    .country-search::placeholder { color: var(--muted); }
+
+    .country-list {
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .country-opt {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 0.65rem;
+      cursor: pointer;
+      font-size: 0.8rem;
+      color: var(--text2);
+      transition: background 0.1s;
+    }
+
+    .country-opt:hover {
+      background: rgba(209,255,0,0.1);
+      color: var(--text);
+    }
+
+    .country-opt .flag { font-size: 1.1rem; }
+    .country-opt .name { flex: 1; }
+    .country-opt .dial {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .row__btn {
+      padding: 0.4rem 0.6rem;
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: none;
+      border-radius: 0.35rem;
+      cursor: pointer;
+      transition: opacity 0.15s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+    }
+
+    .row__btn:hover { opacity: 0.85; }
+    .row__btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    .row__btn--save {
+      background: var(--gold);
+      color: #000;
+    }
+
+    .row__btn--done {
+      background: rgba(34,197,94,0.15);
+      color: var(--green);
+      cursor: default;
+    }
+
+    /* ── Toast ─────────────────────────────────────── */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      padding: 0.7rem 1.25rem;
+      border-radius: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 100;
+      pointer-events: none;
+    }
+
+    .toast--visible {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    .toast--ok {
+      background: rgba(34,197,94,0.15);
+      border: 1px solid rgba(34,197,94,0.3);
+      color: var(--green);
+    }
+
+    .toast--err {
+      background: rgba(239,68,68,0.15);
+      border: 1px solid rgba(239,68,68,0.3);
+      color: var(--red);
+    }
+
+    /* ── Loading ────────────────────────────────────── */
+    .loading {
+      text-align: center;
+      padding: 3rem 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .spinner {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      border: 2px solid var(--border);
+      border-top-color: var(--gold);
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+      margin-bottom: 0.75rem;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Empty state ───────────────────────────────── */
+    .empty {
+      text-align: center;
+      padding: 2rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    /* ── Footer ────────────────────────────────────── */
+    .footer {
+      text-align: center;
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.75rem;
+    }
+
+    /* ── Responsive ────────────────────────────────── */
+    @media (max-width: 600px) {
+      .row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+      .row__email { font-size: 0.75rem; }
+      .container { padding: 1.5rem 1rem 3rem; }
+      .header h1 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header class="header">
+    <div class="header__badge">AIOS Cohort Fundamentals</div>
+    <h1>Vincular WhatsApp</h1>
+    <p>Encontre seu email na lista abaixo e informe seu numero do WhatsApp para conectarmos suas mensagens do grupo ao seu perfil.</p>
+  </header>
+
+  <div class="search-box">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input class="search-input" id="search" type="text" placeholder="Buscar seu email...">
+  </div>
+
+  <div class="stats" id="stats"></div>
+  <div class="list" id="list">
+    <div class="loading">
+      <div class="spinner"></div>
+      <div>Carregando alunos...</div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    Selecione seu pais na bandeira e informe DDD + numero, sem espacos.<br>
+    Exemplo Brasil: <strong style="color:var(--text2);font-family:var(--mono)">11999999999</strong>
+  </footer>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function() {
+  var API = '/api/whatsapp-link';
+  var listEl = document.getElementById('list');
+  var searchEl = document.getElementById('search');
+  var statsEl = document.getElementById('stats');
+  var toastEl = document.getElementById('toast');
+  var allUsers = [];
+  var toastTimer = null;
+
+  // ── Countries ─────────────────────────────────────
+  var countries = [
+    { code:'BR', dial:'55', flag:'\u{1F1E7}\u{1F1F7}', name:'Brasil' },
+    { code:'US', dial:'1', flag:'\u{1F1FA}\u{1F1F8}', name:'Estados Unidos' },
+    { code:'PT', dial:'351', flag:'\u{1F1F5}\u{1F1F9}', name:'Portugal' },
+    { code:'AR', dial:'54', flag:'\u{1F1E6}\u{1F1F7}', name:'Argentina' },
+    { code:'CO', dial:'57', flag:'\u{1F1E8}\u{1F1F4}', name:'Col\u00f4mbia' },
+    { code:'MX', dial:'52', flag:'\u{1F1F2}\u{1F1FD}', name:'M\u00e9xico' },
+    { code:'CL', dial:'56', flag:'\u{1F1E8}\u{1F1F1}', name:'Chile' },
+    { code:'PE', dial:'51', flag:'\u{1F1F5}\u{1F1EA}', name:'Peru' },
+    { code:'UY', dial:'598', flag:'\u{1F1FA}\u{1F1FE}', name:'Uruguai' },
+    { code:'PY', dial:'595', flag:'\u{1F1F5}\u{1F1FE}', name:'Paraguai' },
+    { code:'EC', dial:'593', flag:'\u{1F1EA}\u{1F1E8}', name:'Equador' },
+    { code:'BO', dial:'591', flag:'\u{1F1E7}\u{1F1F4}', name:'Bol\u00edvia' },
+    { code:'VE', dial:'58', flag:'\u{1F1FB}\u{1F1EA}', name:'Venezuela' },
+    { code:'GB', dial:'44', flag:'\u{1F1EC}\u{1F1E7}', name:'Reino Unido' },
+    { code:'ES', dial:'34', flag:'\u{1F1EA}\u{1F1F8}', name:'Espanha' },
+    { code:'FR', dial:'33', flag:'\u{1F1EB}\u{1F1F7}', name:'Fran\u00e7a' },
+    { code:'DE', dial:'49', flag:'\u{1F1E9}\u{1F1EA}', name:'Alemanha' },
+    { code:'IT', dial:'39', flag:'\u{1F1EE}\u{1F1F9}', name:'It\u00e1lia' },
+    { code:'CA', dial:'1', flag:'\u{1F1E8}\u{1F1E6}', name:'Canad\u00e1' },
+    { code:'AU', dial:'61', flag:'\u{1F1E6}\u{1F1FA}', name:'Austr\u00e1lia' },
+    { code:'JP', dial:'81', flag:'\u{1F1EF}\u{1F1F5}', name:'Jap\u00e3o' },
+    { code:'IN', dial:'91', flag:'\u{1F1EE}\u{1F1F3}', name:'\u00cdndia' },
+    { code:'IL', dial:'972', flag:'\u{1F1EE}\u{1F1F1}', name:'Israel' },
+    { code:'AE', dial:'971', flag:'\u{1F1E6}\u{1F1EA}', name:'Emirados \u00c1rabes' },
+    { code:'ZA', dial:'27', flag:'\u{1F1FF}\u{1F1E6}', name:'\u00c1frica do Sul' },
+    { code:'AO', dial:'244', flag:'\u{1F1E6}\u{1F1F4}', name:'Angola' },
+    { code:'MZ', dial:'258', flag:'\u{1F1F2}\u{1F1FF}', name:'Mo\u00e7ambique' },
+    { code:'CR', dial:'506', flag:'\u{1F1E8}\u{1F1F7}', name:'Costa Rica' },
+    { code:'PA', dial:'507', flag:'\u{1F1F5}\u{1F1E6}', name:'Panam\u00e1' },
+    { code:'DO', dial:'1', flag:'\u{1F1E9}\u{1F1F4}', name:'Rep. Dominicana' },
+    { code:'CH', dial:'41', flag:'\u{1F1E8}\u{1F1ED}', name:'Su\u00ed\u00e7a' },
+    { code:'NL', dial:'31', flag:'\u{1F1F3}\u{1F1F1}', name:'Holanda' },
+    { code:'IE', dial:'353', flag:'\u{1F1EE}\u{1F1EA}', name:'Irlanda' },
+    { code:'SE', dial:'46', flag:'\u{1F1F8}\u{1F1EA}', name:'Su\u00e9cia' },
+    { code:'NZ', dial:'64', flag:'\u{1F1F3}\u{1F1FF}', name:'Nova Zel\u00e2ndia' },
+    { code:'KR', dial:'82', flag:'\u{1F1F0}\u{1F1F7}', name:'Coreia do Sul' }
+  ];
+
+  var defaultCountry = countries[0];
+
+  // ── Shared dropdown ───────────────────────────────
+  var dropdown = document.createElement('div');
+  dropdown.className = 'country-dropdown';
+  dropdown.innerHTML = '<input class="country-search" type="text" placeholder="Buscar pa\u00eds...">'
+    + '<div class="country-list"></div>';
+  document.body.appendChild(dropdown);
+
+  var ddSearch = dropdown.querySelector('.country-search');
+  var ddList = dropdown.querySelector('.country-list');
+  var activeBtn = null;
+
+  function fillDropdown(filter) {
+    var f = (filter || '').toLowerCase();
+    ddList.innerHTML = '';
+    countries.forEach(function(c) {
+      if (f && c.name.toLowerCase().indexOf(f) === -1 && c.dial.indexOf(f) === -1) return;
+      var opt = document.createElement('div');
+      opt.className = 'country-opt';
+      opt.innerHTML = '<span class="flag">' + c.flag + '</span>'
+        + '<span class="name">' + c.name + '</span>'
+        + '<span class="dial">+' + c.dial + '</span>';
+      opt.addEventListener('click', function() {
+        if (activeBtn) {
+          activeBtn.querySelector('.flag').textContent = c.flag;
+          activeBtn.querySelector('.dial').textContent = '+' + c.dial;
+          activeBtn.dataset.dial = c.dial;
+        }
+        closeDD();
+      });
+      ddList.appendChild(opt);
+    });
+  }
+
+  function openDD(btn) {
+    var rect = btn.getBoundingClientRect();
+    dropdown.style.top = (rect.bottom + 4) + 'px';
+    dropdown.style.left = Math.max(8, rect.left) + 'px';
+    dropdown.classList.add('open');
+    ddSearch.value = '';
+    fillDropdown('');
+    activeBtn = btn;
+    setTimeout(function() { ddSearch.focus(); }, 50);
+  }
+
+  function closeDD() {
+    dropdown.classList.remove('open');
+    activeBtn = null;
+  }
+
+  ddSearch.addEventListener('input', function() { fillDropdown(this.value); });
+
+  document.addEventListener('click', function(e) {
+    if (!dropdown.contains(e.target) && (!activeBtn || !activeBtn.contains(e.target))) {
+      closeDD();
+    }
+  });
+
+  // ── Detect country from saved phone ───────────────
+  function detectCountry(phone) {
+    if (!phone) return defaultCountry;
+    var sorted = countries.slice().sort(function(a, b) { return b.dial.length - a.dial.length; });
+    for (var i = 0; i < sorted.length; i++) {
+      if (phone.indexOf(sorted[i].dial) === 0) return sorted[i];
+    }
+    return defaultCountry;
+  }
+
+  // ── Load ──────────────────────────────────────────
+  fetch(API)
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.error) throw new Error(data.error);
+      allUsers = data.users || [];
+      renderList(allUsers);
+      updateStats();
+    })
+    .catch(function(err) {
+      listEl.innerHTML = '<div class="empty">Erro ao carregar: ' + err.message + '</div>';
+    });
+
+  // ── Search ────────────────────────────────────────
+  searchEl.addEventListener('input', function() {
+    var q = this.value.toLowerCase().trim();
+    if (!q) { renderList(allUsers); return; }
+    var filtered = allUsers.filter(function(u) { return u.email.toLowerCase().includes(q); });
+    renderList(filtered);
+  });
+
+  // ── Render ────────────────────────────────────────
+  function renderList(users) {
+    if (users.length === 0) {
+      listEl.innerHTML = '<div class="empty">Nenhum email encontrado.</div>';
+      return;
+    }
+
+    listEl.innerHTML = '';
+    users.forEach(function(u) {
+      var row = document.createElement('div');
+      row.className = 'row' + (u.saved ? ' row--saved' : '');
+      row.dataset.email = u.email;
+
+      var emailDiv = document.createElement('div');
+      emailDiv.className = 'row__email';
+      emailDiv.textContent = u.email;
+
+      // ── Phone group (country picker + input) ──────
+      var phoneGroup = document.createElement('div');
+      phoneGroup.className = 'phone-group';
+
+      var detected = u.saved ? detectCountry(u.phone) : defaultCountry;
+
+      var countryBtn = document.createElement('button');
+      countryBtn.type = 'button';
+      countryBtn.className = 'country-btn' + (u.saved ? ' country-btn--saved' : '');
+      countryBtn.dataset.dial = detected.dial;
+      countryBtn.innerHTML = '<span class="flag">' + detected.flag + '</span>'
+        + '<span class="dial">+' + detected.dial + '</span>'
+        + '<span class="chevron"></span>';
+
+      if (!u.saved) {
+        countryBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (dropdown.classList.contains('open') && activeBtn === countryBtn) {
+            closeDD();
+          } else {
+            openDD(countryBtn);
+          }
+        });
+      }
+
+      var input = document.createElement('input');
+      input.className = 'row__input' + (u.saved ? ' row__input--saved' : '');
+      input.type = 'tel';
+      input.maxLength = 15;
+
+      if (u.saved && u.phone) {
+        var localPart = u.phone;
+        if (u.phone.indexOf(detected.dial) === 0) {
+          localPart = u.phone.substring(detected.dial.length);
+        }
+        input.value = localPart;
+      } else {
+        input.value = '';
+        input.placeholder = 'DDD + n\u00famero';
+      }
+
+      input.addEventListener('input', function() {
+        this.value = this.value.replace(/[^0-9]/g, '');
+      });
+
+      phoneGroup.appendChild(countryBtn);
+      phoneGroup.appendChild(input);
+
+      // ── Save button ───────────────────────────────
+      var btn = document.createElement('button');
+      if (u.saved) {
+        btn.className = 'row__btn row__btn--done';
+        btn.innerHTML = '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> OK';
+        btn.disabled = true;
+      } else {
+        btn.className = 'row__btn row__btn--save';
+        btn.textContent = 'Salvar';
+      }
+
+      btn.addEventListener('click', function() {
+        handleSave(u.email, input, btn, row);
+      });
+
+      input.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') handleSave(u.email, input, btn, row);
+      });
+
+      row.appendChild(emailDiv);
+      row.appendChild(phoneGroup);
+      row.appendChild(btn);
+      listEl.appendChild(row);
+    });
+  }
+
+  // ── Save ──────────────────────────────────────────
+  function handleSave(email, input, btn, row) {
+    var localPhone = input.value.trim();
+    var countryBtn = row.querySelector('.country-btn');
+    var dialCode = countryBtn ? countryBtn.dataset.dial : '55';
+    var fullPhone = dialCode + localPhone;
+
+    if (localPhone.length < 8 || localPhone.length > 13) {
+      showToast('N\u00famero inv\u00e1lido. Informe DDD + n\u00famero (8\u201313 d\u00edgitos).', 'err');
+      input.focus();
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = '...';
+
+    fetch(API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email, whatsapp_phone: fullPhone })
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.error) throw new Error(data.error);
+
+      var user = allUsers.find(function(u) { return u.email === email; });
+      if (user) { user.saved = true; user.phone = fullPhone; }
+
+      row.classList.add('row--saved');
+      input.classList.add('row__input--saved');
+      var cBtn = row.querySelector('.country-btn');
+      if (cBtn) cBtn.classList.add('country-btn--saved');
+      btn.className = 'row__btn row__btn--done';
+      btn.innerHTML = '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> OK';
+      btn.disabled = true;
+
+      updateStats();
+      showToast('N\u00famero salvo com sucesso!', 'ok');
+    })
+    .catch(function(err) {
+      btn.disabled = false;
+      btn.textContent = 'Salvar';
+      showToast(err.message, 'err');
+    });
+  }
+
+  // ── Stats ─────────────────────────────────────────
+  function updateStats() {
+    var total = allUsers.length;
+    var done = allUsers.filter(function(u) { return u.saved; }).length;
+    statsEl.innerHTML = '<span><strong>' + total + '</strong> alunos</span>'
+      + '<span class="done"><strong>' + done + '</strong> vinculados</span>'
+      + '<span><strong>' + (total - done) + '</strong> pendentes</span>';
+  }
+
+  // ── Toast ─────────────────────────────────────────
+  function showToast(msg, type) {
+    clearTimeout(toastTimer);
+    toastEl.textContent = msg;
+    toastEl.className = 'toast toast--' + type + ' toast--visible';
+    toastTimer = setTimeout(function() {
+      toastEl.classList.remove('toast--visible');
+    }, 3000);
+  }
+})();
+</script>
+
+</body>
+</html>

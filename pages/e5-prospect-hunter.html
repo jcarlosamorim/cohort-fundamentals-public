@@ -1,0 +1,1111 @@
+<!-- E5 - Case Study: Prospect Hunter -->
+
+    <!-- ============================================
+         HERO HEADER
+         ============================================ -->
+    <header class="hero">
+        <div class="hero-badge">Encontro 5 &bull; Case Study</div>
+        <h1>O Mapa do Tesouro.<br><span>Antes de cavar, leia o mapa.</span></h1>
+        <p>Antes de construir qualquer coisa, voce precisa de um plano. Conheca o Prospect Hunter &mdash; o projeto real que voce vai construir &mdash; e entenda por que o PRD e o mapa que evita voce cavar no lugar errado.</p>
+    </header>
+
+    <div class="content">
+
+        <!-- ============================================
+             SECAO 1: O PROBLEMA REAL
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">A Dor</div>
+            <h2 class="section-title">4 Horas Por Dia Buscando Leads</h2>
+            <p class="section-desc">Todo profissional que vende servicos perde horas buscando prospects. Voce vai resolver isso com tecnologia.</p>
+
+            <!-- Two-column comparison -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;">
+
+                <!-- LEFT: Manual -->
+                <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.5rem; opacity: 0.75;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <div style="width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.04); border: 1px solid var(--color-border);">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--color-text-muted)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-weight: 800; font-size: 0.9rem; color: var(--color-text-muted);">Prospeccao Manual</div>
+                            <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-text-muted); margin-top: 0.15rem;">4h / dia</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1rem;">
+                        <div style="display: flex; gap: 0.5rem; align-items: flex-start;">
+                            <span style="color: var(--color-text-muted); flex-shrink: 0;">&#x2022;</span>
+                            <span>Abre Instagram, busca perfil por perfil</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; align-items: flex-start;">
+                            <span style="color: var(--color-text-muted); flex-shrink: 0;">&#x2022;</span>
+                            <span>Copia dados manualmente no Excel</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; align-items: flex-start;">
+                            <span style="color: var(--color-text-muted); flex-shrink: 0;">&#x2022;</span>
+                            <span>Repete 100x por dia</span>
+                        </div>
+                    </div>
+                    <div style="padding: 0.75rem; background: rgba(255,255,255,0.03); border-radius: var(--radius-md); font-size: 0.7rem; color: var(--color-text-muted); border: 1px solid var(--color-border);">
+                        <strong style="color: var(--color-text-secondary);">Resultado:</strong> 20-30 leads/dia, cansaco, dados inconsistentes
+                    </div>
+                </div>
+
+                <!-- RIGHT: Prospect Hunter -->
+                <div style="background: var(--color-bg-card); border: 2px solid rgba(34,197,94,0.3); border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: 0 0 30px rgba(34,197,94,0.05);">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <div style="width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.25);">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-weight: 800; font-size: 0.9rem; color: #22c55e;">Prospect Hunter</div>
+                            <div style="font-family: var(--font-mono); font-size: 0.7rem; color: #4ADE80; margin-top: 0.15rem;">5 min / dia</div>
+                        </div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.75rem; color: var(--color-text-secondary); line-height: 1.6; margin-bottom: 1rem;">
+                        <div style="display: flex; gap: 0.5rem; align-items: flex-start;">
+                            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.25rem;"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Define filtros uma vez</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; align-items: flex-start;">
+                            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.25rem;"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Apify busca automaticamente</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; align-items: flex-start;">
+                            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.25rem;"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Dados organizados em JSON local</span>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; align-items: flex-start;">
+                            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.25rem;"><polyline points="20 6 9 17 4 12"/></svg>
+                            <span>Mensagens personalizadas por IA</span>
+                        </div>
+                    </div>
+                    <div style="padding: 0.75rem; background: rgba(34,197,94,0.06); border-radius: var(--radius-md); font-size: 0.7rem; color: #4ADE80; border: 1px solid rgba(34,197,94,0.2);">
+                        <strong style="color: #22c55e;">Resultado:</strong> 200-500 leads/dia, zero esforco manual, dados padronizados
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO 2: A STACK DO PROJETO
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">As Ferramentas</div>
+            <h2 class="section-title">4 Pecas Que Fazem a Maquina Funcionar</h2>
+            <p class="section-desc">Cada ferramenta tem um papel. Juntas, elas formam um sistema completo de prospeccao.</p>
+
+            <!-- 2x2 Grid -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;">
+
+                <!-- Card 1: Apify -->
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(249,115,22,0.25); border-radius: var(--radius-lg); padding: 1.5rem; transition: border-color 0.2s, box-shadow 0.2s;" onmouseover="this.style.borderColor='rgba(249,115,22,0.5)'; this.style.boxShadow='0 4px 24px rgba(249,115,22,0.08)'" onmouseout="this.style.borderColor='rgba(249,115,22,0.25)'; this.style.boxShadow='none'">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <div style="width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: rgba(249,115,22,0.1); border: 1px solid rgba(249,115,22,0.25);">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#f97316" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a8 8 0 0 0-8 8c0 3.4 2.1 6.3 5 7.4V20h6v-2.6c2.9-1.1 5-4 5-7.4a8 8 0 0 0-8-8z"/><path d="M9 20v1a3 3 0 0 0 6 0v-1"/><path d="M12 2v3"/><path d="M4.9 4.9l2.1 2.1"/><path d="M19.1 4.9l-2.1 2.1"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-weight: 800; font-size: 0.9rem; color: #f97316;">Apify &mdash; O Coletor</div>
+                            <div style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.15rem 0.5rem; background: rgba(249,115,22,0.1); border: 1px solid rgba(249,115,22,0.2); border-radius: 4px; color: #f97316; display: inline-block; margin-top: 0.25rem;">API + Token</div>
+                        </div>
+                    </div>
+                    <div style="font-size: 0.75rem; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 0.75rem;">Scraping automatizado. Conecta no Instagram, LinkedIn, Google Maps. Extrai dados de perfis em massa.</div>
+                    <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6; padding: 0.75rem; background: rgba(249,115,22,0.04); border-radius: var(--radius-md); border: 1px solid rgba(249,115,22,0.1);">
+                        <strong style="color: #f97316;">Actor:</strong> scraper especializado que voce configura com filtros
+                    </div>
+                </div>
+
+                <!-- Card 2: JSON Local -->
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(34,197,94,0.25); border-radius: var(--radius-lg); padding: 1.5rem; transition: border-color 0.2s, box-shadow 0.2s;" onmouseover="this.style.borderColor='rgba(34,197,94,0.5)'; this.style.boxShadow='0 4px 24px rgba(34,197,94,0.08)'" onmouseout="this.style.borderColor='rgba(34,197,94,0.25)'; this.style.boxShadow='none'">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <div style="width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.25);">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-weight: 800; font-size: 0.9rem; color: #22c55e;">JSON &mdash; Armazenamento Local</div>
+                            <div style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.15rem 0.5rem; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2); border-radius: 4px; color: #22c55e; display: inline-block; margin-top: 0.25rem;">Local + Zero Config</div>
+                        </div>
+                    </div>
+                    <div style="font-size: 0.75rem; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 0.75rem;">Armazenamento local em JSON. Zero configuracao, zero custo. Arquivos .json guardam todos os leads. Perfeito para MVP.</div>
+                    <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6; padding: 0.75rem; background: rgba(34,197,94,0.04); border-radius: var(--radius-md); border: 1px solid rgba(34,197,94,0.1);">
+                        <strong style="color: #22c55e;">Stack:</strong> arquivos .json, sem servidor, leitura direta
+                    </div>
+                </div>
+
+                <!-- Card 3: Gemini API -->
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(66,133,244,0.25); border-radius: var(--radius-lg); padding: 1.5rem; transition: border-color 0.2s, box-shadow 0.2s;" onmouseover="this.style.borderColor='rgba(66,133,244,0.5)'; this.style.boxShadow='0 4px 24px rgba(66,133,244,0.08)'" onmouseout="this.style.borderColor='rgba(66,133,244,0.25)'; this.style.boxShadow='none'">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <div style="width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: rgba(66,133,244,0.1); border: 1px solid rgba(66,133,244,0.25);">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#4285F4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-weight: 800; font-size: 0.9rem; color: #4285F4;">Gemini API &mdash; O Escritor</div>
+                            <div style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.15rem 0.5rem; background: rgba(66,133,244,0.1); border: 1px solid rgba(66,133,244,0.2); border-radius: 4px; color: #4285F4; display: inline-block; margin-top: 0.25rem;">Gratuito &middot; 15 RPM</div>
+                        </div>
+                    </div>
+                    <div style="font-size: 0.75rem; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 0.75rem;">Gera mensagens de prospeccao hiper-personalizadas. Le a bio e ultimos posts do prospect e escreve uma mensagem unica. O melhor: e <strong style="color: #4285F4;">100% gratuito</strong>.</div>
+                    <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6; padding: 0.75rem; background: rgba(66,133,244,0.04); border-radius: var(--radius-md); border: 1px solid rgba(66,133,244,0.1);">
+                        <strong style="color: #4285F4;">Modelo:</strong> Gemini 2.0 Flash &mdash; rapido, gratuito, sem cartao de credito
+                    </div>
+                </div>
+
+                <!-- Card 4: Vercel -->
+                <div style="background: var(--color-bg-card); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: 1.5rem; transition: border-color 0.2s, box-shadow 0.2s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.3)'; this.style.boxShadow='0 4px 24px rgba(255,255,255,0.04)'" onmouseout="this.style.borderColor='var(--color-border-light)'; this.style.boxShadow='none'">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <div style="width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);">
+                            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--color-text-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        </div>
+                        <div>
+                            <div style="font-weight: 800; font-size: 0.9rem; color: var(--color-text-primary);">Vercel &mdash; A Vitrine</div>
+                            <div style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.15rem 0.5rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: var(--color-text-secondary); display: inline-block; margin-top: 0.25rem;">Deploy</div>
+                        </div>
+                    </div>
+                    <div style="font-size: 0.75rem; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 0.75rem;">Deploy automatico. Dashboard web para visualizar leads, filtrar, exportar. Acesso de qualquer lugar.</div>
+                    <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6; padding: 0.75rem; background: rgba(255,255,255,0.03); border-radius: var(--radius-md); border: 1px solid var(--color-border);">
+                        <strong style="color: var(--color-text-secondary);">Infra:</strong> Serverless functions + CDN global
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO 3: CONECTANDO O APIFY
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">A Integracao</div>
+            <h2 class="section-title">Como o Apify Funciona na Pratica</h2>
+            <p class="section-desc">O Apify e como um exercito de robos que voce programa uma vez e eles trabalham pra voce. Veja o passo a passo.</p>
+
+            <!-- Step 1: Criar Conta -->
+            <div style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(249,115,22,0.12); border: 1px solid rgba(249,115,22,0.3); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem; color: #f97316; flex-shrink: 0;">1</div>
+                    <div style="font-weight: 800; font-size: 0.9rem; color: var(--color-text-primary);">Criar Conta no Apify</div>
+                </div>
+
+                <div style="background: #0D1117; border: 1px solid rgba(249,115,22,0.2); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 0.75rem;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(249,115,22,0.15); background: rgba(249,115,22,0.03);">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #f97316; margin-left: 0.4rem;">Browser &mdash; Criando conta</span>
+                    </div>
+                    <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 2; color: #8B949E;">
+                        <div><span style="color: #f97316;">&#x2192;</span> Abra <span style="color: #A5D6FF;">apify.com</span></div>
+                        <div><span style="color: #f97316;">&#x2192;</span> Clique em <span style="color: #A5D6FF;">"Start for free"</span></div>
+                        <div><span style="color: #f97316;">&#x2192;</span> Crie conta com Google ou email</div>
+                        <div><span style="color: #4ADE80;">&#x2713; Conta criada</span></div>
+                    </div>
+                </div>
+
+                <div style="padding: 0.75rem 1rem; background: rgba(34,197,94,0.04); border: 1px solid rgba(34,197,94,0.15); border-radius: var(--radius-md); font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">
+                    <strong style="color: #22c55e;">Plano gratuito:</strong> 5 USD de creditos/mes &mdash; suficiente para comecar e testar os scrapers.
+                </div>
+            </div>
+
+            <!-- Vertical connector -->
+            <div style="width: 2px; height: 24px; background: rgba(249,115,22,0.15); margin: 0 auto 1.5rem auto;"></div>
+
+            <!-- Step 2: Pegar API Token -->
+            <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(249,115,22,0.12); border: 1px solid rgba(249,115,22,0.3); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem; color: #f97316; flex-shrink: 0;">2</div>
+                    <div style="font-weight: 800; font-size: 0.9rem; color: var(--color-text-primary);">Pegar o API Token</div>
+                </div>
+
+                <div style="background: #0D1117; border: 1px solid rgba(249,115,22,0.2); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 0.75rem;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(249,115,22,0.15); background: rgba(249,115,22,0.03);">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #f97316; margin-left: 0.4rem;">Apify Console &mdash; Settings</span>
+                    </div>
+                    <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 2; color: #8B949E;">
+                        <div><span style="color: #f97316;">&#x2192;</span> Settings <span style="color: #6A737D;">&#x2192;</span> Integrations <span style="color: #6A737D;">&#x2192;</span> <span style="color: #A5D6FF;">API Token</span></div>
+                        <div>&nbsp;</div>
+                        <div style="color: #6A737D;">&#35; Copie e guarde seu token:</div>
+                        <div style="color: #FFA657;">APIFY_TOKEN=apify_api_XXXXXXXXXXXXXXXXX</div>
+                    </div>
+                </div>
+
+                <div style="background: rgba(209,255,0,0.05); border: 1px solid var(--color-accent-gold-30); border-radius: var(--radius-lg); padding: 1rem 1.25rem;">
+                    <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--color-accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.7;">
+                            <strong style="color: var(--color-accent-gold);">Seguranca:</strong> Esse token e como a chave do seu exercito de robos. Guarde com seguranca. <strong style="color: var(--color-text-secondary);">Nunca</strong> coloque direto no codigo &mdash; use variaveis de ambiente.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vertical connector -->
+            <div style="width: 2px; height: 24px; background: rgba(249,115,22,0.15); margin: 0 auto 1.5rem auto;"></div>
+
+            <!-- Step 3: Escolher um Actor -->
+            <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(249,115,22,0.12); border: 1px solid rgba(249,115,22,0.3); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem; color: #f97316; flex-shrink: 0;">3</div>
+                    <div style="font-weight: 800; font-size: 0.9rem; color: var(--color-text-primary);">Escolher um Actor</div>
+                </div>
+
+                <div style="padding: 1rem 1.25rem; background: rgba(249,115,22,0.04); border: 1px solid rgba(249,115,22,0.15); border-radius: var(--radius-md); font-size: 0.75rem; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 1rem;">
+                    <strong style="color: #f97316;">Actor</strong> = um script pronto que faz uma tarefa especifica. Voce nao precisa programar o scraper do zero &mdash; escolhe um pronto e configura.
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <!-- Actor 1: Instagram -->
+                    <div style="background: var(--color-bg-card); border: 1px solid rgba(249,115,22,0.2); border-radius: var(--radius-lg); padding: 1rem 1.25rem; display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(249,115,22,0.08); border: 1px solid rgba(249,115,22,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#f97316" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="font-family: var(--font-mono); font-size: 0.78rem; font-weight: 700; color: #f97316;">apify/instagram-scraper</div>
+                            <div style="font-size: 0.7rem; color: var(--color-text-muted); margin-top: 0.15rem;">Extrai perfis, posts, seguidores</div>
+                        </div>
+                    </div>
+
+                    <!-- Actor 2: Google Maps -->
+                    <div style="background: var(--color-bg-card); border: 1px solid rgba(249,115,22,0.2); border-radius: var(--radius-lg); padding: 1rem 1.25rem; display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(249,115,22,0.08); border: 1px solid rgba(249,115,22,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#f97316" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="font-family: var(--font-mono); font-size: 0.78rem; font-weight: 700; color: #f97316;">apify/google-maps-scraper</div>
+                            <div style="font-size: 0.7rem; color: var(--color-text-muted); margin-top: 0.15rem;">Extrai negocios locais, reviews, contatos</div>
+                        </div>
+                    </div>
+
+                    <!-- Actor 3: LinkedIn -->
+                    <div style="background: var(--color-bg-card); border: 1px solid rgba(249,115,22,0.2); border-radius: var(--radius-lg); padding: 1rem 1.25rem; display: flex; align-items: center; gap: 1rem;">
+                        <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(249,115,22,0.08); border: 1px solid rgba(249,115,22,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#f97316" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </div>
+                        <div style="flex: 1;">
+                            <div style="font-family: var(--font-mono); font-size: 0.78rem; font-weight: 700; color: #f97316;">apify/linkedin-scraper</div>
+                            <div style="font-size: 0.7rem; color: var(--color-text-muted); margin-top: 0.15rem;">Extrai perfis profissionais, empresas</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vertical connector -->
+            <div style="width: 2px; height: 24px; background: rgba(249,115,22,0.15); margin: 0 auto 1.5rem auto;"></div>
+
+            <!-- Step 4: Configurar os Filtros -->
+            <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(249,115,22,0.12); border: 1px solid rgba(249,115,22,0.3); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem; color: #f97316; flex-shrink: 0;">4</div>
+                    <div style="font-weight: 800; font-size: 0.9rem; color: var(--color-text-primary);">Configurar os Filtros</div>
+                </div>
+
+                <div style="background: #0D1117; border: 1px solid rgba(249,115,22,0.2); border-radius: var(--radius-lg); overflow: hidden;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(249,115,22,0.15); background: rgba(249,115,22,0.03);">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #f97316; margin-left: 0.4rem;">config.json &mdash; Filtros do Actor</span>
+                    </div>
+                    <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 2; color: #8B949E;">
+                        <div style="color: #6A737D;">{</div>
+                        <div>&nbsp;&nbsp;<span style="color: #7EE787;">"searchQuery"</span>: <span style="color: #A5D6FF;">"agencia de marketing digital"</span>,</div>
+                        <div>&nbsp;&nbsp;<span style="color: #7EE787;">"location"</span>: <span style="color: #A5D6FF;">"Sao Paulo, Brasil"</span>,</div>
+                        <div>&nbsp;&nbsp;<span style="color: #7EE787;">"maxResults"</span>: <span style="color: #FFA657;">100</span>,</div>
+                        <div>&nbsp;&nbsp;<span style="color: #7EE787;">"fields"</span>: [</div>
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #A5D6FF;">"name"</span>, <span style="color: #A5D6FF;">"handle"</span>, <span style="color: #A5D6FF;">"bio"</span>,</div>
+                        <div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #A5D6FF;">"followers"</span>, <span style="color: #A5D6FF;">"email"</span>, <span style="color: #A5D6FF;">"website"</span></div>
+                        <div>&nbsp;&nbsp;]</div>
+                        <div style="color: #6A737D;">}</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vertical connector -->
+            <div style="width: 2px; height: 24px; background: rgba(249,115,22,0.15); margin: 0 auto 1.5rem auto;"></div>
+
+            <!-- Step 5: Receber os Dados -->
+            <div style="margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(249,115,22,0.12); border: 1px solid rgba(249,115,22,0.3); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem; color: #f97316; flex-shrink: 0;">5</div>
+                    <div style="font-weight: 800; font-size: 0.9rem; color: var(--color-text-primary);">Receber os Dados</div>
+                </div>
+
+                <!-- Mini table -->
+                <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 0.75rem;">
+                    <!-- Table header -->
+                    <div style="display: grid; grid-template-columns: 1.5fr 1.2fr 0.8fr 1.5fr 0.6fr; gap: 0; background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--color-border);">
+                        <div style="padding: 0.6rem 0.75rem; font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Nome</div>
+                        <div style="padding: 0.6rem 0.75rem; font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Handle</div>
+                        <div style="padding: 0.6rem 0.75rem; font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Seguidores</div>
+                        <div style="padding: 0.6rem 0.75rem; font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Email</div>
+                        <div style="padding: 0.6rem 0.75rem; font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Score</div>
+                    </div>
+                    <!-- Row 1 -->
+                    <div style="display: grid; grid-template-columns: 1.5fr 1.2fr 0.8fr 1.5fr 0.6fr; gap: 0; border-bottom: 1px solid var(--color-border);">
+                        <div style="padding: 0.6rem 0.75rem; font-size: 0.72rem; color: var(--color-text-secondary);">Ana Marketing</div>
+                        <div style="padding: 0.6rem 0.75rem; font-family: var(--font-mono); font-size: 0.68rem; color: #A5D6FF;">@anadigital</div>
+                        <div style="padding: 0.6rem 0.75rem; font-family: var(--font-mono); font-size: 0.68rem; color: var(--color-text-muted);">15.2k</div>
+                        <div style="padding: 0.6rem 0.75rem; font-family: var(--font-mono); font-size: 0.68rem; color: var(--color-text-muted);">ana@agencia.com</div>
+                        <div style="padding: 0.6rem 0.75rem; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; color: #22c55e;">87</div>
+                    </div>
+                    <!-- Row 2 -->
+                    <div style="display: grid; grid-template-columns: 1.5fr 1.2fr 0.8fr 1.5fr 0.6fr; gap: 0;">
+                        <div style="padding: 0.6rem 0.75rem; font-size: 0.72rem; color: var(--color-text-secondary);">Pedro Ads</div>
+                        <div style="padding: 0.6rem 0.75rem; font-family: var(--font-mono); font-size: 0.68rem; color: #A5D6FF;">@pedroads</div>
+                        <div style="padding: 0.6rem 0.75rem; font-family: var(--font-mono); font-size: 0.68rem; color: var(--color-text-muted);">8.5k</div>
+                        <div style="padding: 0.6rem 0.75rem; font-family: var(--font-mono); font-size: 0.68rem; color: var(--color-text-muted);">pedro@ads.co</div>
+                        <div style="padding: 0.6rem 0.75rem; font-family: var(--font-mono); font-size: 0.72rem; font-weight: 700; color: #4ADE80;">72</div>
+                    </div>
+                </div>
+
+                <div style="padding: 0.75rem 1rem; background: rgba(34,197,94,0.04); border: 1px solid rgba(34,197,94,0.15); border-radius: var(--radius-md); font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">
+                    <strong style="color: #22c55e;">Destino final:</strong> Esses dados vao direto pra arquivos JSON locais. Zero trabalho manual. Todos os leads organizados automaticamente.
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO 3B: SETUP — CONSEGUINDO SEUS TOKENS
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Antes de Comecar</div>
+            <h2 class="section-title">Setup &mdash; Conseguindo Seus Tokens</h2>
+            <p class="section-desc">Voce precisa de 2 chaves de API. Ambas sao gratuitas e levam 2 minutos.</p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;">
+                <!-- Token 1: Apify -->
+                <div style="background: #0D1117; border: 1px solid rgba(249,115,22,0.2); border-radius: var(--radius-lg); overflow: hidden;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(249,115,22,0.15); background: rgba(249,115,22,0.03);">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #f97316; margin-left: 0.4rem;">Token 1 &mdash; Apify (gratuito)</span>
+                    </div>
+                    <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 2; color: #8B949E;">
+                        <div><span style="color: #f97316;">&#x2192;</span> Abra <span style="color: #A5D6FF;">apify.com</span></div>
+                        <div><span style="color: #f97316;">&#x2192;</span> Crie conta com Google <span style="color: #6A737D;">(gratis)</span></div>
+                        <div><span style="color: #f97316;">&#x2192;</span> Settings <span style="color: #6A737D;">&#x2192;</span> Integrations <span style="color: #6A737D;">&#x2192;</span> <span style="color: #A5D6FF;">API Token</span></div>
+                        <div><span style="color: #f97316;">&#x2192;</span> Copie o token</div>
+                        <div>&nbsp;</div>
+                        <div style="color: #FFA657;">APIFY_TOKEN=apify_api_XXXXXXXXXX</div>
+                    </div>
+                </div>
+
+                <!-- Token 2: Gemini -->
+                <div style="background: #0D1117; border: 1px solid rgba(66,133,244,0.2); border-radius: var(--radius-lg); overflow: hidden;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(66,133,244,0.15); background: rgba(66,133,244,0.03);">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #4285F4; margin-left: 0.4rem;">Token 2 &mdash; Gemini API (gratuito)</span>
+                    </div>
+                    <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 2; color: #8B949E;">
+                        <div><span style="color: #4285F4;">&#x2192;</span> Abra <span style="color: #A5D6FF;">aistudio.google.com/api-keys</span></div>
+                        <div><span style="color: #4285F4;">&#x2192;</span> Clique em <span style="color: #A5D6FF;">"Create API key"</span></div>
+                        <div><span style="color: #4285F4;">&#x2192;</span> Selecione um projeto <span style="color: #6A737D;">(ou crie um)</span></div>
+                        <div><span style="color: #4285F4;">&#x2192;</span> Copie a API key</div>
+                        <div>&nbsp;</div>
+                        <div style="color: #FFA657;">GEMINI_API_KEY=AIzaSyXXXXXXXXXXXXX</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Salvando no .env -->
+            <div style="margin-top: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <div style="font-weight: 800; font-size: 0.9rem; color: var(--color-text-primary);">Salvando no Projeto</div>
+                </div>
+
+                <div style="background: #0D1117; border: 1px solid rgba(34,197,94,0.2); border-radius: var(--radius-lg); overflow: hidden;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(34,197,94,0.15); background: rgba(34,197,94,0.03);">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #22c55e; margin-left: 0.4rem;">Claude Code &mdash; Cole esse prompt</span>
+                    </div>
+                    <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.72rem; line-height: 2; color: #E6EDF3;">
+                        <div style="color: #22c55e;">salve no .env as seguintes chaves:</div>
+                        <div style="color: #FFA657;">APIFY_TOKEN=apify_api_SEU_TOKEN_AQUI</div>
+                        <div style="color: #FFA657;">GEMINI_API_KEY=AIzaSy_SUA_KEY_AQUI</div>
+                    </div>
+                </div>
+
+                <div class="insight-card" style="margin-top: 1rem; border: 2px solid rgba(34,197,94,0.25);">
+                    <h4>
+                        <span class="icon" style="color:#22c55e"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+                        Copiar e Colar
+                    </h4>
+                    <p>Voce nao precisa decorar comandos. Basta <strong style="color: var(--color-text-primary);">copiar as 3 linhas acima</strong> e colar direto no Claude Code. Ele vai criar o arquivo <span style="font-family: var(--font-mono); color: #22c55e;">.env</span> automaticamente com suas chaves.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO 3C: CAMPOS DE BUSINESS PARA O PRD
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Prepare-se</div>
+            <h2 class="section-title">7 Campos de Business Para Seu PRD</h2>
+            <p class="section-desc">Antes de chamar o <span style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.15rem 0.5rem; background: rgba(0,153,255,0.1); border: 1px solid rgba(0,153,255,0.2); border-radius: 4px; color: #0099FF;">/AIOS:agents:pm</span>, tenha essas respostas prontas.</p>
+
+            <div style="display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1.5rem;">
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem 1rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                    <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-gold); font-weight: 700; min-width: 1.2rem;">01</span>
+                    <div>
+                        <span style="font-size: 0.78rem; color: var(--color-text-secondary);">Qual servico voce vende?</span>
+                        <span style="font-size: 0.68rem; color: var(--color-text-muted); display: block; margin-top: 0.15rem;">Ex: consultoria de marketing, SaaS, mentoria, agencia</span>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem 1rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                    <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-gold); font-weight: 700; min-width: 1.2rem;">02</span>
+                    <div>
+                        <span style="font-size: 0.78rem; color: var(--color-text-secondary);">Quem e seu cliente ideal (ICP)?</span>
+                        <span style="font-size: 0.68rem; color: var(--color-text-muted); display: block; margin-top: 0.15rem;">Ex: donos de agencia, 10-50 funcionarios, faturamento R$ 500k-5M/ano</span>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem 1rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                    <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-gold); font-weight: 700; min-width: 1.2rem;">03</span>
+                    <div>
+                        <span style="font-size: 0.78rem; color: var(--color-text-secondary);">Qual o ticket medio?</span>
+                        <span style="font-size: 0.68rem; color: var(--color-text-muted); display: block; margin-top: 0.15rem;">Ex: R$ 2.000/mes, R$ 15.000 projeto, R$ 500 mensal</span>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem 1rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                    <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-gold); font-weight: 700; min-width: 1.2rem;">04</span>
+                    <div>
+                        <span style="font-size: 0.78rem; color: var(--color-text-secondary);">Qual plataforma eles usam mais?</span>
+                        <span style="font-size: 0.68rem; color: var(--color-text-muted); display: block; margin-top: 0.15rem;">Instagram, LinkedIn, ou ambos?</span>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem 1rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                    <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-gold); font-weight: 700; min-width: 1.2rem;">05</span>
+                    <div>
+                        <span style="font-size: 0.78rem; color: var(--color-text-secondary);">Qual a dor principal do seu cliente?</span>
+                        <span style="font-size: 0.68rem; color: var(--color-text-muted); display: block; margin-top: 0.15rem;">Ex: "nao consegue escalar", "perde tempo com leads frios", "sem previsibilidade"</span>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem 1rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                    <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-gold); font-weight: 700; min-width: 1.2rem;">06</span>
+                    <div>
+                        <span style="font-size: 0.78rem; color: var(--color-text-secondary);">Quantos prospects voce quer por semana?</span>
+                        <span style="font-size: 0.68rem; color: var(--color-text-muted); display: block; margin-top: 0.15rem;">Ex: 50, 100, 200 &mdash; define o volume do scraping</span>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem 1rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                    <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-gold); font-weight: 700; min-width: 1.2rem;">07</span>
+                    <div>
+                        <span style="font-size: 0.78rem; color: var(--color-text-secondary);">Qual tom de mensagem funciona com seu publico?</span>
+                        <span style="font-size: 0.68rem; color: var(--color-text-muted); display: block; margin-top: 0.15rem;">Direto ao ponto, consultivo, provocativo, educativo</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="insight-card" style="margin-top: 1.5rem; border: 2px solid var(--color-accent-gold-30);">
+                <h4>
+                    <span class="icon" style="color:var(--color-accent-gold)"><svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
+                    ICP e a Base de Tudo
+                </h4>
+                <p>Esses campos parecem simples, mas sao a base de <strong style="color: var(--color-text-primary);">TUDO</strong>. Um PRD sem ICP definido e como pescar sem isca &mdash; voce joga a rede e nao pega nada.</p>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO 3D: O ROTEIRO COMPLETO — DA IDEACAO AO DEPLOY
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">O Roteiro</div>
+            <h2 class="section-title">Da Ideacao ao Deploy &mdash; 7 Passos Exatos</h2>
+            <p class="section-desc">Cada passo mostra qual agente chamar, o que digitar, e o que acontece. Copie e cole.</p>
+
+            <!-- STEP 1: PRD -->
+            <div style="margin-top: 1.5rem; margin-bottom: 2rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(0,153,255,0.12); border: 2px solid rgba(0,153,255,0.4); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; color: #0099FF; flex-shrink: 0;">1</div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.9rem; color: var(--color-text-primary);">Criar o PRD</div>
+                        <div style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.15rem 0.5rem; background: rgba(0,153,255,0.1); border: 1px solid rgba(0,153,255,0.2); border-radius: 4px; color: #0099FF; display: inline-block; margin-top: 0.25rem;">/AIOS:agents:pm</div>
+                        <span style="font-size: 0.65rem; color: var(--color-text-muted); margin-left: 0.5rem;">Morgan &mdash; Product Manager</span>
+                    </div>
+                </div>
+                <div style="background: #0D1117; border: 1px solid rgba(0,153,255,0.2); border-radius: var(--radius-lg); overflow: hidden;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(0,153,255,0.15); background: rgba(0,153,255,0.03);">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #0099FF; margin-left: 0.4rem;">Claude Code &mdash; Passo 1</span>
+                    </div>
+                    <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 1.9; color: #E6EDF3;">
+                        <div style="color: #0099FF;">/AIOS:agents:pm crie o PRD do Prospect Hunter.</div>
+                        <div>&nbsp;</div>
+                        <div style="color: #8B949E;">O projeto e um sistema de prospeccao automatizada que:</div>
+                        <div style="color: #8B949E;">- Usa Apify para buscar prospects no Instagram/LinkedIn</div>
+                        <div style="color: #8B949E;">- Armazena leads em JSON local</div>
+                        <div style="color: #8B949E;">- Usa Gemini API para gerar mensagens personalizadas</div>
+                        <div style="color: #8B949E;">- Dashboard web para visualizar leads e mensagens</div>
+                        <div>&nbsp;</div>
+                        <div style="color: #8B949E;">Meu negocio:</div>
+                        <div style="color: #FFA657;">- Servico: [o que voce vende]</div>
+                        <div style="color: #FFA657;">- Publico-alvo: [donos de agencia, coaches, etc]</div>
+                        <div style="color: #FFA657;">- Ticket medio: [R$ X por mes]</div>
+                        <div style="color: #FFA657;">- Plataforma: [Instagram/LinkedIn]</div>
+                        <div style="color: #FFA657;">- Dor do cliente: [descreva a dor]</div>
+                    </div>
+                </div>
+                <div style="padding: 0.75rem 1rem; margin-top: 0.75rem; background: rgba(0,153,255,0.04); border: 1px solid rgba(0,153,255,0.15); border-radius: var(--radius-md); font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">
+                    O <strong style="color: #0099FF;">@pm</strong> vai fazer 15+ perguntas para entender seu projeto. Responda com calma &mdash; cada resposta vira uma secao do PRD.
+                </div>
+            </div>
+
+            <!-- STEP 2: Architecture -->
+            <div style="margin-bottom: 2rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(56,189,248,0.12); border: 2px solid rgba(56,189,248,0.4); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; color: #38bdf8; flex-shrink: 0;">2</div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.9rem; color: var(--color-text-primary);">Definir a Arquitetura</div>
+                        <div style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.15rem 0.5rem; background: rgba(56,189,248,0.1); border: 1px solid rgba(56,189,248,0.2); border-radius: 4px; color: #38bdf8; display: inline-block; margin-top: 0.25rem;">/AIOS:agents:architect</div>
+                        <span style="font-size: 0.65rem; color: var(--color-text-muted); margin-left: 0.5rem;">Aria &mdash; Architect</span>
+                    </div>
+                </div>
+                <div style="background: #0D1117; border: 1px solid rgba(56,189,248,0.2); border-radius: var(--radius-lg); overflow: hidden;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(56,189,248,0.15); background: rgba(56,189,248,0.03);">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #38bdf8; margin-left: 0.4rem;">Claude Code &mdash; Passo 2</span>
+                    </div>
+                    <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 1.9; color: #E6EDF3;">
+                        <div style="color: #38bdf8;">/AIOS:agents:architect revise o PRD e defina a arquitetura.</div>
+                        <div>&nbsp;</div>
+                        <div style="color: #8B949E;">Stack obrigatoria:</div>
+                        <div style="color: #8B949E;">- Apify REST API (scraping)</div>
+                        <div style="color: #8B949E;">- JSON (armazenamento local)</div>
+                        <div style="color: #8B949E;">- Gemini API (mensagens personalizadas)</div>
+                        <div style="color: #8B949E;">- Next.js + Vercel (dashboard + deploy)</div>
+                    </div>
+                </div>
+                <div style="padding: 0.75rem 1rem; margin-top: 0.75rem; background: rgba(56,189,248,0.04); border: 1px solid rgba(56,189,248,0.15); border-radius: var(--radius-md); font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">
+                    A <strong style="color: #38bdf8;">@architect</strong> analisa o PRD e cria o documento de arquitetura: fluxo de dados, schema do banco, endpoints da API.
+                </div>
+            </div>
+
+            <!-- STEP 3: Stories -->
+            <div style="margin-bottom: 2rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(251,191,36,0.12); border: 2px solid rgba(251,191,36,0.4); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; color: #fbbf24; flex-shrink: 0;">3</div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.9rem; color: var(--color-text-primary);">Criar as Stories</div>
+                        <div style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.15rem 0.5rem; background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.2); border-radius: 4px; color: #fbbf24; display: inline-block; margin-top: 0.25rem;">/AIOS:agents:sm</div>
+                        <span style="font-size: 0.65rem; color: var(--color-text-muted); margin-left: 0.5rem;">River &mdash; Scrum Master</span>
+                    </div>
+                </div>
+                <div style="background: #0D1117; border: 1px solid rgba(251,191,36,0.2); border-radius: var(--radius-lg); overflow: hidden;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(251,191,36,0.15); background: rgba(251,191,36,0.03);">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #fbbf24; margin-left: 0.4rem;">Claude Code &mdash; Passo 3</span>
+                    </div>
+                    <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 1.9; color: #E6EDF3;">
+                        <div style="color: #fbbf24;">/AIOS:agents:sm crie as stories do Prospect Hunter</div>
+                        <div style="color: #8B949E;">baseado no PRD e na arquitetura.</div>
+                    </div>
+                </div>
+                <div style="padding: 0.75rem 1rem; margin-top: 0.75rem; background: rgba(251,191,36,0.04); border: 1px solid rgba(251,191,36,0.15); border-radius: var(--radius-md); font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">
+                    O <strong style="color: #fbbf24;">@sm</strong> quebra o PRD em 5 stories executaveis. Cada story e uma entrega pequena que funciona sozinha.
+                </div>
+            </div>
+
+            <!-- STEP 4: Validate -->
+            <div style="margin-bottom: 2rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(244,114,182,0.12); border: 2px solid rgba(244,114,182,0.4); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; color: #f472b6; flex-shrink: 0;">4</div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.9rem; color: var(--color-text-primary);">Validar as Stories</div>
+                        <div style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.15rem 0.5rem; background: rgba(244,114,182,0.1); border: 1px solid rgba(244,114,182,0.2); border-radius: 4px; color: #f472b6; display: inline-block; margin-top: 0.25rem;">/AIOS:agents:po</div>
+                        <span style="font-size: 0.65rem; color: var(--color-text-muted); margin-left: 0.5rem;">Pax &mdash; Product Owner</span>
+                    </div>
+                </div>
+                <div style="background: #0D1117; border: 1px solid rgba(244,114,182,0.2); border-radius: var(--radius-lg); overflow: hidden;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(244,114,182,0.15); background: rgba(244,114,182,0.03);">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #f472b6; margin-left: 0.4rem;">Claude Code &mdash; Passo 4</span>
+                    </div>
+                    <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 1.9; color: #E6EDF3;">
+                        <div style="color: #f472b6;">/AIOS:agents:po valide as stories criadas.</div>
+                    </div>
+                </div>
+                <div style="padding: 0.75rem 1rem; margin-top: 0.75rem; background: rgba(244,114,182,0.04); border: 1px solid rgba(244,114,182,0.15); border-radius: var(--radius-md); font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">
+                    O <strong style="color: #f472b6;">@po</strong> revisa cada story contra o PRD. Se algo estiver faltando, ele pede ajuste antes de comecar o codigo.
+                </div>
+            </div>
+
+            <!-- STEP 5: Develop -->
+            <div style="margin-bottom: 2rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(34,197,94,0.12); border: 2px solid rgba(34,197,94,0.4); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; color: #22c55e; flex-shrink: 0;">5</div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.9rem; color: var(--color-text-primary);">Desenvolver o Codigo</div>
+                        <div style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.15rem 0.5rem; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2); border-radius: 4px; color: #22c55e; display: inline-block; margin-top: 0.25rem;">/AIOS:agents:dev</div>
+                        <span style="font-size: 0.65rem; color: var(--color-text-muted); margin-left: 0.5rem;">Dex &mdash; Developer</span>
+                    </div>
+                </div>
+                <div style="background: #0D1117; border: 1px solid rgba(34,197,94,0.2); border-radius: var(--radius-lg); overflow: hidden;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(34,197,94,0.15); background: rgba(34,197,94,0.03);">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #22c55e; margin-left: 0.4rem;">Claude Code &mdash; Passo 5 (repita por story)</span>
+                    </div>
+                    <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 1.9; color: #E6EDF3;">
+                        <div style="color: #22c55e;">/AIOS:agents:dev desenvolva a Story 0</div>
+                        <div style="color: #8B949E;">(configurar estrutura de dados local)</div>
+                        <div>&nbsp;</div>
+                        <div style="color: #6A737D;"># Depois repita para cada story:</div>
+                        <div style="color: #22c55e;">/AIOS:agents:dev desenvolva a Story 1</div>
+                        <div style="color: #22c55e;">/AIOS:agents:dev desenvolva a Story 2</div>
+                        <div style="color: #22c55e;">/AIOS:agents:dev desenvolva a Story 3</div>
+                        <div style="color: #22c55e;">/AIOS:agents:dev desenvolva a Story 4</div>
+                    </div>
+                </div>
+                <div style="padding: 0.75rem 1rem; margin-top: 0.75rem; background: rgba(34,197,94,0.04); border: 1px solid rgba(34,197,94,0.15); border-radius: var(--radius-md); font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">
+                    O <strong style="color: #22c55e;">@dev</strong> implementa uma story por vez. Cria o codigo, testa, marca os checkboxes. <strong style="color: var(--color-text-secondary);">Modo YOLO:</strong> quer que faca tudo automaticamente? Use <span style="font-family: var(--font-mono); color: #22c55e;">/AIOS:agents:dev *develop-yolo</span>
+                </div>
+            </div>
+
+            <!-- STEP 6: QA -->
+            <div style="margin-bottom: 2rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(249,115,22,0.12); border: 2px solid rgba(249,115,22,0.4); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; color: #f97316; flex-shrink: 0;">6</div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.9rem; color: var(--color-text-primary);">QA &mdash; Testar Tudo</div>
+                        <div style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.15rem 0.5rem; background: rgba(249,115,22,0.1); border: 1px solid rgba(249,115,22,0.2); border-radius: 4px; color: #f97316; display: inline-block; margin-top: 0.25rem;">/AIOS:agents:qa</div>
+                        <span style="font-size: 0.65rem; color: var(--color-text-muted); margin-left: 0.5rem;">Quinn &mdash; QA</span>
+                    </div>
+                </div>
+                <div style="background: #0D1117; border: 1px solid rgba(249,115,22,0.2); border-radius: var(--radius-lg); overflow: hidden;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(249,115,22,0.15); background: rgba(249,115,22,0.03);">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #f97316; margin-left: 0.4rem;">Claude Code &mdash; Passo 6</span>
+                    </div>
+                    <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 1.9; color: #E6EDF3;">
+                        <div style="color: #f97316;">/AIOS:agents:qa revise o codigo do Prospect Hunter.</div>
+                    </div>
+                </div>
+                <div style="padding: 0.75rem 1rem; margin-top: 0.75rem; background: rgba(249,115,22,0.04); border: 1px solid rgba(249,115,22,0.15); border-radius: var(--radius-md); font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">
+                    A <strong style="color: #f97316;">@qa</strong> testa: Apify retorna dados? Dados persistem localmente? Gemini gera mensagem coerente? Dashboard carrega?
+                </div>
+            </div>
+
+            <!-- STEP 7: Deploy -->
+            <div style="margin-bottom: 1rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08); border: 2px solid rgba(255,255,255,0.25); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; color: var(--color-text-primary); flex-shrink: 0;">7</div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.9rem; color: var(--color-text-primary);">Deploy</div>
+                        <div style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.15rem 0.5rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; color: var(--color-text-secondary); display: inline-block; margin-top: 0.25rem;">/AIOS:agents:devops</div>
+                        <span style="font-size: 0.65rem; color: var(--color-text-muted); margin-left: 0.5rem;">Gage &mdash; DevOps</span>
+                    </div>
+                </div>
+                <div style="background: #0D1117; border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius-lg); overflow: hidden;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.02);">
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                        <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; color: var(--color-text-muted); margin-left: 0.4rem;">Claude Code &mdash; Passo 7 (final)</span>
+                    </div>
+                    <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 1.9; color: #E6EDF3;">
+                        <div style="color: var(--color-text-primary);">/AIOS:agents:devops faz deploy</div>
+                    </div>
+                </div>
+                <div style="padding: 0.75rem 1rem; margin-top: 0.75rem; background: rgba(255,255,255,0.02); border: 1px solid var(--color-border); border-radius: var(--radius-md); font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">
+                    O <strong style="color: var(--color-text-secondary);">@devops</strong> executa quality gates (testes, lint, build) e faz o deploy na Vercel. <strong style="color: #22c55e;">Resultado:</strong> seu Prospect Hunter no ar.
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO 4: O QUE O PRD PRECISA RESOLVER
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">As Decisoes</div>
+            <h2 class="section-title">10 Decisoes Que Seu PRD Vai Documentar</h2>
+            <p class="section-desc">Cada pergunta abaixo e uma decisao que, sem PRD, voce teria que tomar no meio do codigo. Com PRD, ja esta decidida.</p>
+
+            <div style="display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1.5rem;">
+
+                <!-- Item 1 -->
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem 1rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--color-accent-gold-30)'" onmouseout="this.style.borderColor='var(--color-border)'">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--color-accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
+                    <div>
+                        <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-gold); font-weight: 700;">01</span>
+                        <span style="font-size: 0.78rem; color: var(--color-text-secondary); margin-left: 0.5rem;">Qual plataforma prospectar? (Instagram, LinkedIn, Google Maps?)</span>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem 1rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--color-accent-gold-30)'" onmouseout="this.style.borderColor='var(--color-border)'">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--color-accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
+                    <div>
+                        <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-gold); font-weight: 700;">02</span>
+                        <span style="font-size: 0.78rem; color: var(--color-text-secondary); margin-left: 0.5rem;">Qual Actor do Apify usar?</span>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem 1rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--color-accent-gold-30)'" onmouseout="this.style.borderColor='var(--color-border)'">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--color-accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
+                    <div>
+                        <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-gold); font-weight: 700;">03</span>
+                        <span style="font-size: 0.78rem; color: var(--color-text-secondary); margin-left: 0.5rem;">Como autenticar? (API Token &mdash; onde armazenar?)</span>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem 1rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--color-accent-gold-30)'" onmouseout="this.style.borderColor='var(--color-border)'">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--color-accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
+                    <div>
+                        <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-gold); font-weight: 700;">04</span>
+                        <span style="font-size: 0.78rem; color: var(--color-text-secondary); margin-left: 0.5rem;">Quais campos extrair de cada prospect?</span>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem 1rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--color-accent-gold-30)'" onmouseout="this.style.borderColor='var(--color-border)'">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--color-accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
+                    <div>
+                        <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-gold); font-weight: 700;">05</span>
+                        <span style="font-size: 0.78rem; color: var(--color-text-secondary); margin-left: 0.5rem;">Qual o limite de prospects por execucao?</span>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem 1rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--color-accent-gold-30)'" onmouseout="this.style.borderColor='var(--color-border)'">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--color-accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
+                    <div>
+                        <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-gold); font-weight: 700;">06</span>
+                        <span style="font-size: 0.78rem; color: var(--color-text-secondary); margin-left: 0.5rem;">Onde armazenar os dados? (JSON local &mdash; qual estrutura?)</span>
+                    </div>
+                </div>
+
+                <!-- Item 7 -->
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem 1rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--color-accent-gold-30)'" onmouseout="this.style.borderColor='var(--color-border)'">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--color-accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
+                    <div>
+                        <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-gold); font-weight: 700;">07</span>
+                        <span style="font-size: 0.78rem; color: var(--color-text-secondary); margin-left: 0.5rem;">Como evitar duplicatas?</span>
+                    </div>
+                </div>
+
+                <!-- Item 8 -->
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem 1rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--color-accent-gold-30)'" onmouseout="this.style.borderColor='var(--color-border)'">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--color-accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
+                    <div>
+                        <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-gold); font-weight: 700;">08</span>
+                        <span style="font-size: 0.78rem; color: var(--color-text-secondary); margin-left: 0.5rem;">Qual informacao usar para personalizar a mensagem? (bio, posts, cargo?)</span>
+                    </div>
+                </div>
+
+                <!-- Item 9 -->
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem 1rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--color-accent-gold-30)'" onmouseout="this.style.borderColor='var(--color-border)'">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--color-accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
+                    <div>
+                        <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-gold); font-weight: 700;">09</span>
+                        <span style="font-size: 0.78rem; color: var(--color-text-secondary); margin-left: 0.5rem;">Qual o tom da mensagem de prospeccao? (formal, casual, direto?)</span>
+                    </div>
+                </div>
+
+                <!-- Item 10 -->
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 0.75rem 1rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); transition: border-color 0.2s;" onmouseover="this.style.borderColor='var(--color-accent-gold-30)'" onmouseout="this.style.borderColor='var(--color-border)'">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--color-accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
+                    <div>
+                        <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-accent-gold); font-weight: 700;">10</span>
+                        <span style="font-size: 0.78rem; color: var(--color-text-secondary); margin-left: 0.5rem;">Como exportar os resultados? (CSV, dashboard, clipboard?)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insight card -->
+            <div class="insight-card" style="margin-top: 1.5rem; border: 2px solid var(--color-accent-gold-30);">
+                <h4>
+                    <span class="icon" style="color:var(--color-accent-gold)"><svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
+                    Conexao com o E6
+                </h4>
+                <p>No <strong style="color: var(--color-text-primary);">E6</strong>, voce vai responder <strong style="color: var(--color-accent-gold);">TODAS</strong> essas perguntas usando o agente <code style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.15rem 0.5rem; background: rgba(0,153,255,0.1); border: 1px solid rgba(0,153,255,0.2); border-radius: 4px; color: #0099FF;">/AIOS:agents:pm</code> e o template PRD do AIOS. Cada checkbox vai virar uma secao documentada no seu PRD. Nenhuma decisao no escuro.</p>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO 4B: AS 5 STORIES DO PROJETO
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">O Plano</div>
+            <h2 class="section-title">As 5 Stories do Projeto</h2>
+            <p class="section-desc">O projeto e dividido em 5 stories. Cada story e uma entrega funcional, com escopo claro e um agente responsavel.</p>
+
+            <!-- Stories flow -->
+            <div style="display: flex; flex-direction: column; gap: 0; margin-top: 1.5rem;">
+
+                <!-- Story 0 -->
+                <div style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem; background: var(--color-bg-card); border: 1px solid rgba(34,197,94,0.25); border-radius: var(--radius-lg);">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.3); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; color: #22c55e; flex-shrink: 0;">0</div>
+                    <div style="flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                            <div style="font-weight: 800; font-size: 0.85rem; color: var(--color-text-primary);">Configurar Estrutura de Dados</div>
+                            <code style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.15rem 0.5rem; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2); border-radius: 4px; color: #22c55e;">/AIOS:agents:dev</code>
+                        </div>
+                        <div style="font-size: 0.72rem; color: var(--color-text-muted); margin-top: 0.35rem; line-height: 1.6;">Criar pasta <code style="font-family: var(--font-mono); font-size: 0.68rem; color: #4ADE80; background: none; padding: 0; border: none;">data/</code>, definir estrutura JSON para prospects</div>
+                    </div>
+                </div>
+
+                <!-- Connector -->
+                <div style="width: 2px; height: 20px; background: rgba(34,197,94,0.15); margin: 0 auto;"></div>
+
+                <!-- Story 1 -->
+                <div style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem; background: var(--color-bg-card); border: 1px solid rgba(249,115,22,0.25); border-radius: var(--radius-lg);">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(249,115,22,0.12); border: 1px solid rgba(249,115,22,0.3); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; color: #f97316; flex-shrink: 0;">1</div>
+                    <div style="flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                            <div style="font-weight: 800; font-size: 0.85rem; color: var(--color-text-primary);">Conectar Apify + Primeiro Scrape</div>
+                            <code style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.15rem 0.5rem; background: rgba(249,115,22,0.1); border: 1px solid rgba(249,115,22,0.2); border-radius: 4px; color: #f97316;">/AIOS:agents:dev</code>
+                        </div>
+                        <div style="font-size: 0.72rem; color: var(--color-text-muted); margin-top: 0.35rem; line-height: 1.6;">Configurar token, escolher Actor, definir filtros, receber JSON com 50 prospects</div>
+                    </div>
+                </div>
+
+                <!-- Connector -->
+                <div style="width: 2px; height: 20px; background: rgba(0,153,255,0.15); margin: 0 auto;"></div>
+
+                <!-- Story 2 -->
+                <div style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem; background: var(--color-bg-card); border: 1px solid rgba(0,153,255,0.25); border-radius: var(--radius-lg);">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(0,153,255,0.12); border: 1px solid rgba(0,153,255,0.3); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; color: #0099FF; flex-shrink: 0;">2</div>
+                    <div style="flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                            <div style="font-weight: 800; font-size: 0.85rem; color: var(--color-text-primary);">Salvar Leads Localmente</div>
+                            <code style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.15rem 0.5rem; background: rgba(0,153,255,0.1); border: 1px solid rgba(0,153,255,0.2); border-radius: 4px; color: #0099FF;">/AIOS:agents:dev</code>
+                        </div>
+                        <div style="font-size: 0.72rem; color: var(--color-text-muted); margin-top: 0.35rem; line-height: 1.6;">Insert automatico do JSON no banco, deduplicacao por handle</div>
+                    </div>
+                </div>
+
+                <!-- Connector -->
+                <div style="width: 2px; height: 20px; background: rgba(0,153,255,0.15); margin: 0 auto;"></div>
+
+                <!-- Story 3 -->
+                <div style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem; background: var(--color-bg-card); border: 1px solid rgba(0,153,255,0.25); border-radius: var(--radius-lg);">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(0,153,255,0.12); border: 1px solid rgba(0,153,255,0.3); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; color: #0099FF; flex-shrink: 0;">3</div>
+                    <div style="flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                            <div style="font-weight: 800; font-size: 0.85rem; color: var(--color-text-primary);">Gerar Mensagens com Gemini API</div>
+                            <code style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.15rem 0.5rem; background: rgba(0,153,255,0.1); border: 1px solid rgba(0,153,255,0.2); border-radius: 4px; color: #0099FF;">/AIOS:agents:dev</code>
+                        </div>
+                        <div style="font-size: 0.72rem; color: var(--color-text-muted); margin-top: 0.35rem; line-height: 1.6;">Para cada prospect, enviar bio+posts para Haiku, salvar mensagem no banco</div>
+                    </div>
+                </div>
+
+                <!-- Connector -->
+                <div style="width: 2px; height: 20px; background: rgba(255,255,255,0.1); margin: 0 auto;"></div>
+
+                <!-- Story 4 -->
+                <div style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem; background: var(--color-bg-card); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg);">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; color: var(--color-text-primary); flex-shrink: 0;">4</div>
+                    <div style="flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                            <div style="font-weight: 800; font-size: 0.85rem; color: var(--color-text-primary);">Dashboard (Visualizar Leads + Mensagens)</div>
+                            <code style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.15rem 0.5rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: var(--color-text-secondary);">/AIOS:agents:dev</code>
+                        </div>
+                        <div style="font-size: 0.72rem; color: var(--color-text-muted); margin-top: 0.35rem; line-height: 1.6;">Tabela com leads, mensagem gerada, botao copiar</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wave Map -->
+            <div style="margin-top: 2rem;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--color-accent-gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M5 20V8l5 4 4-8 5 8v8"/></svg>
+                    <div style="font-weight: 800; font-size: 0.85rem; color: var(--color-accent-gold); text-transform: uppercase; letter-spacing: 0.06em;">Wave Map</div>
+                </div>
+
+                <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden;">
+                    <!-- Header -->
+                    <div style="display: grid; grid-template-columns: 1fr 2.5fr 1.5fr; gap: 0; background: rgba(255,255,255,0.03); border-bottom: 1px solid var(--color-border);">
+                        <div style="padding: 0.6rem 1rem; font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Wave</div>
+                        <div style="padding: 0.6rem 1rem; font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Stories</div>
+                        <div style="padding: 0.6rem 1rem; font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Tipo</div>
+                    </div>
+                    <!-- Wave 1 -->
+                    <div style="display: grid; grid-template-columns: 1fr 2.5fr 1.5fr; gap: 0; border-bottom: 1px solid var(--color-border);">
+                        <div style="padding: 0.75rem 1rem; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; color: #22c55e;">W1</div>
+                        <div style="padding: 0.75rem 1rem; font-size: 0.72rem; color: var(--color-text-secondary); line-height: 1.6;">Story 0 <span style="color: var(--color-text-muted);">(Estrutura de Dados)</span> + Story 1 <span style="color: var(--color-text-muted);">(Apify)</span></div>
+                        <div style="padding: 0.75rem 1rem;">
+                            <span style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.15rem 0.5rem; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2); border-radius: 4px; color: #22c55e;">paralela</span>
+                        </div>
+                    </div>
+                    <!-- Wave 2 -->
+                    <div style="display: grid; grid-template-columns: 1fr 2.5fr 1.5fr; gap: 0; border-bottom: 1px solid var(--color-border);">
+                        <div style="padding: 0.75rem 1rem; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; color: #0099FF;">W2</div>
+                        <div style="padding: 0.75rem 1rem; font-size: 0.72rem; color: var(--color-text-secondary); line-height: 1.6;">Story 2 <span style="color: var(--color-text-muted);">(Salvar Leads)</span> &mdash; depende de 0 + 1</div>
+                        <div style="padding: 0.75rem 1rem;">
+                            <span style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.15rem 0.5rem; background: rgba(0,153,255,0.1); border: 1px solid rgba(0,153,255,0.2); border-radius: 4px; color: #0099FF;">sequencial</span>
+                        </div>
+                    </div>
+                    <!-- Wave 3 -->
+                    <div style="display: grid; grid-template-columns: 1fr 2.5fr 1.5fr; gap: 0; border-bottom: 1px solid var(--color-border);">
+                        <div style="padding: 0.75rem 1rem; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; color: #0099FF;">W3</div>
+                        <div style="padding: 0.75rem 1rem; font-size: 0.72rem; color: var(--color-text-secondary); line-height: 1.6;">Story 3 <span style="color: var(--color-text-muted);">(Gemini API)</span> &mdash; depende de 2</div>
+                        <div style="padding: 0.75rem 1rem;">
+                            <span style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.15rem 0.5rem; background: rgba(0,153,255,0.1); border: 1px solid rgba(0,153,255,0.2); border-radius: 4px; color: #0099FF;">sequencial</span>
+                        </div>
+                    </div>
+                    <!-- Wave 4 -->
+                    <div style="display: grid; grid-template-columns: 1fr 2.5fr 1.5fr; gap: 0;">
+                        <div style="padding: 0.75rem 1rem; font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; color: var(--color-text-secondary);">W4</div>
+                        <div style="padding: 0.75rem 1rem; font-size: 0.72rem; color: var(--color-text-secondary); line-height: 1.6;">Story 4 <span style="color: var(--color-text-muted);">(Dashboard)</span> &mdash; depende de 3</div>
+                        <div style="padding: 0.75rem 1rem;">
+                            <span style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.15rem 0.5rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: var(--color-text-secondary);">sequencial</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="padding: 0.75rem 1rem; background: rgba(34,197,94,0.04); border: 1px solid rgba(34,197,94,0.15); border-radius: var(--radius-md); font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6; margin-top: 0.75rem;">
+                    <strong style="color: #22c55e;">Wave 1 em paralelo:</strong> voce abre 2 terminais simultaneos &mdash; um para Estrutura de Dados, outro para Apify. Quando ambos terminarem, Wave 2 inicia.
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO 4C: EXEMPLO DE MENSAGEM PERSONALIZADA
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">O Diferencial</div>
+            <h2 class="section-title">Exemplo de Mensagem Personalizada</h2>
+            <p class="section-desc">Veja como a Gemini API transforma dados brutos em uma mensagem que parece escrita a mao.</p>
+
+            <!-- Two-column: INPUT → OUTPUT -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;">
+
+                <!-- LEFT: Input (muted) -->
+                <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; opacity: 0.8;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1rem; border-bottom: 1px solid var(--color-border); background: rgba(255,255,255,0.02);">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="var(--color-text-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        <span style="font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.05em;">Input &mdash; Dados do Apify</span>
+                    </div>
+                    <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 2; color: #8B949E;">
+                        <div><span style="color: #7EE787;">nome:</span> <span style="color: #A5D6FF;">"Marina Costa"</span></div>
+                        <div><span style="color: #7EE787;">cargo:</span> <span style="color: #A5D6FF;">"Head de Growth @ TechCorp"</span></div>
+                        <div><span style="color: #7EE787;">bio:</span> <span style="color: #A5D6FF;">"Apaixonada por dados e growth hacking"</span></div>
+                        <div><span style="color: #7EE787;">ultimo_post:</span> <span style="color: #A5D6FF;">"Como reduzimos churn em 40% com onboarding personalizado"</span></div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Output (green highlight) -->
+                <div style="background: var(--color-bg-card); border: 2px solid rgba(34,197,94,0.3); border-radius: var(--radius-lg); overflow: hidden; box-shadow: 0 0 30px rgba(34,197,94,0.05);">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1rem; border-bottom: 1px solid rgba(34,197,94,0.2); background: rgba(34,197,94,0.03);">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                        <span style="font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700; color: #22c55e; text-transform: uppercase; letter-spacing: 0.05em;">Output &mdash; Mensagem da Gemini API</span>
+                    </div>
+                    <div style="padding: 1.25rem; font-size: 0.78rem; color: var(--color-text-secondary); line-height: 1.8;">
+                        <span style="color: var(--color-text-primary); font-weight: 600;">Marina</span>, vi seu post sobre reducao de churn com onboarding personalizado &mdash; <span style="color: #4ADE80; font-weight: 600;">40% e impressionante</span>. Estou trabalhando em algo que complementa exatamente isso: <span style="color: var(--color-text-muted); font-style: italic;">[sua proposta de valor]</span>. Faz sentido uma conversa de 15min?
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arrow between columns (center) -->
+            <div style="display: flex; justify-content: center; margin: -0.5rem 0 0.5rem 0;">
+                <div style="display: flex; align-items: center; gap: 0.35rem; padding: 0.3rem 0.75rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 20px;">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#4285F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                    <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #4285F4; font-weight: 700;">Gemini Flash</span>
+                </div>
+            </div>
+
+            <!-- Insight card -->
+            <div class="insight-card" style="margin-top: 1rem; border: 2px solid rgba(34,197,94,0.25);">
+                <h4>
+                    <span class="icon" style="color:#22c55e"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+                    Por que isso funciona
+                </h4>
+                <p>Essa mensagem nao e generica. Ela referencia o <strong style="color: var(--color-text-primary);">post real</strong> da Marina. E isso que faz a taxa de resposta subir de <span style="color: var(--color-text-muted);">2%</span> para <strong style="color: #22c55e;">15%+</strong>. O prospect sente que voce pesquisou sobre ele &mdash; porque a IA pesquisou.</p>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO 5: PREVIEW E6
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Proximo Passo</div>
+            <h2 class="section-title">No Proximo Encontro: O PRD do Prospect Hunter</h2>
+            <p class="section-desc">Voce agora sabe O QUE vai construir, a stack, as stories e as decisoes. No E6, voce vai criar o PRD que responde todas as 10 decisoes acima.</p>
+
+            <!-- Teaser card -->
+            <div style="background: var(--color-bg-card); border: 2px solid rgba(0,153,255,0.3); border-radius: var(--radius-xl); padding: 2rem; margin-top: 1.5rem; position: relative; overflow: hidden;">
+                <!-- Subtle gradient glow -->
+                <div style="position: absolute; top: -50%; right: -20%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(0,153,255,0.08) 0%, transparent 70%); pointer-events: none;"></div>
+
+                <div style="font-weight: 800; font-size: 0.85rem; color: #0099FF; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1.25rem; position: relative;">O que voce vai fazer no E6:</div>
+
+                <div style="display: flex; flex-direction: column; gap: 1rem; position: relative;">
+                    <!-- Step 1 -->
+                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                        <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(0,153,255,0.12); border: 1px solid rgba(0,153,255,0.3); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem; color: #0099FF; flex-shrink: 0;">1</div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 0.85rem; color: var(--color-text-primary);">Ativar o agente <code style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.15rem 0.5rem; background: rgba(0,153,255,0.1); border: 1px solid rgba(0,153,255,0.2); border-radius: 4px; color: #0099FF;">/AIOS:agents:pm</code></div>
+                            <div style="font-size: 0.72rem; color: var(--color-text-muted); margin-top: 0.2rem;">O agente de produto que guia a criacao do PRD</div>
+                        </div>
+                    </div>
+
+                    <!-- Connector -->
+                    <div style="width: 2px; height: 12px; background: rgba(0,153,255,0.15); margin-left: 15px;"></div>
+
+                    <!-- Step 2 -->
+                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                        <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(0,153,255,0.12); border: 1px solid rgba(0,153,255,0.3); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem; color: #0099FF; flex-shrink: 0;">2</div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 0.85rem; color: var(--color-text-primary);">Responder as 10 decisoes</div>
+                            <div style="font-size: 0.72rem; color: var(--color-text-muted); margin-top: 0.2rem;">Cada decisao da lista acima vira uma secao documentada no PRD</div>
+                        </div>
+                    </div>
+
+                    <!-- Connector -->
+                    <div style="width: 2px; height: 12px; background: rgba(0,153,255,0.15); margin-left: 15px;"></div>
+
+                    <!-- Step 3 -->
+                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                        <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(0,153,255,0.12); border: 1px solid rgba(0,153,255,0.3); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem; color: #0099FF; flex-shrink: 0;">3</div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 0.85rem; color: var(--color-text-primary);">Gerar o PRD completo do Prospect Hunter</div>
+                            <div style="font-size: 0.72rem; color: var(--color-text-muted); margin-top: 0.2rem;">Todas as secoes preenchidas &mdash; o mapa completo para as 5 stories</div>
+                        </div>
+                    </div>
+
+                    <!-- Connector -->
+                    <div style="width: 2px; height: 12px; background: rgba(0,153,255,0.15); margin-left: 15px;"></div>
+
+                    <!-- Step 4 -->
+                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                        <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(0,153,255,0.12); border: 1px solid rgba(0,153,255,0.3); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem; color: #0099FF; flex-shrink: 0;">4</div>
+                        <div>
+                            <div style="font-weight: 700; font-size: 0.85rem; color: var(--color-text-primary);">Executar o sharding</div>
+                            <div style="font-size: 0.72rem; color: var(--color-text-muted); margin-top: 0.2rem;">Quebrar o PRD em contextos menores para cada agent trabalhar</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA box -->
+                <div style="margin-top: 1.5rem; padding: 1rem 1.25rem; background: rgba(0,153,255,0.06); border: 1px solid rgba(0,153,255,0.2); border-radius: var(--radius-lg);">
+                    <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0099FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+                        <div style="font-size: 0.78rem; color: var(--color-text-secondary); line-height: 1.7;">
+                            <strong style="color: #0099FF;">Dica:</strong> Voce ja conhece o projeto, a stack e as decisoes. No E6 e so documentar tudo com o <code style="font-family: var(--font-mono); font-size: 0.6rem; padding: 0.15rem 0.5rem; background: rgba(0,153,255,0.1); border: 1px solid rgba(0,153,255,0.2); border-radius: 4px; color: #0099FF;">/AIOS:agents:pm</code> &mdash; ele guia cada pergunta.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>

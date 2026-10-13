@@ -1,0 +1,93 @@
+{
+  "course": {
+    "title": "Cohort AIOS Fundamentals",
+    "subtitle": "Mentor: Jose Carlos Amorim"
+  },
+  "mentor": {
+    "name": "Jose Carlos Amorim",
+    "title": "Criador do AIOS Framework",
+    "bio": "Expert em Claude Code e orquestração de agentes de IA"
+  },
+  "encontros": [
+    {
+      "id": 1,
+      "title": "Setup & Fundamentos",
+      "subtitle": "O setup que 95% ignora",
+      "lessons": [
+        { "label": "A Fita de Lucy — Setup & Fundamentos", "page": "pages/e1-fundacao.html" }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Liberdade e Empoderamento",
+      "subtitle": "AIOS é sobre liberdade",
+      "lessons": [
+        { "label": "AIOS é Sobre Liberdade e Empoderamento", "page": "pages/e2-liberdade.html" },
+        { "label": "Organizacao do AIOS com Clareza", "page": "pages/e2-organizacao.html" },
+        { "label": "Criando o Proprio AIOS", "page": "pages/e2-criando-aios.html" }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Squad é Vida",
+      "subtitle": "Anatomia. Metáfora. Estrutura.",
+      "lessons": [
+        { "label": "Claude Code + AIOS: Por Que Processo Importa", "page": "pages/e3-estrutura-aios.html" },
+        { "label": "Dissecando o AIOS", "page": "pages/e3-dissecando-aios.html" },
+        { "label": "Estrutura de um Squad", "page": "pages/e3-anatomia-squad.html" }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Seu Primeiro Fluxo AIOS",
+      "subtitle": "Maker ou Thinker. Seu caminho.",
+      "lessons": [
+        { "label": "Maker ou Thinker — Quem e Voce?", "page": "pages/e4-identidade.html" },
+        { "label": "Fluxo do Maker — Da Ideia ao Deploy", "page": "pages/e4-maker.html" },
+        { "label": "Fluxo do Thinker — Da Visao ao Blueprint", "page": "pages/e4-thinker.html" }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Por Que PRD É a Alma",
+      "subtitle": "A cadeia. PRD bom vs ruim.",
+      "lessons": [
+        { "label": "A Caixa-Preta — 346 Vidas e a Documentacao", "page": "pages/e5-caixa-preta.html" },
+        { "label": "A Cadeia de Comando", "page": "pages/e5-cadeia.html" },
+        { "label": "PRD Bom vs PRD Ruim", "page": "pages/e5-bom-vs-ruim.html" },
+        { "label": "Case Study: Prospect Hunter", "page": "pages/e5-prospect-hunter.html" }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Transformando o Velho em Novo",
+      "subtitle": "Vibecoding → GitHub → Brownfield → Deploy",
+      "lessons": [
+        { "label": "Do Vibecoding ao Deploy — Brownfield Discovery", "page": "pages/e6-transformando.html" },
+        { "label": "Fluxos: Como o Brownfield Discovery Funciona", "page": "pages/e6-fluxos.html" }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Criando sua Primeira Task AIOS",
+      "subtitle": "Anatomia. Gap. Criar. Integrar. Executar.",
+      "lessons": [
+        { "label": "Criando sua Primeira Task AIOS", "page": "pages/e7-primeira-task.html" }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "A Fábrica - Projeto Final",
+      "subtitle": "Squad patterns. Integração total.",
+      "lessons": []
+    },
+    {
+      "id": 9,
+      "title": "Quiz de Certificacao",
+      "subtitle": "8 perguntas. Certificado.",
+      "lessons": [
+        { "label": "Quiz Final — Certificado de Conclusao", "page": "pages/quiz-certificado.html" }
+      ]
+    }
+  ]
+}

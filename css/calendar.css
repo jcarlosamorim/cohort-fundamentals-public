@@ -1,0 +1,305 @@
+/* ==========================================================================
+   CALENDAR PAGE - Full month grid with event markers
+   Renders into #calendar-page on the /calendario route
+   Zero hardcoded values - all from tokens.css
+   ========================================================================== */
+
+/* --- Month Grids Container --- */
+.cal-months {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+/* --- Single Month --- */
+.cal-month {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.cal-month__header {
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  background: var(--color-bg-elevated);
+  border-bottom: 1px solid var(--color-border);
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+/* --- 7-Column Day Grid --- */
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0;
+  padding: 0.5rem;
+}
+
+/* Day name headers (SEG TER QUA...) */
+.cal-grid__hdr {
+  text-align: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  padding: 0.5rem 0.25rem;
+}
+
+/* Empty spacer cells */
+.cal-grid__empty {
+  aspect-ratio: 1;
+}
+
+/* --- Day Cell --- */
+.cal-grid__day {
+  position: relative;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  border-radius: var(--radius-sm);
+  transition: background 0.15s ease;
+}
+
+.cal-grid__day:hover {
+  background: var(--color-white-5);
+}
+
+/* Day number */
+.cal-grid__num {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  line-height: 1;
+}
+
+/* Event label (T1 E1, T2 E1, PS) */
+.cal-grid__label {
+  font-size: 0.45rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  padding: 0.1rem 0.25rem;
+  border-radius: 3px;
+}
+
+.cal-grid__label--t1 {
+  background: var(--color-accent-gold-20);
+  color: var(--color-accent-gold);
+}
+
+.cal-grid__label--t2 {
+  background: rgba(139, 92, 246, 0.2);
+  color: rgb(167, 139, 250);
+}
+
+.cal-grid__label--ps {
+  background: var(--color-accent-green-20);
+  color: var(--color-accent-green);
+}
+
+/* --- Day State Modifiers --- */
+
+/* Today ring */
+.cal-grid__day--today {
+  outline: 2px solid var(--color-text-secondary);
+  outline-offset: -2px;
+}
+
+.cal-grid__day--today .cal-grid__num {
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+
+/* T1 Encontro day (gold) */
+.cal-grid__day--encontro {
+  background: var(--color-accent-gold-10);
+}
+
+.cal-grid__day--encontro .cal-grid__num {
+  color: var(--color-accent-gold);
+  font-weight: 700;
+}
+
+/* T2 Encontro day (purple) */
+.cal-grid__day--encontro-t2 {
+  background: rgba(139, 92, 246, 0.08);
+}
+
+.cal-grid__day--encontro-t2 .cal-grid__num {
+  color: rgb(167, 139, 250);
+  font-weight: 700;
+}
+
+/* Both T1+T2 on same day */
+.cal-grid__day--encontro-both {
+  background: linear-gradient(135deg, var(--color-accent-gold-10) 50%, rgba(139, 92, 246, 0.08) 50%);
+}
+
+.cal-grid__day--encontro-both .cal-grid__num {
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+
+/* Current encontro (today + encontro) */
+.cal-grid__day--current {
+  background: var(--color-accent-gold-20);
+  outline: 2px solid var(--color-accent-gold);
+  outline-offset: -2px;
+}
+
+.cal-grid__day--current .cal-grid__num {
+  color: var(--color-accent-gold-light);
+  font-weight: 800;
+}
+
+/* T2 current */
+.cal-grid__day--encontro-t2.cal-grid__day--current {
+  background: rgba(139, 92, 246, 0.2);
+  outline-color: rgb(139, 92, 246);
+}
+
+.cal-grid__day--encontro-t2.cal-grid__day--current .cal-grid__num {
+  color: rgb(196, 181, 253);
+}
+
+/* Future/locked encontro */
+.cal-grid__day--future {
+  opacity: 0.45;
+}
+
+.cal-grid__day--future .cal-grid__num {
+  color: var(--color-text-muted);
+}
+
+/* Pronto-Socorro day */
+.cal-grid__day--ps {
+  background: var(--color-accent-green-10);
+}
+
+.cal-grid__day--ps .cal-grid__num {
+  color: var(--color-accent-green);
+  font-weight: 600;
+}
+
+/* --- Legend --- */
+.cal-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-bottom: 2.5rem;
+}
+
+.cal-legend__item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+.cal-legend__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.cal-legend__dot--t1 {
+  background: var(--color-accent-gold);
+}
+
+.cal-legend__dot--t2 {
+  background: rgb(139, 92, 246);
+}
+
+.cal-legend__dot--ps {
+  background: var(--color-accent-green);
+}
+
+.cal-legend__dot--today {
+  background: transparent;
+  border: 2px solid var(--color-text-secondary);
+}
+
+/* --- Upcoming / Salas Section --- */
+.cal-upcoming {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+
+.cal-upcoming__title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-accent-gold);
+  margin-bottom: 1rem;
+}
+
+.cal-upcoming__salas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.cal-upcoming__sala {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cal-upcoming__sala-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.cal-upcoming__sala-desc {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .cal-months {
+    grid-template-columns: 1fr;
+  }
+
+  .cal-grid__num {
+    font-size: 0.7rem;
+  }
+
+  .cal-grid__label {
+    font-size: 0.45rem;
+  }
+
+  .cal-legend {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .cal-upcoming__salas {
+    grid-template-columns: 1fr;
+  }
+}

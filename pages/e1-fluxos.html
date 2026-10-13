@@ -1,0 +1,905 @@
+<!-- E1 - Fluxos: Brownfield Discovery -->
+    <header class="hero">
+        <div class="hero-badge">Encontro 1 &bull; Arquitetura AIOS</div>
+        <h1>Como funciona<br><span>por dentro.</span></h1>
+        <p>Compreenda os fluxos de trabalho do AIOS Framework. Como agents se comunicam, como workflows orquestram m&#250;ltiplas fases.</p>
+    </header>
+
+    <div class="content">
+
+        <!-- ============================================
+             IMAGEM CONTEXTO - Fluxos de Trabalho
+             ============================================ -->
+        <section class="mb-3">
+            <img src="https://i.imgur.com/usAoIsV.png" alt="Fluxos de Trabalho - Contexto Visual" class="img-full" />
+        </section>
+
+        <!-- ============================================
+             CONCEITO: BROWNFIELD DISCOVERY
+             ============================================ -->
+        <section class="mb-3">
+            <div class="section-label">Conceito Central</div>
+            <h2 class="section-title">Brownfield Discovery</h2>
+            <p class="section-desc">Antes de mexer no que existe, voc&#234; precisa de um diagn&#243;stico completo. 10 fases. M&#250;ltiplos especialistas.</p>
+
+            <div class="compare-grid">
+                <!-- Greenfield -->
+                <div class="compare-card compare-card--dim">
+                    <div class="compare-card__icon">
+                        <span class="icon" style="color:var(--color-text-muted)">
+                            <svg viewBox="0 0 24 24" style="width:36px;height:36px;stroke-width:1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                        </span>
+                    </div>
+                    <h3 class="compare-card__title" style="color:var(--color-text-muted)">Greenfield</h3>
+                    <p class="compare-card__desc" style="color:var(--color-text-muted)">Terreno vazio. Come&#231;a do zero.<br>N&#227;o precisa de discovery.</p>
+                    <div class="compare-card__badge" style="background:rgba(107,114,128,0.1); color:var(--color-text-muted)">N&#227;o &#233; o foco hoje</div>
+                </div>
+
+                <!-- Brownfield Discovery -->
+                <div class="compare-card compare-card--highlight" style="text-align:center; position:relative;">
+                    <div style="position:absolute; top:-10px; right:16px; background:var(--color-accent-gold); color:var(--color-bg-primary); font-size:0.65rem; font-weight:800; padding:0.2rem 0.6rem; border-radius:999px; text-transform:uppercase; letter-spacing:0.1em;">Foco da aula</div>
+                    <div class="compare-card__icon">
+                        <span class="icon" style="color:var(--color-accent-gold)">
+                            <svg viewBox="0 0 24 24" style="width:36px;height:36px;stroke-width:1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                        </span>
+                    </div>
+                    <h3 class="compare-card__title" style="color:var(--color-accent-gold)">Brownfield Discovery</h3>
+                    <p class="compare-card__desc">Diagn&#243;stico multi-agente completo.<br>10 fases antes de mexer em c&#243;digo.</p>
+                    <div class="compare-card__badge" style="background:rgba(209,255,0,0.12); color:var(--color-accent-gold)">Assessment completo</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             ANALOGIA 2 COLUNAS - DIAGN&#211;STICO vs DISCOVERY
+             ============================================ -->
+        <section class="analogy-section">
+            <div class="section-label">Analogia Visual</div>
+            <h2 class="section-title">Diagn&#243;stico de Im&#243;vel vs Brownfield Discovery</h2>
+            <p class="section-desc">Antes de qualquer reforma, especialistas avaliam. No AIOS, agentes fazem o mesmo com c&#243;digo.</p>
+
+            <div class="analogy-grid">
+                <!-- Headers -->
+                <div class="analogy-header casa">
+                    <div class="analogy-header-icon">
+                        <span class="icon">
+                            <svg viewBox="0 0 24 24"><path d="M2 20h20"/><path d="M5 20V7l7-4 7 4v13"/><path d="M9 20v-5h6v5"/><path d="M17 8l4 4"/><path d="M15 10l4 4"/></svg>
+                        </span>
+                    </div>
+                    <h3>Diagn&#243;stico de Im&#243;vel</h3>
+                    <p>Especialistas avaliam antes de reformar.</p>
+                </div>
+                <div class="analogy-header aios">
+                    <div class="analogy-header-icon">
+                        <span class="icon">
+                            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                        </span>
+                    </div>
+                    <h3>Brownfield Discovery</h3>
+                    <p>Agentes avaliam antes de codar.</p>
+                </div>
+
+                <!-- ===== FASES 1-3: DIAGN&#211;STICO COMPLETO ===== -->
+                <div class="analogy-divider">
+                    <span class="analogy-divider-badge">Fases 1-3</span>
+                    <span class="analogy-divider-text">Diagn&#243;stico completo (em paralelo)</span>
+                </div>
+
+                <div class="analogy-cell casa">
+                    <div class="analogy-cell-title">
+                        <span class="icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+                        Tr&#234;s Especialistas Avaliam
+                    </div>
+                    <div class="analogy-role">
+                        <div class="analogy-role-icon">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            </span>
+                        </div>
+                        <div>
+                            <div class="analogy-role-name">3 Peritos em Paralelo</div>
+                            <div class="analogy-role-desc">Cada um avalia sua &#225;rea</div>
+                        </div>
+                    </div>
+                    <div class="analogy-details">
+                        <ul>
+                            <li><strong>Engenheiro Estrutural:</strong> Funda&#231;&#245;es, paredes, laje, rachaduras</li>
+                            <li><strong>Encanador/Eletricista:</strong> Tubula&#231;&#245;es, fia&#231;&#227;o, quadro el&#233;trico</li>
+                            <li><strong>Arquiteto de Interiores:</strong> Layout, acabamentos, ilumina&#231;&#227;o</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="analogy-cell aios">
+                    <div class="analogy-cell-title">
+                        <span class="icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+                        Tr&#234;s Agentes Coletam Dados
+                    </div>
+                    <div class="analogy-role">
+                        <div class="analogy-role-icon">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            </span>
+                        </div>
+                        <div>
+                            <div class="analogy-role-name">3 Agentes em Paralelo</div>
+                            <div class="analogy-role-desc">Cada um documenta sua &#225;rea</div>
+                        </div>
+                    </div>
+                    <div class="analogy-details">
+                        <ul>
+                            <li><strong>@architect</strong> &#8594; <code class="code-purple">*document-project</code><br><span style="color:var(--color-text-muted);font-size:0.85em">Stack, estrutura, depend&#234;ncias, d&#233;bitos de sistema</span></li>
+                            <li><strong>@data-engineer</strong> &#8594; <code class="code-purple">*db-schema-audit</code><br><span style="color:var(--color-text-muted);font-size:0.85em">Schema, RLS, &#237;ndices, performance, seguran&#231;a</span></li>
+                            <li><strong>@ux-design-expert</strong> &#8594; <code class="code-purple">*create-front-end-spec</code><br><span style="color:var(--color-text-muted);font-size:0.85em">Componentes, design system, a11y, responsividade</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ===== FASE 4: CONSOLIDA&#199;&#195;O ===== -->
+                <div class="analogy-divider">
+                    <span class="analogy-divider-badge">Fase 4</span>
+                    <span class="analogy-divider-text">Consolidar num laudo &#250;nico</span>
+                </div>
+
+                <div class="analogy-cell casa">
+                    <div class="analogy-cell-title">
+                        <span class="icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                        Laudo Unificado
+                    </div>
+                    <div class="analogy-role">
+                        <div class="analogy-role-icon">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4"/><path d="M12 19v4"/><path d="M4.22 4.22l2.83 2.83"/><path d="M16.95 16.95l2.83 2.83"/><path d="M1 12h4"/><path d="M19 12h4"/></svg>
+                            </span>
+                        </div>
+                        <div>
+                            <div class="analogy-role-name">Engenheiro Principal</div>
+                            <div class="analogy-role-desc">Junta os 3 laudos num documento s&#243;</div>
+                        </div>
+                    </div>
+                    <div class="analogy-details">
+                        <ul>
+                            <li>Consolida achados de todos os especialistas</li>
+                            <li>Marca o que cada um precisa confirmar</li>
+                            <li>Cria lista preliminar de problemas e custos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="analogy-cell aios">
+                    <div class="analogy-cell-title">
+                        <span class="icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                        Consolida&#231;&#227;o Inicial
+                    </div>
+                    <div class="analogy-role">
+                        <div class="analogy-role-icon">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4"/><path d="M12 19v4"/><path d="M4.22 4.22l2.83 2.83"/><path d="M16.95 16.95l2.83 2.83"/><path d="M1 12h4"/><path d="M19 12h4"/></svg>
+                            </span>
+                        </div>
+                        <div>
+                            <div class="analogy-role-name">@architect</div>
+                            <div class="analogy-role-desc">Consolida DRAFT com todos os d&#233;bitos</div>
+                        </div>
+                    </div>
+                    <div class="analogy-details">
+                        <ul>
+                            <li>Junta d&#233;bitos de sistema, database e frontend</li>
+                            <li>Marca se&#231;&#245;es pendentes de valida&#231;&#227;o</li>
+                            <li>Cria matriz preliminar de prioriza&#231;&#227;o</li>
+                        </ul>
+                        <div class="output-tag output-tag--purple">&#8594; technical-debt-DRAFT.md</div>
+                    </div>
+                </div>
+
+                <!-- ===== FASES 5-7: VALIDA&#199;&#195;O DOS ESPECIALISTAS ===== -->
+                <div class="analogy-divider">
+                    <span class="analogy-divider-badge">Fases 5-7</span>
+                    <span class="analogy-divider-text">Valida&#231;&#227;o + Quality Gate</span>
+                </div>
+
+                <div class="analogy-cell casa">
+                    <div class="analogy-cell-title">
+                        <span class="icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+                        Valida&#231;&#227;o + Vistoria
+                    </div>
+                    <div class="analogy-role">
+                        <div class="analogy-role-icon">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></svg>
+                            </span>
+                        </div>
+                        <div>
+                            <div class="analogy-role-name">Especialistas + Fiscal</div>
+                            <div class="analogy-role-desc">Cada um valida sua parte, fiscal aprova</div>
+                        </div>
+                    </div>
+                    <div class="analogy-details">
+                        <ul>
+                            <li><strong>Encanador:</strong> Confirma problemas hidr&#225;ulicos, ajusta custos</li>
+                            <li><strong>Designer:</strong> Confirma problemas est&#233;ticos, sugere solu&#231;&#245;es</li>
+                            <li><strong>Fiscal Municipal:</strong> Vistoria geral &#8594; <span style="color:var(--color-accent-green);font-weight:600">APROVADO</span> ou <span style="color:var(--color-danger);font-weight:600">REFAZER</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="analogy-cell aios">
+                    <div class="analogy-cell-title">
+                        <span class="icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+                        Valida&#231;&#227;o + QA Gate
+                    </div>
+                    <div class="analogy-role">
+                        <div class="analogy-role-icon">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></svg>
+                            </span>
+                        </div>
+                        <div>
+                            <div class="analogy-role-name">Especialistas + @qa</div>
+                            <div class="analogy-role-desc">Cada agente valida sua se&#231;&#227;o</div>
+                        </div>
+                    </div>
+                    <div class="analogy-details">
+                        <ul>
+                            <li><strong>@data-engineer:</strong> Valida d&#233;bitos de DB, estima horas, prioriza</li>
+                            <li><strong>@ux-design-expert:</strong> Valida d&#233;bitos de UX, sugere solu&#231;&#245;es</li>
+                            <li><strong>@qa:</strong> Quality Gate &#8594; <span style="color:var(--color-accent-green);font-weight:600">APPROVED</span> ou <span style="color:var(--color-danger);font-weight:600">NEEDS WORK</span></li>
+                        </ul>
+                        <div class="output-tag output-tag--red">&#x27F2; Se NEEDS WORK &#8594; volta pra Fase 4</div>
+                    </div>
+                </div>
+
+                <!-- ===== FASE 8: ASSESSMENT FINAL ===== -->
+                <div class="analogy-divider">
+                    <span class="analogy-divider-badge">Fase 8</span>
+                    <span class="analogy-divider-text">Laudo final aprovado</span>
+                </div>
+
+                <div class="analogy-cell casa">
+                    <div class="analogy-cell-title">
+                        <span class="icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                        Laudo Final
+                    </div>
+                    <div class="analogy-role">
+                        <div class="analogy-role-icon">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4"/><path d="M12 19v4"/><path d="M4.22 4.22l2.83 2.83"/><path d="M16.95 16.95l2.83 2.83"/><path d="M1 12h4"/><path d="M19 12h4"/></svg>
+                            </span>
+                        </div>
+                        <div>
+                            <div class="analogy-role-name">Engenheiro Principal</div>
+                            <div class="analogy-role-desc">Incorpora todas as corre&#231;&#245;es</div>
+                        </div>
+                    </div>
+                    <div class="analogy-details">
+                        <ul>
+                            <li>Incorpora ajustes de cada especialista</li>
+                            <li>Recalcula custos e prazos finais</li>
+                            <li>Documento completo, pronto para or&#231;ar</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="analogy-cell aios">
+                    <div class="analogy-cell-title">
+                        <span class="icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+                        Assessment Final
+                    </div>
+                    <div class="analogy-role">
+                        <div class="analogy-role-icon">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4"/><path d="M12 19v4"/><path d="M4.22 4.22l2.83 2.83"/><path d="M16.95 16.95l2.83 2.83"/><path d="M1 12h4"/><path d="M19 12h4"/></svg>
+                            </span>
+                        </div>
+                        <div>
+                            <div class="analogy-role-name">@architect</div>
+                            <div class="analogy-role-desc">Consolida assessment definitivo</div>
+                        </div>
+                    </div>
+                    <div class="analogy-details">
+                        <ul>
+                            <li>Incorpora valida&#231;&#245;es dos especialistas</li>
+                            <li>Recalcula prioridades com inputs de todos</li>
+                            <li>Define ordem final de resolu&#231;&#227;o</li>
+                        </ul>
+                        <div class="output-tag output-tag--purple">&#8594; technical-debt-assessment.md</div>
+                    </div>
+                </div>
+
+                <!-- ===== FASE 9: RELAT&#211;RIO EXECUTIVO ===== -->
+                <div class="analogy-divider">
+                    <span class="analogy-divider-badge">Fase 9</span>
+                    <span class="analogy-divider-text">Or&#231;amento pro dono</span>
+                </div>
+
+                <div class="analogy-cell casa">
+                    <div class="analogy-cell-title">
+                        <span class="icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+                        Or&#231;amento da Reforma
+                    </div>
+                    <div class="analogy-role">
+                        <div class="analogy-role-icon">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            </span>
+                        </div>
+                        <div>
+                            <div class="analogy-role-name">Or&#231;amentista</div>
+                            <div class="analogy-role-desc">Apresenta custos ao propriet&#225;rio</div>
+                        </div>
+                    </div>
+                    <div class="analogy-details">
+                        <ul>
+                            <li>Custo de resolver vs custo de n&#227;o resolver</li>
+                            <li>Timeline fase por fase</li>
+                            <li>ROI da reforma (valoriza&#231;&#227;o do im&#243;vel)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="analogy-cell aios">
+                    <div class="analogy-cell-title">
+                        <span class="icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+                        Relat&#243;rio Executivo
+                    </div>
+                    <div class="analogy-role">
+                        <div class="analogy-role-icon">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                            </span>
+                        </div>
+                        <div>
+                            <div class="analogy-role-name">@analyst</div>
+                            <div class="analogy-role-desc">Relat&#243;rio de awareness para stakeholders</div>
+                        </div>
+                    </div>
+                    <div class="analogy-details">
+                        <ul>
+                            <li>Custos claros: resolver vs n&#227;o resolver (em R$)</li>
+                            <li>Impacto no neg&#243;cio (performance, seguran&#231;a, UX)</li>
+                            <li>Timeline recomendado + ROI estimado</li>
+                        </ul>
+                        <div class="output-tag output-tag--purple">&#8594; TECHNICAL-DEBT-REPORT.md</div>
+                    </div>
+                </div>
+
+                <!-- ===== FASE 10: PLANEJAMENTO ===== -->
+                <div class="analogy-divider">
+                    <span class="analogy-divider-badge">Fase 10</span>
+                    <span class="analogy-divider-text">Plano de obra</span>
+                </div>
+
+                <div class="analogy-cell casa" style="border-bottom:none">
+                    <div class="analogy-cell-title">
+                        <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
+                        Plano de Execu&#231;&#227;o
+                    </div>
+                    <div class="analogy-role">
+                        <div class="analogy-role-icon">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24"><path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93"/><path d="M8.56 9.93A4.002 4.002 0 0 1 12 2"/><rect x="5" y="12" width="14" height="4" rx="1"/><path d="M6 16v4a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-4"/><path d="M12 12v-2"/></svg>
+                            </span>
+                        </div>
+                        <div>
+                            <div class="analogy-role-name">Mestre de Obras</div>
+                            <div class="analogy-role-desc">Cronograma, equipe, fases</div>
+                        </div>
+                    </div>
+                    <div class="analogy-details">
+                        <ul>
+                            <li>Quick wins primeiro (pintura, acabamento)</li>
+                            <li>Funda&#231;&#227;o depois (estrutural, el&#233;trica)</li>
+                            <li>Otimiza&#231;&#227;o por &#250;ltimo (paisagismo, detalhes)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="analogy-cell aios" style="border-bottom:none">
+                    <div class="analogy-cell-title">
+                        <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>
+                        Epic + Stories
+                    </div>
+                    <div class="analogy-role">
+                        <div class="analogy-role-icon">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                            </span>
+                        </div>
+                        <div>
+                            <div class="analogy-role-name">@pm</div>
+                            <div class="analogy-role-desc">Cria epic e stories priorizadas</div>
+                        </div>
+                    </div>
+                    <div class="analogy-details">
+                        <ul>
+                            <li><code class="code-purple">*brownfield-create-epic</code> &#8594; Epic de resolu&#231;&#227;o</li>
+                            <li><code class="code-purple">*brownfield-create-story</code> &#8594; Story por d&#233;bito</li>
+                            <li>Pronto para @dev iniciar implementa&#231;&#227;o</li>
+                        </ul>
+                        <div class="output-tag output-tag--green">&#8594; epic-*.md + story-*.md</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             QUANDO USAR - BROWNFIELD DISCOVERY
+             ============================================ -->
+        <section class="mb-4">
+            <div class="section-label">Quando Usar</div>
+            <h2 class="section-title">Discovery vs Ir Direto pro Workflow</h2>
+            <p class="section-desc">Nem todo projeto precisa de discovery. Veja quando usar cada abordagem.</p>
+
+            <div class="compare-grid">
+                <!-- USAR DISCOVERY -->
+                <div class="compare-card compare-card--highlight" style="padding:1.5rem">
+                    <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem;">
+                        <span class="icon" style="color:var(--color-accent-gold)">
+                            <svg viewBox="0 0 24 24" style="width:24px;height:24px"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                        </span>
+                        <h3 style="font-size:1rem; font-weight:700; color:var(--color-accent-gold)">Usar Discovery</h3>
+                    </div>
+                    <ul class="discovery-list">
+                        <li class="discovery-list__item">
+                            <span class="discovery-list__arrow discovery-list__arrow--gold">&#8594;</span>
+                            Migra&#231;&#227;o de <strong style="color:var(--color-text-primary)">Lovable / v0.dev</strong>
+                        </li>
+                        <li class="discovery-list__item">
+                            <span class="discovery-list__arrow discovery-list__arrow--gold">&#8594;</span>
+                            Codebase <strong style="color:var(--color-text-primary)">legado sem documenta&#231;&#227;o</strong>
+                        </li>
+                        <li class="discovery-list__item">
+                            <span class="discovery-list__arrow discovery-list__arrow--gold">&#8594;</span>
+                            <strong style="color:var(--color-text-primary)">Due diligence</strong> t&#233;cnica antes de investir
+                        </li>
+                        <li class="discovery-list__item">
+                            <span class="discovery-list__arrow discovery-list__arrow--gold">&#8594;</span>
+                            Planejamento de <strong style="color:var(--color-text-primary)">moderniza&#231;&#227;o</strong> completa
+                        </li>
+                        <li class="discovery-list__item">
+                            <span class="discovery-list__arrow discovery-list__arrow--gold">&#8594;</span>
+                            <strong style="color:var(--color-text-primary)">Onboarding</strong> em projeto desconhecido
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- PULAR PRO WORKFLOW -->
+                <div class="compare-card" style="padding:1.5rem">
+                    <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem;">
+                        <span class="icon" style="color:var(--color-text-muted)">
+                            <svg viewBox="0 0 24 24" style="width:24px;height:24px"><polyline points="13 17 18 12 13 7"/><polyline points="6 17 11 12 6 7"/></svg>
+                        </span>
+                        <h3 style="font-size:1rem; font-weight:700; color:var(--color-text-secondary)">Pular pro Workflow</h3>
+                    </div>
+                    <ul class="discovery-list">
+                        <li class="discovery-list__item" style="color:var(--color-text-muted)">
+                            <span class="discovery-list__arrow discovery-list__arrow--muted">&#8594;</span>
+                            Projeto j&#225; tem docs &#8594; <code class="code-purple">brownfield-fullstack</code>
+                        </li>
+                        <li class="discovery-list__item" style="color:var(--color-text-muted)">
+                            <span class="discovery-list__arrow discovery-list__arrow--muted">&#8594;</span>
+                            S&#243; backend &#8594; <code class="code-purple">brownfield-service</code>
+                        </li>
+                        <li class="discovery-list__item" style="color:var(--color-text-muted)">
+                            <span class="discovery-list__arrow discovery-list__arrow--muted">&#8594;</span>
+                            S&#243; frontend &#8594; <code class="code-purple">brownfield-ui</code>
+                        </li>
+                        <li class="discovery-list__item" style="color:var(--color-text-muted)">
+                            <span class="discovery-list__arrow discovery-list__arrow--muted">&#8594;</span>
+                            Bug fix r&#225;pido &#8594; <code class="code-purple">brownfield-create-story</code>
+                        </li>
+                        <li class="discovery-list__item" style="color:var(--color-text-muted)">
+                            <span class="discovery-list__arrow discovery-list__arrow--muted">&#8594;</span>
+                            Feature nova &#8594; <code class="code-purple">brownfield-create-epic</code>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             DECISION TREE - BROWNFIELD DISCOVERY FLOW
+             ============================================ -->
+        <section class="mb-4">
+            <div class="section-label">Fluxo Visual</div>
+            <h2 class="section-title">O Caminho do Discovery</h2>
+            <p class="section-desc">Da primeira an&#225;lise at&#233; o plano de a&#231;&#227;o. 10 fases, 1 quality gate, 0 atalhos.</p>
+
+            <div class="flow-diagram">
+                <div class="flow-diagram__inner">
+
+                    <!-- ===== START NODE ===== -->
+                    <div class="flow-diagram__node flow-diagram__node--start">
+                        <span style="font-family:var(--font-mono); font-size:0.85rem; font-weight:700; color:var(--color-accent-gold)">Brownfield Discovery</span>
+                    </div>
+
+                    <!-- Arrow down -->
+                    <div class="flow-diagram__connector"></div>
+
+                    <!-- ===== PHASE GROUP 1-3: COLETA ===== -->
+                    <div class="flow-diagram__group flow-diagram__group--purple">
+                        <div class="flow-diagram__phase-tag flow-diagram__phase-tag--purple">Fases 1-3</div>
+                        <div class="text-center" style="margin-bottom:0.75rem">
+                            <span style="font-size:0.75rem; font-weight:600; color:var(--color-accent-purple-light); text-transform:uppercase; letter-spacing:0.1em">Coleta de Dados (paralelo)</span>
+                        </div>
+                        <div style="display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap">
+                            <!-- Architect -->
+                            <div class="agent-card agent-card--purple">
+                                <div class="agent-card__name" style="color:var(--color-accent-purple-light)">@architect</div>
+                                <div class="agent-card__desc">Sistema &amp; Stack</div>
+                                <div class="agent-card__file">system-architecture.md</div>
+                            </div>
+                            <!-- Data Engineer -->
+                            <div class="agent-card agent-card--blue">
+                                <div class="agent-card__name" style="color:var(--color-blue-light)">@data-engineer</div>
+                                <div class="agent-card__desc">Database &amp; Seguran&#231;a</div>
+                                <div class="agent-card__file">SCHEMA.md + DB-AUDIT.md</div>
+                            </div>
+                            <!-- UX Expert -->
+                            <div class="agent-card agent-card--pink">
+                                <div class="agent-card__name" style="color:var(--color-pink-light)">@ux-design-expert</div>
+                                <div class="agent-card__desc">Frontend &amp; UX</div>
+                                <div class="agent-card__file">frontend-spec.md</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arrow down -->
+                    <div class="flow-diagram__connector"></div>
+
+                    <!-- ===== PHASE 4: CONSOLIDA&#199;&#195;O ===== -->
+                    <div class="flow-diagram__node flow-diagram__node--purple" id="fase4-node">
+                        <div class="flow-diagram__phase-tag flow-diagram__phase-tag--purple" style="left:16px">Fase 4</div>
+                        <span style="font-family:var(--font-mono); font-size:0.8rem; font-weight:700; color:var(--color-accent-purple-light)">@architect</span>
+                        <span style="font-size:0.8rem; color:var(--color-text-secondary)"> &#8594; Consolida DRAFT</span>
+                        <div style="font-family:var(--font-mono); font-size:0.65rem; color:var(--color-text-muted); margin-top:0.2rem; opacity:0.7">technical-debt-DRAFT.md</div>
+                    </div>
+
+                    <!-- Arrow down -->
+                    <div class="flow-diagram__connector"></div>
+
+                    <!-- ===== PHASE GROUP 5-7: VALIDA&#199;&#195;O ===== -->
+                    <div class="flow-diagram__group flow-diagram__group--yellow">
+                        <div class="flow-diagram__phase-tag flow-diagram__phase-tag--yellow">Fases 5-7</div>
+                        <div class="text-center" style="margin-bottom:0.75rem">
+                            <span style="font-size:0.75rem; font-weight:600; color:var(--color-warning); text-transform:uppercase; letter-spacing:0.1em">Valida&#231;&#227;o dos Especialistas</span>
+                        </div>
+                        <div style="display:flex; gap:0.75rem; justify-content:center; align-items:center; flex-wrap:wrap">
+                            <!-- Data Engineer Review -->
+                            <div class="agent-card-sm agent-card--blue">
+                                <div class="agent-card-sm__name" style="color:var(--color-blue-light)">@data-engineer</div>
+                                <div class="agent-card-sm__desc">Valida DB</div>
+                            </div>
+                            <!-- Arrow -->
+                            <div style="color:var(--color-text-muted); font-size:1.2rem">&#8594;</div>
+                            <!-- UX Review -->
+                            <div class="agent-card-sm agent-card--pink">
+                                <div class="agent-card-sm__name" style="color:var(--color-pink-light)">@ux-design-expert</div>
+                                <div class="agent-card-sm__desc">Valida UX</div>
+                            </div>
+                            <!-- Arrow -->
+                            <div style="color:var(--color-text-muted); font-size:1.2rem">&#8594;</div>
+                            <!-- QA Gate -->
+                            <div class="agent-card-sm agent-card--yellow-strong">
+                                <div class="agent-card-sm__name" style="color:var(--color-warning)">@qa</div>
+                                <div class="agent-card-sm__desc" style="color:var(--color-warning)">Quality Gate</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arrow down -->
+                    <div class="flow-diagram__connector flow-diagram__connector--short"></div>
+
+                    <!-- ===== QA GATE DIAMOND ===== -->
+                    <div style="position:relative; margin:0.25rem 0">
+                        <div class="qa-diamond">
+                            <span class="qa-diamond__text">QA Gate?</span>
+                        </div>
+
+                        <!-- NEEDS WORK branch (left) -->
+                        <div style="position:absolute; top:50%; right:calc(50% + 90px); transform:translateY(-50%); display:flex; align-items:center; gap:0">
+                            <div style="display:flex; align-items:center; gap:0.5rem">
+                                <div style="background:rgba(239,68,68,0.15); border:1px solid rgba(239,68,68,0.3); border-radius:var(--radius-md); padding:0.35rem 0.75rem; white-space:nowrap">
+                                    <span style="font-size:0.7rem; font-weight:700; color:var(--color-danger)">NEEDS WORK</span>
+                                    <span style="font-size:0.65rem; color:var(--color-text-muted)"> &#x27F2; Fase 4</span>
+                                </div>
+                                <div style="width:30px; height:2px; background:var(--color-danger)"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arrow down (APPROVED path) -->
+                    <div style="display:flex; align-items:center; gap:0.5rem; margin-top:0.25rem">
+                        <div style="display:flex; flex-direction:column; align-items:center">
+                            <div style="background:rgba(34,197,94,0.15); border:1px solid rgba(34,197,94,0.3); border-radius:999px; padding:0.2rem 0.6rem; font-size:0.65rem; font-weight:700; color:var(--color-accent-green); text-transform:uppercase; letter-spacing:0.08em">Approved</div>
+                            <div class="flow-diagram__connector flow-diagram__connector--short flow-diagram__connector--green"></div>
+                        </div>
+                    </div>
+
+                    <!-- ===== PHASE 8: ASSESSMENT FINAL ===== -->
+                    <div class="flow-diagram__node flow-diagram__node--purple">
+                        <div class="flow-diagram__phase-tag flow-diagram__phase-tag--purple" style="left:16px">Fase 8</div>
+                        <span style="font-family:var(--font-mono); font-size:0.8rem; font-weight:700; color:var(--color-accent-purple-light)">@architect</span>
+                        <span style="font-size:0.8rem; color:var(--color-text-secondary)"> &#8594; Assessment Final</span>
+                        <div style="font-family:var(--font-mono); font-size:0.65rem; color:var(--color-text-muted); margin-top:0.2rem; opacity:0.7">technical-debt-assessment.md</div>
+                    </div>
+
+                    <!-- Arrow down -->
+                    <div class="flow-diagram__connector"></div>
+
+                    <!-- ===== PHASE 9: RELAT&#211;RIO EXECUTIVO ===== -->
+                    <div class="flow-diagram__node flow-diagram__node--gold">
+                        <div class="flow-diagram__phase-tag flow-diagram__phase-tag--gold" style="left:16px">Fase 9</div>
+                        <span style="font-family:var(--font-mono); font-size:0.8rem; font-weight:700; color:var(--color-accent-gold)">@analyst</span>
+                        <span style="font-size:0.8rem; color:var(--color-text-secondary)"> &#8594; Relat&#243;rio Executivo</span>
+                        <div style="font-family:var(--font-mono); font-size:0.65rem; color:var(--color-text-muted); margin-top:0.2rem; opacity:0.7">TECHNICAL-DEBT-REPORT.md &#9733;</div>
+                    </div>
+
+                    <!-- Arrow down -->
+                    <div class="flow-diagram__connector"></div>
+
+                    <!-- ===== PHASE 10: PLANNING ===== -->
+                    <div class="flow-diagram__group flow-diagram__group--green">
+                        <div class="flow-diagram__phase-tag flow-diagram__phase-tag--green">Fase 10</div>
+                        <div class="text-center" style="margin-bottom:0.75rem">
+                            <span style="font-size:0.75rem; font-weight:600; color:var(--color-accent-green); text-transform:uppercase; letter-spacing:0.1em">Planning</span>
+                        </div>
+                        <div style="display:flex; gap:0.75rem; justify-content:center">
+                            <div class="agent-card-sm agent-card--green">
+                                <div class="agent-card-sm__name" style="color:var(--color-accent-green)">@pm</div>
+                                <div class="agent-card-sm__desc">Cria Epic</div>
+                            </div>
+                            <div style="color:var(--color-text-muted); font-size:1.2rem; display:flex; align-items:center">&#8594;</div>
+                            <div class="agent-card-sm agent-card--green">
+                                <div class="agent-card-sm__name" style="color:var(--color-accent-green)">@pm</div>
+                                <div class="agent-card-sm__desc">Cria Stories</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arrow down -->
+                    <div class="flow-diagram__connector flow-diagram__connector--green"></div>
+
+                    <!-- ===== END NODE ===== -->
+                    <div class="flow-diagram__node flow-diagram__node--end">
+                        <span style="font-size:0.85rem; font-weight:700; color:var(--color-accent-green)">&#10003; Discovery Completo</span>
+                        <div style="font-size:0.7rem; color:var(--color-text-muted); margin-top:0.15rem">Pronto para @dev implementar</div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PIPELINE COMPLETO - BROWNFIELD DISCOVERY
+             ============================================ -->
+        <section class="mb-3">
+            <div class="section-label">Pipeline Completo</div>
+            <h2 class="section-title">O Fluxo Discovery de Ponta a Ponta</h2>
+            <p class="section-desc">10 fases. 6 agentes. Cada um com papel definido.</p>
+
+            <div class="terminal">
+                <div class="terminal-bar">
+                    <div class="terminal-dot red"></div>
+                    <div class="terminal-dot yellow"></div>
+                    <div class="terminal-dot green"></div>
+                    <span class="terminal-title">brownfield-discovery.yaml &mdash; workflow</span>
+                </div>
+                <div class="terminal-body">
+                    <span class="comment"># Workflow: brownfield-discovery v2.0</span><br>
+                    <span class="comment"># "Diagnostica. Valida. Planeja. S&#243; ent&#227;o executa."</span><br><br>
+
+                    <span class="comment"># &#9552;&#9552;&#9552; FASES 1-3: COLETA DE DADOS (paralelo) &#9552;&#9552;&#9552;</span><br><br>
+
+                    <span class="output"><span class="icon" style="color:var(--color-accent-purple)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4"/><path d="M12 19v4"/><path d="M4.22 4.22l2.83 2.83"/><path d="M16.95 16.95l2.83 2.83"/><path d="M1 12h4"/><path d="M19 12h4"/></svg></span> <span style="color:var(--color-accent-purple);font-weight:600">@architect</span> &rarr; *document-project</span><br>
+                    <span class="output" style="color:var(--terminal-comment)">  &boxur;&HorizontalLine; docs/architecture/system-architecture.md</span><br><br>
+
+                    <span class="output"><span class="icon" style="color:var(--color-info)"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></span> <span style="color:var(--color-info);font-weight:600">@data-engineer</span> &rarr; *db-schema-audit + *security-audit</span><br>
+                    <span class="output" style="color:var(--terminal-comment)">  &boxvr;&HorizontalLine; supabase/docs/SCHEMA.md</span><br>
+                    <span class="output" style="color:var(--terminal-comment)">  &boxur;&HorizontalLine; supabase/docs/DB-AUDIT.md</span><br><br>
+
+                    <span class="output"><span class="icon" style="color:var(--color-pink)"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span> <span style="color:var(--color-pink);font-weight:600">@ux-design-expert</span> &rarr; *create-front-end-spec</span><br>
+                    <span class="output" style="color:var(--terminal-comment)">  &boxur;&HorizontalLine; docs/frontend/frontend-spec.md</span><br><br>
+
+                    <span class="comment"># &#9552;&#9552;&#9552; FASE 4: CONSOLIDA&#199;&#195;O &#9552;&#9552;&#9552;</span><br><br>
+
+                    <span class="output"><span class="icon" style="color:var(--color-accent-purple)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4"/><path d="M12 19v4"/><path d="M4.22 4.22l2.83 2.83"/><path d="M16.95 16.95l2.83 2.83"/><path d="M1 12h4"/><path d="M19 12h4"/></svg></span> <span style="color:var(--color-accent-purple);font-weight:600">@architect</span> &rarr; consolida DRAFT</span><br>
+                    <span class="output" style="color:var(--terminal-comment)">  &boxur;&HorizontalLine; docs/prd/technical-debt-DRAFT.md</span><br><br>
+
+                    <span class="comment"># &#9552;&#9552;&#9552; FASES 5-7: VALIDA&#199;&#195;O DOS ESPECIALISTAS &#9552;&#9552;&#9552;</span><br><br>
+
+                    <span class="output"><span class="icon" style="color:var(--color-info)"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></span> <span style="color:var(--color-info);font-weight:600">@data-engineer</span> &rarr; valida se&#231;&#227;o DB</span><br>
+                    <span class="output" style="color:var(--terminal-comment)">  &boxur;&HorizontalLine; docs/reviews/db-specialist-review.md</span><br><br>
+
+                    <span class="output"><span class="icon" style="color:var(--color-pink)"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></span> <span style="color:var(--color-pink);font-weight:600">@ux-design-expert</span> &rarr; valida se&#231;&#227;o UX</span><br>
+                    <span class="output" style="color:var(--terminal-comment)">  &boxur;&HorizontalLine; docs/reviews/ux-specialist-review.md</span><br><br>
+
+                    <span class="output"><span class="icon" style="color:var(--color-warning)"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span> <span style="color:var(--color-warning);font-weight:600">@qa</span> &rarr; Quality Gate</span><br>
+                    <span class="output" style="color:var(--terminal-comment)">  &boxvr;&HorizontalLine; <span style="color:var(--color-accent-green)">&check; APPROVED</span> &rarr; segue pra Fase 8</span><br>
+                    <span class="output" style="color:var(--terminal-comment)">  &boxur;&HorizontalLine; <span style="color:var(--color-danger)">&cross; NEEDS WORK</span> &rarr; volta pra Fase 4</span><br><br>
+
+                    <span class="comment"># &#9552;&#9552;&#9552; FASES 8-9: REPORTS FINAIS &#9552;&#9552;&#9552;</span><br><br>
+
+                    <span class="output"><span class="icon" style="color:var(--color-accent-purple)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4"/><path d="M12 19v4"/><path d="M4.22 4.22l2.83 2.83"/><path d="M16.95 16.95l2.83 2.83"/><path d="M1 12h4"/><path d="M19 12h4"/></svg></span> <span style="color:var(--color-accent-purple);font-weight:600">@architect</span> &rarr; Assessment Final</span><br>
+                    <span class="output" style="color:var(--terminal-comment)">  &boxur;&HorizontalLine; docs/prd/technical-debt-assessment.md</span><br><br>
+
+                    <span class="output"><span class="icon" style="color:var(--color-accent-gold)"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span> <span class="highlight">@analyst</span> &rarr; Relat&#243;rio Executivo</span><br>
+                    <span class="output" style="color:var(--terminal-comment)">  &boxur;&HorizontalLine; docs/reports/TECHNICAL-DEBT-REPORT.md</span><br><br>
+
+                    <span class="comment"># &#9552;&#9552;&#9552; FASE 10: PLANNING &#9552;&#9552;&#9552;</span><br><br>
+
+                    <span class="output"><span class="icon" style="color:var(--color-accent-green)"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span> <span style="color:var(--color-accent-green);font-weight:600">@pm</span> &rarr; *brownfield-create-epic</span><br>
+                    <span class="output" style="color:var(--terminal-comment)">  &boxur;&HorizontalLine; docs/stories/epic-technical-debt.md</span><br><br>
+
+                    <span class="output"><span class="icon" style="color:var(--color-accent-green)"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span> <span style="color:var(--color-accent-green);font-weight:600">@pm</span> &rarr; *brownfield-create-story (repete por d&#233;bito)</span><br>
+                    <span class="output" style="color:var(--terminal-comment)">  &boxvr;&HorizontalLine; docs/stories/story-1.1-fix-security-rls.md</span><br>
+                    <span class="output" style="color:var(--terminal-comment)">  &boxvr;&HorizontalLine; docs/stories/story-1.2-add-missing-indexes.md</span><br>
+                    <span class="output" style="color:var(--terminal-comment)">  &boxur;&HorizontalLine; docs/stories/story-1.3-implement-design-system.md</span><br><br>
+
+                    <span class="success"><span class="icon" style="color:var(--color-accent-green)"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span> Discovery completo. Pronto para @dev iniciar implementa&#231;&#227;o.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             ARTEFATOS GERADOS
+             ============================================ -->
+        <section class="mb-3">
+            <div class="section-label">Output</div>
+            <h2 class="section-title">Artefatos Gerados pelo Discovery</h2>
+
+            <div style="background:var(--color-bg-card); border:1px solid var(--color-border); border-radius:var(--radius-xl); padding:2rem; margin-top:1.5rem">
+                <pre class="artifact-tree"><span style="color:var(--color-text-muted)">docs/</span>
+&#9500;&#9472;&#9472; <span style="color:var(--color-accent-purple-light)">architecture/</span>
+&#9474;   &#9492;&#9472;&#9472; system-architecture.md         <span style="color:var(--color-text-muted)">[Fase 1]</span>
+&#9500;&#9472;&#9472; <span style="color:var(--color-accent-purple-light)">frontend/</span>
+&#9474;   &#9492;&#9472;&#9472; frontend-spec.md               <span style="color:var(--color-text-muted)">[Fase 3]</span>
+&#9500;&#9472;&#9472; <span style="color:var(--color-accent-purple-light)">reviews/</span>
+&#9474;   &#9500;&#9472;&#9472; db-specialist-review.md        <span style="color:var(--color-text-muted)">[Fase 5]</span>
+&#9474;   &#9500;&#9472;&#9472; ux-specialist-review.md        <span style="color:var(--color-text-muted)">[Fase 6]</span>
+&#9474;   &#9492;&#9472;&#9472; qa-review.md                   <span style="color:var(--color-text-muted)">[Fase 7]</span>
+&#9500;&#9472;&#9472; <span style="color:var(--color-accent-purple-light)">prd/</span>
+&#9474;   &#9500;&#9472;&#9472; technical-debt-DRAFT.md        <span style="color:var(--color-text-muted)">[Fase 4]</span>
+&#9474;   &#9492;&#9472;&#9472; technical-debt-assessment.md   <span style="color:var(--color-text-muted)">[Fase 8]</span>
+&#9500;&#9472;&#9472; <span style="color:var(--color-accent-purple-light)">reports/</span>
+&#9474;   &#9492;&#9472;&#9472; <span style="color:var(--color-accent-gold)">TECHNICAL-DEBT-REPORT.md</span>   <span style="color:var(--color-text-muted)">[Fase 9]</span> <span style="color:var(--color-accent-gold)">&#9733;</span>
+&#9492;&#9472;&#9472; <span style="color:var(--color-accent-purple-light)">stories/</span>
+    &#9500;&#9472;&#9472; epic-technical-debt.md         <span style="color:var(--color-text-muted)">[Fase 10]</span>
+    &#9492;&#9472;&#9472; story-*.md                     <span style="color:var(--color-text-muted)">[Fase 10]</span>
+
+<span style="color:var(--color-text-muted)">supabase/docs/</span>
+&#9500;&#9472;&#9472; SCHEMA.md                          <span style="color:var(--color-text-muted)">[Fase 2]</span>
+&#9492;&#9472;&#9472; DB-AUDIT.md                        <span style="color:var(--color-text-muted)">[Fase 2]</span></pre>
+            </div>
+        </section>
+
+        <!-- ============================================
+             PRINC&#205;PIOS DISCOVERY
+             ============================================ -->
+        <section class="mb-3">
+            <div class="section-label">Princ&#237;pios</div>
+            <h2 class="section-title">Regras de Ouro do Discovery</h2>
+
+            <div class="principles-grid">
+                <!-- Princ&#237;pio 1 -->
+                <div class="principle-card">
+                    <div class="principle-card__icon" style="color:var(--color-accent-green)">
+                        <span class="icon"><svg viewBox="0 0 24 24" style="width:28px;height:28px;stroke-width:1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+                    </div>
+                    <h4 class="principle-card__title">Diagnostica antes<br>de mexer</h4>
+                    <p class="principle-card__desc">Nenhum c&#243;digo muda sem assessment completo.</p>
+                </div>
+
+                <!-- Princ&#237;pio 2 -->
+                <div class="principle-card">
+                    <div class="principle-card__icon" style="color:var(--color-warning)">
+                        <span class="icon"><svg viewBox="0 0 24 24" style="width:28px;height:28px;stroke-width:1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                    </div>
+                    <h4 class="principle-card__title">M&#250;ltiplos olhares<br>&gt; opini&#227;o &#250;nica</h4>
+                    <p class="principle-card__desc">Especialistas validam entre si. Ningu&#233;m &#233; dono da verdade.</p>
+                </div>
+
+                <!-- Princ&#237;pio 3 -->
+                <div class="principle-card">
+                    <div class="principle-card__icon" style="color:var(--color-accent-purple-light)">
+                        <span class="icon"><svg viewBox="0 0 24 24" style="width:28px;height:28px;stroke-width:1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+                    </div>
+                    <h4 class="principle-card__title">Quality Gate<br>&#233; obrigat&#243;rio</h4>
+                    <p class="principle-card__desc">@qa decide: APPROVED ou NEEDS WORK. Sem atalhos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             INSIGHT BLOCO 2
+             ============================================ -->
+        <div class="insight-card">
+            <h4>
+                <span class="icon" style="color:var(--color-accent-gold)"><svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
+                Insight do Bloco
+            </h4>
+            <p><strong>O discovery transforma caos em plano de a&#231;&#227;o.</strong><br>
+            Projetos migrados de Lovable, v0.dev ou legados parecem imposs&#237;veis de melhorar. O brownfield-discovery usa 6 agentes especializados em 10 fases para produzir um relat&#243;rio executivo com custos, riscos e ROI. O dono do produto recebe um documento de decis&#227;o, n&#227;o uma lista de problemas t&#233;cnicos.</p>
+        </div>
+
+        <!-- ============================================
+             EXERCÍCIO PRÁTICO: DISCOVERY NA PRÁTICA
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Mao na Massa</div>
+            <h2 class="section-title">Exercicio: Diagnostique um Projeto Real</h2>
+            <p class="section-desc">Aplique o raciocinio do Brownfield Discovery a um projeto que voce ja tem. Pode ser um site, app, planilha, processo &mdash; qualquer coisa.</p>
+
+            <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 2rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(209,255,0,0.12); border: 1px solid rgba(209,255,0,0.25); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span class="icon" style="color: var(--color-accent-gold);"><svg viewBox="0 0 24 24" style="width:18px;height:18px"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.1rem; font-weight: 700;">Mini-Discovery em 4 Perguntas</h3>
+                        <p style="font-size: 0.8rem; color: var(--color-text-muted);">Escolha 1 projeto que voce ja tem e responda as 4 perguntas abaixo</p>
+                    </div>
+                </div>
+
+                <!-- Fase 1 -->
+                <div style="padding: 1.25rem; margin-bottom: 0.75rem; background: rgba(0,153,255,0.04); border: 1px solid rgba(0,153,255,0.15); border-radius: var(--radius-lg);">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; color: var(--color-accent-purple-light); background: rgba(0,153,255,0.15); padding: 0.2rem 0.6rem; border-radius: 999px;">Fase 1</span>
+                        <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-accent-purple-light);">@architect &mdash; Sistema &amp; Stack</span>
+                    </div>
+                    <p style="color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.7;">
+                        <strong style="color: var(--color-text-primary);">Qual e a "arquitetura" atual do seu projeto?</strong><br>
+                        Como as partes se conectam? Quais ferramentas, plataformas ou servicos voce usa? Existe documentacao?
+                    </p>
+                </div>
+
+                <!-- Fase 2 -->
+                <div style="padding: 1.25rem; margin-bottom: 0.75rem; background: rgba(59,130,246,0.04); border: 1px solid rgba(59,130,246,0.15); border-radius: var(--radius-lg);">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; color: var(--color-blue-light, #60a5fa); background: rgba(59,130,246,0.15); padding: 0.2rem 0.6rem; border-radius: 999px;">Fase 2</span>
+                        <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-blue-light, #60a5fa);">@data-engineer &mdash; Dados</span>
+                    </div>
+                    <p style="color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.7;">
+                        <strong style="color: var(--color-text-primary);">Onde estao os dados?</strong><br>
+                        Planilha? Banco de dados? Tudo na cabeca? Os dados estao seguros? Tem backup?
+                    </p>
+                </div>
+
+                <!-- Fase 3 -->
+                <div style="padding: 1.25rem; margin-bottom: 0.75rem; background: rgba(236,72,153,0.04); border: 1px solid rgba(236,72,153,0.15); border-radius: var(--radius-lg);">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; color: var(--color-pink-light, #f472b6); background: rgba(236,72,153,0.15); padding: 0.2rem 0.6rem; border-radius: 999px;">Fase 3</span>
+                        <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-pink-light, #f472b6);">@ux-design-expert &mdash; Interface</span>
+                    </div>
+                    <p style="color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.7;">
+                        <strong style="color: var(--color-text-primary);">O que o usuario final ve?</strong><br>
+                        Tem interface visual? E bonita ou funcional? Funciona no celular? O que os usuarios reclamam?
+                    </p>
+                </div>
+
+                <!-- Fase 4 -->
+                <div style="padding: 1.25rem; margin-bottom: 0; background: rgba(209,255,0,0.04); border: 1px solid rgba(209,255,0,0.15); border-radius: var(--radius-lg);">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem;">
+                        <span style="font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700; color: var(--color-accent-gold); background: rgba(209,255,0,0.15); padding: 0.2rem 0.6rem; border-radius: 999px;">Fase 4</span>
+                        <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-accent-gold);">Consolidacao &mdash; Debitos</span>
+                    </div>
+                    <p style="color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.7;">
+                        <strong style="color: var(--color-text-primary);">O que esta quebrado, desatualizado ou faltando?</strong><br>
+                        Liste 3 coisas que voce sabe que precisam melhorar. Classifique: qual e urgente, qual e importante, qual pode esperar?
+                    </p>
+                </div>
+            </div>
+
+            <div class="insight-card">
+                <h4>
+                    <span class="icon" style="color:var(--color-accent-gold)"><svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
+                    O Que Voce Acabou de Fazer
+                </h4>
+                <p>Voce executou as <strong>4 primeiras fases</strong> do Brownfield Discovery &mdash; mentalmente. No AIOS, agentes de IA fazem isso automaticamente, em paralelo, e geram documentos completos. Mas o raciocinio e o mesmo: <strong>diagnosticar antes de mexer</strong>.</p>
+            </div>
+        </section>
+
+        <!-- Gamification: Interactive scenarios -->
+        <div class="scenario-slot" data-page="e1-fluxos"></div>
+
+    </div>

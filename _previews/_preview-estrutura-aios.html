@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview - Estrutura AIOS + O Sonho dos Tokens</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg-primary: #0A0A0A;
+            --color-bg-secondary: #0F0F0F;
+            --color-bg-card: #1A1A1A;
+            --color-bg-card-hover: #222222;
+            --color-bg-elevated: #252525;
+            --color-accent-gold: #D1FF00;
+            --color-accent-gold-light: #E0FF4D;
+            --color-accent-purple: #0099FF;
+            --color-accent-purple-light: #33ADFF;
+            --color-accent-green: #22C55E;
+            --color-text-primary: #FFFFFF;
+            --color-text-secondary: #A3A3A3;
+            --color-text-muted: #6B7280;
+            --color-border: #2A2A2A;
+            --color-border-light: #3A3A3A;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+            --radius-sm: 0.5rem;
+            --radius-md: 0.75rem;
+            --radius-lg: 1rem;
+            --radius-xl: 1.25rem;
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
+            --shadow-glow-gold: 0 0 30px rgba(209, 255, 0, 0.15);
+            --color-accent-gold-10: rgba(209, 255, 0, 0.1);
+            --color-accent-gold-15: rgba(209, 255, 0, 0.15);
+            --color-accent-gold-20: rgba(209, 255, 0, 0.2);
+            --color-accent-gold-30: rgba(209, 255, 0, 0.3);
+            --color-accent-gold-50: rgba(209, 255, 0, 0.5);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: var(--font-family);
+            background: var(--color-bg-primary);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+        }
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem 3rem;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        .hero-badge {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--color-accent-gold);
+            background: var(--color-accent-gold-10);
+            border: 1px solid var(--color-accent-gold-30);
+            border-radius: 999px;
+            padding: 0.35rem 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+            color: var(--color-text-primary);
+        }
+        .hero h1 span { color: var(--color-accent-gold); }
+        .hero p {
+            font-size: 0.95rem;
+            color: var(--color-text-muted);
+            max-width: 560px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .content {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+        .flow-section {
+            margin-bottom: 3rem;
+        }
+        .section-label {
+            font-family: var(--font-mono);
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-accent-gold);
+            margin-bottom: 0.5rem;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--color-text-primary);
+            margin-bottom: 0.75rem;
+        }
+        .section-desc {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        code {
+            background: rgba(255,255,255,0.06);
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-family: var(--font-mono);
+        }
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 1.6rem; }
+            .content { padding: 0 1rem 3rem; }
+            div[style*="grid-template-columns: repeat(3"] { grid-template-columns: 1fr !important; }
+            div[style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-badge">Encontro 3 &bull; Estrutura AIOS + O Sonho dos Tokens</div>
+        <h1>O Claude e excelente.<br><span>Com processo, e imbativel.</span></h1>
+        <p>Claude Code sozinho ja faz coisas incriveis. Mas quando voce adiciona processo, templates e agentes especializados &mdash; o resultado muda de nivel. A diferenca e a mesma entre um profissional talentoso trabalhando sozinho e uma equipe organizada.</p>
+    </header>
+
+    <div class="content">
+
+        <!-- ============================================
+             BLOCO 0: O Desafio
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">O Desafio</div>
+            <h2 class="section-title">Missao: Criar uma Landing Page</h2>
+            <p class="section-desc">Um cliente pede: <em style="color: var(--color-text-secondary);">"Preciso de uma landing page para vender meu curso de fotografia."</em> Vamos ver como os dois caminhos resolvem o mesmo problema.</p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                <div style="background: linear-gradient(135deg, rgba(56,189,248,0.06) 0%, rgba(234,179,8,0.04) 100%); border: 1px solid rgba(56,189,248,0.2); border-radius: var(--radius-xl); padding: 1.5rem; text-align: center;">
+                    <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(56,189,248,0.1); border: 1px solid rgba(56,189,248,0.25); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <div style="font-weight: 800; font-size: 1rem; color: var(--color-text-primary); margin-bottom: 0.25rem;">Claude Code Sozinho</div>
+                    <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.5;">Excelente. Faz tudo. Mas voce e o gerente de projeto.</div>
+                </div>
+                <div style="background: linear-gradient(135deg, rgba(34,197,94,0.06) 0%, rgba(209,255,0,0.04) 100%); border: 1px solid rgba(34,197,94,0.2); border-radius: var(--radius-xl); padding: 1.5rem; text-align: center;">
+                    <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.25); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div style="font-weight: 800; font-size: 1rem; color: var(--color-text-primary); margin-bottom: 0.25rem;">Claude Code + AIOS</div>
+                    <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.5;">O mesmo Claude. Mas com processo, agentes e quality gates.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             BLOCO 1: Caminho A — Claude Code Sozinho
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Caminho A</div>
+            <h2 class="section-title">Claude Code Sozinho</h2>
+            <p class="section-desc">Voce abre o terminal, digita <code>claude</code>, e pede. O Claude e capaz &mdash; o resultado vai ser bom. Mas repara <strong style="color: var(--color-text-secondary);">quem esta gerenciando o processo</strong>.</p>
+
+            <!-- Terminal simulation -->
+            <div style="background: #0D1117; border: 1px solid rgba(56,189,248,0.2); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(56,189,248,0.15); background: rgba(56,189,248,0.03);">
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                    <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #38BDF8; margin-left: 0.4rem;">Terminal &mdash; Claude Code (sem AIOS)</span>
+                </div>
+                <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 2; color: #8B949E;">
+                    <div><span style="color: #38BDF8;">voce:</span> <span style="color: #A5D6FF;">Cria uma landing page para meu curso de fotografia</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #38BDF8;">claude:</span> <span style="color: #6A737D;">Vou criar! Preciso de alguns detalhes:</span></div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;- Qual o publico-alvo?</span></div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;- Qual o preco?</span></div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;- Tem depoimentos?</span></div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;- Qual o diferencial do curso?</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #38BDF8;">voce:</span> <span style="color: #A5D6FF;">[responde o que lembra na hora]</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #38BDF8;">claude:</span> <span style="color: #4ADE80;">&#x2713; Gerei a landing page completa!</span></div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;index.html + styles.css + hero + depoimentos + CTA</span></div>
+                    <div>&nbsp;</div>
+                    <div style="color: #FBBF24; font-style: italic;">&nbsp;&nbsp;// Resultado: bom. Mas...</div>
+                    <div style="color: #FBBF24; font-style: italic;">&nbsp;&nbsp;// Voce lembrou de tudo? Faltou algo no brief?</div>
+                    <div style="color: #FBBF24; font-style: italic;">&nbsp;&nbsp;// A copy seguiu algum framework ou foi inventada?</div>
+                    <div style="color: #FBBF24; font-style: italic;">&nbsp;&nbsp;// Alguem validou antes de ir pro ar?</div>
+                    <div style="color: #FBBF24; font-style: italic;">&nbsp;&nbsp;// No proximo projeto, comeca tudo do zero de novo.</div>
+                </div>
+            </div>
+
+            <!-- The real issue -->
+            <div style="background: rgba(251,191,36,0.04); border: 1px solid rgba(251,191,36,0.15); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1rem;">
+                <div style="font-weight: 800; font-size: 0.8rem; color: #FBBF24; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem;">O Que Falta (Nao e Competencia)</div>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.6;">
+                    <div style="display: flex; gap: 0.5rem;"><span style="color: #FBBF24;">&#x26A0;</span> <strong style="color: var(--color-text-secondary);">Voce e o gerente de projeto</strong> &mdash; decide o que pedir, em qual ordem, o que validar</div>
+                    <div style="display: flex; gap: 0.5rem;"><span style="color: #FBBF24;">&#x26A0;</span> <strong style="color: var(--color-text-secondary);">Sem template de requisitos</strong> &mdash; o brief depende da sua memoria na hora</div>
+                    <div style="display: flex; gap: 0.5rem;"><span style="color: #FBBF24;">&#x26A0;</span> <strong style="color: var(--color-text-secondary);">Sem quality gate</strong> &mdash; quem verifica se a copy ta boa? Se o CTA converte?</div>
+                    <div style="display: flex; gap: 0.5rem;"><span style="color: #FBBF24;">&#x26A0;</span> <strong style="color: var(--color-text-secondary);">Sem processo replicavel</strong> &mdash; no proximo projeto, comeca do zero</div>
+                    <div style="display: flex; gap: 0.5rem;"><span style="color: #FBBF24;">&#x26A0;</span> <strong style="color: var(--color-text-secondary);">Um contexto faz tudo</strong> &mdash; requisitos, arquitetura, codigo e QA no mesmo fluxo</div>
+                </div>
+            </div>
+
+            <!-- Metaphor -->
+            <div style="background: rgba(249,115,22,0.04); border: 1px dashed rgba(249,115,22,0.2); border-radius: var(--radius-lg); padding: 1.25rem;">
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                    <div style="font-size: 1.5rem; line-height: 1;">&#x1F3E0;</div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.85rem; color: #f97316; margin-bottom: 0.3rem;">Na Reforma: Profissional Talentoso Sozinho</div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.7;">
+                            Imagine um profissional excelente reformando sua casa. Ele sabe fazer eletrica, encanamento, pintura. E competente. Mas ele decide tudo na hora, sem planta, sem cronograma, sem vistoria formal. O resultado depende da memoria dele naquele dia &mdash; e no proximo cliente, comeca tudo de cabeca de novo.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             BLOCO 2: Caminho B — Com AIOS
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Caminho B</div>
+            <h2 class="section-title">Claude Code + AIOS</h2>
+            <p class="section-desc">O <strong style="color: var(--color-text-secondary);">mesmo Claude</strong>, o <strong style="color: var(--color-text-secondary);">mesmo modelo</strong>. Mas agora com processo definido: cada etapa tem um agente especialista, um template, e um quality gate.</p>
+
+            <!-- Terminal simulation -->
+            <div style="background: #0D1117; border: 1px solid rgba(34,197,94,0.2); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(34,197,94,0.15); background: rgba(34,197,94,0.03);">
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                    <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #22c55e; margin-left: 0.4rem;">Terminal &mdash; Claude Code + AIOS (.aios-core/)</span>
+                </div>
+                <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 2; color: #8B949E;">
+                    <div><span style="color: #22c55e;">voce:</span> <span style="color: #A5D6FF;">@pm Preciso de uma landing page para meu curso de fotografia</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #38BDF8;">@pm (Morgan):</span> <span style="color: #6A737D;">Seguindo task create-doc.md + template prd-tmpl.yaml</span></div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; Elicitacao estruturada: publico, dor, oferta, metricas, concorrentes</span></div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; PRD completo gerado (nada esquecido &mdash; o template garante)</span></div>
+                    <div><span style="color: #4ADE80;">&nbsp;&nbsp;&#x2713; docs/prd/landing-fotografia.md</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #22c55e;">voce:</span> <span style="color: #A5D6FF;">@architect Projeta a arquitetura</span></div>
+                    <div><span style="color: #33ADFF;">@architect (Aria):</span> <span style="color: #6A737D;">Analisando PRD &rarr; front-end-architecture-tmpl.yaml</span></div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; Tech stack definida, estrutura documentada</span></div>
+                    <div><span style="color: #4ADE80;">&nbsp;&nbsp;&#x2713; Decisoes tecnicas registradas</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #22c55e;">voce:</span> <span style="color: #A5D6FF;">@dev Implementa</span></div>
+                    <div><span style="color: #FBBF24;">@dev (Dex):</span> <span style="color: #6A737D;">Seguindo dev-develop-story.md + arquitetura</span></div>
+                    <div><span style="color: #4ADE80;">&nbsp;&nbsp;&#x2713; Landing page implementada</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #F472B6;">@qa (Quinn):</span> <span style="color: #6A737D;">qa-gate.md &rarr; 7 checks objetivos</span></div>
+                    <div><span style="color: #4ADE80;">&nbsp;&nbsp;&#x2713; QA Gate: PASS (7/7)</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #FB923C;">@devops (Gage):</span> <span style="color: #6A737D;">Pre-push quality gates &rarr; deploy</span></div>
+                    <div><span style="color: #4ADE80;">&nbsp;&nbsp;&#x2713; Deployed: landing-fotografia.vercel.app</span></div>
+                    <div>&nbsp;</div>
+                    <div style="color: #22c55e; font-style: italic;">&nbsp;&nbsp;// Proximo projeto? Mesmo processo. Mesmos templates.</div>
+                    <div style="color: #22c55e; font-style: italic;">&nbsp;&nbsp;// Nada esquecido. Qualidade verificada. Replicavel.</div>
+                </div>
+            </div>
+
+            <!-- The Flow with agents -->
+            <div style="font-weight: 800; font-size: 0.9rem; color: var(--color-text-primary); margin-bottom: 1rem;">O Fluxo: Quem Faz o Que</div>
+
+            <!-- Agent flow cards -->
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+
+                <!-- Step 1: @pm (Morgan) -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(56,189,248,0.1); border: 2px solid rgba(56,189,248,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: #38BDF8;">1</span>
+                    </div>
+                    <div style="flex: 1; background: var(--color-bg-card); border: 1px solid rgba(56,189,248,0.15); border-radius: var(--radius-lg); padding: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: #38BDF8;">@pm (Morgan)</span>
+                            <span style="font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.05); padding: 0.15rem 0.5rem; border-radius: 4px;">= Engenheiro da Obra</span>
+                        </div>
+                        <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">Coleta requisitos com <strong style="color: var(--color-text-secondary);">elicitacao estruturada</strong> &mdash; o template <code>prd-tmpl.yaml</code> garante que nada e esquecido. Publico, dor, oferta, metricas, concorrentes. Tudo documentado.</div>
+                    </div>
+                </div>
+
+                <!-- Step 2: @architect (Aria) -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(0,153,255,0.1); border: 2px solid rgba(0,153,255,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: #a855f7;">2</span>
+                    </div>
+                    <div style="flex: 1; background: var(--color-bg-card); border: 1px solid rgba(0,153,255,0.15); border-radius: var(--radius-lg); padding: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: #33ADFF;">@architect (Aria)</span>
+                            <span style="font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.05); padding: 0.15rem 0.5rem; border-radius: 4px;">= Arquiteta</span>
+                        </div>
+                        <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">Analisa o PRD e define a <strong style="color: var(--color-text-secondary);">arquitetura tecnica</strong> usando <code>front-end-architecture-tmpl.yaml</code>. Tech stack, estrutura, componentes &mdash; decisoes documentadas, nao improvisadas.</div>
+                    </div>
+                </div>
+
+                <!-- Step 3: @dev (Dex) -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(251,191,36,0.1); border: 2px solid rgba(251,191,36,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: #FBBF24;">3</span>
+                    </div>
+                    <div style="flex: 1; background: var(--color-bg-card); border: 1px solid rgba(251,191,36,0.15); border-radius: var(--radius-lg); padding: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: #FBBF24;">@dev (Dex)</span>
+                            <span style="font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.05); padding: 0.15rem 0.5rem; border-radius: 4px;">= Mestre de Obras</span>
+                        </div>
+                        <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">Segue <code>dev-develop-story.md</code> passo a passo. Recebe o PRD + arquitetura prontos &mdash; nao precisa inventar requisitos. Foco total em implementar bem.</div>
+                    </div>
+                </div>
+
+                <!-- Step 4: @qa (Quinn) -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(244,114,182,0.1); border: 2px solid rgba(244,114,182,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: #F472B6;">4</span>
+                    </div>
+                    <div style="flex: 1; background: var(--color-bg-card); border: 1px solid rgba(244,114,182,0.15); border-radius: var(--radius-lg); padding: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: #F472B6;">@qa (Quinn)</span>
+                            <span style="font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.05); padding: 0.15rem 0.5rem; border-radius: 4px;">= Inspetor de Qualidade</span>
+                        </div>
+                        <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">Executa <code>qa-gate.md</code> com <strong style="color: var(--color-text-secondary);">7 verificacoes objetivas</strong>: codigo, testes, criterios de aceite, regressao, performance, seguranca, docs. <strong style="color: #F472B6;">Passa ou nao passa.</strong></div>
+                    </div>
+                </div>
+
+                <!-- Step 5: @devops (Gage) -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(251,146,60,0.1); border: 2px solid rgba(251,146,60,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: #FB923C;">5</span>
+                    </div>
+                    <div style="flex: 1; background: var(--color-bg-card); border: 1px solid rgba(251,146,60,0.15); border-radius: var(--radius-lg); padding: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: #FB923C;">@devops (Gage)</span>
+                            <span style="font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.05); padding: 0.15rem 0.5rem; border-radius: 4px;">= Entrega &amp; Habite-se</span>
+                        </div>
+                        <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">Roda <strong style="color: var(--color-text-secondary);">pre-push quality gates</strong>, cria PR, faz deploy. <strong style="color: var(--color-text-secondary);">Unico agente</strong> autorizado a fazer git push &mdash; nenhum outro toca no remoto.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metaphor -->
+            <div style="background: rgba(34,197,94,0.04); border: 1px dashed rgba(34,197,94,0.2); border-radius: var(--radius-lg); padding: 1.25rem;">
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                    <div style="font-size: 1.5rem; line-height: 1;">&#x1F3D7;&#xFE0F;</div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.85rem; color: #22c55e; margin-bottom: 0.3rem;">Na Reforma: Construtora Organizada</div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.7;">
+                            Agora imagine uma construtora. O <strong style="color: var(--color-text-secondary);">engenheiro</strong> (@pm) faz a planta completa. A <strong style="color: var(--color-text-secondary);">arquiteta</strong> (@architect) define a estrutura. O <strong style="color: var(--color-text-secondary);">mestre de obras</strong> (@dev) executa seguindo o projeto. O <strong style="color: var(--color-text-secondary);">inspetor</strong> (@qa) faz a vistoria formal. E a <strong style="color: var(--color-text-secondary);">construtora</strong> (@devops) entrega com habite-se. O profissional e o mesmo &mdash; o que muda e o processo.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             BLOCO 3: Mapeamento Reforma x AIOS
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">A Estrutura</div>
+            <h2 class="section-title">Reforma &harr; .aios-core/</h2>
+            <p class="section-desc">Cada peca de uma construtora organizada tem um equivalente direto no .aios-core/:</p>
+
+            <!-- Mapping cards -->
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+
+                <!-- config.yaml -->
+                <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.75rem; align-items: center;">
+                    <div style="background: rgba(249,115,22,0.04); border: 1px solid rgba(249,115,22,0.15); border-radius: var(--radius-lg); padding: 1rem; text-align: center;">
+                        <div style="font-size: 1.2rem; margin-bottom: 0.3rem;">&#x1F4DC;</div>
+                        <div style="font-weight: 700; font-size: 0.75rem; color: #f97316;">Contrato da Obra</div>
+                        <div style="font-size: 0.62rem; color: var(--color-text-muted);">Escopo, equipe, regras, prazos</div>
+                    </div>
+                    <div style="font-size: 1.2rem; color: var(--color-accent-gold);">&#x2194;</div>
+                    <div style="background: rgba(209,255,0,0.04); border: 1px solid var(--color-accent-gold-20); border-radius: var(--radius-lg); padding: 1rem; text-align: center;">
+                        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--color-accent-gold); font-weight: 700; margin-bottom: 0.3rem;">config.yaml</div>
+                        <div style="font-size: 0.62rem; color: var(--color-text-muted);">Nome, agentes, routing, regras</div>
+                    </div>
+                </div>
+
+                <!-- agents/ -->
+                <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.75rem; align-items: center;">
+                    <div style="background: rgba(249,115,22,0.04); border: 1px solid rgba(249,115,22,0.15); border-radius: var(--radius-lg); padding: 1rem; text-align: center;">
+                        <div style="font-size: 1.2rem; margin-bottom: 0.3rem;">&#x1F477;</div>
+                        <div style="font-weight: 700; font-size: 0.75rem; color: #f97316;">Equipe Profissional</div>
+                        <div style="font-size: 0.62rem; color: var(--color-text-muted);">Engenheiro, arquiteta, mestre, inspetor</div>
+                    </div>
+                    <div style="font-size: 1.2rem; color: var(--color-accent-gold);">&#x2194;</div>
+                    <div style="background: rgba(0,153,255,0.04); border: 1px solid rgba(0,153,255,0.2); border-radius: var(--radius-lg); padding: 1rem; text-align: center;">
+                        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: #33ADFF; font-weight: 700; margin-bottom: 0.3rem;">agents/</div>
+                        <div style="font-size: 0.62rem; color: var(--color-text-muted);">pm, architect, dev, qa, devops</div>
+                    </div>
+                </div>
+
+                <!-- tasks/ -->
+                <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.75rem; align-items: center;">
+                    <div style="background: rgba(249,115,22,0.04); border: 1px solid rgba(249,115,22,0.15); border-radius: var(--radius-lg); padding: 1rem; text-align: center;">
+                        <div style="font-size: 1.2rem; margin-bottom: 0.3rem;">&#x1F4CB;</div>
+                        <div style="font-weight: 700; font-size: 0.75rem; color: #f97316;">Ordens de Servico</div>
+                        <div style="font-size: 0.62rem; color: var(--color-text-muted);">Instalar eletrica, pintar sala</div>
+                    </div>
+                    <div style="font-size: 1.2rem; color: var(--color-accent-gold);">&#x2194;</div>
+                    <div style="background: rgba(74,222,128,0.04); border: 1px solid rgba(74,222,128,0.2); border-radius: var(--radius-lg); padding: 1rem; text-align: center;">
+                        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: #4ADE80; font-weight: 700; margin-bottom: 0.3rem;">tasks/</div>
+                        <div style="font-size: 0.62rem; color: var(--color-text-muted);">create-doc.md, dev-develop-story.md</div>
+                    </div>
+                </div>
+
+                <!-- workflows/ -->
+                <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.75rem; align-items: center;">
+                    <div style="background: rgba(249,115,22,0.04); border: 1px solid rgba(249,115,22,0.15); border-radius: var(--radius-lg); padding: 1rem; text-align: center;">
+                        <div style="font-size: 1.2rem; margin-bottom: 0.3rem;">&#x1F4C5;</div>
+                        <div style="font-weight: 700; font-size: 0.75rem; color: #f97316;">Cronograma da Obra</div>
+                        <div style="font-size: 0.62rem; color: var(--color-text-muted);">Fase 1: fundacao, Fase 2: estrutura...</div>
+                    </div>
+                    <div style="font-size: 1.2rem; color: var(--color-accent-gold);">&#x2194;</div>
+                    <div style="background: rgba(56,189,248,0.04); border: 1px solid rgba(56,189,248,0.2); border-radius: var(--radius-lg); padding: 1rem; text-align: center;">
+                        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: #38BDF8; font-weight: 700; margin-bottom: 0.3rem;">workflows/</div>
+                        <div style="font-size: 0.62rem; color: var(--color-text-muted);">story-development-cycle.yaml</div>
+                    </div>
+                </div>
+
+                <!-- templates/ -->
+                <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.75rem; align-items: center;">
+                    <div style="background: rgba(249,115,22,0.04); border: 1px solid rgba(249,115,22,0.15); border-radius: var(--radius-lg); padding: 1rem; text-align: center;">
+                        <div style="font-size: 1.2rem; margin-bottom: 0.3rem;">&#x1F3E8;</div>
+                        <div style="font-weight: 700; font-size: 0.75rem; color: #f97316;">Projetos-Padrao</div>
+                        <div style="font-size: 0.62rem; color: var(--color-text-muted);">Planta do 2 quartos, planta do comercial</div>
+                    </div>
+                    <div style="font-size: 1.2rem; color: var(--color-accent-gold);">&#x2194;</div>
+                    <div style="background: rgba(251,146,60,0.04); border: 1px solid rgba(251,146,60,0.2); border-radius: var(--radius-lg); padding: 1rem; text-align: center;">
+                        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: #FB923C; font-weight: 700; margin-bottom: 0.3rem;">templates/</div>
+                        <div style="font-size: 0.62rem; color: var(--color-text-muted);">prd-tmpl.yaml, architecture-tmpl.yaml</div>
+                    </div>
+                </div>
+
+                <!-- checklists/ -->
+                <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.75rem; align-items: center;">
+                    <div style="background: rgba(249,115,22,0.04); border: 1px solid rgba(249,115,22,0.15); border-radius: var(--radius-lg); padding: 1rem; text-align: center;">
+                        <div style="font-size: 1.2rem; margin-bottom: 0.3rem;">&#x1F50D;</div>
+                        <div style="font-weight: 700; font-size: 0.75rem; color: #f97316;">Vistoria Formal</div>
+                        <div style="font-size: 0.62rem; color: var(--color-text-muted);">Tomadas OK? Fios em norma? Acabamento?</div>
+                    </div>
+                    <div style="font-size: 1.2rem; color: var(--color-accent-gold);">&#x2194;</div>
+                    <div style="background: rgba(244,114,182,0.04); border: 1px solid rgba(244,114,182,0.2); border-radius: var(--radius-lg); padding: 1rem; text-align: center;">
+                        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: #F472B6; font-weight: 700; margin-bottom: 0.3rem;">checklists/</div>
+                        <div style="font-size: 0.62rem; color: var(--color-text-muted);">story-dod-checklist.md, qa-gate.md</div>
+                    </div>
+                </div>
+
+                <!-- data/ -->
+                <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.75rem; align-items: center;">
+                    <div style="background: rgba(249,115,22,0.04); border: 1px solid rgba(249,115,22,0.15); border-radius: var(--radius-lg); padding: 1rem; text-align: center;">
+                        <div style="font-size: 1.2rem; margin-bottom: 0.3rem;">&#x1F4DA;</div>
+                        <div style="font-weight: 700; font-size: 0.75rem; color: #f97316;">Normas e Manuais</div>
+                        <div style="font-size: 0.62rem; color: var(--color-text-muted);">ABNT, catalogo de materiais</div>
+                    </div>
+                    <div style="font-size: 1.2rem; color: var(--color-accent-gold);">&#x2194;</div>
+                    <div style="background: rgba(167,139,250,0.04); border: 1px solid rgba(167,139,250,0.2); border-radius: var(--radius-lg); padding: 1rem; text-align: center;">
+                        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: #A78BFA; font-weight: 700; margin-bottom: 0.3rem;">data/</div>
+                        <div style="font-size: 0.62rem; color: var(--color-text-muted);">technical-preferences.md, aios-kb.md</div>
+                    </div>
+                </div>
+
+                <!-- skills/ -->
+                <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 0.75rem; align-items: center;">
+                    <div style="background: rgba(249,115,22,0.04); border: 1px solid rgba(249,115,22,0.15); border-radius: var(--radius-lg); padding: 1rem; text-align: center;">
+                        <div style="font-size: 1.2rem; margin-bottom: 0.3rem;">&#x1F4DE;</div>
+                        <div style="font-weight: 700; font-size: 0.75rem; color: #f97316;">Chamar o Especialista</div>
+                        <div style="font-size: 0.62rem; color: var(--color-text-muted);">"Preciso do eletricista aqui"</div>
+                    </div>
+                    <div style="font-size: 1.2rem; color: var(--color-accent-gold);">&#x2194;</div>
+                    <div style="background: rgba(251,191,36,0.04); border: 1px solid rgba(251,191,36,0.2); border-radius: var(--radius-lg); padding: 1rem; text-align: center;">
+                        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: #FBBF24; font-weight: 700; margin-bottom: 0.3rem;">skills/ (slash commands)</div>
+                        <div style="font-size: 0.62rem; color: var(--color-text-muted);">@pm, @architect, @dev, @qa</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             BLOCO 4: A Verdadeira Diferenca
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">A Verdade</div>
+            <h2 class="section-title">Nao e Sobre Ser Melhor. E Sobre Processo.</h2>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(56,189,248,0.15); border-radius: var(--radius-xl); padding: 1.5rem;">
+                    <div style="font-weight: 800; font-size: 0.85rem; color: #38BDF8; margin-bottom: 0.75rem;">Claude Sozinho</div>
+                    <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">
+                        <div><span style="color: #4ADE80;">&#x2713;</span> Capaz e competente</div>
+                        <div><span style="color: #4ADE80;">&#x2713;</span> Resultado bom pra uma vez</div>
+                        <div><span style="color: #FBBF24;">&#x26A0;</span> Voce gerencia o processo</div>
+                        <div><span style="color: #FBBF24;">&#x26A0;</span> Brief depende da sua memoria</div>
+                        <div><span style="color: #FBBF24;">&#x26A0;</span> Sem validacao formal</div>
+                        <div><span style="color: #FBBF24;">&#x26A0;</span> Proximo projeto: do zero</div>
+                    </div>
+                </div>
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(34,197,94,0.15); border-radius: var(--radius-xl); padding: 1.5rem;">
+                    <div style="font-weight: 800; font-size: 0.85rem; color: #22c55e; margin-bottom: 0.75rem;">Claude + AIOS</div>
+                    <div style="display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">
+                        <div><span style="color: #4ADE80;">&#x2713;</span> Mesmo Claude, mesmo modelo</div>
+                        <div><span style="color: #4ADE80;">&#x2713;</span> Resultado replicavel sempre</div>
+                        <div><span style="color: #4ADE80;">&#x2713;</span> Processo gerencia pra voce</div>
+                        <div><span style="color: #4ADE80;">&#x2713;</span> Templates garantem completude</div>
+                        <div><span style="color: #4ADE80;">&#x2713;</span> Quality gates objetivos</div>
+                        <div><span style="color: #4ADE80;">&#x2713;</span> Proximo projeto: mesmo processo</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key insight -->
+            <div style="background: rgba(209,255,0,0.05); border: 1px solid var(--color-accent-gold-30); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                    <div style="font-size: 1.5rem; line-height: 1;">&#x1F4A1;</div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.85rem; color: var(--color-accent-gold); margin-bottom: 0.3rem;">O Sonho dos Tokens</div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.7;">
+                            Quando o Claude sabe <strong style="color: var(--color-text-secondary);">quem ele e</strong> (agent), <strong style="color: var(--color-text-secondary);">o que fazer</strong> (task), <strong style="color: var(--color-text-secondary);">como fazer</strong> (template) e <strong style="color: var(--color-text-secondary);">quando parar</strong> (checklist) &mdash; cada token vai direto pro resultado. Sem gastar tokens decidindo o processo. O processo ja esta decidido.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The punchline -->
+            <div style="background: rgba(34,197,94,0.04); border: 1px solid rgba(34,197,94,0.2); border-radius: var(--radius-lg); padding: 1.25rem;">
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                    <div style="font-size: 1.5rem; line-height: 1;">&#x1F3AF;</div>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.85rem; color: #22c55e; margin-bottom: 0.3rem;">A Pergunta Certa</div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.7;">
+                            Nao e "Claude e bom ou ruim?" &mdash; ele e excelente. A pergunta e: <strong style="color: var(--color-text-secondary);">voce quer ser o gerente de projeto toda vez, ou quer que o processo ja esteja pronto?</strong> AIOS e o processo pronto.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FECHAMENTO -->
+        <section class="flow-section" style="text-align: center; padding: 3rem 0;">
+            <div style="font-size: 2.5rem; margin-bottom: 1rem;">&#x1F3D7;&#xFE0F;</div>
+            <h2 class="section-title" style="font-size: 1.4rem;">Mesmo profissional. Processo diferente.</h2>
+            <p class="section-desc" style="max-width: 480px; margin: 0 auto;">Na proxima licao, vamos abrir o capo de um squad e ver cada peca em detalhe &mdash; como cada agent, task, template e checklist trabalham juntos.</p>
+        </section>
+
+    </div>
+
+</body>
+</html>

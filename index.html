@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIOS Cohort Fundamentals - Jose Amorim</title>
+    <meta name="description" content="Cohort Fundamentals: Domine os fundamentos do AIOS - Do Universo à Workflows. Mentor: Jose Carlos Amorim">
+    <meta name="keywords" content="AIOS, Fundamentals, Cohort, E1-E5, Jose Amorim">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <script type="text/javascript">
+        // Clarity — only loads after LGPD consent
+        function loadClarity() {
+            if (window._clarityLoaded) return;
+            window._clarityLoaded = true;
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "vmgxawm5wn");
+        }
+        // Auto-load if consent was given previously
+        if (localStorage.getItem('lgpd_consent') === 'accepted') loadClarity();
+    </script>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/calendar.css">
+    <link rel="stylesheet" href="css/overview.css">
+    <link rel="stylesheet" href="css/gamification.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/aurora.css">
+    <link rel="stylesheet" href="css/business.css">
+    <link rel="stylesheet" href="css/leaderboard.css">
+    <link rel="stylesheet" href="css/whatsapp-link.css">
+    <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+
+    <a class="skip-to-content" href="#content">Pular para o conteúdo</a>
+
+    <div class="app">
+        <!-- Mobile hamburger -->
+        <button class="app__hamburger" id="hamburger" aria-label="Abrir menu">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <line x1="3" y1="12" x2="21" y2="12"/>
+                <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+        </button>
+
+        <!-- Sidebar -->
+        <aside class="app__sidebar" id="sidebar" aria-label="Navegação do curso"></aside>
+
+        <!-- Mobile overlay -->
+        <div class="app__overlay" id="overlay"></div>
+
+        <!-- Content area -->
+        <main class="app__content" id="content" tabindex="-1"></main>
+    </div>
+
+    <script src="js/vendor/supabase.min.js" defer></script>
+    <script src="js/error-logger.js" defer></script>
+    <script src="js/config.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/auth-ui.js" defer></script>
+    <script src="js/persistence.js" defer></script>
+    <script src="js/router.js" defer></script>
+    <script src="js/sidebar.js" defer></script>
+    <script src="js/calendar.js" defer></script>
+    <script src="js/modals.js" defer></script>
+    <script src="js/gamification.js" defer></script>
+    <script src="js/business.js" defer></script>
+    <script src="js/pipeline.js" defer></script>
+    <script src="js/lead-search.js" defer></script>
+    <script src="js/leaderboard.js" defer></script>
+    <script src="js/whatsapp-link.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/aurora.js" defer></script>
+    <script src="js/boot.js" defer></script>
+
+    <!-- LGPD Consent Banner -->
+    <div id="lgpd-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(15,15,20,0.97);border-top:1px solid rgba(209,255,0,0.3);padding:0.8rem 1rem;font-family:var(--font-sans,system-ui);font-size:0.75rem;color:rgba(255,255,255,0.8);backdrop-filter:blur(12px);">
+        <div style="max-width:800px;margin:0 auto;display:flex;align-items:center;gap:0.8rem;flex-wrap:wrap;">
+            <p style="flex:1;margin:0;min-width:200px;line-height:1.4;">
+                Usamos cookies de analytics (Microsoft Clarity) para melhorar sua experiencia. Nenhum dado pessoal e vendido.
+                <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener" style="color:rgba(209,255,0,0.9);text-decoration:underline;">Politica de Privacidade</a>
+            </p>
+            <div style="display:flex;gap:0.5rem;flex-shrink:0;">
+                <button onclick="acceptLGPD()" style="padding:0.4rem 1rem;border-radius:6px;border:none;background:linear-gradient(135deg,rgba(209,255,0,0.9),rgba(0,153,255,0.9));color:#fff;font-size:0.7rem;font-weight:600;cursor:pointer;">Aceitar</button>
+                <button onclick="declineLGPD()" style="padding:0.4rem 0.8rem;border-radius:6px;border:1px solid rgba(255,255,255,0.15);background:transparent;color:rgba(255,255,255,0.6);font-size:0.7rem;cursor:pointer;">Recusar</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function acceptLGPD() {
+            localStorage.setItem('lgpd_consent', 'accepted');
+            document.getElementById('lgpd-banner').style.display = 'none';
+            loadClarity();
+        }
+        function declineLGPD() {
+            localStorage.setItem('lgpd_consent', 'declined');
+            document.getElementById('lgpd-banner').style.display = 'none';
+        }
+        (function() {
+            var consent = localStorage.getItem('lgpd_consent');
+            if (!consent) {
+                document.getElementById('lgpd-banner').style.display = 'block';
+            }
+        })();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Error Auto-Diagnosis Pipeline — Flowchart</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0a0f; color: #e0e0e0; font-family: 'SF Mono', 'Fira Code', monospace; padding: 40px; }
+  h1 { color: #a78bfa; font-size: 24px; margin-bottom: 8px; }
+  h2 { color: #60a5fa; font-size: 18px; margin: 40px 0 16px; }
+  .subtitle { color: #888; font-size: 14px; margin-bottom: 40px; }
+
+  .flow-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Simulation Section */
+  .sim-section {
+    background: #111118;
+    border: 1px solid #2a2a3a;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 32px;
+  }
+  .sim-section h3 {
+    font-size: 14px;
+    color: #f59e0b;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Flow Steps */
+  .flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 4px;
+    position: relative;
+  }
+  .flow-step::after {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 52px;
+    width: 2px;
+    height: calc(100% - 20px);
+    background: linear-gradient(to bottom, #4a4a6a, transparent);
+  }
+  .flow-step:last-child::after { display: none; }
+
+  .step-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+    z-index: 1;
+  }
+  .step-icon.error { background: #7f1d1d; border: 2px solid #ef4444; }
+  .step-icon.frontend { background: #1e1b4b; border: 2px solid #818cf8; }
+  .step-icon.api { background: #064e3b; border: 2px solid #34d399; }
+  .step-icon.db { background: #1c1917; border: 2px solid #f59e0b; }
+  .step-icon.ai { background: #3b0764; border: 2px solid #c084fc; }
+  .step-icon.whatsapp { background: #052e16; border: 2px solid #22c55e; }
+  .step-icon.human { background: #1e3a5f; border: 2px solid #60a5fa; }
+
+  .step-content {
+    flex: 1;
+    padding-bottom: 24px;
+  }
+  .step-title {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+  .step-title .time {
+    color: #888;
+    font-weight: normal;
+    font-size: 12px;
+  }
+  .step-detail {
+    font-size: 12px;
+    color: #aaa;
+    line-height: 1.6;
+  }
+
+  /* Code blocks */
+  .code-block {
+    background: #1a1a2e;
+    border: 1px solid #2a2a4a;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 8px 0;
+    font-size: 11px;
+    line-height: 1.5;
+    overflow-x: auto;
+    color: #d4d4d8;
+  }
+  .code-block .key { color: #60a5fa; }
+  .code-block .str { color: #34d399; }
+  .code-block .num { color: #f59e0b; }
+  .code-block .bool { color: #c084fc; }
+  .code-block .comment { color: #666; }
+
+  /* Arrow */
+  .arrow-down {
+    display: flex;
+    justify-content: center;
+    padding: 8px 0;
+    color: #4a4a6a;
+    font-size: 20px;
+  }
+
+  /* WhatsApp messages */
+  .whatsapp-msg {
+    background: #1a2e1a;
+    border: 1px solid #22c55e33;
+    border-radius: 0 12px 12px 12px;
+    padding: 12px 16px;
+    margin: 8px 0;
+    font-size: 11px;
+    line-height: 1.6;
+    max-width: 500px;
+  }
+  .whatsapp-msg .bold { color: #fff; font-weight: bold; }
+
+  /* Phases */
+  .phase-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 8px;
+  }
+  .phase-1 { background: #1e3a5f; color: #60a5fa; }
+  .phase-2 { background: #3b0764; color: #c084fc; }
+  .phase-cron { background: #422006; color: #f59e0b; }
+  .phase-human { background: #1c1917; color: #d4d4d8; }
+
+  /* Tool Use Explanation */
+  .tool-explain {
+    background: #1a1033;
+    border: 1px solid #7c3aed44;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 24px 0;
+  }
+  .tool-explain h4 {
+    color: #c084fc;
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+  .tool-explain p {
+    font-size: 12px;
+    color: #aaa;
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  .comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .comparison > div {
+    border-radius: 8px;
+    padding: 12px;
+  }
+  .comparison .without {
+    background: #1f1315;
+    border: 1px solid #ef444433;
+  }
+  .comparison .with {
+    background: #0f1f15;
+    border: 1px solid #22c55e33;
+  }
+  .comparison h5 {
+    font-size: 11px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .comparison .without h5 { color: #ef4444; }
+  .comparison .with h5 { color: #22c55e; }
+  .comparison pre {
+    font-size: 10px;
+    line-height: 1.4;
+    color: #ccc;
+    white-space: pre-wrap;
+  }
+
+  /* Timeline */
+  .timeline-bar {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin: 16px 0;
+    height: 40px;
+  }
+  .tl-segment {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+    color: #fff;
+    position: relative;
+  }
+  .tl-segment .tl-label {
+    position: absolute;
+    bottom: -18px;
+    font-size: 9px;
+    color: #888;
+    white-space: nowrap;
+  }
+  .tl-1 { background: #1e40af; width: 5%; border-radius: 6px 0 0 6px; }
+  .tl-2 { background: #065f46; width: 15%; }
+  .tl-3 { background: #7c2d12; width: 10%; }
+  .tl-4 { background: #3b0764; width: 60%; }
+  .tl-5 { background: #14532d; width: 10%; border-radius: 0 6px 6px 0; }
+
+  .legend {
+    display: flex;
+    gap: 24px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: #aaa;
+  }
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+</style>
+</head>
+<body>
+<div class="flow-container">
+
+<h1>Error Auto-Diagnosis Pipeline</h1>
+<p class="subtitle">Simulacao completa: do erro ate o diagnostico no WhatsApp</p>
+
+<!-- TOOL_USE EXPLANATION -->
+<div class="tool-explain">
+  <h4>Como o tool_use funciona aqui?</h4>
+  <p>O <code>tool_use</code> NAO executa codigo nem aplica fixes. Ele e um mecanismo da API Claude que <strong>forca o modelo a retornar JSON estruturado</strong> em vez de texto livre. Pense nele como um "formulario" que o Opus preenche.</p>
+
+  <div class="comparison">
+    <div class="without">
+      <h5>Sem tool_use (texto livre)</h5>
+      <pre>
+"O erro parece ser um TypeError porque
+a funcao renderTalents esta tentando
+chamar .map() em undefined. Isso
+provavelmente acontece quando..."
+
+// Texto livre, dificil de parsear
+// Formato imprevisivel
+// Nao da pra salvar no banco
+// Nao da pra formatar no WhatsApp
+      </pre>
+    </div>
+    <div class="with">
+      <h5>Com tool_use (JSON estruturado)</h5>
+      <pre>
+{
+  "root_cause": "renderTalents chama...",
+  "severity_assessment": "high",
+  "category": "runtime",
+  "file_likely": "js/psicometria-upload.js",
+  "line_likely": "142",
+  "suggested_fix": "if (!Array.isArray...",
+  "auto_fixable": true,
+  "confidence": 0.88
+}
+
+// Previsivel, parseavel, salvavel
+      </pre>
+    </div>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<h2>Timeline da Execucao</h2>
+<div class="timeline-bar">
+  <div class="tl-segment tl-1">
+    <span class="tl-label">0s</span>
+  </div>
+  <div class="tl-segment tl-2">Haiku</div>
+  <div class="tl-segment tl-3">WhatsApp</div>
+  <div class="tl-segment tl-4">Opus 4.6 tool_use</div>
+  <div class="tl-segment tl-5">
+    <span class="tl-label">~35s</span>
+  </div>
+</div>
+<div style="display:flex; justify-content:space-between; margin-top:24px; font-size:10px; color:#666;">
+  <span>Erro ocorre</span>
+  <span>Alerta rapido (2s)</span>
+  <span>WhatsApp #1 (4s)</span>
+  <span>Opus analisa com tool_use (5s-30s)</span>
+  <span>WhatsApp #2</span>
+</div>
+
+<!-- FLOW SIMULATION -->
+<h2>Simulacao: Erro real no Psicometria Upload</h2>
+
+<div class="sim-section">
+<h3>Trigger: Usuario faz upload de documento</h3>
+
+<!-- Step 1: Error occurs -->
+<div class="flow-step">
+  <div class="step-icon error">💥</div>
+  <div class="step-content">
+    <div class="step-title">
+      1. Erro ocorre no browser do usuario
+      <span class="time">T+0ms</span>
+    </div>
+    <div class="step-detail">
+      O usuario fez upload de um PDF. A API retornou o resultado, mas o campo <code>talents</code> veio como <code>undefined</code>.
+      A funcao <code>renderTalents()</code> tentou chamar <code>.map()</code> em <code>undefined</code>.
+    </div>
+    <div class="code-block">
+      <span class="comment">// js/psicometria-upload.js:142</span><br>
+      <span class="key">function</span> renderTalents(talents) {<br>
+      &nbsp;&nbsp;<span class="key">return</span> talents.<span class="str">map</span>(t => ...); <span class="comment">// 💥 TypeError: Cannot read properties of undefined (reading 'map')</span><br>
+      }
+    </div>
+  </div>
+</div>
+
+<!-- Step 2: ErrorLogger catches -->
+<div class="flow-step">
+  <div class="step-icon frontend">📡</div>
+  <div class="step-content">
+    <div class="step-title">
+      2. ErrorLogger.js captura automaticamente
+      <span class="time">T+1ms</span>
+      <span class="phase-badge phase-1">Fase 1</span>
+    </div>
+    <div class="step-detail">
+      <code>window.onerror</code> intercepta o erro. ErrorLogger monta o payload e envia para <code>/api/error-log</code>.
+    </div>
+    <div class="code-block">
+      <span class="comment">// ErrorLogger.capture() automatico</span><br>
+      POST /api/error-log<br>
+      {<br>
+      &nbsp;&nbsp;<span class="key">"severity"</span>: <span class="str">"error"</span>,<br>
+      &nbsp;&nbsp;<span class="key">"source"</span>: <span class="str">"frontend"</span>,<br>
+      &nbsp;&nbsp;<span class="key">"message"</span>: <span class="str">"Cannot read properties of undefined (reading 'map')"</span>,<br>
+      &nbsp;&nbsp;<span class="key">"stack"</span>: <span class="str">"at renderTalents (js/psicometria-upload.js:142:35)..."</span>,<br>
+      &nbsp;&nbsp;<span class="key">"url"</span>: <span class="str">"https://fundamentals-theta.vercel.app/home#/psicometria"</span><br>
+      }
+    </div>
+  </div>
+</div>
+
+<!-- Step 3: error-log.js processes -->
+<div class="flow-step">
+  <div class="step-icon api">⚡</div>
+  <div class="step-content">
+    <div class="step-title">
+      3. /api/error-log processa
+      <span class="time">T+200ms</span>
+    </div>
+    <div class="step-detail">
+      Gera UUID, salva no Supabase com <code>fix_status: 'new'</code>, chama Haiku para explicacao rapida.
+    </div>
+    <div class="code-block">
+      <span class="comment">// Supabase INSERT</span><br>
+      {<br>
+      &nbsp;&nbsp;<span class="key">"id"</span>: <span class="str">"4eb7d635-8cba-46e5-..."</span>,<br>
+      &nbsp;&nbsp;<span class="key">"fix_status"</span>: <span class="str">"new"</span>,<br>
+      &nbsp;&nbsp;<span class="key">"severity"</span>: <span class="str">"error"</span>,<br>
+      &nbsp;&nbsp;...<br>
+      }
+    </div>
+  </div>
+</div>
+
+<!-- Step 4: Supabase save -->
+<div class="flow-step">
+  <div class="step-icon db">💾</div>
+  <div class="step-content">
+    <div class="step-title">
+      4. Supabase: error_logs INSERT
+      <span class="time">T+400ms</span>
+    </div>
+    <div class="step-detail">
+      Linha salva na tabela <code>error_logs</code> com todos os campos + <code>fix_status = 'new'</code>
+    </div>
+  </div>
+</div>
+
+<!-- Step 5: Haiku explanation -->
+<div class="flow-step">
+  <div class="step-icon ai">🧠</div>
+  <div class="step-content">
+    <div class="step-title">
+      5. Haiku 4.5 gera explicacao de crianca
+      <span class="time">T+500ms → T+2s</span>
+    </div>
+    <div class="step-detail">
+      Chamada rapida ao Haiku (~1.5s). Retorna texto simples para o alerta rapido.
+    </div>
+    <div class="code-block">
+      <span class="comment">// Haiku response (texto livre, nao tool_use)</span><br>
+      <span class="str">"Imagina que voce pediu pra alguem uma lista de figurinhas,<br>
+      mas a pessoa te deu uma caixa vazia. O programa esperava<br>
+      receber uma lista de talentos, mas recebeu 'nada'."</span>
+    </div>
+  </div>
+</div>
+
+<!-- Step 6: WhatsApp #1 -->
+<div class="flow-step">
+  <div class="step-icon whatsapp">📱</div>
+  <div class="step-content">
+    <div class="step-title">
+      6. WhatsApp #1: Alerta rapido via Uazapi
+      <span class="time">T+2.5s</span>
+    </div>
+    <div class="step-detail">
+      Primeira mensagem enviada. Rapida, com explicacao simples. Avisa que o diagnostico completo esta em andamento.
+    </div>
+    <div class="whatsapp-msg">
+      ⚠️ <span class="bold">COHORT FUNDAMENTALS — ERROR</span><br><br>
+      <span class="bold">Source:</span> frontend<br>
+      <span class="bold">Message:</span> Cannot read properties of undefined (reading 'map')<br>
+      <span class="bold">URL:</span> .../home#/psicometria<br><br>
+      🧒 <span class="bold">Explicando como crianca:</span><br>
+      Imagina que voce pediu figurinhas, mas a caixa veio vazia...<br><br>
+      ⏳ <em>Diagnostico completo via Opus 4.6 em andamento...</em><br>
+      <em>2026-02-18T22:15:03.000Z</em>
+    </div>
+  </div>
+</div>
+
+<!-- Step 7: Response to frontend -->
+<div class="flow-step">
+  <div class="step-icon frontend">↩️</div>
+  <div class="step-content">
+    <div class="step-title">
+      7. Frontend recebe error_id
+      <span class="time">T+3s</span>
+    </div>
+    <div class="code-block">
+      { <span class="key">"logged"</span>: <span class="bool">true</span>, <span class="key">"alerted"</span>: <span class="bool">true</span>, <span class="key">"error_id"</span>: <span class="str">"4eb7d635-8cba-46e5-..."</span> }
+    </div>
+  </div>
+</div>
+
+<!-- Step 8: Frontend triggers diagnosis -->
+<div class="flow-step">
+  <div class="step-icon frontend">🚀</div>
+  <div class="step-content">
+    <div class="step-title">
+      8. Frontend dispara diagnostico (fire-and-forget)
+      <span class="time">T+3.1s</span>
+      <span class="phase-badge phase-2">Fase 2</span>
+    </div>
+    <div class="step-detail">
+      ErrorLogger.js faz POST para <code>/api/error-diagnose</code> sem esperar resposta. Se o browser fechar, o cron diario pega.
+    </div>
+    <div class="code-block">
+      <span class="comment">// fire-and-forget — nao bloqueia o usuario</span><br>
+      POST /api/error-diagnose<br>
+      { <span class="key">"error_id"</span>: <span class="str">"4eb7d635-8cba-46e5-..."</span> }
+    </div>
+  </div>
+</div>
+
+<!-- Step 9: Fetch from DB -->
+<div class="flow-step">
+  <div class="step-icon db">🔍</div>
+  <div class="step-content">
+    <div class="step-title">
+      9. error-diagnose.js busca erro no Supabase
+      <span class="time">T+3.5s</span>
+    </div>
+    <div class="step-detail">
+      Usa <code>SUPABASE_SERVICE_ROLE_KEY</code> (bypassa RLS) para ler o erro. Marca <code>fix_status = 'diagnosing'</code> para evitar processamento duplo.
+    </div>
+  </div>
+</div>
+
+<!-- Step 10: OPUS 4.6 -->
+<div class="flow-step">
+  <div class="step-icon ai" style="border-color: #f59e0b; background: #2a1800;">🧠</div>
+  <div class="step-content">
+    <div class="step-title">
+      10. Opus 4.6 analisa com tool_use
+      <span class="time">T+4s → T+30s</span>
+      <span class="phase-badge" style="background:#f59e0b22; color:#f59e0b;">CORE</span>
+    </div>
+    <div class="step-detail">
+      <strong>AQUI esta o tool_use em acao.</strong> O endpoint envia o erro para Opus 4.6 com <code>tool_choice: { type: 'tool', name: 'diagnose_and_fix' }</code>.
+      Isso FORCA o Opus a preencher um JSON com campos obrigatorios. Opus NAO executa nada — ele ANALISA e PREENCHE o formulario.
+    </div>
+    <div class="code-block">
+      <span class="comment">// Request para Anthropic API</span><br>
+      {<br>
+      &nbsp;&nbsp;<span class="key">"model"</span>: <span class="str">"claude-opus-4-6"</span>,<br>
+      &nbsp;&nbsp;<span class="key">"max_tokens"</span>: <span class="num">4096</span>,<br>
+      &nbsp;&nbsp;<span class="key">"system"</span>: <span class="str">"You are an expert debugger for Cohort Fundamentals..."</span>,<br>
+      &nbsp;&nbsp;<span class="key">"messages"</span>: [{ <span class="key">"role"</span>: <span class="str">"user"</span>, <span class="key">"content"</span>: <span class="str">"ERRO: TypeError... at renderTalents..."</span> }],<br>
+      &nbsp;&nbsp;<span class="key">"tools"</span>: [{<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"name"</span>: <span class="str">"diagnose_and_fix"</span>,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"input_schema"</span>: {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"required"</span>: [<span class="str">"root_cause"</span>, <span class="str">"severity_assessment"</span>, <span class="str">"suggested_fix"</span>, ...]<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+      &nbsp;&nbsp;}],<br>
+      &nbsp;&nbsp;<span class="key">"tool_choice"</span>: { <span class="key">"type"</span>: <span class="str">"tool"</span>, <span class="key">"name"</span>: <span class="str">"diagnose_and_fix"</span> }<br>
+      &nbsp;&nbsp;<span class="comment">// ^ FORCA Opus a usar esta tool — nao pode responder texto livre</span><br>
+      }
+    </div>
+    <br>
+    <div class="step-detail"><strong>Opus 4.6 responde com tool_use preenchido:</strong></div>
+    <div class="code-block">
+      <span class="comment">// Response da Anthropic API</span><br>
+      {<br>
+      &nbsp;&nbsp;<span class="key">"content"</span>: [{<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"type"</span>: <span class="str">"tool_use"</span>,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"name"</span>: <span class="str">"diagnose_and_fix"</span>,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"input"</span>: {<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"root_cause"</span>: <span class="str">"renderTalents chama .map() em undefined porque..."</span>,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"severity_assessment"</span>: <span class="str">"high"</span>,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"category"</span>: <span class="str">"runtime"</span>,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"file_likely"</span>: <span class="str">"js/psicometria-upload.js"</span>,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"line_likely"</span>: <span class="str">"142"</span>,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"explanation_child"</span>: <span class="str">"Imagina que voce pediu figurinhas..."</span>,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"explanation_technical"</span>: <span class="str">"A funcao renderTalents na linha 142..."</span>,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"suggested_fix"</span>: <span class="str">"// DE:\ntalents.map(...)\n// PARA:\nif (!Array.isArray(talents)) return '...'\ntalents.map(...)"</span>,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"remediation_steps"</span>: [<span class="str">"1. Abrir psicometria-upload.js"</span>, <span class="str">"2. Adicionar validacao..."</span>],<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"auto_fixable"</span>: <span class="bool">true</span>,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"known_pattern"</span>: <span class="bool">true</span>,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"pattern_name"</span>: <span class="str">"NULL_REF"</span>,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"confidence"</span>: <span class="num">0.88</span>,<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="key">"prevention"</span>: <span class="str">"Sempre validar dados de APIs externas..."</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;}<br>
+      &nbsp;&nbsp;}]<br>
+      }
+    </div>
+  </div>
+</div>
+
+<!-- Step 11: Save diagnosis -->
+<div class="flow-step">
+  <div class="step-icon db">💾</div>
+  <div class="step-content">
+    <div class="step-title">
+      11. Salva diagnostico no Supabase
+      <span class="time">T+31s</span>
+    </div>
+    <div class="step-detail">
+      PATCH na linha do erro: <code>fix_status = 'fix_suggested'</code>, <code>diagnosis = {JSON completo}</code>, <code>diagnosed_at = now()</code>
+    </div>
+    <div class="code-block">
+      PATCH /rest/v1/error_logs?id=eq.4eb7d635-...<br>
+      {<br>
+      &nbsp;&nbsp;<span class="key">"fix_status"</span>: <span class="str">"fix_suggested"</span>,<br>
+      &nbsp;&nbsp;<span class="key">"diagnosis"</span>: { <span class="comment">/* JSON completo do Opus */</span> },<br>
+      &nbsp;&nbsp;<span class="key">"diagnosed_at"</span>: <span class="str">"2026-02-18T22:15:33.000Z"</span>,<br>
+      &nbsp;&nbsp;<span class="key">"fix_suggestion"</span>: <span class="str">"if (!Array.isArray(talents))..."</span><br>
+      }
+    </div>
+  </div>
+</div>
+
+<!-- Step 12: WhatsApp #2 -->
+<div class="flow-step">
+  <div class="step-icon whatsapp">📱</div>
+  <div class="step-content">
+    <div class="step-title">
+      12. WhatsApp #2: Relatorio completo do Opus
+      <span class="time">T+32s</span>
+    </div>
+    <div class="step-detail">
+      Segunda mensagem no WhatsApp com o diagnostico completo, fix sugerido e passos de remediacao.
+    </div>
+    <div class="whatsapp-msg">
+      🧠 <span class="bold">OPUS DIAGNOSIS — ERROR</span><br>
+      🔴 Severidade real: <span class="bold">high</span> (88% confianca)<br><br>
+      🧒 <span class="bold">Explicando como crianca:</span><br>
+      Imagina que voce pediu figurinhas, mas a caixa veio vazia...<br><br>
+      🔍 <span class="bold">Diagnostico tecnico:</span><br>
+      A funcao renderTalents na linha 142 de psicometria-upload.js chama .map() em undefined...<br><br>
+      🎯 <span class="bold">Causa raiz:</span><br>
+      renderTalents chama .map() em undefined porque a propriedade talents nao existe no response da API<br><br>
+      📁 <span class="bold">Arquivo:</span> js/psicometria-upload.js (L142)<br>
+      🏷 <span class="bold">Categoria:</span> runtime | Padrao: NULL_REF<br><br>
+      🔧 <span class="bold">Fix sugerido:</span><br>
+      <code>if (!Array.isArray(talents)) return '...'</code><br><br>
+      📋 <span class="bold">Passos para corrigir:</span><br>
+      1. Abrir psicometria-upload.js<br>
+      2. Verificar linha 98 (displayResults)<br>
+      3. Adicionar validacao defensiva na linha 142<br>
+      4. Adicionar optional chaining + fallback<br>
+      5. Testar fluxo completo<br><br>
+      🛡 <span class="bold">Prevencao:</span> Sempre validar dados de APIs externas...<br><br>
+      ✅ Este erro pode ser corrigido automaticamente<br><br>
+      <em>Diagnosticado por Opus 4.6 em 2026-02-18T22:15:33Z</em>
+    </div>
+  </div>
+</div>
+
+<!-- Step 13: Human decides -->
+<div class="flow-step">
+  <div class="step-icon human">👤</div>
+  <div class="step-content">
+    <div class="step-title">
+      13. Humano decide
+      <span class="phase-badge phase-human">Acao humana</span>
+    </div>
+    <div class="step-detail">
+      Voce recebe as 2 mensagens no WhatsApp. Com o diagnostico completo, voce pode:
+      <ul style="margin-top:8px; padding-left: 20px; line-height: 2;">
+        <li><strong>Aplicar o fix manualmente</strong> — abrir o arquivo, fazer a mudanca sugerida</li>
+        <li><strong>Pedir ao Claude Code</strong> — "@dev aplica o fix sugerido no diagnostico"</li>
+        <li><strong>Ignorar</strong> — marcar como <code>ignored</code> no Supabase</li>
+        <li><strong>Marcar resolvido</strong> — apos aplicar, setar <code>fix_status = 'resolved'</code></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- SAFETY NET -->
+<h2 style="margin-top:40px;">Safety Net: Cron Diario</h2>
+<div class="sim-section">
+  <h3>Se o frontend nao disparar a Fase 2 (browser fechou, erro de rede, etc)</h3>
+  <div class="flow-step">
+    <div class="step-icon" style="background:#422006; border:2px solid #f59e0b;">⏰</div>
+    <div class="step-content">
+      <div class="step-title">
+        Cron roda todo dia as 8h UTC
+        <span class="phase-badge phase-cron">Safety Net</span>
+      </div>
+      <div class="step-detail">
+        <code>/api/cron/diagnose-errors</code> consulta <code>error_logs WHERE fix_status = 'new'</code>.
+        Para cada erro pendente, executa o mesmo pipeline Opus 4.6 + WhatsApp.
+        Processa ate 3 erros por execucao para nao estourar o timeout.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LIFECYCLE -->
+<h2>Ciclo de Vida do Erro no Banco</h2>
+<div class="sim-section" style="text-align: center; padding: 32px;">
+  <div style="display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; font-size: 13px;">
+    <div style="background:#1e3a5f; padding:8px 16px; border-radius:20px; border:2px solid #60a5fa;">new</div>
+    <span style="color:#4a4a6a;">→</span>
+    <div style="background:#4a1d96; padding:8px 16px; border-radius:20px; border:2px solid #8b5cf6;">diagnosing</div>
+    <span style="color:#4a4a6a;">→</span>
+    <div style="background:#065f46; padding:8px 16px; border-radius:20px; border:2px solid #34d399;">diagnosed</div>
+    <span style="color:#4a4a6a;">→</span>
+    <div style="background:#92400e; padding:8px 16px; border-radius:20px; border:2px solid #f59e0b;">fix_suggested</div>
+    <span style="color:#4a4a6a;">→</span>
+    <div style="background:#14532d; padding:8px 16px; border-radius:20px; border:2px solid #22c55e;">resolved ✅</div>
+  </div>
+  <div style="margin-top: 16px; font-size: 11px; color: #666;">
+    Cada transicao e salva no Supabase com timestamp. O campo <code>diagnosis</code> (JSONB) contem o output completo do Opus 4.6.
+  </div>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#ef4444;"></div> Erro</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#818cf8;"></div> Frontend</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#34d399;"></div> API</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#f59e0b;"></div> Supabase</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#c084fc;"></div> Claude AI</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#22c55e;"></div> WhatsApp</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#60a5fa;"></div> Humano</div>
+</div>
+
+</div>
+</body>
+</html>

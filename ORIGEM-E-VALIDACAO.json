@@ -1,0 +1,971 @@
+{
+  "source_deployment": "dpl_HAoGkzza4aJma5atATpaiwj6QvpC",
+  "source_url": "https://fundamentals-theta.vercel.app",
+  "recovered_on": "2026-10-13",
+  "source_files": [
+    {
+      "path": ".env.daemon.example",
+      "vercel_sha1": "e26974e8d17ddb00a30edc6b42c9e2ecf8838d53",
+      "sha256": "7c8277dfcf3e7d3f60299bace86097b04f9ff6f89996daa65c9db42fb5c09ccd",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "_previews/_preview-dissecando-aios.html",
+      "vercel_sha1": "4bd8f1cbdb2ba2f52cfdf2a4855707c27036a921",
+      "sha256": "9a31b9d5543677d98ad8ddd27c1d334b1ed3df44cb3fb0c38b372425d4d20793",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "_previews/_preview-e1.html",
+      "vercel_sha1": "5284a5569f604754ac5eb3f98f06c243ad36ddd1",
+      "sha256": "a0ae96d48278cdac2d81d01ec83701033c719e78a6b891b13f1812337ac8c2e8",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "_previews/_preview-e3.html",
+      "vercel_sha1": "257a4ad998cc7cd735a6e5c05116ad6205a80e07",
+      "sha256": "f54ff4f989a2d8be681809e4107e31228d4475c66b250c8ff02c5658a0bbffbc",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "_previews/_preview-estrutura-aios.html",
+      "vercel_sha1": "c0c615b727a4a0fe78cb93d32ab982aca8361158",
+      "sha256": "834338ec2873d9c370d1e8d616c9076b2d6225c6fb5d1178cc73e22af5b04db0",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "_previews/preview-e2.html",
+      "vercel_sha1": "fcde67607ddc74c48e3b99293a7f8dd03b290b34",
+      "sha256": "c0ded3e9bd52cabcf96c81dd7431506aff64bfe26c348a309d8dff9fcb44e84e",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "_previews/preview-full.html",
+      "vercel_sha1": "2e5c733b385fa48907d5c4298b1a459e5da5630a",
+      "sha256": "c57dea9cad2e5e385f525faed923ffc1d7e170b7b45fbffce7a176eac7951972",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "admin.html",
+      "vercel_sha1": "4fd2a9aa8136cfee607699010801fb16380cf477",
+      "sha256": "e08ed9659a357e3a800fdd89b6a6811c1dcc4e6467b641416e8c04fa2616bf19",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "api/_shared/admin-guard.js",
+      "vercel_sha1": "ad228b6a1635d3bc900828e9aebd10103f37a287",
+      "sha256": "3b9f1b1f56090d1aa963228198586bffb1d219edd3b5b21c602aa3d35faedbfa",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "api/_shared/auth-guard.js",
+      "vercel_sha1": "04fdbad1e880ad6672d5c2473c45e3c86fc8e32d",
+      "sha256": "ade401e5aa58c6aa0595f795651c8567c815465907ad3767a6e6957cfdaa7cae",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "api/_shared/logger.js",
+      "vercel_sha1": "ec0d71329aef592d31480d0a12dca7a7cfc4a603",
+      "sha256": "fbd6d7f93865f9934f07ccf5558e153350c1090b6251f98f5245c86633ddd45c",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "api/_shared/quota-guard.js",
+      "vercel_sha1": "e683d13e70b8518c28be434d106b515a3ddcc12b",
+      "sha256": "e8e76c968b6a49d3c2a88b99392974bf369f06f15a28c3788c0812cc269e4ce4",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "api/_shared/rate-limiter.js",
+      "vercel_sha1": "17211c0f9b7e31935e485189a5638ad37fe782e1",
+      "sha256": "301d72308dd6df4fe038a832d7b902265f982b65ac28ff4250646006db00c2c1",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "api/_shared/supabase-config.js",
+      "vercel_sha1": "50702f4fbc12506b6d0f8787bbcbf2c06bd5a885",
+      "sha256": "d1f9610a61bc0d61140808872842b6c0092395b9ac170d952a1919fe1ea69720",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "api/_shared/token-logger.js",
+      "vercel_sha1": "980b13f28ab92823b829d2c1469e53f6e34be206",
+      "sha256": "da11ffadca70ff89229c9b8102dbbc1b72b74404ecf8951eb77767ee527d16d2",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "api/admin/users.js",
+      "vercel_sha1": "bddaf971f7cc27f4b3c7df6c8934336b4f5ec36d",
+      "sha256": "0ca6d5caf334890238f65caf4938f2edf643dea1f647a1547dcea96bb33a724c",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "api/analyze.js",
+      "vercel_sha1": "edadb5e11305b36da2f09f116747757cfedfeb2b",
+      "sha256": "1c62bf9cf77c09a3d0b2fde2e6cce248337e841695a8db63e26ef34470545555",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "api/aurora.js",
+      "vercel_sha1": "1d0e758b8132dea156abf744b6aa06dc0ace2fb8",
+      "sha256": "932bf1c773a5b977c03e5adfd2044d1eecf885ab4bedf4b0c0d7ee3fc4e27b5c",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "api/cron/diagnose-errors.js",
+      "vercel_sha1": "4019f5884db7fa65bdf676daf6c8ed183fa78bcc",
+      "sha256": "2dae169060f6dc17f33731f32b4576aa16b54871a5832b3e8929aff7496a14b9",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "api/cron/token-report.js",
+      "vercel_sha1": "6fc750cad8f1c7c305c11ed5441c86f34949cae5",
+      "sha256": "94a131dd82a9439c0ea924c4840183bed50e1b47a2451b941c76f41a04216226",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "api/error-diagnose.js",
+      "vercel_sha1": "517f7b058dae396efba5e3ca585557f01d3c6689",
+      "sha256": "a684db014c123e56049edf00cc3454d1158ebdced35e8dc8e962ee81a7d94a2c",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "api/error-log.js",
+      "vercel_sha1": "db609c2dfc74d70c3fd0acc9ae9325626d0e7f8a",
+      "sha256": "8afc014a61777985018b055071a99bf88041aaa26b5aec3b3e40dcdfdc7a89f0",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "api/message-gen.js",
+      "vercel_sha1": "f29f2b7ae44098024db41ef3e294091409565755",
+      "sha256": "1017e129d05dc23d2c91372e681e57f62bb5102b5d7111bba4f49c7af7b4f532",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "api/offer-analysis.js",
+      "vercel_sha1": "77e23d4bc82f30868615b9803d05de0304ff838a",
+      "sha256": "bf586c647e8a5867966a6e334b58d23491a1f03dedfb0c995a884605764a2f55",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "api/offer-suggest.js",
+      "vercel_sha1": "955d4fb4d041f3e82cf341ce0c546c3dc6b6c30a",
+      "sha256": "7b218e6d0cfb5d6a438c49ce64598672b4689224cfad474bc4dcbae7e7c2fe0d",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "api/whatsapp-link.js",
+      "vercel_sha1": "1f1dab4792b1af4fe7be02a324ae4bb8068fbda2",
+      "sha256": "d9bd7e1b4394464c266cb6258a7ff7c9eb41435ee65bf4c286806345576c68b1",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "automation/SETUP.md",
+      "vercel_sha1": "007508f51c2fa0203d2ca4c315205193d5a0a841",
+      "sha256": "75015f5241090c8437aa919679967df6411cce47805accc2b278ff1f6cd5d8aa",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "automation/publish-squad.md",
+      "vercel_sha1": "f3d57a27d11ef9c4742dc81acb5589b8a34ff212",
+      "sha256": "abc19e6c73793ca331992005ca5fc7282140d0c090014504e55e30045a629476",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "course-outline.md",
+      "vercel_sha1": "0005d12cb35bec943f72a1afa2b31e663966afaa",
+      "sha256": "2b7e2ae686819c347393ce7a3fa36cce571dcec643a540a569c63f0f3b5eeb5f",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "css/aurora.css",
+      "vercel_sha1": "50fa38acaa2cc77dfb70cf6bbbde4f8ad80b7a4d",
+      "sha256": "a813c502c96be12e97d35c9986fad116a7e6d33f22d53ad25402e5fef11b10ab",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "css/auth.css",
+      "vercel_sha1": "324c51503781a25256bbd3a123163f53568d784c",
+      "sha256": "091cc18d1ecece0147efeb9977d9decf0be41f247967b4cb79a7c354e656bbc8",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "css/business.css",
+      "vercel_sha1": "e254c733cc67c56641fd495d21e57472e82f5cdc",
+      "sha256": "a1589e3e94fecc5c85176ba21e9673812a540b7ced882b91bd5d6f9dee6c7a3f",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "css/calendar.css",
+      "vercel_sha1": "be25af0df1d28a129786f984a698ac6c15ee18f1",
+      "sha256": "e789c7adc53b41a1cf253ea7ecc19402b53f55aa9bd1fb201eb0fa335dbaa496",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "css/components.css",
+      "vercel_sha1": "b8af3331ff5a2aa840fd83a654a7a28598255297",
+      "sha256": "5ed04283441e10653829db723fc5ec152291ff553f2832e854e375926b169262",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "css/fonts.css",
+      "vercel_sha1": "3a52b6d3d9db171c81f4ad8004ed43a1218e09f0",
+      "sha256": "f8b49742cd7f9bbb063209e3216ec00be0b1c65b9588755a3dcc37d9a7ca2055",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "css/fonts/ibm-plex-mono-400-latin-ext.woff2",
+      "vercel_sha1": "108d5090849a23168a0782f4dd732971f0eb49d1",
+      "sha256": "f1050dc5317b43434c0aeda599d4624c774ffc162e87a8cf204b949b6a85816d",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "css/fonts/ibm-plex-mono-400-latin.woff2",
+      "vercel_sha1": "2c9bacf0241b142bd8e8f1dfa855bb293a490ae1",
+      "sha256": "c36f509c0a8f9f85f29cb44bc8701d8a9e0b14c499e77a884f789ead7093a7ac",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "css/fonts/ibm-plex-mono-700-latin-ext.woff2",
+      "vercel_sha1": "a42db88dd4d4e135020c2f3438173936ba9a4abd",
+      "sha256": "099842414ddad0cb366cf984641b14e75c01a2c6e3f42fa13a6e89d1f4c3fc20",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "css/fonts/ibm-plex-mono-700-latin.woff2",
+      "vercel_sha1": "944960b7291632894c55580f2c8e75074df0fb0e",
+      "sha256": "9e1455e6e9c5866f607e464fffb7855486dcf575b7e69b83a3d234e587fce41b",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "css/fonts/manrope-latin-ext.woff2",
+      "vercel_sha1": "f0f3d4184b528205146a858a1eb06d319a427082",
+      "sha256": "ce093b341d9c10658ee1eaa85c5f8042ff3307bc6ccfc5f405616eb437f0009e",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "css/fonts/manrope-latin.woff2",
+      "vercel_sha1": "c8eafee863a53185ebfdad8cf43056163f8f14fd",
+      "sha256": "e310b55a7fd9677f5e3555e6c6c4d064fa1f1d24393f0ddbe217cea12a8c432f",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "css/fonts/space-grotesk-latin-ext.woff2",
+      "vercel_sha1": "1efa87763419826a7a5376a1616fa19d4e9bc2e4",
+      "sha256": "054c266fbb441ee059365dba0885d206f67ca05b375de869b88e02ebfccc9b9d",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "css/fonts/space-grotesk-latin.woff2",
+      "vercel_sha1": "cbee7234c1d753e7c63f8ea9bdb19c87f5378bfb",
+      "sha256": "a0d054c4af557de20afd6ca59f47ab353bcaec49c63ff04b6c9d39d0f8910557",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "css/gamification.css",
+      "vercel_sha1": "b060291b9312bf2987411df466715436695a52f4",
+      "sha256": "57bf02d498840acfb17b0fdaa190d1e5b134d8e134028ef298cc13cde7d940d7",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "css/layout.css",
+      "vercel_sha1": "e28a9cbd29d60d842c8b0364ed29508ce7ebbe15",
+      "sha256": "127c529e4bacdca11b7fd1dcc1c4eb8233a765bf61390c442c1df75c92323171",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "css/leaderboard.css",
+      "vercel_sha1": "5872ea45676f2c5b13d3923e21a53a23b6e36c4f",
+      "sha256": "f73f68d6262837d62d11662c6d07987339432f9715b171decfd68cc5fb37f79c",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "css/overview.css",
+      "vercel_sha1": "93aef860548364394dc05123b241c9644db1950f",
+      "sha256": "b0aebe8e175beb36de8813ae6ddd5017eae6772ef02d1b4fe85772352862ceaa",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "css/quiz.css",
+      "vercel_sha1": "cc68fe05d2152875671e57848bdbb290929413aa",
+      "sha256": "cc16c394f31a8d6a2796ebfd4820860946965434dc9232b6c884a0be8269ede6",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "css/sidebar.css",
+      "vercel_sha1": "e139990cf9110025054cdead0b31bf62c4f618bb",
+      "sha256": "bbc6df6bf2acf0851a62fae3394c229c6bc6798cea7b41b0baf423680ce0f5d2",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "css/tokens.css",
+      "vercel_sha1": "42d69033854b264f45331a178a75e5275ccd7d39",
+      "sha256": "917faca7123da42c89715c0cc28a53afa50066a5cd60fe0919d9ede1f6b865b9",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "css/whatsapp-link.css",
+      "vercel_sha1": "b0dd00ef7e669de93750bd742f9176db2e9d2405",
+      "sha256": "3d85c6d26ca411d7a695f0a8bc2d24951de03fbc3da8f9ebc422daf3274b51a8",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "curriculum.yaml",
+      "vercel_sha1": "6f262a83fcb1facb92a63812a902e3a5dc8e7a80",
+      "sha256": "ffaf1312b3784ddeec351613a98741a641f172e9226fda0ae682bbabf558e6f0",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "data/downloads.json",
+      "vercel_sha1": "33e5bbfd4ea097b06aa8fe69dead31804b8eccfa",
+      "sha256": "a0a9658b1c36b8951c36ba50a0b187b20764451c4759428cb5317cf8e765fb05",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "data/mentor.json",
+      "vercel_sha1": "77f2b2f73c232a7d4f2a12d537492c13e04166dc",
+      "sha256": "85d55ed8f107ed8c92ed8a4c133b108b09d2273101b3239e79923b5fd279ce23",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "data/navigation.json",
+      "vercel_sha1": "b47f0bf626d6774ae2b672fe6c28243eccf24465",
+      "sha256": "b16494d20d378c1c29a8de2c472bd32e87557a516559a8ec316d6b5208548a38",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "data/scenarios.json",
+      "vercel_sha1": "ccf3dfc67a27c84acde9e99c8e02f1cfe3a2cb0c",
+      "sha256": "174b2010770447c317f76a5c4a2b09e2112a5623c0988c474f9a5584268c5316",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "data/schedule.json",
+      "vercel_sha1": "0e362819cf431a6449ad3ded777b600ee2803a57",
+      "sha256": "4407b298148654320ebdddd7e6a1c404a03a121a2590eb3b9ebe8a83a4fd2780",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "data/supabase-migration.sql",
+      "vercel_sha1": "cba54d709b0e3365932283f46263173c0fcddb50",
+      "sha256": "834b0f06f3dd6340b652ac21a8bbee38792f4596aea7d4dd0f0b3cff828465a3",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "docs/flowchart-error-pipeline.html",
+      "vercel_sha1": "9d6eaa438551654bb8d53b35c56030be84b35990",
+      "sha256": "adc96d782ce4602b3f537ff932049fe87095499404c6b24a765b3b6e96be895d",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "docs/stories/fix-favicon-404.md",
+      "vercel_sha1": "c7a0badeddccbb3746e642289464c882ca64a2ca",
+      "sha256": "92c903115519783cf9a2e6ced1b83d6a2b9d8b2a791ac4b3c28f04a061ade129",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "downloads/brownfield-discovery.md",
+      "vercel_sha1": "fbbe310d4e07098b95f97b5ab3155a85411693e1",
+      "sha256": "afeade51391b31f797de31f0225343e9ba4929cd774fb86f52ec9e16d519ae3a",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "downloads/content-distillery.zip",
+      "vercel_sha1": "5c83c435e6e229b280400560f411ae2f538fd5ca",
+      "sha256": "2f071b328d62fa8ff0f3f44d8049f3e71bdf2777c2f49c0b691ff01f7c5e5ce4",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "downloads/design.zip",
+      "vercel_sha1": "2c0d5e5042113bff24cff0a6a081b0b629bce223",
+      "sha256": "73a43235957be64cf4e019d7761b354a3aac8de9b5586c2a617543c5b8b6041a",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "downloads/jose_amorim.zip",
+      "vercel_sha1": "50d24e27bae5cb4693842d6b8b2b1d10db2f4e57",
+      "sha256": "55884293f52e16f7173daeaf502fd9146e536d3dac7a973477d377b4a1992ffd",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "downloads/squad-creator-pro.zip",
+      "vercel_sha1": "8aa76bbc9b8e8daf4fbb7331617f24331b6ba8e5",
+      "sha256": "4f16b7ac33e76557f6eb66977860515079b7808d15bff7d034472e4524ffa6e0",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "downloads/zona-genialidade.zip",
+      "vercel_sha1": "b704b54a3590557d1805e5c5c76c667b3400ad4b",
+      "sha256": "b6277cd567229e1ffe39e20fb3a712cd403432adcc076b08fa552cdcf1e8f072",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "favicon.svg",
+      "vercel_sha1": "f04c094eddf104e84ad2d7f2a8f505450d3a898c",
+      "sha256": "572e351c68f5a92c118a00cb09e872fb0746476fa244728671a65453b7174f8f",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "img/e2/claude-code-aios.png",
+      "vercel_sha1": "a72a11bc44050b256068e4abcd53d04546e282e4",
+      "sha256": "293bd3523add23b1731103b676d637eb24b4bc00f6b9c3a1f488fc9d1751fffc",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "img/e2/claude-code-caverna.png",
+      "vercel_sha1": "8543f4c446185f3637209e61297bbc80d3087c4a",
+      "sha256": "b94990789d4e1270e0ede80b3f7674285275596ed4815bf59f46f7335b23b059",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "img/e4/maker-chef.png",
+      "vercel_sha1": "ea61bbd0c19b02891d385df8ebe83e59c0be5ed8",
+      "sha256": "d67c52365da9b145477c37321bb6c30742bf6c8404227609e9eae35aba0fb711",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "img/e4/thinker-critico.png",
+      "vercel_sha1": "e1c7fc0b0bd5e2f8fe5ae6a9b442a29681d52f26",
+      "sha256": "96e0b672a698085a9de1ceb49d6fc9deecff642712fafa266bd9e8a85e9aa772",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "index.html",
+      "vercel_sha1": "bbd1d822fb29c6ee1a0301417f97a75748654817",
+      "sha256": "4b4e3d75bcc380c74d9ec6db15ef67b91417860f9434f67e9ca991b5b254b4e9",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "js/aurora.js",
+      "vercel_sha1": "11aeeca6876f498347259213697842468763368d",
+      "sha256": "0dcb176f613a40f3a6bbc7d039781e18a729eb2ff0bb176ed8242f27507e8cb4",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "js/auth-ui.js",
+      "vercel_sha1": "d1860bb3a78d7798f0947381ff602079bc02b1ed",
+      "sha256": "5ce08ce4fc8dbcfc232e3acaad0b7f38a75fe01ecb93fbe4978b6b428ce68eae",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "js/auth.js",
+      "vercel_sha1": "05e16b55afc72e5b42ab4c85a3e31dcb4fefbe00",
+      "sha256": "a76b5c29b72255ba7cba38ace2a9da6b3606abd18c692c55c79a0f871754a480",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "js/boot.js",
+      "vercel_sha1": "c97fb30bf045ba7bf05d4dc2b345b665cda9e5e7",
+      "sha256": "ad1f69ba9cd8e20e69d2e7db5f18dc6b3ebc7415be2f619a9cbd9ee061e53ca2",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "js/business.js",
+      "vercel_sha1": "3eaeb8ea0b329d84f0b2c9c10c6fc47cfaa0e066",
+      "sha256": "03da28f75d9610febe6fff4938ee12ff91bf5ff6ad1e44a9e9fa82590a7580a1",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "js/calendar.js",
+      "vercel_sha1": "342726860d3adecf92a32c336a0de0ac7cec7c02",
+      "sha256": "ab0d032cb48b1043cd248a1134990a12d696fba340642566f2bd2006bb43f389",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "js/config.js",
+      "vercel_sha1": "57d8e91dd455cf80b4a55791e96c644ed5d3d34d",
+      "sha256": "07f27017687cac0f5b9799eabd7ccb6769d230df937c467e837851f7ee7b4c92",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "js/error-logger.js",
+      "vercel_sha1": "0bfac556309c0f129f6a847cb8cf1ccadf7ff19f",
+      "sha256": "9d1adc855d45963796fc2d7ee708423c6277643d53149902345e1fbabcaf413c",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "js/gamification.js",
+      "vercel_sha1": "2a81bd6c5c24b32d93c7267116f0a401ad8fb205",
+      "sha256": "e260d97297f791f9f67a7fbfd8d629a39558adac459027cd53407aaa34349f14",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "js/lead-search.js",
+      "vercel_sha1": "aabee9cb53c06531d1dafcf4c110cb7396ffdf21",
+      "sha256": "7d456e0d889eb045e5d43a612b06f67174fad99f1fa7b89ef96069a2f2c5188c",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "js/leaderboard.js",
+      "vercel_sha1": "ff41f39f5adf0cae3505b121647fb3c6c821578a",
+      "sha256": "4b7ef529d576039291c4fca4642375b7777c5bab6202c15e8abeb15fc8a4b425",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "js/modals.js",
+      "vercel_sha1": "225bd4fc1022b250e348e9f1c6fccd1ce34895b6",
+      "sha256": "dd48e2dc806e642ecc86d096019acc12d1b16243bda1ad17e18a6d1d6fbc9117",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "js/persistence.js",
+      "vercel_sha1": "a2acb97426acc3a0d408e1ad53b4b59d976006c7",
+      "sha256": "8f82417928ec0bd9db7c1ab98cf9d9ca599d6a41d07ee3fa743a223e882f16f7",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "js/pipeline.js",
+      "vercel_sha1": "22043da0e173e0586b0108bc03b59877e2c05b63",
+      "sha256": "4ea26ede79d695ff6fb07bd8e8070b913405bd6a92cfc33a3c51304d790879fc",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "js/psicometria-renderer.js",
+      "vercel_sha1": "9c9695478afe65cc6095046b1db109f259fd1804",
+      "sha256": "c9440c9c288154061fea93cf3dd8b78ec72cb2279001ca4a76913cadb52b56ba",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "js/psicometria-upload.js",
+      "vercel_sha1": "00f57cca1361fe298e8abf0ee3e4ec21d7e89424",
+      "sha256": "fe6c5e9d7a3c4becf6d3dae73635d52f415861973d2b5285c5c42f221c504696",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "js/quiz.js",
+      "vercel_sha1": "f58dbba76cee39d008aea455d5f84af6fce4b9ae",
+      "sha256": "d03a66548aa921e099fd00ff7764666aa2184113c9546826539a96fc8fcd610e",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "js/router.js",
+      "vercel_sha1": "d5a8c6ef4adbe14d16b9b37fa3ebd3e0cec3411e",
+      "sha256": "3af30f386a9c3f95d2d9d0547d8604cce56c6c865450dab615608026f7dfbbce",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "js/sidebar.js",
+      "vercel_sha1": "df05e63bc42a573981d1f5a60b666decf71c2da1",
+      "sha256": "20e8fde60ecedc212581504cd3ab44bd81b01c28e9cc85990f40ffa2a1edae6c",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "js/theme.js",
+      "vercel_sha1": "87b40be26ebc6199f19274ac98e0f315765660e4",
+      "sha256": "65275f11b04ab76d70f803390458533ebfa04d9ef4dced61262c6d0f8c1e9655",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "js/vendor/supabase.min.js",
+      "vercel_sha1": "3340dea3805e0c4976531d136e2044c3882f452e",
+      "sha256": "919862733b4b0603eaeff81b04dd692639f90e77f6a2a8ec47443f7b4802b8e3",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "js/whatsapp-link.js",
+      "vercel_sha1": "c2bb7b122b3f6178157984b6f006ffc12ff414f3",
+      "sha256": "0c36f6054bb21a5e19f12ae68c7f7943d757b4c51358742719def4d045f2cf79",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "middleware.js",
+      "vercel_sha1": "468ca4adbb55c80435d5db8f6e5a4093061fcbd4",
+      "sha256": "30aa4c369c232fec323bd8d3f84b3f7957025d5b77627eddbcf978a0a45fd85a",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "package-lock.json",
+      "vercel_sha1": "0a6194435f2b95a00f1f44e18c93a2521e10b1c4",
+      "sha256": "3a43105e1b8912c08780c7e92bde4b1a3cb48ae83c144e2f4e45d8239482d56a",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "package.json",
+      "vercel_sha1": "9f63357bd9ddeec05c348050fab6f3ade612a6f3",
+      "sha256": "0645dee70fd11daf1aeefdc6cd0687d81b8d4638415e7809363e8176f6c5d226",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/business.html",
+      "vercel_sha1": "3aaebedcb0690e4ed762d6586bd6cefd5b194689",
+      "sha256": "ae82d0c34d358412c124d9646ea9f4f4886d46897e8c1c3812286be11e87729c",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/calendario.html",
+      "vercel_sha1": "0af72fd8cc9ab8b8a6b360051c93081e4d806487",
+      "sha256": "16d37a53ea647b15f440cc1892182529cbc4e137c93e3cf151e1f18d2c09fc14",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/downloads.html",
+      "vercel_sha1": "19a9e758dab4f042dc2ffe0d2c3007cab6273251",
+      "sha256": "43a59ef0734b8bf7d63f07aa790f375ba92982538832bc9e453b411af6b401a9",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/e1-fluxos.html",
+      "vercel_sha1": "771060f459128c4a503b67cd32d75d76d4cc5ebb",
+      "sha256": "9aa2d750529dd4c6b71d33c65b2a2b999281f604053f822f7d153c4563e49cf5",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/e1-fundacao.html",
+      "vercel_sha1": "f11063c3b11ba5023a4e6b6e14f93938855b9ad4",
+      "sha256": "28f85b7c122cf91bb5e1df36ec653119dfb798b8946bf800717bbbbc4f2fd7b8",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/e2-criando-aios.html",
+      "vercel_sha1": "619bc68f71352e6619bc42ba3df07ab38b780ec9",
+      "sha256": "4007d86d7ba0fa1fe22a721baf35f00a53a7d2891965d090c30974161eaadce3",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/e2-design-system.html",
+      "vercel_sha1": "ddec8f1eb62de5f9e7082949a1b94a749258ad77",
+      "sha256": "09d5fdf3726bbab9582fc8db1f8d60c1570be9ddf096f9b234df4515c7e05e08",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/e2-liberdade.html",
+      "vercel_sha1": "450c5a0a42d1a6f9ccee81a8172ec22836257e63",
+      "sha256": "f256098d0bb9222670572de207b642fd57cf87bb871a1a8736ad45112d8e164b",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/e2-organizacao.html",
+      "vercel_sha1": "a441ecd5e105d8d176ba4873e6a59a1270f1f505",
+      "sha256": "fc4c65bfa76555c1707a7183d77d91e25d1f722edc560f5986a226d329a26aff",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/e3-anatomia-squad.html",
+      "vercel_sha1": "1627f785b7dab4a8c9d02d2b439ca72366a49bf7",
+      "sha256": "e855ab0451b4cbc723488695589a3a15a179fe3d520f8c41403ef5b8b188b00e",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/e3-dissecando-aios.html",
+      "vercel_sha1": "f42c2d62c4fc91b2068e2de0d2cd46d3c90957da",
+      "sha256": "c3e003437ae246f68284221022614436a40388ee0225e230bd4090d61c365f67",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/e3-estrutura-aios.html",
+      "vercel_sha1": "b504c6d3ea43294d6b1e301805520903552ea69c",
+      "sha256": "096af7b0010ebd336099ade3064b435296acea88b960cc3f28b385339ba6bd64",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/e3-tasks.html",
+      "vercel_sha1": "36c3f39233a9921f6d369ce350310a2a868640a8",
+      "sha256": "343608aa70f3716ab639412e4e92e41167975b82f6352fabdfc81bd974ba3bee",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/e4-agents.html",
+      "vercel_sha1": "fe711a56dd43f790a07aa84b932fbb9956ddcd5b",
+      "sha256": "f4b2c7bc2f67d186d22843cfa22f8fab2889db122eb1dae94568c7d4a4323eb5",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/e4-identidade.html",
+      "vercel_sha1": "0b0445ec338f21be425dc7a172a4c197103b79e1",
+      "sha256": "b576440b977767d5c25ff36ca6ee97347b57ea3aab3f78a43beca425a551efb8",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/e4-maker.html",
+      "vercel_sha1": "8734f5754945ceb93411f58c8248a4f2a8e5963f",
+      "sha256": "9816181735a83294788b2ff425ea01ec1ce79f8b1c69886b0c1b73fb91ec51ab",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/e4-thinker.html",
+      "vercel_sha1": "9680959be6bdcca69066b721aedf16a4834e3680",
+      "sha256": "310306eb27b890a02ccf56735f4ca491a5d70e98fd5b3508f8808bfae322826d",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/e5-bom-vs-ruim.html",
+      "vercel_sha1": "03ca701aea93c773d81abb7a39691ac71ba0fa80",
+      "sha256": "df60632313fd7105f6077728eeeab0f863e4e32bd932544633ed151d6a795bd8",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/e5-cadeia.html",
+      "vercel_sha1": "f5c43c191782afdaea829668d5355a4939cbbf6c",
+      "sha256": "6e6017a1e4125ba136758d1bc0bcf681dceaa0276b48194b3d4f13537e6d4852",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/e5-caixa-preta.html",
+      "vercel_sha1": "14e9e8ada49d5eaefae2a5212bd063f9ccc13a89",
+      "sha256": "bd5bfd19a60b2c3d5d382c3ef581d225fcbacc99420d31a8c205405dcd43592e",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/e5-prospect-hunter.html",
+      "vercel_sha1": "5b85d34cbecdf0eaa07637a54703907bb87c55ab",
+      "sha256": "5eb52c409633e9c7756d1c1fd458a2d82b9c15f4e8aa6da634b280e7699774df",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/e5-workflows.html",
+      "vercel_sha1": "a53896c0396fac844a8e5c20fbe3643d73c0a521",
+      "sha256": "1162d0da38cff1781c1108b90183d72c083b177ae781302801ceb9c8de27cbdb",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/e6-fluxos.html",
+      "vercel_sha1": "11366afc49c98d3ee6a9cdf76a8e0022ee21c4f9",
+      "sha256": "44dbf78c1b88c04b8e85ccf3c27137f91dd2ad7061638b63b922845a699e773a",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/e6-transformando.html",
+      "vercel_sha1": "352a101289b0b3757fbadfe3975cadde7c5232f7",
+      "sha256": "cb9646df13dbca3f869e585740b897cef71abb21e8f808875486e22f85d70b2b",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/e7-primeira-task.html",
+      "vercel_sha1": "3464f0e909847b6164af3ec1414e3fbdbd3a1a34",
+      "sha256": "f9cc88c484d90d7d6dcc9d7e0e3a8bce420c72cfd0627ef317826f0cbea3dcbf",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/maker-challenge-admin.html",
+      "vercel_sha1": "7bea929b41bdafcec190b8dda6f24215763844af",
+      "sha256": "895f79a181fbcbfa860efe627fcea19e417738654b5a3b35b3f26e750f88e7b9",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/maker-challenge.html",
+      "vercel_sha1": "34875af119ea6690f2393aa076725b3440282713",
+      "sha256": "2bbc5e1d6e34b5a706a721c11bdaef6ecc286e9536ccc860a43c454f901ed4b6",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/psicometria.html",
+      "vercel_sha1": "46a9311169749ca4c42367d798fef6f2e57ce6ad",
+      "sha256": "9791494eceef73bb8d25fe16af739ac972d6cc66cca9a7794633dc6d5a8b82f3",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/quiz-certificado.html",
+      "vercel_sha1": "32161aef869f4d91240b5b555ab2e6c71d216f7d",
+      "sha256": "34f6b8d9b46cd32f53dd2581f737928b3a223313b8f6e805baeaed6cd694bdf5",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "pages/whatsapp-link.html",
+      "vercel_sha1": "b104802314184234eb8c11c325cd24956ddd30e2",
+      "sha256": "7a2c1356905024407a69807a91f1fdc19564418aecdfb23740000d3b01c17b5b",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "quiz-certificado.txt",
+      "vercel_sha1": "c0f256a9a3657f7a5e15085145e9fdc332b4936f",
+      "sha256": "b806613c8b0fab310979efede584e01f0bfc040bf6937a503e876a59fa309327",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "scripts/quiz-solver.bookmarklet.js",
+      "vercel_sha1": "4afb3c82775e6f9a26054ff5765b5d318f83c017",
+      "sha256": "a590bd1848b07640e9dc3c0e88a9ef82d8a6ae893699234604ccf4ff56bd4032",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "supabase/migrations/001_student_psicometria.sql",
+      "vercel_sha1": "8e3a4c8925f997c8b7ea05c81d1d31c6bf1150c4",
+      "sha256": "856cbfe7a75b4c1f4d0a263cc81336eb87472f871cf5f078ab9950e8e2518203",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "supabase/migrations/002_error_logs.sql",
+      "vercel_sha1": "ef71f1ca499cd035374c720cd6cfd7239c0d85dc",
+      "sha256": "7977dc319e95917920d64615e759095e8ed393547fb6bc4bf9f3f3104363b4c2",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "supabase/migrations/003_error_diagnosis.sql",
+      "vercel_sha1": "be5f55bcdf2c72644ec5e73f2a50184b10cc3930",
+      "sha256": "efbdabc9ddb46af5aa23b4990d94077a6788b5df6f3ba826c46b6070c9248ab1",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "supabase/migrations/004_auto_fix_states.sql",
+      "vercel_sha1": "4599ebdf382391f0dc69cbdb2aefe4a4194e6c40",
+      "sha256": "2c098f6297b24f479462736437bb1ddedf1b0f1bb6685755b133248507225019",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "supabase/migrations/005_daemon_heartbeats.sql",
+      "vercel_sha1": "b90519fcb626e96726db0a4346b86632034dbcaf",
+      "sha256": "049d175174756afbb23ca5e81c425984fcd6a8ec2f84cbf9b471127941b48032",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "supabase/migrations/006_student_progress.sql",
+      "vercel_sha1": "9034c894a2c284ecb77109964ec25b4476c24e3f",
+      "sha256": "e2c499de59fc78e00c84f4f8abe09dfc7e68feca613f236781b0b4f777529c63",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "supabase/migrations/007_student_notes.sql",
+      "vercel_sha1": "88f355267068c7d8c377fe089b94fae8abac60d4",
+      "sha256": "845b851e91c2b0b23388a541e0a5820d6da1cf5e08895dc31555c3b7b9a0d6c1",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "supabase/migrations/008_scenario_results.sql",
+      "vercel_sha1": "3cb067bbedda4f84c24d5f9108d620935af088a2",
+      "sha256": "9fec264b13927afdc911ecefb5433d24b93127c072e8dbc8e56bf1492d5c83f5",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "supabase/migrations/009_get_leaderboard_rpc.sql",
+      "vercel_sha1": "35cbb0d97eff61959b09c245150b22f690d394e8",
+      "sha256": "36dda3ce25e06158b56c829364e5ce304e2165bebdbba3571b2c0959376b7c31",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "supabase/migrations/010_error_logs_rate_limit.sql",
+      "vercel_sha1": "88468ba372a3c3da4e3c4e48f8f8dd1d0333e0ae",
+      "sha256": "cbf5dd5e54dba15356a6f14e1dfc6b0a08b343f81500b824188e25e06bb9da4c",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "supabase/migrations/011_cleanup_ttl.sql",
+      "vercel_sha1": "9744b237d9a78c41fae29fb27928603ab4b30bb7",
+      "sha256": "9cf7327f40e76ee84c0bae4986206d426c1c1bc5baadcbe92a0101683e687660",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "supabase/migrations/012_api_token_usage.sql",
+      "vercel_sha1": "e8e95702ad0c6af762a4e821f6ef39947925b48e",
+      "sha256": "1ed42e6948054936706fb4ae0383825b51b6d9a889706df314835e7bc2029ac9",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "supabase/migrations/012_student_whatsapp.sql",
+      "vercel_sha1": "f79655bc1f28e54a1aef41be6800207a38fc3f59",
+      "sha256": "5e2b713fb758f53590ba8e3ed91504caa3f9aa54140a51475711e85285ff9b95",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "supabase/migrations/013_security_hardening.sql",
+      "vercel_sha1": "1b1a3f00844fdacfb805170d058acddc56a90c33",
+      "sha256": "2144d2473b820e464a3b61049ac86bfa6c613911930b1a293e6c931a79c14ed8",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "supabase/migrations/014_security_fixes_v2.sql",
+      "vercel_sha1": "ea669bd57dd86e197f0a31ed0a5707d1c5d904bd",
+      "sha256": "7032ddb30c97c314bf7f37cafe192a6121a9649311fd6185bc126f2d21f96a33",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "supabase/migrations/015_student_offer.sql",
+      "vercel_sha1": "87bd14bd0e388faee1d3349a982e0a8ad64d1303",
+      "sha256": "e8853dfc9440bacc6d53c5f3c2d39cc1c0810f3d33c53efd4b72ae2d165c4265",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "supabase/migrations/016_student_pipeline.sql",
+      "vercel_sha1": "a61d68f466529d69fab7edfb8d7bc7f7a9a7fa28",
+      "sha256": "f29c7e54e9005f80d578bdc2758bb77d3ebb7b6e928356374c51c271498fa46e",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "supabase/migrations/017_api_quota_usage.sql",
+      "vercel_sha1": "50aeed4bb0872c1854c7aaec68858495b815dc7b",
+      "sha256": "7b6f3b1e8d8f483df11b0cecaa4c9d77bd0f194c10507592e3c9c81e57fa5954",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "supabase/migrations/018_maker_challenge.sql",
+      "vercel_sha1": "26d11232cb37434f495517cc951712a097bba663",
+      "sha256": "b322ff5bf429a8794794b6d96456e2d7d9b1c7f4ca18558fe5c83174de587891",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "templates/CLAUDE.md",
+      "vercel_sha1": "14ca649b41f2725fb871d8285ab517614339fe16",
+      "sha256": "cc05f934f913c36118fd416655ff8658dc27933857b1ade5b0d17dbfb6e3eedb",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "templates/prompt-setup-claude.md",
+      "vercel_sha1": "798a56a495d2110c23472d2cb9e1747ab25a985f",
+      "sha256": "d094fdf7aa9677a651f9c2e1fbc9194f04eb0a10a5223ede7ab4a941ae333448",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "tests/config.test.js",
+      "vercel_sha1": "e5ee2dd0934d3497d5b8f9c1f82ab3bdc6856d5c",
+      "sha256": "9967145dd112c18dbfb6a0b22cc68f55b38040f04b68d1059db864bf6ce79d85",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "tests/leaderboard-privacy.test.js",
+      "vercel_sha1": "e100a045b91c85b5ba68f50e95ed8742036c0918",
+      "sha256": "24c194b45a2c5ff892120c729e0e02bd0ed4d87b02d3473ed7cefee4368c104e",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "tests/router-paths.test.js",
+      "vercel_sha1": "23865a11853706d9f1225d085d93e5d06a7ab1a0",
+      "sha256": "b4b74f3ac6b9d8ce7cf9aa3ae68fa3f23fce3c1c701f0ef8d2ad323a0f4ba552",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "validation-report-pedagogical.md",
+      "vercel_sha1": "3a8a3c180aff7eb9919f67df5d287bfa24068fa6",
+      "sha256": "69973f1c9b5eab7af32d61f568c9f9c6bdf7190d86d610acef544f7b2c010dda",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "validation-report.md",
+      "vercel_sha1": "5131b963f3452a3eabd58bcbb7e6a9ae2320fb15",
+      "sha256": "b003713c0c45eeb9842ca8a5cdc96566a6720ac7b8ddf51795b5093beb760eee",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "vercel.json",
+      "vercel_sha1": "abdffae702f34f2044a80f0d5d829ca28e3fde16",
+      "sha256": "a642c6aa84ec329938f50ea3bdf642c1117eafbba50acef421db26352cb68780",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "vitest.config.js",
+      "vercel_sha1": "a5ab1325d623cff2e748494699366347fbc1aaa9",
+      "sha256": "24d3e2e3208b7a2e05f77145481b7284d5f022bfae9eb1e7c6db2e9526601477",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    },
+    {
+      "path": "whatsapp-form.html",
+      "vercel_sha1": "3f67f4b543ddd399dade30e63d2963dda7b16e38",
+      "sha256": "9d2fa92f00e3b2bc38e4359a40036573da51913771f16075ca6d29bf137aedb1",
+      "source": "Vercel deployment dpl_HAoGkzza4aJma5atATpaiwj6QvpC"
+    }
+  ],
+  "generated_files": [
+    "README.md",
+    ".env.example",
+    ".gitignore",
+    "ARQUIVOS-EXCLUIDOS.md",
+    "ORIGEM-E-VALIDACAO.json"
+  ],
+  "tests": {
+    "count": 26,
+    "result": "passed"
+  },
+  "publication_changes": [
+    "public Supabase placeholders",
+    "private individual assessment excluded",
+    "standalone Git history"
+  ]
+}

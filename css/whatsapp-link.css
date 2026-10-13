@@ -1,0 +1,348 @@
+/* ==========================================================================
+   WHATSAPP LINK — Student email <-> WhatsApp phone mapping
+   ========================================================================== */
+
+.wa-hero {
+  padding: 2rem 0 1.5rem;
+}
+
+.wa-hero h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 0.5rem;
+}
+
+.wa-hero p {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 600px;
+}
+
+/* ── Card ────────────────────────────────────────────────────────────── */
+
+.wa-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.wa-card__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: end;
+}
+
+@media (max-width: 640px) {
+  .wa-card__row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* ── Fields ──────────────────────────────────────────────────────────── */
+
+.wa-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.wa-field__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.wa-field__value {
+  font-size: 0.95rem;
+  font-family: var(--font-mono);
+  color: var(--color-text-primary);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.75rem;
+  user-select: all;
+}
+
+.wa-field__input {
+  font-size: 0.95rem;
+  font-family: var(--font-mono);
+  color: var(--color-text-primary);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.75rem;
+  outline: none;
+  transition: border-color 0.15s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.wa-field__input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.wa-field__input:focus {
+  border-color: var(--color-accent-gold);
+}
+
+.wa-field__hint {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: 0.15rem;
+}
+
+/* ── Phone group (country picker + input) ───────────────────────────── */
+
+.wa-phone-group {
+  display: flex;
+  position: relative;
+}
+
+.wa-phone-group .wa-field__input {
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  flex: 1;
+  min-width: 0;
+}
+
+.wa-country-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.65rem 0.6rem;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-right: none;
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  transition: border-color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.wa-country-btn:hover {
+  border-color: var(--color-accent-gold);
+}
+
+.wa-country-btn .wa-flag {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.wa-country-btn .wa-dial {
+  font-size: 0.8rem;
+}
+
+.wa-country-btn .wa-chevron {
+  width: 0;
+  height: 0;
+  border-left: 3.5px solid transparent;
+  border-right: 3.5px solid transparent;
+  border-top: 4.5px solid var(--color-text-muted);
+  margin-left: 0.15rem;
+}
+
+/* ── Country dropdown ───────────────────────────────────────────────── */
+
+.wa-country-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 280px;
+  max-height: 300px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  z-index: 999;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.wa-country-dropdown.open {
+  display: flex;
+}
+
+.wa-country-search {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 0.85rem;
+  color: var(--color-text-primary);
+  background: var(--color-bg-secondary);
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  outline: none;
+  box-sizing: border-box;
+}
+
+.wa-country-search::placeholder {
+  color: var(--color-text-muted);
+}
+
+.wa-country-list {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.wa-country-opt {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  transition: background 0.1s ease;
+}
+
+.wa-country-opt:hover {
+  background: rgba(200, 162, 39, 0.1);
+  color: var(--color-text-primary);
+}
+
+.wa-country-opt .wa-flag {
+  font-size: 1.2rem;
+}
+
+.wa-country-opt .wa-cname {
+  flex: 1;
+}
+
+.wa-country-opt .wa-cdial {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* ── Saved state flag ───────────────────────────────────────────────── */
+
+.wa-saved-flag {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+/* ── Button ──────────────────────────────────────────────────────────── */
+
+.wa-actions {
+  margin-top: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.wa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.wa-btn:hover {
+  opacity: 0.85;
+}
+
+.wa-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.wa-btn--primary {
+  background: var(--color-accent-gold);
+  color: #000;
+}
+
+.wa-btn--edit {
+  background: transparent;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+
+/* ── Status ──────────────────────────────────────────────────────────── */
+
+.wa-status {
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.wa-status--ok {
+  color: var(--color-accent-green);
+}
+
+.wa-status--err {
+  color: #EF4444;
+}
+
+/* ── Saved state ─────────────────────────────────────────────────────── */
+
+.wa-saved {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: var(--radius-sm);
+  margin-top: 1rem;
+}
+
+.wa-saved svg {
+  flex-shrink: 0;
+  color: var(--color-accent-green);
+}
+
+.wa-saved__text {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.wa-saved__phone {
+  font-family: var(--font-mono);
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+/* ── Info box ────────────────────────────────────────────────────────── */
+
+.wa-info {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: rgba(200, 162, 39, 0.06);
+  border: 1px solid rgba(200, 162, 39, 0.15);
+  border-radius: var(--radius-sm);
+  margin-top: 1.5rem;
+}
+
+.wa-info svg {
+  flex-shrink: 0;
+  color: var(--color-accent-gold);
+  margin-top: 0.1rem;
+}
+
+.wa-info__text {
+  font-size: 0.825rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}

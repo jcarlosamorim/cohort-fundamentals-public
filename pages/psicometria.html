@@ -1,0 +1,638 @@
+<!-- Psicometria & Genialidade - Dynamic Dashboard -->
+<style>
+  .psico-hero {
+    text-align: center;
+    padding: 2.5rem 1.5rem 2rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .psico-hero__badge {
+    display: inline-block;
+    font-size: 0.65rem; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--color-pink);
+    background: var(--color-pink-10);
+    border: 1px solid var(--color-pink-20);
+    padding: 0.3rem 0.8rem; border-radius: 999px;
+    margin-bottom: 1rem;
+  }
+  .psico-hero h1 { font-size: 1.6rem; font-weight: 800; color: var(--color-text-primary); margin: 0 0 0.5rem; }
+  .psico-hero h1 span { color: var(--color-pink); }
+  .psico-hero p { font-size: 0.85rem; color: var(--color-text-muted); max-width: 500px; margin: 0 auto; line-height: 1.5; }
+
+  /* Upload dropzone */
+  .psico-dropzone {
+    border: 2px dashed var(--color-border-light);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 1.5rem;
+    text-align: center; cursor: pointer;
+    margin: 1.5rem 1.5rem 0;
+    transition: all 0.2s;
+  }
+  .psico-dropzone:hover, .psico-dropzone--hover {
+    border-color: var(--color-pink);
+    background: var(--color-pink-10);
+  }
+  .psico-dropzone--loading {
+    border-color: var(--color-accent-gold);
+    background: var(--color-accent-gold-10);
+    pointer-events: none;
+  }
+  .psico-dropzone__label {
+    font-size: 0.85rem; color: var(--color-text-secondary); line-height: 1.6;
+  }
+  .psico-dropzone__label strong { color: var(--color-pink); }
+  .psico-spinner {
+    width: 24px; height: 24px;
+    border: 3px solid var(--color-white-10);
+    border-top-color: var(--color-accent-gold);
+    border-radius: 50%;
+    animation: psico-spin 0.8s linear infinite;
+    margin: 0 auto 0.75rem;
+  }
+  @keyframes psico-spin { to { transform: rotate(360deg); } }
+  .psico-curiosity {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--color-accent-gold);
+    font-style: italic;
+    max-width: 420px;
+    margin: 0.5rem auto;
+    line-height: 1.5;
+    min-height: 2.5em;
+    transition: opacity 0.3s ease;
+  }
+  .psico-upload-error {
+    font-size: 0.75rem; color: var(--color-danger);
+    margin: 0.75rem 1.5rem 0; display: none;
+  }
+
+  /* Upload done bar */
+  .psico-upload-done {
+    display: flex; align-items: center; gap: 0.75rem;
+    background: var(--color-accent-green-10);
+    border: 1px solid var(--color-accent-green-20);
+    border-radius: var(--radius-md);
+    padding: 0.75rem 1rem; margin: 1.5rem 1.5rem 0;
+  }
+  .psico-upload-done__icon {
+    width: 32px; height: 32px;
+    background: var(--color-accent-green); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .psico-upload-done__icon svg { color: var(--color-bg-primary); }
+  .psico-upload-done__text { font-size: 0.8rem; color: var(--color-accent-green); font-weight: 600; }
+  .psico-upload-done__file { font-size: 0.7rem; color: var(--color-text-muted); }
+  .psico-upload-done__re {
+    font-size: 0.65rem; font-weight: 700;
+    color: var(--color-text-muted); background: var(--color-white-5);
+    border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+    padding: 0.3rem 0.6rem; cursor: pointer; text-transform: uppercase;
+    letter-spacing: 0.06em; transition: all 0.15s;
+  }
+  .psico-upload-done__re:hover { color: var(--color-pink); border-color: var(--color-pink); }
+
+  /* Profile card */
+  .psico-profile {
+    display: grid; grid-template-columns: auto 1fr; gap: 1.25rem;
+    background: var(--color-bg-card); border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg); padding: 1.25rem; margin: 1.5rem 1.5rem 0;
+  }
+  .psico-profile__avatar {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-pink), var(--color-accent-purple));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; font-weight: 800; color: #fff;
+  }
+  .psico-profile__info h3 { font-size: 1rem; font-weight: 700; color: var(--color-text-primary); margin: 0 0 0.25rem; }
+  .psico-profile__tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.4rem; }
+  .psico-tag { font-size: 0.6rem; font-weight: 700; padding: 0.2rem 0.5rem; border-radius: 999px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .psico-tag--pink { background: var(--color-pink-10); color: var(--color-pink); border: 1px solid var(--color-pink-20); }
+  .psico-tag--purple { background: var(--color-accent-purple-10); color: var(--color-accent-purple-light); border: 1px solid var(--color-accent-purple-20); }
+  .psico-tag--gold { background: var(--color-accent-gold-10); color: var(--color-accent-gold); border: 1px solid var(--color-accent-gold-20); }
+  .psico-tag--green { background: var(--color-accent-green-10); color: var(--color-accent-green); border: 1px solid var(--color-accent-green-20); }
+
+  /* Dashboard grid */
+  .psico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding: 1.5rem; }
+  @media (max-width: 768px) { .psico-grid { grid-template-columns: 1fr; } }
+  .psico-card {
+    background: var(--color-bg-card); border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg); padding: 1.25rem; transition: border-color 0.2s;
+  }
+  .psico-card:hover { border-color: var(--color-border-light); }
+  .psico-card--wide { grid-column: 1 / -1; }
+  .psico-card__header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
+  .psico-card__icon { width: 28px; height: 28px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; }
+  .psico-card__title { font-size: 0.75rem; font-weight: 700; color: var(--color-text-primary); letter-spacing: 0.02em; }
+  .psico-card__subtitle { font-size: 0.65rem; color: var(--color-text-muted); }
+  .psico-card__desc { font-size: 0.73rem; color: var(--color-text-muted); line-height: 1.55; margin-bottom: 1rem; padding: 0.6rem 0.75rem; background: var(--color-white-5); border-radius: var(--radius-sm); border-left: 2px solid var(--color-border-light); }
+  .psico-card__reading { font-size: 0.73rem; color: var(--color-text-secondary); line-height: 1.6; margin-top: 1rem; padding: 0.75rem 0.85rem; background: linear-gradient(135deg, var(--color-pink-10), transparent); border: 1px solid var(--color-pink-20); border-radius: var(--radius-md); position: relative; }
+  .psico-card__reading::before { content: 'Sua Leitura'; display: block; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-pink); margin-bottom: 0.4rem; }
+  .psico-card__reading strong { color: var(--color-text-primary); }
+  .psico-card__reading em { color: var(--color-accent-gold); font-style: normal; font-weight: 600; }
+  .psico-chart-wrap { position: relative; width: 100%; min-height: 140px; }
+  .psico-chart-wrap canvas { width: 100% !important; }
+  .psico-chart-wrap--radar { min-height: 260px; }
+  .psico-chart-wrap--bar { min-height: 140px; }
+
+  /* Horizontal bars */
+  .psico-hbar { margin-bottom: 0.75rem; }
+  .psico-hbar:last-child { margin-bottom: 0; }
+  .psico-hbar__label { display: flex; justify-content: space-between; font-size: 0.7rem; margin-bottom: 0.3rem; }
+  .psico-hbar__name { color: var(--color-text-secondary); font-weight: 500; }
+  .psico-hbar__val { color: var(--color-text-muted); font-variant-numeric: tabular-nums; }
+  .psico-hbar__track { height: 8px; background: var(--color-white-5); border-radius: 4px; overflow: hidden; }
+  .psico-hbar__fill { height: 100%; border-radius: 4px; transition: width 1s cubic-bezier(0.22,1,0.36,1); }
+
+  /* Stat row */
+  .psico-stat-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .psico-stat { flex: 1; min-width: 80px; text-align: center; background: var(--color-white-5); border-radius: var(--radius-md); padding: 0.75rem 0.5rem; }
+  .psico-stat__value { font-size: 1.4rem; font-weight: 800; color: var(--color-text-primary); font-variant-numeric: tabular-nums; }
+  .psico-stat__label { font-size: 0.6rem; font-weight: 600; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 0.2rem; }
+
+  /* Profile badges */
+  .psico-badge-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .psico-badge { flex: 1; min-width: 120px; background: var(--color-white-5); border-radius: var(--radius-md); padding: 1rem; text-align: center; }
+  .psico-badge__emoji { font-size: 1.5rem; margin-bottom: 0.4rem; }
+  .psico-badge__title { font-size: 0.8rem; font-weight: 700; color: var(--color-text-primary); }
+  .psico-badge__desc { font-size: 0.65rem; color: var(--color-text-muted); margin-top: 0.25rem; line-height: 1.4; }
+
+  /* Insight */
+  .psico-insight { background: var(--color-pink-10); border: 1px solid var(--color-pink-20); border-radius: var(--radius-md); padding: 1rem 1.25rem; margin: 0 1.5rem 1.5rem; }
+  .psico-insight__title { font-size: 0.75rem; font-weight: 700; color: var(--color-pink); margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem; }
+  .psico-insight__text { font-size: 0.8rem; color: var(--color-text-secondary); line-height: 1.5; }
+
+  /* Action plan */
+  .psico-actions { padding: 0 1.5rem 1.5rem; }
+  .psico-actions__header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
+  .psico-actions__icon { width: 28px; height: 28px; border-radius: var(--radius-sm); background: var(--color-accent-gold-10); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; }
+  .psico-actions__title { font-size: 0.85rem; font-weight: 700; color: var(--color-text-primary); }
+  .psico-actions__subtitle { font-size: 0.65rem; color: var(--color-text-muted); }
+  .psico-action { display: flex; gap: 0.75rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: 1rem; margin-bottom: 0.6rem; transition: border-color 0.2s; }
+  .psico-action:hover { border-color: var(--color-border-light); }
+  .psico-action__num { width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 800; flex-shrink: 0; }
+  .psico-action__content { flex: 1; }
+  .psico-action__label { font-size: 0.8rem; font-weight: 600; color: var(--color-text-primary); margin-bottom: 0.25rem; }
+  .psico-action__desc { font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.5; }
+  .psico-action__meta { display: flex; gap: 0.5rem; margin-top: 0.4rem; }
+  .psico-action__tag { font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.15rem 0.4rem; border-radius: 999px; }
+
+  /* Convergence list */
+  .psico-converge { list-style: none; padding: 0; margin: 0; }
+  .psico-converge li { display: flex; align-items: flex-start; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid var(--color-white-5); font-size: 0.75rem; color: var(--color-text-secondary); line-height: 1.4; }
+  .psico-converge li:last-child { border-bottom: none; }
+  .psico-converge__dot { width: 6px; height: 6px; border-radius: 50%; margin-top: 0.35rem; flex-shrink: 0; }
+
+  /* Action Plan Checklist */
+  .psico-ap { padding: 0 1.5rem 1.5rem; }
+  .psico-ap__header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
+  .psico-ap__icon { width: 28px; height: 28px; border-radius: var(--radius-sm); background: var(--color-accent-green-10); display: flex; align-items: center; justify-content: center; }
+  .psico-ap__title { font-size: 0.85rem; font-weight: 700; color: var(--color-text-primary); }
+  .psico-ap__subtitle { font-size: 0.65rem; color: var(--color-text-muted); }
+  .psico-ap-table { width: 100%; border-collapse: collapse; background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; }
+  .psico-ap-table thead th { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-muted); background: var(--color-white-5); padding: 0.6rem 0.75rem; text-align: left; border-bottom: 1px solid var(--color-border); }
+  .psico-ap-row td { padding: 0.55rem 0.75rem; border-bottom: 1px solid var(--color-white-5); font-size: 0.75rem; color: var(--color-text-secondary); vertical-align: middle; }
+  .psico-ap-row:last-child td { border-bottom: none; }
+  .psico-ap-timeframe { font-weight: 700; font-size: 0.7rem; white-space: nowrap; border-right: 1px solid var(--color-white-5); width: 110px; }
+  .psico-ap-timeframe--pink { color: var(--color-pink); background: var(--color-pink-10); }
+  .psico-ap-timeframe--gold { color: var(--color-accent-gold); background: var(--color-accent-gold-10); }
+  .psico-ap-timeframe--purple { color: var(--color-accent-purple-light); background: var(--color-accent-purple-10); }
+  .psico-ap-check { width: 32px; text-align: center; }
+  .psico-ap-checkbox { width: 15px; height: 15px; accent-color: var(--color-accent-green); cursor: pointer; }
+  .psico-ap-action { line-height: 1.5; }
+
+  /* Do NOT callout */
+  .psico-donot { margin-top: 1rem; background: var(--color-bg-card); border: 1px solid var(--color-border); border-left: 3px solid var(--color-danger); border-radius: var(--radius-md); padding: 1rem 1.25rem; }
+  .psico-donot__header { display: flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; font-weight: 700; color: var(--color-danger); margin-bottom: 0.5rem; }
+  .psico-donot__list { list-style: none; padding: 0; margin: 0; }
+  .psico-donot__list li { font-size: 0.73rem; color: var(--color-text-secondary); line-height: 1.5; padding: 0.3rem 0; padding-left: 1.2rem; position: relative; }
+  .psico-donot__list li::before { content: '\2715'; position: absolute; left: 0; color: var(--color-danger); font-weight: 700; font-size: 0.65rem; }
+
+  /* Squad Recomendado */
+  .psico-squad { padding: 0 1.5rem 1.5rem; }
+  .psico-squad__header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
+  .psico-squad__icon { width: 28px; height: 28px; border-radius: var(--radius-sm); background: var(--color-accent-purple-10); display: flex; align-items: center; justify-content: center; }
+  .psico-squad__title { font-size: 0.85rem; font-weight: 700; color: var(--color-text-primary); }
+  .psico-squad__subtitle { font-size: 0.65rem; color: var(--color-text-muted); }
+  .psico-squad__card { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden; }
+  .psico-squad__field { padding: 1rem 1.25rem; border-bottom: 1px solid var(--color-white-5); }
+  .psico-squad__field:last-child { border-bottom: none; }
+  .psico-squad__field-label { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-muted); margin-bottom: 0.3rem; }
+  .psico-squad__field-name { font-size: 0.85rem; font-weight: 700; color: var(--color-text-primary); }
+  .psico-squad__field-desc { font-size: 0.7rem; color: var(--color-text-muted); margin-top: 0.15rem; line-height: 1.4; }
+  .psico-squad__mode { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-accent-green); background: var(--color-accent-green-10); border: 1px solid var(--color-accent-green-20); padding: 0.25rem 0.6rem; border-radius: 999px; margin-top: 0.5rem; }
+
+  /* ===================== PRINT / PDF =====================
+     Layout-level print CSS lives in layout.css (loaded from <head>).
+     This block is a fallback for direct browser print (Ctrl+P). */
+  @media print {
+    .psico-hero, #psico-upload, .psico-upload-done { display: none !important; }
+    #psico-dashboard { display: block !important; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    .psico-card, .psico-profile, .psico-action, .psico-insight, .psico-badge, .psico-donot, .psico-squad__card { break-inside: avoid; page-break-inside: avoid; }
+    .psico-ap-row { break-inside: avoid; page-break-inside: avoid; }
+    .psico-card__header, .psico-actions__header, .psico-ap__header, .psico-squad__header { break-after: avoid; page-break-after: avoid; }
+    .psico-grid { display: block !important; }
+    .psico-card { margin-bottom: 1rem; }
+  }
+  @page { margin: 1.5cm; }
+</style>
+
+<!-- HERO -->
+<div class="psico-hero">
+  <div class="psico-hero__badge">Mapa da Zona de Genialidade</div>
+  <h1>Psicometria & <span>Genialidade</span></h1>
+  <p>Fa&ccedil;a upload do seu documento de autoconhecimento e receba um dashboard psicom&eacute;trico completo com 7 frameworks convergentes</p>
+</div>
+
+<!-- ==================== UPLOAD SECTION ==================== -->
+<div id="psico-upload">
+  <div class="psico-dropzone" id="psico-dropzone">
+    <div class="psico-dropzone__label" id="psico-dropzone-label">
+      <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="var(--color-pink)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:0.75rem"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg><br>
+      Arraste seu arquivo aqui ou <strong>clique para selecionar</strong><br>
+      <span style="font-size:0.7rem;color:var(--color-text-muted)">.pdf, .md ou .txt &middot; Relat&oacute;rio de zona de genialidade, DISC, Kolbe, CliftonStrengths ou qualquer autoconhecimento</span>
+    </div>
+  </div>
+  <input type="file" id="psico-file-input" accept=".pdf,.md,.txt" style="display:none">
+  <div class="psico-upload-error" id="psico-upload-error"></div>
+</div>
+
+<!-- ==================== DASHBOARD SECTION ==================== -->
+<div id="psico-dashboard" style="display:none">
+
+  <!-- Upload done bar -->
+  <div class="psico-upload-done">
+    <div class="psico-upload-done__icon">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <div>
+      <div class="psico-upload-done__text">Documento analisado com sucesso</div>
+      <div class="psico-upload-done__file" id="psico-done-file"></div>
+    </div>
+    <div style="display:flex;gap:0.5rem;margin-left:auto;flex-shrink:0">
+      <button class="psico-upload-done__re" id="psico-reanalyze-btn">Re-analisar</button>
+    </div>
+  </div>
+
+  <!-- Profile card -->
+  <div class="psico-profile">
+    <div class="psico-profile__avatar" id="psico-profile-initials">--</div>
+    <div class="psico-profile__info">
+      <h3 id="psico-profile-name">---</h3>
+      <div style="font-size:0.75rem;color:var(--color-text-muted)" id="psico-profile-zone"></div>
+      <div class="psico-profile__tags" id="psico-profile-tags"></div>
+    </div>
+  </div>
+
+  <!-- Dashboard Grid -->
+  <div class="psico-grid">
+
+    <!-- 1. Zona Diagnóstica -->
+    <div class="psico-card">
+      <div class="psico-card__header">
+        <div class="psico-card__icon" style="background:var(--color-pink-10);color:var(--color-pink)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+        <div>
+          <div class="psico-card__title">Zona Diagn&oacute;stica</div>
+          <div class="psico-card__subtitle">Gay Hendricks &middot; O Grande Salto</div>
+        </div>
+      </div>
+      <div class="psico-card__desc">Gay Hendricks identificou 4 zonas onde operamos: <strong>Incompet&ecirc;ncia</strong> (atividades que fazemos mal), <strong>Compet&ecirc;ncia</strong> (fazemos bem, mas outros tamb&eacute;m), <strong>Excel&ecirc;ncia</strong> (fazemos muito bem, mas n&atilde;o nos energiza) e <strong>Genialidade</strong> (onde somos excepcionais E sentimos flow).</div>
+      <div class="psico-hbar">
+        <div class="psico-hbar__label"><span class="psico-hbar__name">Genialidade</span><span class="psico-hbar__val" id="p-zone-genialidade-val">--%</span></div>
+        <div class="psico-hbar__track"><div class="psico-hbar__fill" id="p-zone-genialidade-bar" style="width:0%;background:var(--color-pink)"></div></div>
+      </div>
+      <div class="psico-hbar">
+        <div class="psico-hbar__label"><span class="psico-hbar__name">Excel&ecirc;ncia</span><span class="psico-hbar__val" id="p-zone-excelencia-val">--%</span></div>
+        <div class="psico-hbar__track"><div class="psico-hbar__fill" id="p-zone-excelencia-bar" style="width:0%;background:var(--color-accent-gold)"></div></div>
+      </div>
+      <div class="psico-hbar">
+        <div class="psico-hbar__label"><span class="psico-hbar__name">Compet&ecirc;ncia</span><span class="psico-hbar__val" id="p-zone-competencia-val">--%</span></div>
+        <div class="psico-hbar__track"><div class="psico-hbar__fill" id="p-zone-competencia-bar" style="width:0%;background:var(--color-accent-purple)"></div></div>
+      </div>
+      <div class="psico-hbar">
+        <div class="psico-hbar__label"><span class="psico-hbar__name">Incompet&ecirc;ncia</span><span class="psico-hbar__val" id="p-zone-incompetencia-val">--%</span></div>
+        <div class="psico-hbar__track"><div class="psico-hbar__fill" id="p-zone-incompetencia-bar" style="width:0%;background:var(--color-text-muted)"></div></div>
+      </div>
+      <div class="psico-card__reading" id="psico-reading-zones"></div>
+    </div>
+
+    <!-- 2. Radar de Talentos -->
+    <div class="psico-card">
+      <div class="psico-card__header">
+        <div class="psico-card__icon" style="background:var(--color-accent-purple-10);color:var(--color-accent-purple-light)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+        <div>
+          <div class="psico-card__title">Top 5 Talentos</div>
+          <div class="psico-card__subtitle">Don Clifton &middot; CliftonStrengths</div>
+        </div>
+      </div>
+      <div class="psico-card__desc">O CliftonStrengths mapeia seus 5 talentos dominantes entre 34 poss&iacute;veis. Talentos s&atilde;o padr&otilde;es naturais de pensamento, sentimento e comportamento. Investir nos seus talentos dominantes gera at&eacute; 6x mais engajamento do que corrigir fraquezas.</div>
+      <div class="psico-chart-wrap psico-chart-wrap--radar"><canvas id="chart-talentos" height="220"></canvas></div>
+      <div class="psico-card__reading" id="psico-reading-talents"></div>
+    </div>
+
+    <!-- 3. Índice Kolbe A -->
+    <div class="psico-card">
+      <div class="psico-card__header">
+        <div class="psico-card__icon" style="background:var(--color-info-10);color:var(--color-info)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+        <div>
+          <div class="psico-card__title">&Iacute;ndice Kolbe A</div>
+          <div class="psico-card__subtitle">Kathy Kolbe &middot; Instintos Conativos</div>
+        </div>
+      </div>
+      <div class="psico-card__desc">O Kolbe A mede como voc&ecirc; <strong>age instintivamente</strong> quando tem liberdade. 4 modos: <strong>Investigador</strong> (coleta info), <strong>Seguimento</strong> (organiza), <strong>In&iacute;cio R&aacute;pido</strong> (assume riscos) e <strong>Implementador</strong> (constr&oacute;i tang&iacute;vel).</div>
+      <div class="psico-stat-row" style="margin-bottom:1rem">
+        <div class="psico-stat"><div class="psico-stat__value" style="color:var(--color-pink)" id="psico-kolbe-investigador">-</div><div class="psico-stat__label">Investigador</div></div>
+        <div class="psico-stat"><div class="psico-stat__value" style="color:var(--color-accent-purple-light)" id="psico-kolbe-seguimento">-</div><div class="psico-stat__label">Seguimento</div></div>
+        <div class="psico-stat"><div class="psico-stat__value" style="color:var(--color-accent-gold)" id="psico-kolbe-iniciorapido">-</div><div class="psico-stat__label">In&iacute;cio R&aacute;pido</div></div>
+        <div class="psico-stat"><div class="psico-stat__value" style="color:var(--color-accent-green)" id="psico-kolbe-implementador">-</div><div class="psico-stat__label">Implementador</div></div>
+      </div>
+      <div class="psico-hbar">
+        <div class="psico-hbar__label"><span class="psico-hbar__name">Investigador</span><span class="psico-hbar__val" id="p-zone-kolbe-investigador-val">-/10</span></div>
+        <div class="psico-hbar__track"><div class="psico-hbar__fill" id="p-zone-kolbe-investigador-bar" style="width:0%;background:var(--color-pink)"></div></div>
+      </div>
+      <div class="psico-hbar">
+        <div class="psico-hbar__label"><span class="psico-hbar__name">Seguimento</span><span class="psico-hbar__val" id="p-zone-kolbe-seguimento-val">-/10</span></div>
+        <div class="psico-hbar__track"><div class="psico-hbar__fill" id="p-zone-kolbe-seguimento-bar" style="width:0%;background:var(--color-accent-purple-light)"></div></div>
+      </div>
+      <div class="psico-hbar">
+        <div class="psico-hbar__label"><span class="psico-hbar__name">In&iacute;cio R&aacute;pido</span><span class="psico-hbar__val" id="p-zone-kolbe-iniciorapido-val">-/10</span></div>
+        <div class="psico-hbar__track"><div class="psico-hbar__fill" id="p-zone-kolbe-iniciorapido-bar" style="width:0%;background:var(--color-accent-gold)"></div></div>
+      </div>
+      <div class="psico-hbar">
+        <div class="psico-hbar__label"><span class="psico-hbar__name">Implementador</span><span class="psico-hbar__val" id="p-zone-kolbe-implementador-val">-/10</span></div>
+        <div class="psico-hbar__track"><div class="psico-hbar__fill" id="p-zone-kolbe-implementador-bar" style="width:0%;background:var(--color-accent-green)"></div></div>
+      </div>
+      <div class="psico-card__reading" id="psico-reading-kolbe"></div>
+    </div>
+
+    <!-- 4. Equação de Valor (Hormozi) -->
+    <div class="psico-card">
+      <div class="psico-card__header">
+        <div class="psico-card__icon" style="background:var(--color-danger-10);color:var(--color-danger)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+        <div>
+          <div class="psico-card__title">Equa&ccedil;&atilde;o de Valor</div>
+          <div class="psico-card__subtitle">Alex Hormozi &middot; Ofertas de $100M</div>
+        </div>
+      </div>
+      <div class="psico-card__desc"><strong>Valor = (Resultado Sonhado &times; Probabilidade) &divide; (Tempo &times; Esfor&ccedil;o)</strong>. Quanto maior o resultado e a probabilidade, e menor o tempo e esfor&ccedil;o, mais irresist&iacute;vel a oferta.</div>
+      <div style="text-align:center;margin-bottom:1rem">
+        <div style="font-size:2rem;font-weight:800;color:var(--color-accent-gold)" id="psico-hormozi-score">-<span style="font-size:0.9rem;color:var(--color-text-muted)">/10</span></div>
+        <div style="font-size:0.65rem;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.06em">Pontua&ccedil;&atilde;o de Valor Percebido</div>
+      </div>
+      <div class="psico-hbar">
+        <div class="psico-hbar__label"><span class="psico-hbar__name">Resultado Sonhado</span><span class="psico-hbar__val" id="p-zone-hormozi-resultado-val">-/10</span></div>
+        <div class="psico-hbar__track"><div class="psico-hbar__fill" id="p-zone-hormozi-resultado-bar" style="width:0%;background:var(--color-accent-green)"></div></div>
+      </div>
+      <div class="psico-hbar">
+        <div class="psico-hbar__label"><span class="psico-hbar__name">Probabilidade Percebida</span><span class="psico-hbar__val" id="p-zone-hormozi-probabilidade-val">-/10</span></div>
+        <div class="psico-hbar__track"><div class="psico-hbar__fill" id="p-zone-hormozi-probabilidade-bar" style="width:0%;background:var(--color-accent-gold)"></div></div>
+      </div>
+      <div class="psico-hbar">
+        <div class="psico-hbar__label"><span class="psico-hbar__name">Tempo de Espera</span><span class="psico-hbar__val" id="p-zone-hormozi-tempo-val">-/10</span></div>
+        <div class="psico-hbar__track"><div class="psico-hbar__fill" id="p-zone-hormozi-tempo-bar" style="width:0%;background:var(--color-danger)"></div></div>
+      </div>
+      <div class="psico-hbar">
+        <div class="psico-hbar__label"><span class="psico-hbar__name">Esfor&ccedil;o &amp; Sacrif&iacute;cio</span><span class="psico-hbar__val" id="p-zone-hormozi-esforco-val">-/10</span></div>
+        <div class="psico-hbar__track"><div class="psico-hbar__fill" id="p-zone-hormozi-esforco-bar" style="width:0%;background:var(--color-warning)"></div></div>
+      </div>
+      <div class="psico-card__reading" id="psico-reading-hormozi"></div>
+    </div>
+
+    <!-- 5. Perfis (Wealth + Fascination) -->
+    <div class="psico-card">
+      <div class="psico-card__header">
+        <div class="psico-card__icon" style="background:var(--color-accent-gold-10);color:var(--color-accent-gold)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div>
+          <div class="psico-card__title">Perfis de Personalidade</div>
+          <div class="psico-card__subtitle">Hamilton + Hogshead</div>
+        </div>
+      </div>
+      <div class="psico-card__desc">A <strong>Din&acirc;mica de Riqueza</strong> (Roger Hamilton) revela como voc&ecirc; gera valor naturalmente. A <strong>Vantagem de Fascina&ccedil;&atilde;o</strong> (Sally Hogshead) mostra como o mundo te enxerga no seu melhor.</div>
+      <div class="psico-badge-row">
+        <div class="psico-badge">
+          <div class="psico-badge__emoji" style="color:var(--color-accent-gold)"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+          <div class="psico-badge__title" id="psico-wealth-name">---</div>
+          <div class="psico-badge__desc">Din&acirc;mica de Riqueza &middot; Roger Hamilton</div>
+          <div style="font-size:0.65rem;color:var(--color-text-muted);margin-top:0.4rem" id="psico-wealth-desc"></div>
+        </div>
+        <div class="psico-badge">
+          <div class="psico-badge__emoji" style="color:var(--color-pink)"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg></div>
+          <div class="psico-badge__title" id="psico-fascination-name">---</div>
+          <div class="psico-badge__desc">Vantagem de Fascina&ccedil;&atilde;o &middot; Sally Hogshead</div>
+          <div style="font-size:0.65rem;color:var(--color-text-muted);margin-top:0.4rem"><span id="psico-fascination-archetype"></span></div>
+          <div style="font-size:0.65rem;color:var(--color-text-muted);margin-top:0.2rem" id="psico-fascination-desc"></div>
+        </div>
+      </div>
+      <div class="psico-card__reading" id="psico-reading-profiles"></div>
+    </div>
+
+    <!-- 6. Habilidade Única -->
+    <div class="psico-card">
+      <div class="psico-card__header">
+        <div class="psico-card__icon" style="background:var(--color-accent-green-10);color:var(--color-accent-green)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div>
+        <div>
+          <div class="psico-card__title">Habilidade &Uacute;nica</div>
+          <div class="psico-card__subtitle">Dan Sullivan &middot; Strategic Coach</div>
+        </div>
+      </div>
+      <div class="psico-card__desc">A <strong>Habilidade &Uacute;nica</strong> &eacute; a interse&ccedil;&atilde;o entre o que voc&ecirc; faz excepcionalmente bem, o que te d&aacute; energia infinita e o que gera mais valor para os outros.</div>
+      <div style="font-size:0.8rem;color:var(--color-text-secondary);line-height:1.6;margin-bottom:1rem" id="psico-sullivan-desc"></div>
+      <div class="psico-stat-row">
+        <div class="psico-stat"><div class="psico-stat__value" style="color:var(--color-accent-green)" id="psico-sullivan-alignment">--%</div><div class="psico-stat__label">Alinhamento</div></div>
+        <div class="psico-stat"><div class="psico-stat__value" style="color:var(--color-accent-gold)" id="psico-sullivan-time">--%</div><div class="psico-stat__label">Tempo na Zona</div></div>
+        <div class="psico-stat"><div class="psico-stat__value" style="color:var(--color-pink)" id="psico-sullivan-potential">--%</div><div class="psico-stat__label">Potencial</div></div>
+      </div>
+      <div class="psico-card__reading" id="psico-reading-sullivan"></div>
+    </div>
+
+    <!-- 7. Mapa de Convergência -->
+    <div class="psico-card psico-card--wide">
+      <div class="psico-card__header">
+        <div class="psico-card__icon" style="background:var(--color-pink-10);color:var(--color-pink)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+        <div>
+          <div class="psico-card__title">Mapa de Converg&ecirc;ncia</div>
+          <div class="psico-card__subtitle">S&iacute;ntese de todos os 7 frameworks</div>
+        </div>
+      </div>
+      <div class="psico-card__desc">Cruza todos os 7 frameworks para encontrar padr&otilde;es que se repetem. A linha tracejada (dourada) mostra seu potencial.</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start">
+        <div class="psico-chart-wrap psico-chart-wrap--radar"><canvas id="chart-convergencia" height="250"></canvas></div>
+        <div><ul class="psico-converge" id="psico-convergence-list"></ul></div>
+      </div>
+      <div class="psico-card__reading" id="psico-reading-convergence"></div>
+    </div>
+
+    <!-- 8. Distribuição do Tempo -->
+    <div class="psico-card psico-card--wide">
+      <div class="psico-card__header">
+        <div class="psico-card__icon" style="background:var(--color-warning-10);color:var(--color-warning)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div>
+          <div class="psico-card__title">Distribui&ccedil;&atilde;o do Tempo por Zona</div>
+          <div class="psico-card__subtitle">Como voc&ecirc; distribui suas horas hoje vs. ideal</div>
+        </div>
+      </div>
+      <div class="psico-card__desc">Compara como voc&ecirc; distribui suas horas <strong>hoje</strong> vs. a <strong>meta em 90 dias</strong>. Cada 10% migrado para Genialidade tende a gerar retorno exponencial.</div>
+      <div class="psico-chart-wrap psico-chart-wrap--bar"><canvas id="chart-tempo" height="120"></canvas></div>
+      <div class="psico-card__reading" id="psico-reading-tempo"></div>
+    </div>
+
+  </div><!-- /psico-grid -->
+
+  <!-- Insight callout -->
+  <div class="psico-insight">
+    <div class="psico-insight__title">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      Recomenda&ccedil;&atilde;o Principal
+    </div>
+    <div class="psico-insight__text" id="psico-recommendation"></div>
+  </div>
+
+  <!-- Plano de Ação — Checklist -->
+  <div class="psico-ap">
+    <div class="psico-ap__header">
+      <div class="psico-ap__icon">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--color-accent-green)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <div>
+        <div class="psico-ap__title">Plano de A&ccedil;&atilde;o &mdash; Checklist</div>
+        <div class="psico-ap__subtitle">Organizado por timeframe para execu&ccedil;&atilde;o imediata</div>
+      </div>
+    </div>
+    <table class="psico-ap-table">
+      <thead><tr><th>Quando</th><th></th><th>A&ccedil;&atilde;o</th></tr></thead>
+      <tbody id="psico-action-plan-body"></tbody>
+    </table>
+    <div class="psico-donot">
+      <div class="psico-donot__header">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        O que N&Atilde;O fazer
+      </div>
+      <ul class="psico-donot__list" id="psico-donot-list"></ul>
+    </div>
+  </div>
+
+  <!-- Squad Recomendado -->
+  <div class="psico-squad">
+    <div class="psico-squad__header">
+      <div class="psico-squad__icon">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="var(--color-accent-purple-light)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div>
+        <div class="psico-squad__title">Squad Recomendado</div>
+        <div class="psico-squad__subtitle">Time ideal para potencializar sua Zona de Genialidade</div>
+      </div>
+    </div>
+    <div class="psico-squad__card">
+      <div class="psico-squad__field">
+        <div class="psico-squad__field-label">Dom&iacute;nio de Expertise</div>
+        <div class="psico-squad__field-name" id="psico-squad-domain-name">---</div>
+        <div class="psico-squad__field-desc" id="psico-squad-domain-desc"></div>
+      </div>
+      <div class="psico-squad__field">
+        <div class="psico-squad__field-label">Prop&oacute;sito Principal</div>
+        <div class="psico-squad__field-name" id="psico-squad-purpose-name">---</div>
+        <div class="psico-squad__field-desc" id="psico-squad-purpose-desc"></div>
+      </div>
+      <div class="psico-squad__field">
+        <div class="psico-squad__field-label">Usu&aacute;rio-Alvo</div>
+        <div class="psico-squad__field-name" id="psico-squad-target-name">---</div>
+        <div class="psico-squad__field-desc" id="psico-squad-target-desc"></div>
+      </div>
+      <div class="psico-squad__field" style="display:flex;align-items:center;justify-content:space-between">
+        <div>
+          <div class="psico-squad__field-label">Modo de Execu&ccedil;&atilde;o</div>
+          <div class="psico-squad__mode" id="psico-squad-mode">---</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /psico-dashboard -->
+
+
+</script>
+
+<!-- Init script -->
+<script>
+(function() {
+  var LS_DATA_BASE = 'psicometria_data_v2';
+  var LS_SRC_BASE = 'psicometria_source_v2';
+
+  function _uid() {
+    var user = typeof Auth !== 'undefined' && Auth.getUser ? Auth.getUser() : null;
+    return user ? user.id : null;
+  }
+  function userKey(base) { var id = _uid(); return id ? base + '_' + id : null; }
+
+  // Purge old non-scoped keys (security: prevent cross-user data leak)
+  function purgeOldKeys() {
+    try {
+      localStorage.removeItem(LS_DATA_BASE);
+      localStorage.removeItem(LS_SRC_BASE);
+    } catch(e) {}
+  }
+
+  function loadScript(src, cb) {
+    if (document.querySelector('script[src="' + src + '"]')) { cb(); return; }
+    var s = document.createElement('script');
+    s.src = src; s.onload = cb; document.head.appendChild(s);
+  }
+
+  function boot() {
+    purgeOldKeys();
+
+    var dataKey = userKey(LS_DATA_BASE);
+    var srcKey = userKey(LS_SRC_BASE);
+
+    function initAurora() {
+      loadScript('js/aurora.js', function() { Aurora.init(); });
+    }
+
+    function renderFromData(data) {
+      PsicoRenderer.render(data);
+      initAurora();
+    }
+
+    // Load upload + renderer modules
+    loadScript('js/psicometria-upload.js', function() {
+      loadScript('js/psicometria-renderer.js', function() {
+        // L1: Check user-scoped localStorage (instant)
+        if (dataKey) {
+          var saved = localStorage.getItem(dataKey);
+          if (saved) {
+            try {
+              var data = JSON.parse(saved);
+              if (data && data.profile) {
+                renderFromData(data);
+                PsicoUpload.init();
+                return;
+              }
+            } catch(e) {
+              localStorage.removeItem(dataKey);
+            }
+          }
+        }
+
+        // L2: Check Supabase (persistent, user-scoped by RLS)
+        if (typeof Persistence !== 'undefined') {
+          Persistence.loadPsicometria().then(function(result) {
+            if (result && result.profile_data && result.profile_data.profile) {
+              // Restore to user-scoped L1 cache
+              if (dataKey) localStorage.setItem(dataKey, JSON.stringify(result.profile_data));
+              if (srcKey && result.source_text) localStorage.setItem(srcKey, result.source_text);
+              renderFromData(result.profile_data);
+            }
+          }).catch(function(e) {
+            console.warn('Supabase psicometria fallback error:', e);
+          });
+        }
+
+        // Init upload handler (always — shows upload if no data loaded)
+        PsicoUpload.init();
+      });
+    });
+  }
+
+  boot();
+})();
+</script>

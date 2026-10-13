@@ -1,0 +1,67 @@
+<!-- Quiz de Certificacao — Cohort AIOS Fundamentals E1-E8 -->
+
+    <!-- ============================================
+         HERO HEADER
+         ============================================ -->
+    <header class="hero">
+        <div class="hero-badge">Quiz Final &bull; AIOS Fundamentals</div>
+        <h1>Quiz de Certificacao<br><span>Encontros E1 a E8</span></h1>
+        <p>Responda 8 perguntas de multipla escolha — uma por encontro. Acerte pelo menos 6 (75%) para desbloquear seu certificado de conclusao.</p>
+    </header>
+
+    <div class="content">
+
+        <!-- ============================================
+             INFO CARD
+             ============================================ -->
+        <section class="flow-section" style="margin-bottom: 2rem;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;">
+
+                <!-- Total -->
+                <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.25rem; text-align: center;">
+                    <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--color-accent-gold-10, rgba(209,255,0,0.1)); border: 1px solid var(--color-accent-gold-30, rgba(209,255,0,0.3)); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--color-accent-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </div>
+                    <div style="font-family: var(--font-mono); font-weight: 800; font-size: 1.5rem; color: var(--color-accent-gold);">8</div>
+                    <div style="font-size: 0.7rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.08em;">Perguntas</div>
+                </div>
+
+                <!-- Minimo -->
+                <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.25rem; text-align: center;">
+                    <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.25); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#22C55E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <div style="font-family: var(--font-mono); font-weight: 800; font-size: 1.5rem; color: #22C55E;">75%</div>
+                    <div style="font-size: 0.7rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.08em;">Nota minima</div>
+                </div>
+
+                <!-- Tentativas -->
+                <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.25rem; text-align: center;">
+                    <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(0,153,255,0.1); border: 1px solid rgba(0,153,255,0.25); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#0099FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+                    </div>
+                    <div style="font-family: var(--font-mono); font-weight: 800; font-size: 1.5rem; color: #0099FF;">&infin;</div>
+                    <div style="font-size: 0.7rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.08em;">Tentativas</div>
+                </div>
+
+                <!-- Certificado -->
+                <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.25rem; text-align: center;">
+                    <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(234,179,8,0.1); border: 1px solid rgba(234,179,8,0.25); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#EAB308" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <div style="font-family: var(--font-mono); font-weight: 800; font-size: 1.5rem; color: #EAB308;">PDF</div>
+                    <div style="font-size: 0.7rem; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.08em;">Certificado</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ============================================
+             QUIZ ROOT — JS renders here
+             ============================================ -->
+        <div id="quiz-root"></div>
+
+    </div>
+
+    <!-- Quiz JS -->
+    <script src="js/quiz.js"></script>

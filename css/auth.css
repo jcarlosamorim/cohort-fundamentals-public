@@ -1,0 +1,291 @@
+/* ==========================================================================
+   AUTH - Login page + User badge styles
+   Uses design tokens from tokens.css exclusively
+   ========================================================================== */
+
+/* ── Login Page ──────────────────────────────────────────────────────────── */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-primary);
+  padding: 1.5rem;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.login-card__logo {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-accent-gold);
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+}
+
+.login-card__title {
+  font-family: var(--font-family);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.login-card__subtitle {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* ── Tabs ────────────────────────────────────────────────────────────────── */
+
+.login-card__tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.login-card__tab {
+  flex: 1;
+  padding: 0.6rem 0;
+  font-family: var(--font-family);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.login-card__tab:hover {
+  color: var(--color-text-primary);
+}
+
+.login-card__tab.active {
+  color: var(--color-accent-gold);
+  border-bottom-color: var(--color-accent-gold);
+}
+
+.login-card__form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.login-card__input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-family);
+  font-size: 0.9rem;
+  color: var(--color-text-primary);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.login-card__input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.login-card__input:focus {
+  border-color: var(--color-accent-gold);
+  box-shadow: 0 0 0 2px var(--color-accent-gold-20);
+}
+
+.login-card__btn {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-family);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-bg-primary);
+  background: var(--color-accent-gold);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.login-card__btn:hover {
+  opacity: 0.9;
+}
+
+.login-card__btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.login-card__forgot {
+  margin-top: 1rem;
+}
+
+.login-card__forgot a {
+  font-size: 0.8rem;
+  color: var(--color-accent-gold);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.login-card__forgot a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.login-card__footer {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  margin-top: 1rem;
+}
+
+/* ── Sent state ──────────────────────────────────────────────────────────── */
+
+.login-card__sent {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.login-card__sent.active {
+  display: flex;
+}
+
+.login-card__form.hidden {
+  display: none;
+}
+
+.login-card__sent-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-accent-green-10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent-green);
+}
+
+.login-card__sent-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.login-card__sent-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.login-card__sent-email {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-accent-gold);
+  background: var(--color-accent-gold-10);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Error message ───────────────────────────────────────────────────────── */
+
+.login-card__error {
+  display: none;
+  font-size: 0.8rem;
+  color: var(--color-danger);
+  background: var(--color-danger-10);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-sm);
+  margin-top: 0.25rem;
+}
+
+.login-card__error.active {
+  display: block;
+}
+
+/* ── User badge (sidebar bottom) ─────────────────────────────────────────── */
+
+.user-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--color-border);
+  margin-top: auto;
+}
+
+.user-badge__avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-accent-gold-20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-accent-gold);
+  flex-shrink: 0;
+}
+
+.user-badge__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.user-badge__email {
+  font-size: 0.7rem;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-badge__logout {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-family);
+  transition: color 0.2s;
+}
+
+.user-badge__logout:hover {
+  color: var(--color-danger);
+}
+
+/* ── Loading spinner ─────────────────────────────────────────────────────── */
+
+.login-card__spinner {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-bg-primary);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: auth-spin 0.6s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes auth-spin {
+  to { transform: rotate(360deg); }
+}

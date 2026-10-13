@@ -1,0 +1,449 @@
+<!-- E5 - A Caixa-Preta: Por Que Documentacao Salva Vidas -->
+
+    <!-- ============================================
+         HERO HEADER
+         ============================================ -->
+    <header class="hero">
+        <div class="hero-badge">Encontro 5 &bull; A Caixa-Preta</div>
+        <h1>346 pessoas morreram<br>porque alguem escondeu a documentacao.<br><span>Isso acontece com software tambem.</span></h1>
+        <p>A historia real de como a Boeing matou 346 pessoas ao omitir um sistema dos manuais dos pilotos. E o paralelo exato com o que acontece quando voce constroi software sem PRD.</p>
+    </header>
+
+    <div class="content">
+
+        <!-- ============================================
+             SECAO 1: O Desastre — Boeing 737 MAX
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">A Historia Real</div>
+            <h2 class="section-title">Boeing 737 MAX &mdash; O Software Que Matou</h2>
+            <p class="section-desc">Dois avioes cairam em 5 meses. 346 mortos. A causa nao foi mecanica. Foi documentacao.</p>
+
+            <!-- Timeline — 2 crashes -->
+            <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 2rem; position: relative;">
+
+                <!-- Vertical line -->
+                <div style="position: absolute; left: 22px; top: 28px; bottom: 28px; width: 2px; background: linear-gradient(180deg, #EF4444, #EF4444 45%, transparent 45%, transparent 55%, #EF4444 55%);"></div>
+
+                <!-- Crash 1: Lion Air -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start; padding: 1rem 0;">
+                    <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(239,68,68,0.15); border: 2px solid #EF4444; display: flex; align-items: center; justify-content: center; flex-shrink: 0; z-index: 1;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </div>
+                    <div style="background: var(--color-bg-card); border: 1px solid rgba(239,68,68,0.25); border-radius: var(--radius-lg); padding: 1.25rem; flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <span style="font-family: var(--font-mono); font-size: 0.65rem; padding: 0.15rem 0.5rem; border-radius: 3px; background: rgba(239,68,68,0.15); color: #EF4444; font-weight: 700;">29 OUT 2018</span>
+                        </div>
+                        <div style="font-weight: 800; font-size: 0.9rem; color: var(--color-text-primary); margin-bottom: 0.4rem;">Lion Air Flight 610 &mdash; Indonesia</div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.7;">O aviao mergulhou no Mar de Java a 700 km/h, 12 minutos apos a decolagem de Jacarta. <strong style="color: #EF4444;">189 mortos.</strong> Os pilotos lutaram contra o aviao que insistia em empurrar o nariz para baixo. Eles nao sabiam por que.</div>
+                    </div>
+                </div>
+
+                <!-- Crash 2: Ethiopian Airlines -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start; padding: 1rem 0;">
+                    <div style="width: 44px; height: 44px; border-radius: 50%; background: rgba(239,68,68,0.15); border: 2px solid #EF4444; display: flex; align-items: center; justify-content: center; flex-shrink: 0; z-index: 1;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    </div>
+                    <div style="background: var(--color-bg-card); border: 1px solid rgba(239,68,68,0.25); border-radius: var(--radius-lg); padding: 1.25rem; flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <span style="font-family: var(--font-mono); font-size: 0.65rem; padding: 0.15rem 0.5rem; border-radius: 3px; background: rgba(239,68,68,0.15); color: #EF4444; font-weight: 700;">10 MAR 2019</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.6rem; color: var(--color-text-muted);">137 dias depois</span>
+                        </div>
+                        <div style="font-weight: 800; font-size: 0.9rem; color: var(--color-text-primary); margin-bottom: 0.4rem;">Ethiopian Airlines Flight 302 &mdash; Etiopia</div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.7;">O mesmo problema. O aviao caiu 6 minutos apos a decolagem. <strong style="color: #EF4444;">157 mortos.</strong> Os pilotos lutaram contra o mesmo sistema invisivel. Novamente, eles nao sabiam que ele existia.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The root cause: MCAS -->
+            <div style="background: rgba(239,68,68,0.04); border: 1px solid rgba(239,68,68,0.25); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    <span style="font-weight: 800; font-size: 0.85rem; color: #EF4444; text-transform: uppercase; letter-spacing: 0.08em;">A Causa Raiz</span>
+                </div>
+                <div style="font-size: 0.78rem; color: var(--color-text-muted); line-height: 1.8; margin-bottom: 1rem;">
+                    A Boeing adicionou um software chamado <strong style="color: var(--color-text-primary);">MCAS</strong> (Maneuvering Characteristics Augmentation System) ao 737 MAX. O MCAS empurrava automaticamente o nariz do aviao para baixo quando um sensor detectava angulo de ataque alto demais.
+                </div>
+                <div style="font-size: 0.78rem; color: var(--color-text-muted); line-height: 1.8; margin-bottom: 1rem;">
+                    O problema: o MCAS usava dados de <strong style="color: var(--color-text-primary);">um unico sensor</strong>. Quando esse sensor falhava, o MCAS ativava repetidamente, empurrando o nariz para baixo com mais forca do que os pilotos conseguiam reverter.
+                </div>
+                <div style="font-size: 0.78rem; line-height: 1.8;">
+                    <strong style="color: #EF4444;">Mas o pior nao foi o bug. Foi o que a Boeing fez com a documentacao:</strong>
+                </div>
+            </div>
+
+            <!-- The documentation crime — terminal style -->
+            <div style="background: #0D1117; border: 1px solid rgba(239,68,68,0.3); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 2rem;">
+                <div style="padding: 0.6rem 1rem; border-bottom: 1px solid rgba(239,68,68,0.15); background: rgba(239,68,68,0.05); display: flex; align-items: center; gap: 0.5rem;">
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F;"></div>
+                    <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #EF4444; margin-left: 0.3rem;">investigacao-congresso-eua.log</span>
+                </div>
+                <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 2.2; color: #8B949E;">
+                    <div style="color: #6A737D;">// Descobertas da investigacao do Congresso dos EUA:</div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #EF4444;">FATO 1:</span> <span style="color: #A5D6FF;">Boeing REMOVEU todas as referencias ao MCAS dos manuais dos pilotos.</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #EF4444;">FATO 2:</span> <span style="color: #A5D6FF;">Emails internos mostram que a Boeing removeu deliberadamente</span></div>
+                    <div><span style="color: #A5D6FF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;para evitar que companhias aereas exigissem treinamento</span></div>
+                    <div><span style="color: #A5D6FF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;em simulador (que custaria milhoes).</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #EF4444;">FATO 3:</span> <span style="color: #A5D6FF;">Pilotos do 737 MAX NAO sabiam que o MCAS existia.</span></div>
+                    <div><span style="color: #A5D6FF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quando o sistema ativou com dados errados, eles nao</span></div>
+                    <div><span style="color: #A5D6FF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tinham modelo mental para diagnosticar o problema.</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #EF4444;">FATO 4:</span> <span style="color: #A5D6FF;">Boeing foi acusada de fraude pelo Departamento de Justica</span></div>
+                    <div><span style="color: #A5D6FF;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;por enganar a FAA sobre a documentacao do MCAS.</span></div>
+                    <div>&nbsp;</div>
+                    <div style="color: #6A737D;">// A frota 737 MAX ficou no chao por 20 meses.</div>
+                    <div style="color: #6A737D;">// Custo total para Boeing: mais de US$ 20 bilhoes.</div>
+                    <div style="color: #6A737D;">// Custo humano: 346 vidas.</div>
+                </div>
+            </div>
+
+            <!-- The fix — 3 pillars -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1.5rem;">
+                <!-- Fix 1: Software -->
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(34,197,94,0.25); border-radius: var(--radius-lg); padding: 1.25rem; text-align: center;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(34,197,94,0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
+                    <div style="font-weight: 800; font-size: 0.75rem; color: #22c55e; margin-bottom: 0.3rem;">Correcao do Software</div>
+                    <div style="font-size: 0.65rem; color: var(--color-text-muted); line-height: 1.6;">MCAS passou a ler <strong style="color: var(--color-text-secondary);">2 sensores</strong> (nao 1). Limite de ativacao unica. Forca nunca maior do que o piloto pode reverter.</div>
+                </div>
+                <!-- Fix 2: Documentacao -->
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(209,255,0,0.3); border-radius: var(--radius-lg); padding: 1.25rem; text-align: center;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(209,255,0,0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--color-accent-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <div style="font-weight: 800; font-size: 0.75rem; color: var(--color-accent-gold); margin-bottom: 0.3rem;">Documentacao Obrigatoria</div>
+                    <div style="font-size: 0.65rem; color: var(--color-text-muted); line-height: 1.6;">MCAS <strong style="color: var(--color-text-secondary);">documentado em todos os manuais</strong>. O que era escondido virou leitura obrigatoria.</div>
+                </div>
+                <!-- Fix 3: Treinamento -->
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(56,189,248,0.25); border-radius: var(--radius-lg); padding: 1.25rem; text-align: center;">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: rgba(56,189,248,0.1); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#38BDF8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div style="font-weight: 800; font-size: 0.75rem; color: #38BDF8; margin-bottom: 0.3rem;">Treinamento em Simulador</div>
+                    <div style="font-size: 0.65rem; color: var(--color-text-muted); line-height: 1.6;">Treinamento completo + teste obrigatorio <strong style="color: var(--color-text-secondary);">antes de voar</strong>. O que economizaram em dinheiro, custou 346 vidas.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO 2: O Paralelo — PRD e a Caixa-Preta
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">O Paralelo</div>
+            <h2 class="section-title">Seu Projeto Tambem Tem Uma Caixa-Preta</h2>
+            <p class="section-desc">Na aviacao, a caixa-preta grava tudo. Quando algo da errado, os investigadores abrem e descobrem EXATAMENTE o que aconteceu. No software, esse documento se chama PRD.</p>
+
+            <!-- Side-by-side: Aviation vs Software -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+
+                <!-- LEFT: Aviation -->
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(239,68,68,0.2); border-radius: var(--radius-lg); overflow: hidden;">
+                    <div style="padding: 0.75rem 1rem; border-bottom: 1px solid rgba(239,68,68,0.12); display: flex; align-items: center; gap: 0.5rem;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+                        <span style="font-weight: 800; font-size: 0.7rem; color: #EF4444; text-transform: uppercase; letter-spacing: 0.08em;">Boeing 737 MAX</span>
+                    </div>
+                    <div style="padding: 1.25rem;">
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <div style="display: flex; gap: 0.5rem; align-items: flex-start;">
+                                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.2rem;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                                <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6;">Sistema critico <strong style="color: var(--color-text-secondary);">omitido</strong> dos manuais</div>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem; align-items: flex-start;">
+                                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.2rem;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                                <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6;">Pilotos <strong style="color: var(--color-text-secondary);">sem modelo mental</strong> do que o sistema fazia</div>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem; align-items: flex-start;">
+                                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.2rem;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                                <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6;">Quando falhou, <strong style="color: var(--color-text-secondary);">ninguem sabia diagnosticar</strong></div>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem; align-items: flex-start;">
+                                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.2rem;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                                <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6;">Investigacao so foi possivel porque a <strong style="color: var(--color-text-secondary);">caixa-preta</strong> gravou tudo</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Software sem PRD -->
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(239,68,68,0.2); border-radius: var(--radius-lg); overflow: hidden;">
+                    <div style="padding: 0.75rem 1rem; border-bottom: 1px solid rgba(239,68,68,0.12); display: flex; align-items: center; gap: 0.5rem;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#EF4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        <span style="font-weight: 800; font-size: 0.7rem; color: #EF4444; text-transform: uppercase; letter-spacing: 0.08em;">Software Sem PRD</span>
+                    </div>
+                    <div style="padding: 1.25rem;">
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                            <div style="display: flex; gap: 0.5rem; align-items: flex-start;">
+                                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.2rem;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                                <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6;">Requisitos <strong style="color: var(--color-text-secondary);">nunca escritos</strong>, ficaram na cabeca</div>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem; align-items: flex-start;">
+                                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.2rem;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                                <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6;">Dev <strong style="color: var(--color-text-secondary);">sem contexto</strong> do que o sistema deveria fazer</div>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem; align-items: flex-start;">
+                                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.2rem;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                                <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6;">Quando bugou, <strong style="color: var(--color-text-secondary);">ninguem sabia o comportamento esperado</strong></div>
+                            </div>
+                            <div style="display: flex; gap: 0.5rem; align-items: flex-start;">
+                                <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="#EF4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.2rem;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                                <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6;">Sem PRD, <strong style="color: var(--color-text-secondary);">nao tem nem como investigar</strong> o que deu errado</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key insight callout -->
+            <div style="background: rgba(209,255,0,0.06); border: 1px solid var(--color-accent-gold-30); border-radius: var(--radius-lg); padding: 1.25rem;">
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--color-accent-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.85rem; color: var(--color-accent-gold); margin-bottom: 0.3rem;">A Regra da Caixa-Preta</div>
+                        <div style="font-size: 0.78rem; color: var(--color-text-muted); line-height: 1.8;">
+                            Na aviacao, apos cada acidente, investigadores abrem a caixa-preta e rastreiam cada decisao ate a origem. <strong style="color: var(--color-text-secondary);">So e possivel melhorar porque existe documentacao.</strong><br><br>
+                            No software, o PRD e a sua caixa-preta. Quando o projeto da errado &mdash; e todo projeto da errado em algum momento &mdash; voce volta ao PRD e descobre: o requisito estava errado? O escopo mudou? A integracao nao foi especificada?<br><br>
+                            <strong style="color: var(--color-accent-gold);">Sem PRD, voce so sabe que deu errado. Nunca sabe POR QUE.</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO 3: O Segundo Desastre — Hyatt Regency
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Construcao Civil</div>
+            <h2 class="section-title">Hyatt Regency Kansas City &mdash; 1981</h2>
+            <p class="section-desc">114 mortos porque uma mudanca no projeto foi comunicada por telefone e nunca passou pela cadeia de validacao.</p>
+
+            <!-- Story in cards -->
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem;">
+
+                <!-- Original design -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid rgba(34,197,94,0.2); border-left: 3px solid #22c55e; border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.2rem; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; font-weight: 800; padding: 0.15rem 0.4rem; border-radius: 3px; background: rgba(34,197,94,0.15); color: #22c55e; letter-spacing: 0.05em;">ORIGINAL</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary); margin-bottom: 0.2rem;">Projeto aprovado: haste unica continua</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6;">O projeto estrutural original previa hastes de aco continuas, do teto ate o chao, passando pelas duas passarelas. Carga calculada. Projeto aprovado.</div>
+                    </div>
+                </div>
+
+                <!-- The phone call -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid rgba(239,68,68,0.2); border-left: 3px solid #EF4444; border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.2rem; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; font-weight: 800; padding: 0.15rem 0.4rem; border-radius: 3px; background: rgba(239,68,68,0.15); color: #EF4444; letter-spacing: 0.05em;">MUDANCA</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary); margin-bottom: 0.2rem;">Telefonema do fabricante: "vamos trocar pra duas hastes"</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6;">O fabricante ligou para o escritorio de engenharia e sugeriu trocar por duas hastes separadas (mais facil de fabricar). A mudanca foi <strong style="color: #EF4444;">aprovada verbalmente por telefone</strong>. Nunca houve submissao formal. Nunca houve revisao escrita. Ninguem recalculou a carga.</div>
+                    </div>
+                </div>
+
+                <!-- The consequence -->
+                <div style="display: flex; gap: 0.75rem; align-items: flex-start; background: var(--color-bg-card); border: 1px solid rgba(239,68,68,0.25); border-left: 3px solid #EF4444; border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 0.2rem; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.55rem; font-weight: 800; padding: 0.15rem 0.4rem; border-radius: 3px; background: rgba(239,68,68,0.15); color: #EF4444; letter-spacing: 0.05em;">COLAPSO</span>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary); margin-bottom: 0.2rem;">17 de julho de 1981 &mdash; 114 mortos, 216 feridos</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.6;">A mudanca <strong style="color: #EF4444;">dobrou a carga</strong> na conexao da passarela do 4o andar. As duas passarelas desabaram sobre o lobby lotado durante um evento. Os investigadores nao encontraram nenhum calculo estrutural da configuracao modificada. <strong style="color: var(--color-text-secondary);">Ninguem fez as contas.</strong></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The broken chain -->
+            <div style="background: rgba(209,255,0,0.05); border: 1px solid var(--color-accent-gold-30); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="var(--color-accent-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.85rem; color: var(--color-accent-gold); margin-bottom: 0.3rem;">A Cadeia Quebrada</div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.8;">
+                            Se a mudanca tivesse passado pela cadeia correta &mdash; <strong style="color: var(--color-text-secondary);">Arquiteto &rarr; Engenheiro Estrutural &rarr; Inspetor</strong> &mdash; alguem teria feito as contas e visto que a carga dobrava. 114 pessoas estariam vivas.<br><br>
+                            No AIOS, essa cadeia existe: <strong style="color: var(--color-text-secondary);">PM &rarr; SM &rarr; PO &rarr; DEV &rarr; QA &rarr; DEVOPS</strong>. Cada elo valida o anterior. Se algum elo falha, o erro e pego ANTES de virar desastre.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO 4: A Cadeia do PRD — Cada Agente Usa
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">A Cadeia</div>
+            <h2 class="section-title">Como o PRD Alimenta Cada Elo</h2>
+            <p class="section-desc">O PRD nao e um documento que voce cria e esquece. Ele e lido, usado e validado por CADA agente da cadeia. Veja o que cada um faz com o PRD.</p>
+
+            <!-- 6-step vertical chain with detailed explanation -->
+            <div style="display: flex; flex-direction: column; gap: 0; position: relative; margin-bottom: 2rem;">
+
+                <!-- Vertical line -->
+                <div style="position: absolute; left: 27px; top: 32px; bottom: 32px; width: 2px; background: linear-gradient(180deg, var(--color-accent-gold), #33ADFF 20%, #38BDF8 35%, #FBBF24 50%, #22c55e 65%, #f97316 80%, var(--color-text-secondary));"></div>
+
+                <!-- Step 1: PM (Creates PRD) -->
+                <div style="display: flex; gap: 1.25rem; align-items: flex-start; padding: 0.75rem 0;">
+                    <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(209,255,0,0.1); border: 2px solid var(--color-accent-gold); display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; z-index: 1;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--color-accent-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <div style="background: rgba(209,255,0,0.04); border: 1px solid var(--color-accent-gold-30); border-radius: var(--radius-lg); padding: 1.25rem; flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <span style="font-family: var(--font-mono); font-weight: 800; font-size: 0.85rem; color: var(--color-accent-gold);">@pm</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.55rem; padding: 0.15rem 0.5rem; border-radius: 999px; background: rgba(209,255,0,0.12); color: var(--color-accent-gold); border: 1px solid rgba(209,255,0,0.25);">CRIA o PRD</span>
+                        </div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary); margin-bottom: 0.3rem;">Faz 15 perguntas estruturadas. Documenta TUDO.</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.7;">
+                            O PM e o engenheiro que desenha a planta. Ele pergunta: qual o problema? Para quem? Que tecnologias? Que limites? <strong style="color: var(--color-text-secondary);">Cada resposta vira uma secao do PRD.</strong> Quando termina, o PRD tem todas as decisoes ja tomadas &mdash; antes de uma unica linha de codigo existir.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: SM (Creates Stories from PRD) -->
+                <div style="display: flex; gap: 1.25rem; align-items: flex-start; padding: 0.75rem 0;">
+                    <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(0,153,255,0.1); border: 2px solid #33ADFF; display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; z-index: 1;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#33ADFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                    </div>
+                    <div style="background: rgba(0,153,255,0.04); border: 1px solid rgba(0,153,255,0.25); border-radius: var(--radius-lg); padding: 1.25rem; flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <span style="font-family: var(--font-mono); font-weight: 800; font-size: 0.85rem; color: #33ADFF;">@sm</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.55rem; padding: 0.15rem 0.5rem; border-radius: 999px; background: rgba(0,153,255,0.12); color: #33ADFF; border: 1px solid rgba(0,153,255,0.25);">LE o PRD &rarr; CRIA Stories</span>
+                        </div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary); margin-bottom: 0.3rem;">Quebra o PRD em tarefas executaveis.</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.7;">
+                            O SM le cada FR (Functional Requirement) do PRD e transforma em uma Story com criterios de aceitacao claros. <strong style="color: var(--color-text-secondary);">Cada story aponta de volta para o PRD.</strong> Se o FR diz "buscar leads no Instagram via Apify", a story diz exatamente o que o dev precisa construir.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: PO (Validates Stories against PRD) -->
+                <div style="display: flex; gap: 1.25rem; align-items: flex-start; padding: 0.75rem 0;">
+                    <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(251,191,36,0.1); border: 2px solid #FBBF24; display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; z-index: 1;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#FBBF24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div style="background: rgba(251,191,36,0.04); border: 1px solid rgba(251,191,36,0.25); border-radius: var(--radius-lg); padding: 1.25rem; flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <span style="font-family: var(--font-mono); font-weight: 800; font-size: 0.85rem; color: #FBBF24;">@po</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.55rem; padding: 0.15rem 0.5rem; border-radius: 999px; background: rgba(251,191,36,0.12); color: #FBBF24; border: 1px solid rgba(251,191,36,0.25);">VALIDA Story vs PRD</span>
+                        </div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary); margin-bottom: 0.3rem;">Checa: a story reflete o PRD? Nada inventado?</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.7;">
+                            O PO e o inspetor. Ele compara cada story com o PRD original e verifica: os criterios de aceitacao cobrem o FR? O scope esta respeitado? <strong style="color: var(--color-text-secondary);">E a validacao que o Hyatt Regency NAO fez.</strong> Se algo nao bate com o PRD, a story volta pro SM.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: DEV (Implements based on Stories → PRD) -->
+                <div style="display: flex; gap: 1.25rem; align-items: flex-start; padding: 0.75rem 0;">
+                    <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(34,197,94,0.1); border: 2px solid #22c55e; display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; z-index: 1;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
+                    <div style="background: rgba(34,197,94,0.04); border: 1px solid rgba(34,197,94,0.25); border-radius: var(--radius-lg); padding: 1.25rem; flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <span style="font-family: var(--font-mono); font-weight: 800; font-size: 0.85rem; color: #22c55e;">@dev</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.55rem; padding: 0.15rem 0.5rem; border-radius: 999px; background: rgba(34,197,94,0.12); color: #22c55e; border: 1px solid rgba(34,197,94,0.25);">IMPLEMENTA a Story</span>
+                        </div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary); margin-bottom: 0.3rem;">Constroi exatamente o que a story pede. Sem inventar.</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.7;">
+                            O dev nao precisa adivinhar nada. A story (que veio do PRD) diz exatamente: que endpoints criar, que tabelas usar, que integracoes conectar. <strong style="color: var(--color-text-secondary);">O dev e o construtor que segue a planta.</strong> Se a planta esta certa, a construcao fica certa.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: QA (Tests against Acceptance Criteria → PRD) -->
+                <div style="display: flex; gap: 1.25rem; align-items: flex-start; padding: 0.75rem 0;">
+                    <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(249,115,22,0.1); border: 2px solid #f97316; display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; z-index: 1;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#f97316" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                    </div>
+                    <div style="background: rgba(249,115,22,0.04); border: 1px solid rgba(249,115,22,0.25); border-radius: var(--radius-lg); padding: 1.25rem; flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <span style="font-family: var(--font-mono); font-weight: 800; font-size: 0.85rem; color: #f97316;">@qa</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.55rem; padding: 0.15rem 0.5rem; border-radius: 999px; background: rgba(249,115,22,0.12); color: #f97316; border: 1px solid rgba(249,115,22,0.25);">TESTA contra o PRD</span>
+                        </div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary); margin-bottom: 0.3rem;">O codigo faz o que o PRD prometeu?</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.7;">
+                            O QA nao testa "se funciona". Testa <strong style="color: var(--color-text-secondary);">se funciona conforme o PRD.</strong> Os criterios de aceitacao vieram do PRD. Os NFRs vieram do PRD. Se o PRD diz "buscar 50 leads/dia com tempo < 200ms", o QA verifica exatamente isso.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6: DEVOPS (Deploys what was validated) -->
+                <div style="display: flex; gap: 1.25rem; align-items: flex-start; padding: 0.75rem 0;">
+                    <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(255,255,255,0.04); border: 2px solid var(--color-text-secondary); display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; z-index: 1;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--color-text-secondary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.25rem; flex: 1;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <span style="font-family: var(--font-mono); font-weight: 800; font-size: 0.85rem; color: var(--color-text-secondary);">@devops</span>
+                            <span style="font-family: var(--font-mono); font-size: 0.55rem; padding: 0.15rem 0.5rem; border-radius: 999px; background: rgba(255,255,255,0.06); color: var(--color-text-secondary); border: 1px solid rgba(255,255,255,0.12);">ENTREGA ao mundo</span>
+                        </div>
+                        <div style="font-weight: 700; font-size: 0.8rem; color: var(--color-text-primary); margin-bottom: 0.3rem;">So faz deploy do que passou por TODA a cadeia.</div>
+                        <div style="font-size: 0.7rem; color: var(--color-text-muted); line-height: 1.7;">
+                            O DevOps so publica o que foi: criado pelo PM, quebrado em stories pelo SM, validado pelo PO, implementado pelo DEV, e testado pelo QA. <strong style="color: var(--color-text-secondary);">E o ultimo elo. Se todos os anteriores fizeram o trabalho, o deploy e apenas o ponto final.</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The chain trace-back -->
+            <div style="background: #0D1117; border: 1px solid rgba(209,255,0,0.25); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1.5rem;">
+                <div style="padding: 0.6rem 1rem; border-bottom: 1px solid rgba(209,255,0,0.12); background: rgba(209,255,0,0.04); display: flex; align-items: center; gap: 0.5rem;">
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F;"></div>
+                    <span style="font-family: var(--font-mono); font-size: 0.55rem; color: var(--color-accent-gold); margin-left: 0.3rem;">rastreabilidade.md</span>
+                </div>
+                <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 2.2; color: #8B949E;">
+                    <div style="color: #6A737D;">// Quando algo da errado, voce rastreia de volta:</div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: var(--color-text-secondary);">BUG em producao</span></div>
+                    <div>&nbsp;&nbsp;<span style="color: #6A737D;">&rarr;</span> <span style="color: #f97316;">@qa</span> <span style="color: #6A737D;">testou contra qual criterio?</span></div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6A737D;">&rarr;</span> <span style="color: #22c55e;">@dev</span> <span style="color: #6A737D;">implementou qual story?</span></div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6A737D;">&rarr;</span> <span style="color: #FBBF24;">@po</span> <span style="color: #6A737D;">validou contra qual FR?</span></div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6A737D;">&rarr;</span> <span style="color: #33ADFF;">@sm</span> <span style="color: #6A737D;">criou a story de qual secao do PRD?</span></div>
+                    <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #6A737D;">&rarr;</span> <span style="color: var(--color-accent-gold);">@pm</span> <span style="color: #6A737D;">o PRD especificou isso?</span></div>
+                    <div>&nbsp;</div>
+                    <div style="color: #4ADE80;">// Se o PRD estava certo e o bug apareceu = falha de implementacao</div>
+                    <div style="color: #EF4444;">// Se o PRD estava errado = falha de planejamento</div>
+                    <div style="color: #38BDF8;">// Nos dois casos, voce SABE onde consertar.</div>
+                    <div>&nbsp;</div>
+                    <div style="color: #6A737D;">// Sem PRD? Voce so sabe que esta quebrado.</div>
+                    <div style="color: #6A737D;">// Nao sabe por que. Nao sabe onde consertar.</div>
+                    <div style="color: #6A737D;">// Exatamente como os pilotos do 737 MAX.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             KEY INSIGHT
+             ============================================ -->
+        <div class="insight-card">
+            <h4>
+                <span class="icon" style="color:var(--color-accent-gold)"><svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg></span>
+                Insight da Aula
+            </h4>
+            <p>A aviacao e a industria mais segura do mundo. Nao porque avioes nao caem &mdash; mas porque <strong>cada queda gera uma investigacao que melhora o sistema todo</strong>.<br><br>
+            Isso so e possivel porque existe documentacao. A caixa-preta grava. Os manuais documentam. A cadeia de validacao verifica.<br><br>
+            No software, o PRD e a sua caixa-preta. Ele nao impede que erros acontecam &mdash; mas garante que, quando acontecem, <strong>voce sabe exatamente onde consertar</strong>.<br><br>
+            <strong style="color: var(--color-accent-gold);">346 pessoas morreram porque a Boeing escondeu a documentacao.<br>Nao esconda a sua.</strong></p>
+        </div>
+
+        <!-- ============================================
+             CLOSING
+             ============================================ -->
+        <section class="flow-section" style="text-align: center; padding: 3rem 1.5rem;">
+            <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--color-text-primary); margin-bottom: 0.5rem; line-height: 1.3;">So podemos melhorar<br>se tivermos PRD.</h2>
+            <p style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.7; max-width: 480px; margin: 0 auto;">
+                Sem documentacao, voce nao investiga. Sem investigacao, voce nao aprende. Sem aprendizado, voce repete os mesmos erros.<br>
+                <span style="color: var(--color-text-secondary);">O PRD e onde tudo comeca &mdash; e pra onde voce volta quando precisa consertar.</span>
+            </p>
+        </section>
+
+    </div>

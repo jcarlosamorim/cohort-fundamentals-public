@@ -1,0 +1,530 @@
+{
+  "cohort": {
+    "title": "Cohort AIOS Fundamentals",
+    "mentor": "Jose Carlos Amorim",
+    "turmas": {
+      "T1": {
+        "startDate": "2026-02-12",
+        "cadence": "segunda e quinta",
+        "time": "18:00"
+      },
+      "T2": {
+        "startDate": "2026-02-21",
+        "cadence": "sabado (2 por sabado)",
+        "time": "09:00 e 14:00"
+      }
+    },
+    "totalWeeks": 4
+  },
+  "encontros": [
+    {
+      "id": 1,
+      "turma": "T1",
+      "title": "Setup & Fundamentos",
+      "subtitle": "O setup que 95% ignora",
+      "date": "2026-02-12",
+      "day": "qui",
+      "time": "18:00",
+      "duration": 180,
+      "bloom": "Apply",
+      "big_idea": "Interface completa. CLAUDE.md configurado. Lucy é a metáfora central.",
+      "deliverable": "Ambiente Claude Code + CLAUDE.md + Primeiro Commit",
+      "verification": "Git commit em GitHub",
+      "objectives": [
+        "Dominar Terminal: pwd, ls, cd, mkdir",
+        "Configurar Git e GitHub com primeiras commits",
+        "Conhecer Claude Code: sidebar, chat, output, permissions",
+        "Criar .claude/CLAUDE.md: a memória do seu projeto",
+        "Fazer seu primeiro commit oficial"
+      ],
+      "blocos": [
+        "Terminal Básico",
+        "Git + GitHub",
+        "Interface Claude Code",
+        "A Fita de Lucy (CLAUDE.md)",
+        "Seu Primeiro Commit"
+      ]
+    },
+    {
+      "id": 2,
+      "turma": "T1",
+      "title": "Vibe Coding Export",
+      "subtitle": "Bolt/v0/Lovable → Claude Code",
+      "date": "2026-02-16",
+      "day": "seg",
+      "time": "18:00",
+      "duration": 120,
+      "bloom": "Apply",
+      "big_idea": "Como trazer qualquer projeto para Claude Code",
+      "deliverable": "Projeto importado e funcionando",
+      "verification": "Link GitHub + screenshot do projeto",
+      "objectives": [
+        "Exportar projeto de Bolt/v0/Lovable",
+        "Usar Git como ponte entre plataformas",
+        "Configurar Claude Code como cérebro central",
+        "Aplicar workflow profissional de importação"
+      ],
+      "blocos": [
+        "Export de Bolt/v0/Lovable",
+        "Git Clone & Setup",
+        "Estruturação no Claude Code",
+        "Teste de Funcionamento",
+        "Deploy Verification"
+      ]
+    },
+    {
+      "id": 3,
+      "turma": "T1",
+      "title": "Squad é Vida",
+      "subtitle": "Anatomia. Metáfora. Estrutura.",
+      "date": "2026-02-19",
+      "day": "qui",
+      "time": "18:00",
+      "duration": 120,
+      "bloom": "Understand",
+      "big_idea": "Cada squad é uma equipe completa de obra — entenda as peças antes de construir.",
+      "deliverable": "Mapa mental da anatomia de um squad",
+      "verification": "Cenários interativos completados + squad montado",
+      "objectives": [
+        "Entender a metáfora Squad = Equipe de Reforma",
+        "Identificar os 8 componentes de um squad",
+        "Montar a sequência correta de criação de um squad",
+        "Navegar o fluxo completo de um pedido dentro do squad"
+      ],
+      "blocos": [
+        "A Metáfora: Squad = Equipe de Reforma",
+        "As 8 Peças de um Squad",
+        "Sequência de Montagem",
+        "Fluxo Completo: Pedido → Entrega",
+        "Monte o Squad (jogo de cartas)"
+      ]
+    },
+    {
+      "id": 4,
+      "turma": "T1",
+      "title": "A Estrutura AIOS",
+      "subtitle": "Anatomia do .aios-core/. Agentes. Expansion Packs.",
+      "date": "2026-02-23",
+      "day": "seg",
+      "time": "18:00",
+      "duration": 120,
+      "bloom": "Understand",
+      "big_idea": "Navegar o sistema completo",
+      "deliverable": "Mapa mental do sistema AIOS",
+      "verification": "Diagrama mostrando conexões",
+      "objectives": [
+        "Navegar a estrutura completa do .aios-core/",
+        "Identificar agentes especializados",
+        "Explicar como agents, tasks, templates e workflows se conectam",
+        "Explorar Expansion Packs disponíveis"
+      ],
+      "blocos": [
+        "Tour .aios-core/",
+        "5 Agentes Core (PM, Dev, Architect, QA, SM)",
+        "Tasks, Templates, Workflows",
+        "Expansion Packs Ecosystem",
+        "Exercício: Mapa Mental"
+      ]
+    },
+    {
+      "id": 5,
+      "turma": "T1",
+      "title": "Por Que PRD É a Alma",
+      "subtitle": "A cadeia. PRD bom vs ruim. Erros fatais.",
+      "date": "2026-02-26",
+      "day": "qui",
+      "time": "18:00",
+      "duration": 120,
+      "bloom": "Understand",
+      "big_idea": "PRD como memória persistente = blueprint claro",
+      "deliverable": "Análise de PRD (bom vs ruim)",
+      "verification": "Documento com 5+ diferenças",
+      "objectives": [
+        "Explicar a cadeia PRD → Architecture → Stories → Code",
+        "Comparar características de PRD bom vs PRD ruim",
+        "Identificar por que IA precisa de PRD",
+        "Listar erros que matam projetos antes de começar"
+      ],
+      "blocos": [
+        "A Cadeia de Desenvolvimento",
+        "Anatomia de PRD Bom",
+        "Anatomia de PRD Ruim",
+        "Erros Fatais",
+        "Case Studies"
+      ]
+    },
+    {
+      "id": 6,
+      "turma": "T1",
+      "title": "Transformando o Velho em Novo",
+      "subtitle": "Vibecoding → GitHub → Brownfield → Deploy",
+      "date": "2026-03-02",
+      "day": "seg",
+      "time": "18:00",
+      "duration": 120,
+      "bloom": "Apply",
+      "big_idea": "Qualquer projeto feito no vibecoding pode virar profissional. O segredo é o processo.",
+      "deliverable": "Projeto importado com brownfield discovery completo e deploy na Vercel",
+      "verification": "Link Vercel funcionando + brownfield report no repositório",
+      "objectives": [
+        "Exportar projeto de vibecoding para GitHub e clonar no terminal",
+        "Configurar .env com credenciais Supabase e Vercel",
+        "Executar brownfield discovery no projeto importado",
+        "Fazer commit e deploy na Vercel"
+      ],
+      "blocos": [
+        "Do Vibecoding ao GitHub",
+        "Git Clone — Trazendo pro Terminal",
+        "Configurando Supabase e Vercel (.env)",
+        "Brownfield Discovery",
+        "Commit e Deploy na Vercel"
+      ]
+    },
+    {
+      "id": 7,
+      "turma": "T1",
+      "title": "Criando sua Primeira Task AIOS",
+      "subtitle": "Anatomia. Gap. Criar. Integrar. Executar.",
+      "date": "2026-03-05",
+      "day": "qui",
+      "time": "18:00",
+      "duration": 120,
+      "bloom": "Create",
+      "big_idea": "Você não usa o AIOS. Você ESTENDE. Encontrou um gap? Cria a peça que falta.",
+      "deliverable": "Task create-wave-map.md criada e integrada no agente PM",
+      "verification": "Executar *wave-map via /AIOS:agents:pm e ver wave-map.yaml gerado",
+      "objectives": [
+        "Entender a anatomia de uma Task AIOS (formato AIOX V1.0)",
+        "Identificar gaps no framework e propor soluções",
+        "Criar uma task do zero (create-wave-map.md)",
+        "Integrar task em um agente (registrar em dependencies e commands)",
+        "Executar a task via *wave-map e validar o output"
+      ],
+      "blocos": [
+        "Criar Mini-Projeto com Stories",
+        "Anatomia de uma Task AIOS",
+        "Temos Stories com Dependências. E Agora?",
+        "Criando a Task create-wave-map.md",
+        "Como a Task se Conecta ao Agente",
+        "Executando o *wave-map"
+      ]
+    },
+    {
+      "id": 8,
+      "turma": "T1",
+      "title": "A Fábrica - Projeto Final",
+      "subtitle": "Squad patterns. Integração total. Sistema completo.",
+      "date": "2026-03-09",
+      "day": "seg",
+      "time": "18:00",
+      "duration": 120,
+      "bloom": "Create",
+      "big_idea": "Sistema completo funcionando com squad",
+      "deliverable": "Projeto completo funcionando com squad",
+      "verification": "Demo ao vivo OU vídeo de 5min",
+      "objectives": [
+        "Implementar squad patterns funcionais",
+        "Integrar Claude Code + AIOS + PRD + Subagentes",
+        "Demonstrar sistema completo em ação",
+        "Apresentar projeto final"
+      ],
+      "blocos": [
+        "Squad Patterns",
+        "Integração Total",
+        "Sistema em Produção",
+        "Demo Preparation",
+        "Apresentações Finais"
+      ]
+    },
+    {
+      "id": 9,
+      "turma": "T2",
+      "encontroNum": 1,
+      "title": "Setup & Fundamentos",
+      "subtitle": "O setup que 95% ignora",
+      "date": "2026-02-21",
+      "day": "sab",
+      "time": "09:00",
+      "duration": 180,
+      "bloom": "Apply",
+      "big_idea": "Interface completa. CLAUDE.md configurado. Lucy é a metáfora central.",
+      "deliverable": "Ambiente Claude Code + CLAUDE.md + Primeiro Commit",
+      "verification": "Git commit em GitHub",
+      "objectives": [
+        "Dominar Terminal: pwd, ls, cd, mkdir",
+        "Configurar Git e GitHub com primeiras commits",
+        "Conhecer Claude Code: sidebar, chat, output, permissions",
+        "Criar .claude/CLAUDE.md: a memória do seu projeto",
+        "Fazer seu primeiro commit oficial"
+      ],
+      "blocos": [
+        "Terminal Básico",
+        "Git + GitHub",
+        "Interface Claude Code",
+        "A Fita de Lucy (CLAUDE.md)",
+        "Seu Primeiro Commit"
+      ]
+    },
+    {
+      "id": 10,
+      "turma": "T2",
+      "encontroNum": 2,
+      "title": "Vibe Coding Export",
+      "subtitle": "Bolt/v0/Lovable → Claude Code",
+      "date": "2026-02-21",
+      "day": "sab",
+      "time": "14:00",
+      "duration": 120,
+      "bloom": "Apply",
+      "big_idea": "Como trazer qualquer projeto para Claude Code",
+      "deliverable": "Projeto importado e funcionando",
+      "verification": "Link GitHub + screenshot do projeto",
+      "objectives": [
+        "Exportar projeto de Bolt/v0/Lovable",
+        "Usar Git como ponte entre plataformas",
+        "Configurar Claude Code como cérebro central",
+        "Aplicar workflow profissional de importação"
+      ],
+      "blocos": [
+        "Export de Bolt/v0/Lovable",
+        "Git Clone & Setup",
+        "Estruturação no Claude Code",
+        "Teste de Funcionamento",
+        "Deploy Verification"
+      ]
+    },
+    {
+      "id": 11,
+      "turma": "T2",
+      "encontroNum": 3,
+      "title": "Squad é Vida",
+      "subtitle": "Anatomia. Metáfora. Estrutura.",
+      "date": "2026-02-28",
+      "day": "sab",
+      "time": "09:00",
+      "duration": 120,
+      "bloom": "Understand",
+      "big_idea": "Cada squad é uma equipe completa de obra — entenda as peças antes de construir.",
+      "deliverable": "Mapa mental da anatomia de um squad",
+      "verification": "Cenários interativos completados + squad montado",
+      "objectives": [
+        "Entender a metáfora Squad = Equipe de Reforma",
+        "Identificar os 8 componentes de um squad",
+        "Montar a sequência correta de criação de um squad",
+        "Navegar o fluxo completo de um pedido dentro do squad"
+      ],
+      "blocos": [
+        "A Metáfora: Squad = Equipe de Reforma",
+        "As 8 Peças de um Squad",
+        "Sequência de Montagem",
+        "Fluxo Completo: Pedido → Entrega",
+        "Monte o Squad (jogo de cartas)"
+      ]
+    },
+    {
+      "id": 12,
+      "turma": "T2",
+      "encontroNum": 4,
+      "title": "A Estrutura AIOS",
+      "subtitle": "Anatomia do .aios-core/. Agentes. Expansion Packs.",
+      "date": "2026-02-28",
+      "day": "sab",
+      "time": "14:00",
+      "duration": 120,
+      "bloom": "Understand",
+      "big_idea": "Navegar o sistema completo",
+      "deliverable": "Mapa mental do sistema AIOS",
+      "verification": "Diagrama mostrando conexões",
+      "objectives": [
+        "Navegar a estrutura completa do .aios-core/",
+        "Identificar agentes especializados",
+        "Explicar como agents, tasks, templates e workflows se conectam",
+        "Explorar Expansion Packs disponíveis"
+      ],
+      "blocos": [
+        "Tour .aios-core/",
+        "5 Agentes Core (PM, Dev, Architect, QA, SM)",
+        "Tasks, Templates, Workflows",
+        "Expansion Packs Ecosystem",
+        "Exercício: Mapa Mental"
+      ]
+    },
+    {
+      "id": 13,
+      "turma": "T2",
+      "encontroNum": 5,
+      "title": "Por Que PRD É a Alma",
+      "subtitle": "A cadeia. PRD bom vs ruim. Erros fatais.",
+      "date": "2026-03-07",
+      "day": "sab",
+      "time": "09:00",
+      "duration": 120,
+      "bloom": "Understand",
+      "big_idea": "PRD como memória persistente = blueprint claro",
+      "deliverable": "Análise de PRD (bom vs ruim)",
+      "verification": "Documento com 5+ diferenças",
+      "objectives": [
+        "Explicar a cadeia PRD → Architecture → Stories → Code",
+        "Comparar características de PRD bom vs PRD ruim",
+        "Identificar por que IA precisa de PRD",
+        "Listar erros que matam projetos antes de começar"
+      ],
+      "blocos": [
+        "A Cadeia de Desenvolvimento",
+        "Anatomia de PRD Bom",
+        "Anatomia de PRD Ruim",
+        "Erros Fatais",
+        "Case Studies"
+      ]
+    },
+    {
+      "id": 14,
+      "turma": "T2",
+      "encontroNum": 6,
+      "title": "Transformando o Velho em Novo",
+      "subtitle": "Vibecoding → GitHub → Brownfield → Deploy",
+      "date": "2026-03-07",
+      "day": "sab",
+      "time": "14:00",
+      "duration": 120,
+      "bloom": "Apply",
+      "big_idea": "Qualquer projeto feito no vibecoding pode virar profissional. O segredo é o processo.",
+      "deliverable": "Projeto importado com brownfield discovery completo e deploy na Vercel",
+      "verification": "Link Vercel funcionando + brownfield report no repositório",
+      "objectives": [
+        "Exportar projeto de vibecoding para GitHub e clonar no terminal",
+        "Configurar .env com credenciais Supabase e Vercel",
+        "Executar brownfield discovery no projeto importado",
+        "Fazer commit e deploy na Vercel"
+      ],
+      "blocos": [
+        "Do Vibecoding ao GitHub",
+        "Git Clone — Trazendo pro Terminal",
+        "Configurando Supabase e Vercel (.env)",
+        "Brownfield Discovery",
+        "Commit e Deploy na Vercel"
+      ]
+    },
+    {
+      "id": 15,
+      "turma": "T2",
+      "encontroNum": 7,
+      "title": "Criando sua Primeira Task AIOS",
+      "subtitle": "Anatomia. Gap. Criar. Integrar. Executar.",
+      "date": "2026-03-14",
+      "day": "sab",
+      "time": "09:00",
+      "duration": 120,
+      "bloom": "Create",
+      "big_idea": "Você não usa o AIOS. Você ESTENDE. Encontrou um gap? Cria a peça que falta.",
+      "deliverable": "Task create-wave-map.md criada e integrada no agente PM",
+      "verification": "Executar *wave-map via /AIOS:agents:pm e ver wave-map.yaml gerado",
+      "objectives": [
+        "Entender a anatomia de uma Task AIOS (formato AIOX V1.0)",
+        "Identificar gaps no framework e propor soluções",
+        "Criar uma task do zero (create-wave-map.md)",
+        "Integrar task em um agente (registrar em dependencies e commands)",
+        "Executar a task via *wave-map e validar o output"
+      ],
+      "blocos": [
+        "Criar Mini-Projeto com Stories",
+        "Anatomia de uma Task AIOS",
+        "Temos Stories com Dependências. E Agora?",
+        "Criando a Task create-wave-map.md",
+        "Como a Task se Conecta ao Agente",
+        "Executando o *wave-map"
+      ]
+    },
+    {
+      "id": 16,
+      "turma": "T2",
+      "encontroNum": 8,
+      "title": "A Fábrica - Projeto Final",
+      "subtitle": "Squad patterns. Integração total. Sistema completo.",
+      "date": "2026-03-14",
+      "day": "sab",
+      "time": "14:00",
+      "duration": 120,
+      "bloom": "Create",
+      "big_idea": "Sistema completo funcionando com squad",
+      "deliverable": "Projeto completo funcionando com squad",
+      "verification": "Demo ao vivo OU vídeo de 5min",
+      "objectives": [
+        "Implementar squad patterns funcionais",
+        "Integrar Claude Code + AIOS + PRD + Subagentes",
+        "Demonstrar sistema completo em ação",
+        "Apresentar projeto final"
+      ],
+      "blocos": [
+        "Squad Patterns",
+        "Integração Total",
+        "Sistema em Produção",
+        "Demo Preparation",
+        "Apresentações Finais"
+      ]
+    }
+  ],
+  "prontoSocorros": [
+    {
+      "encontroId": 1,
+      "turma": "T1",
+      "sessions": [
+        { "date": "2026-02-13", "day": "sex", "time": "18:00" }
+      ]
+    },
+    {
+      "encontroId": 2,
+      "turma": "T1",
+      "sessions": [
+        { "date": "2026-02-17", "day": "ter", "time": "18:00" }
+      ]
+    },
+    {
+      "encontroId": 3,
+      "turma": "T1",
+      "sessions": [
+        { "date": "2026-02-20", "day": "sex", "time": "18:00" }
+      ]
+    },
+    {
+      "encontroId": 4,
+      "turma": "T1",
+      "sessions": [
+        { "date": "2026-02-24", "day": "ter", "time": "18:00" }
+      ]
+    },
+    {
+      "encontroId": 5,
+      "turma": "T1",
+      "sessions": [
+        { "date": "2026-02-27", "day": "sex", "time": "18:00" }
+      ]
+    },
+    {
+      "encontroId": 6,
+      "turma": "T1",
+      "sessions": [
+        { "date": "2026-03-03", "day": "ter", "time": "18:00" }
+      ]
+    },
+    {
+      "encontroId": 7,
+      "turma": "T1",
+      "sessions": [
+        { "date": "2026-03-06", "day": "sex", "time": "18:00" }
+      ]
+    },
+    {
+      "encontroId": 8,
+      "turma": "T1",
+      "sessions": [
+        { "date": "2026-03-10", "day": "ter", "time": "18:00" }
+      ]
+    }
+  ],
+  "salas": [
+    { "id": 1, "name": "Setup & Config", "desc": "Dúvidas sobre instalação e configuração" },
+    { "id": 2, "name": "AIOS & Filosofia", "desc": "Conceitos de AIOS, mentalidade CEO'ing" },
+    { "id": 3, "name": "PRD & Arquitetura", "desc": "PRD, Architecture, Sharding" }
+  ]
+}

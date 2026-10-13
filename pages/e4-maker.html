@@ -1,0 +1,503 @@
+<!-- E4 - Fluxo do Maker -->
+
+    <!-- ============================================
+         HERO HEADER
+         ============================================ -->
+    <header class="hero">
+        <div class="hero-badge">Encontro 4 &bull; Fluxo Maker</div>
+        <h1>O Fluxo do Maker.<br><span>Da Ideia ao Deploy.</span></h1>
+        <p>Voce ja conhece as pecas do AIOS. Agora vai ver como elas se conectam &mdash; o caminho completo que um Maker percorre para transformar uma ideia em software funcionando.</p>
+    </header>
+
+    <div class="content">
+
+        <!-- ============================================
+             SECAO 1: O Chef Entrou na Cozinha
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">O Inicio</div>
+            <h2 class="section-title">O Chef Entrou na Cozinha</h2>
+            <p class="section-desc">O Maker recebeu uma missao: construir algo real. Ele abre o terminal e... para. Porque no AIOS, ate o chef segue uma receita.</p>
+
+            <!-- Metaphor card -->
+            <div style="background: rgba(34,197,94,0.04); border: 1px dashed rgba(34,197,94,0.2); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3"/><path d="M18 22V15"/></svg>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.85rem; color: #22c55e; margin-bottom: 0.3rem;">Na Cozinha</div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.7;">
+                            Um chef de verdade nao improvisa sem receita. Ele tem a <strong style="color: var(--color-text-secondary);">ficha tecnica do prato</strong> (story), os <strong style="color: var(--color-text-secondary);">ingredientes preparados</strong> (PRD) e o <strong style="color: var(--color-text-secondary);">mise en place</strong> (arquitetura). O AIOS e o mise en place do Maker.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal simulation -->
+            <div style="background: #0D1117; border: 1px solid rgba(34,197,94,0.2); border-radius: var(--radius-lg); overflow: hidden;">
+                <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(34,197,94,0.15); background: rgba(34,197,94,0.03);">
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                    <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #22c55e; margin-left: 0.4rem;">Terminal &mdash; Sem AIOS vs Com AIOS</span>
+                </div>
+                <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 2; color: #8B949E;">
+                    <div><span style="color: #22c55e;">voce:</span> <span style="color: #A5D6FF;">Quero construir um sistema de login</span></div>
+                    <div>&nbsp;</div>
+                    <div style="color: #6A737D; font-style: italic;">&nbsp;&nbsp;// Sem AIOS:</div>
+                    <div style="color: #6A737D; font-style: italic;">&nbsp;&nbsp;// claude: OK, vou criar... [inventa tudo na hora]</div>
+                    <div>&nbsp;</div>
+                    <div style="color: #4ADE80; font-style: italic;">&nbsp;&nbsp;// Com AIOS:</div>
+                    <div><span style="color: #22c55e;">voce:</span> <span style="color: #A5D6FF;">@sm Crie uma story para o sistema de login</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #38BDF8;">@sm (River):</span> <span style="color: #6A737D;">Seguindo template...</span></div>
+                    <div><span style="color: #4ADE80;">&nbsp;&nbsp;&#x2713; docs/stories/1.1.story.md criada</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO 2: Passo 1 — A Story
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Passo 1 de 5</div>
+            <h2 class="section-title">A Story: A Receita do Prato</h2>
+            <p class="section-desc">Antes de cozinhar, o chef precisa da receita. No AIOS, a receita e a <strong style="color: var(--color-text-secondary);">Story</strong> &mdash; um documento que define EXATAMENTE o que construir.</p>
+
+            <!-- Info box: what a Story contains -->
+            <div style="background: rgba(56,189,248,0.04); border: 1px solid rgba(56,189,248,0.2); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1.5rem;">
+                <div style="font-weight: 800; font-size: 0.8rem; color: #38BDF8; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem;">O que uma Story contem</div>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.6;">
+                    <div style="display: flex; gap: 0.5rem; align-items: flex-start;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.2rem;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                        <span><strong style="color: var(--color-text-secondary);">Titulo e descricao</strong> &mdash; o que sera construido e por que</span>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; align-items: flex-start;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.2rem;"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                        <span><strong style="color: var(--color-text-secondary);">Acceptance Criteria (AC)</strong> &mdash; quando considerar PRONTO</span>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; align-items: flex-start;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.2rem;"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                        <span><strong style="color: var(--color-text-secondary);">Scope IN/OUT</strong> &mdash; o que FAZ e o que NAO faz parte</span>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; align-items: flex-start;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.2rem;"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                        <span><strong style="color: var(--color-text-secondary);">Dependencies</strong> &mdash; o que precisa estar pronto antes</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Terminal simulation: @sm creating story -->
+            <div style="background: #0D1117; border: 1px solid rgba(56,189,248,0.2); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(56,189,248,0.15); background: rgba(56,189,248,0.03);">
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                    <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #38BDF8; margin-left: 0.4rem;">Terminal &mdash; @sm criando a Story</span>
+                </div>
+                <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 2; color: #8B949E;">
+                    <div><span style="color: #22c55e;">voce:</span> <span style="color: #A5D6FF;">@sm Crie a story para autenticacao</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #38BDF8;">@sm (River):</span> <span style="color: #6A737D;">Usando task create-next-story.md</span></div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; Titulo: Implementar autenticacao email + senha</span></div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; AC: Given usuario na tela / When digita email+senha / Then acessa o dashboard</span></div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; Scope IN: Login, cadastro, recuperar senha</span></div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; Scope OUT: OAuth, 2FA, admin panel</span></div>
+                    <div><span style="color: #4ADE80;">&nbsp;&nbsp;&#x2713; docs/stories/1.1.story.md</span></div>
+                </div>
+            </div>
+
+            <!-- Why this matters callout -->
+            <div style="background: rgba(209,255,0,0.05); border: 1px solid var(--color-accent-gold-30); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="var(--color-accent-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.85rem; color: var(--color-accent-gold); margin-bottom: 0.3rem;">Por Que Isso Importa</div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.7;">
+                            Sem story, o @dev improvisa. Com story, ele executa com <strong style="color: var(--color-text-secondary);">precisao</strong>. O Scope OUT e tao importante quanto o IN &mdash; ele impede que o agente invente funcionalidades que ninguem pediu. Menos desperdicio, mais foco.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bonus: @po validates before @dev starts -->
+            <div style="background: rgba(34,197,94,0.03); border: 1px solid rgba(34,197,94,0.15); border-radius: var(--radius-lg); padding: 1rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
+                    <span style="font-weight: 800; font-size: 0.75rem; color: #22c55e;">Detalhe: @po valida antes do @dev comecar</span>
+                </div>
+                <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6; padding-left: 1.4rem;">
+                    Depois que o @sm cria, o <strong style="color: var(--color-text-secondary);">@po (Pax)</strong> faz 10 verificacoes na story. Se estiver incompleta, volta pro @sm. Nenhum @dev comeca a cozinhar com receita mal escrita.
+                </div>
+            </div>
+
+            <!-- Scenario container -->
+            <div class="scenario-container" data-scenario="e4-maker-sequence-1"></div>
+        </section>
+
+        <!-- ============================================
+             SECAO 3: Passo 2 — O Dev em Acao
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Passo 2 de 5</div>
+            <h2 class="section-title">O @dev Entra: Hora de Cozinhar</h2>
+            <p class="section-desc">Com a receita (story) na mao, o <strong style="color: var(--color-text-secondary);">@dev (Dex)</strong> entra na cozinha. Ele nao decide O QUE fazer &mdash; a story ja definiu. Ele foca em COMO fazer bem.</p>
+
+            <!-- Three mode cards -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem;">
+                <!-- YOLO -->
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(34,197,94,0.25); border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.5rem;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                        <span style="font-weight: 800; font-size: 0.75rem; color: #22c55e;">YOLO</span>
+                    </div>
+                    <div style="font-size: 0.65rem; color: var(--color-text-muted); line-height: 1.6;">Autonomo. 0-1 prompts. Para stories simples e claras. O chef cozinha sozinho.</div>
+                </div>
+                <!-- Interactive -->
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(56,189,248,0.25); border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.5rem;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        <span style="font-weight: 800; font-size: 0.75rem; color: #38BDF8;">Interactive</span>
+                    </div>
+                    <div style="font-size: 0.65rem; color: var(--color-text-muted); line-height: 1.6;">Guiado. 5-10 prompts. Para aprendizado. O chef pede sua opiniao em cada etapa.</div>
+                </div>
+                <!-- Pre-Flight -->
+                <div style="background: var(--color-bg-card); border: 1px solid rgba(0,153,255,0.25); border-radius: var(--radius-lg); padding: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.5rem;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#0099FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H2v7l6.29 6.29c.94.94 2.48.94 3.42 0l3.58-3.58c.94-.94.94-2.48 0-3.42L9 5z"/><path d="M6 9.01V9"/></svg>
+                        <span style="font-weight: 800; font-size: 0.75rem; color: #0099FF;">Pre-Flight</span>
+                    </div>
+                    <div style="font-size: 0.65rem; color: var(--color-text-muted); line-height: 1.6;">Planejado. Todas perguntas antes. Para stories complexas. O chef faz o briefing completo antes de ligar o fogao.</div>
+                </div>
+            </div>
+
+            <!-- Terminal simulation: @dev in action -->
+            <div style="background: #0D1117; border: 1px solid rgba(251,191,36,0.2); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(251,191,36,0.15); background: rgba(251,191,36,0.03);">
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                    <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #FBBF24; margin-left: 0.4rem;">Terminal &mdash; @dev implementando</span>
+                </div>
+                <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 2; color: #8B949E;">
+                    <div><span style="color: #22c55e;">voce:</span> <span style="color: #A5D6FF;">@dev Implemente a story 1.1</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #FBBF24;">@dev (Dex):</span> <span style="color: #6A737D;">Lendo story...</span></div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; Modo: Interactive (padrao)</span></div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; AC #1: Login email + senha</span></div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; Implementando...</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #FBBF24;">@dev:</span> <span style="color: #6A737D;">Sugestao: Usar Supabase Auth</span></div>
+                    <div><span style="color: #22c55e;">voce:</span> <span style="color: #A5D6FF;">Aprovado</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #FBBF24;">@dev:</span> <span style="color: #4ADE80;">&#x2713; auth.js criado</span></div>
+                    <div><span style="color: #FBBF24;">@dev:</span> <span style="color: #4ADE80;">&#x2713; auth-ui.js criado</span></div>
+                    <div><span style="color: #FBBF24;">@dev:</span> <span style="color: #4ADE80;">&#x2713; Testes passando (3/3)</span></div>
+                    <div><span style="color: #FBBF24;">@dev:</span> <span style="color: #4ADE80;">&#x2713; git commit: &quot;feat: implement auth&quot;</span></div>
+                </div>
+            </div>
+
+            <!-- Scenario container -->
+            <div class="scenario-container" data-scenario="e4-maker-mc-1"></div>
+        </section>
+
+        <!-- ============================================
+             SECAO 4: Passo 3 — Quality Gate
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Passo 3 de 5</div>
+            <h2 class="section-title">O @qa Faz a Vistoria: Passa ou Nao Passa</h2>
+            <p class="section-desc">Antes de servir o prato, o inspetor de qualidade verifica. Os <strong style="color: var(--color-text-secondary);">7 checks do QA Gate</strong> sao objetivos &mdash; nao e opiniao, e criterio.</p>
+
+            <!-- 7 QA checks list -->
+            <div style="background: var(--color-bg-card); border: 1px solid rgba(244,114,182,0.15); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1.5rem;">
+                <div style="font-weight: 800; font-size: 0.8rem; color: #F472B6; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem;">7 Verificacoes do QA Gate</div>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.6;">
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#4ADE80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span><strong style="color: var(--color-text-secondary);">1.</strong> Codigo limpo e legivel</span>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#4ADE80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span><strong style="color: var(--color-text-secondary);">2.</strong> Testes unitarios adequados</span>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#4ADE80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span><strong style="color: var(--color-text-secondary);">3.</strong> Criterios de aceite atendidos (AC)</span>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#4ADE80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span><strong style="color: var(--color-text-secondary);">4.</strong> Sem regressoes</span>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#4ADE80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span><strong style="color: var(--color-text-secondary);">5.</strong> Performance aceitavel</span>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#4ADE80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span><strong style="color: var(--color-text-secondary);">6.</strong> Seguranca basica (OWASP)</span>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#4ADE80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span><strong style="color: var(--color-text-secondary);">7.</strong> Documentacao atualizada</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Decision box: outcomes -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem;">
+                <!-- PASS -->
+                <div style="background: rgba(34,197,94,0.04); border: 1px solid rgba(34,197,94,0.25); border-radius: var(--radius-lg); padding: 1rem; text-align: center;">
+                    <div style="font-weight: 800; font-size: 0.8rem; color: #22c55e; margin-bottom: 0.3rem;">PASS</div>
+                    <div style="font-size: 0.62rem; color: var(--color-text-muted); line-height: 1.5;">&#x2192; Segue para deploy</div>
+                </div>
+                <!-- CONCERNS -->
+                <div style="background: rgba(251,191,36,0.04); border: 1px solid rgba(251,191,36,0.25); border-radius: var(--radius-lg); padding: 1rem; text-align: center;">
+                    <div style="font-weight: 800; font-size: 0.8rem; color: #FBBF24; margin-bottom: 0.3rem;">CONCERNS</div>
+                    <div style="font-size: 0.62rem; color: var(--color-text-muted); line-height: 1.5;">&#x2192; Aprovado com observacoes</div>
+                </div>
+                <!-- FAIL -->
+                <div style="background: rgba(239,68,68,0.04); border: 1px solid rgba(239,68,68,0.25); border-radius: var(--radius-lg); padding: 1rem; text-align: center;">
+                    <div style="font-weight: 800; font-size: 0.8rem; color: #EF4444; margin-bottom: 0.3rem;">FAIL</div>
+                    <div style="font-size: 0.62rem; color: var(--color-text-muted); line-height: 1.5;">&#x2192; Volta para @dev com feedback especifico</div>
+                </div>
+            </div>
+
+            <!-- What happens on FAIL -->
+            <div style="background: rgba(239,68,68,0.03); border: 1px solid rgba(239,68,68,0.15); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#EF4444" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.85rem; color: #EF4444; margin-bottom: 0.3rem;">E se der FAIL?</div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.7;">
+                            O @qa retorna com <strong style="color: var(--color-text-secondary);">feedback especifico</strong> &mdash; nao e "arruma ai". E "o AC #2 nao foi atendido: o botao de recuperar senha nao redireciona". O @dev corrige e submete de novo. Esse loop pode rodar ate <strong style="color: var(--color-text-secondary);">5 vezes</strong> antes de escalar.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kitchen metaphor for QA -->
+            <div style="background: rgba(244,114,182,0.03); border: 1px dashed rgba(244,114,182,0.15); border-radius: var(--radius-lg); padding: 1rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#F472B6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    <span style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;"><strong style="color: #F472B6;">Na cozinha:</strong> O inspetor prova o prato. Se o sal esta errado, nao serve. O chef ajusta e submete de novo. Simples assim.</span>
+                </div>
+            </div>
+
+            <!-- Scenario container -->
+            <div class="scenario-container" data-scenario="e4-maker-branching-1"></div>
+        </section>
+
+        <!-- ============================================
+             SECAO 5: Passo 4 — Deploy
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Passo 4 de 5</div>
+            <h2 class="section-title">O @devops Entrega: No Ar</h2>
+            <p class="section-desc">O <strong style="color: var(--color-text-secondary);">@devops (Gage)</strong> e o UNICO autorizado a fazer git push. Nenhum outro agente toca no remoto. Ele roda os pre-push gates e faz o deploy.</p>
+
+            <!-- Terminal simulation: deploy -->
+            <div style="background: #0D1117; border: 1px solid rgba(251,146,60,0.2); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid rgba(251,146,60,0.15); background: rgba(251,146,60,0.03);">
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FF5F56; opacity: 0.7;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #FFBD2E; opacity: 0.7;"></div>
+                    <div style="width: 8px; height: 8px; border-radius: 50%; background: #27C93F; opacity: 0.7;"></div>
+                    <span style="font-family: var(--font-mono); font-size: 0.55rem; color: #FB923C; margin-left: 0.4rem;">Terminal &mdash; @devops fazendo deploy</span>
+                </div>
+                <div style="padding: 1.25rem; font-family: var(--font-mono); font-size: 0.68rem; line-height: 2; color: #8B949E;">
+                    <div><span style="color: #F472B6;">@qa (Quinn):</span> <span style="color: #4ADE80;">QA Gate &#x2192; PASS (7/7)</span></div>
+                    <div>&nbsp;</div>
+                    <div><span style="color: #FB923C;">@devops (Gage):</span> <span style="color: #6A737D;">Pre-push quality check...</span></div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; Lint: </span><span style="color: #4ADE80;">&#x2713;</span></div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; Types: </span><span style="color: #4ADE80;">&#x2713;</span></div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; Tests: </span><span style="color: #4ADE80;">&#x2713;</span></div>
+                    <div><span style="color: #FB923C;">&nbsp;&nbsp;&#x2192;</span> <span style="color: #A5D6FF;">git push origin feat/auth</span></div>
+                    <div><span style="color: #6A737D;">&nbsp;&nbsp;&#x2192; Vercel: Building...</span></div>
+                    <div><span style="color: #4ADE80;">&nbsp;&nbsp;&#x2713; Deployed: meu-projeto.vercel.app</span></div>
+                </div>
+            </div>
+
+            <!-- Important callout: golden rule -->
+            <div style="background: rgba(209,255,0,0.05); border: 1px solid var(--color-accent-gold-30); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="var(--color-accent-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.85rem; color: var(--color-accent-gold); margin-bottom: 0.3rem;">Regra de Ouro</div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.7;">
+                            So o <strong style="color: var(--color-text-secondary);">@devops faz push</strong>. O @dev faz commit local, mas <strong style="color: var(--color-text-secondary);">NUNCA push</strong>. Isso protege o codigo em producao &mdash; como a construtora que so entrega com habite-se.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Permission boundaries mini-table -->
+            <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); overflow: hidden;">
+                <div style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--color-border); font-weight: 800; font-size: 0.7rem; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.08em;">Quem pode o que</div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
+                    <div style="padding: 0.6rem 1rem; border-bottom: 1px solid var(--color-border); border-right: 1px solid var(--color-border); font-size: 0.68rem; color: var(--color-text-muted);">
+                        <span style="color: #FBBF24; font-weight: 700;">@dev</span> &mdash; git add, commit, branch, stash
+                    </div>
+                    <div style="padding: 0.6rem 1rem; border-bottom: 1px solid var(--color-border); font-size: 0.68rem; color: var(--color-text-muted);">
+                        <span style="color: #EF4444; font-weight: 700;">@dev</span> &mdash; git push, gh pr create
+                    </div>
+                    <div style="padding: 0.6rem 1rem; border-right: 1px solid var(--color-border); font-size: 0.68rem; color: var(--color-text-muted);">
+                        <span style="color: #FB923C; font-weight: 700;">@devops</span> &mdash; git push, deploy, CI/CD
+                    </div>
+                    <div style="padding: 0.6rem 1rem; font-size: 0.68rem; color: var(--color-text-muted);">
+                        <span style="color: #EF4444; font-weight: 700;">@devops</span> &mdash; alterar stories, editar AC
+                    </div>
+                </div>
+                <div style="padding: 0.5rem 1rem; font-size: 0.6rem; color: var(--color-text-muted); font-style: italic; background: rgba(255,255,255,0.02);">
+                    <span style="color: #4ADE80;">&#x2713;</span> = permitido &nbsp;&nbsp; <span style="color: #EF4444;">&#x2717;</span> = bloqueado &nbsp;&nbsp; Cada agente fica na sua raia.
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================
+             SECAO 6: O Ciclo Completo
+             ============================================ -->
+        <section class="flow-section">
+            <div class="section-label">Passo 5 de 5</div>
+            <h2 class="section-title">O Story Development Cycle (SDC)</h2>
+            <p class="section-desc">O fluxo completo do Maker em 5 passos. Cada agente tem seu papel. Nenhum faz o trabalho do outro.</p>
+
+            <!-- Visual flow diagram: vertical numbered steps -->
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
+
+                <!-- Step 1: @sm (River) -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(56,189,248,0.1); border: 2px solid rgba(56,189,248,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: #38BDF8;">1</span>
+                    </div>
+                    <div style="flex: 1; background: var(--color-bg-card); border: 1px solid rgba(56,189,248,0.15); border-radius: var(--radius-lg); padding: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: #38BDF8;">@sm (River)</span>
+                            <span style="font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.05); padding: 0.15rem 0.5rem; border-radius: 4px;">Cria a story</span>
+                        </div>
+                        <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">= A receita do prato</div>
+                    </div>
+                </div>
+
+                <!-- Connector -->
+                <div style="display: flex; align-items: center; padding-left: 16px;">
+                    <div style="width: 2px; height: 12px; background: rgba(255,255,255,0.08); margin-left: 1px;"></div>
+                </div>
+
+                <!-- Step 2: @po (Pax) -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(34,197,94,0.1); border: 2px solid rgba(34,197,94,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: #22c55e;">2</span>
+                    </div>
+                    <div style="flex: 1; background: var(--color-bg-card); border: 1px solid rgba(34,197,94,0.15); border-radius: var(--radius-lg); padding: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: #22c55e;">@po (Pax)</span>
+                            <span style="font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.05); padding: 0.15rem 0.5rem; border-radius: 4px;">Valida a story (10 checks)</span>
+                        </div>
+                        <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">= Aprovacao do cardapio</div>
+                    </div>
+                </div>
+
+                <!-- Connector -->
+                <div style="display: flex; align-items: center; padding-left: 16px;">
+                    <div style="width: 2px; height: 12px; background: rgba(255,255,255,0.08); margin-left: 1px;"></div>
+                </div>
+
+                <!-- Step 3: @dev (Dex) -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(251,191,36,0.1); border: 2px solid rgba(251,191,36,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: #FBBF24;">3</span>
+                    </div>
+                    <div style="flex: 1; background: var(--color-bg-card); border: 1px solid rgba(251,191,36,0.15); border-radius: var(--radius-lg); padding: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: #FBBF24;">@dev (Dex)</span>
+                            <span style="font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.05); padding: 0.15rem 0.5rem; border-radius: 4px;">Implementa seguindo a story</span>
+                        </div>
+                        <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">= O chef cozinha</div>
+                    </div>
+                </div>
+
+                <!-- Connector -->
+                <div style="display: flex; align-items: center; padding-left: 16px;">
+                    <div style="width: 2px; height: 12px; background: rgba(255,255,255,0.08); margin-left: 1px;"></div>
+                </div>
+
+                <!-- Step 4: @qa (Quinn) -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(244,114,182,0.1); border: 2px solid rgba(244,114,182,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: #F472B6;">4</span>
+                    </div>
+                    <div style="flex: 1; background: var(--color-bg-card); border: 1px solid rgba(244,114,182,0.15); border-radius: var(--radius-lg); padding: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: #F472B6;">@qa (Quinn)</span>
+                            <span style="font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.05); padding: 0.15rem 0.5rem; border-radius: 4px;">QA Gate: 7 verificacoes</span>
+                        </div>
+                        <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">= Vistoria do prato</div>
+                    </div>
+                </div>
+
+                <!-- Connector -->
+                <div style="display: flex; align-items: center; padding-left: 16px;">
+                    <div style="width: 2px; height: 12px; background: rgba(255,255,255,0.08); margin-left: 1px;"></div>
+                </div>
+
+                <!-- Step 5: @devops (Gage) -->
+                <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                    <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(251,146,60,0.1); border: 2px solid rgba(251,146,60,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-family: var(--font-mono); font-size: 0.85rem; font-weight: 800; color: #FB923C;">5</span>
+                    </div>
+                    <div style="flex: 1; background: var(--color-bg-card); border: 1px solid rgba(251,146,60,0.15); border-radius: var(--radius-lg); padding: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
+                            <span style="font-weight: 800; font-size: 0.85rem; color: #FB923C;">@devops (Gage)</span>
+                            <span style="font-size: 0.6rem; color: var(--color-text-muted); background: rgba(255,255,255,0.05); padding: 0.15rem 0.5rem; border-radius: 4px;">Push + deploy</span>
+                        </div>
+                        <div style="font-size: 0.72rem; color: var(--color-text-muted); line-height: 1.6;">= Serviu na mesa</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Status flow mini-bar -->
+            <div style="background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1.5rem;">
+                <div style="font-weight: 800; font-size: 0.7rem; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.75rem;">Status da Story ao Longo do Ciclo</div>
+                <div style="display: flex; align-items: center; gap: 0.4rem; flex-wrap: wrap;">
+                    <span style="font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 4px; background: rgba(56,189,248,0.1); border: 1px solid rgba(56,189,248,0.25); color: #38BDF8;">Draft</span>
+                    <span style="font-size: 0.72rem; color: var(--color-text-muted);">&#x2192;</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 4px; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.25); color: #22c55e;">Ready</span>
+                    <span style="font-size: 0.72rem; color: var(--color-text-muted);">&#x2192;</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 4px; background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.25); color: #FBBF24;">InProgress</span>
+                    <span style="font-size: 0.72rem; color: var(--color-text-muted);">&#x2192;</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 4px; background: rgba(244,114,182,0.1); border: 1px solid rgba(244,114,182,0.25); color: #F472B6;">InReview</span>
+                    <span style="font-size: 0.72rem; color: var(--color-text-muted);">&#x2192;</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.62rem; font-weight: 700; padding: 0.25rem 0.6rem; border-radius: 4px; background: rgba(251,146,60,0.1); border: 1px solid rgba(251,146,60,0.25); color: #FB923C;">Done</span>
+                </div>
+                <div style="font-size: 0.62rem; color: var(--color-text-muted); margin-top: 0.6rem; line-height: 1.5;">
+                    Cada agente muda o status ao completar sua etapa. Voce sempre sabe em que ponto a story esta.
+                </div>
+            </div>
+
+            <!-- Green insight card -->
+            <div style="background: rgba(34,197,94,0.04); border: 1px solid rgba(34,197,94,0.2); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 0.1rem;"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                    <div>
+                        <div style="font-weight: 800; font-size: 0.85rem; color: #22c55e; margin-bottom: 0.3rem;">O Ciclo que Todo Maker Roda</div>
+                        <div style="font-size: 0.75rem; color: var(--color-text-muted); line-height: 1.7;">
+                            Este e o ciclo que todo Maker roda no AIOS. <strong style="color: var(--color-text-secondary);">Simples, replicavel, com qualidade garantida.</strong> Proximo projeto? Mesmo processo. O chef muda o prato, mas a cozinha continua organizada.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scenario container -->
+            <div class="scenario-container" data-scenario="e4-maker-terminal-1"></div>
+        </section>
+
+        <!-- ============================================
+             SECAO 7: CLOSING
+             ============================================ -->
+        <section class="flow-section" style="text-align: center; padding: 3rem 0;">
+            <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="var(--color-accent-gold)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem; opacity: 0.8;"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+            <h2 class="section-title" style="font-size: 1.4rem;">Da ideia ao deploy. Com processo.</h2>
+            <p class="section-desc" style="max-width: 480px; margin: 0 auto; margin-bottom: 1.5rem;">Story &#x2192; Validacao &#x2192; Implementacao &#x2192; QA Gate &#x2192; Deploy. Cinco passos. Cinco agentes. Um resultado confiavel.</p>
+            <p class="section-desc" style="max-width: 480px; margin: 0 auto; font-size: 0.72rem; color: var(--color-text-muted);">Na proxima licao: <strong style="color: var(--color-accent-purple-light);">O Fluxo do Thinker</strong> &mdash; da visao ao blueprint.</p>
+        </section>
+
+    </div>

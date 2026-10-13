@@ -1,0 +1,149 @@
+/* ==========================================================================
+   LAYOUT - SPA Shell Grid
+   Caderno Inteligente: sidebar (280px) | content (flex)
+   Zero hardcoded values - all from tokens.css
+   ========================================================================== */
+
+/* --- Skip to Content (Accessibility) --- */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 9999;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-accent-gold);
+  color: var(--color-bg-primary);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  border-radius: 0 0 var(--radius-sm) 0;
+}
+.skip-to-content:focus {
+  left: 0;
+}
+
+/* --- App Shell --- */
+.app {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-family);
+}
+
+/* --- Sidebar Panel --- */
+.app__sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  background: var(--color-bg-secondary);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+/* --- Content Panel --- */
+.app__content {
+  overflow-y: auto;
+  height: 100vh;
+  scroll-behavior: smooth;
+}
+
+/* Content inner inherits .content from components.css */
+.app__content .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem 4rem;
+}
+
+/* --- Mobile Hamburger --- */
+.app__hamburger {
+  display: none;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 200;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  transition: background 0.15s ease;
+}
+
+.app__hamburger:hover {
+  background: var(--color-bg-card);
+}
+
+/* --- Mobile Overlay --- */
+.app__overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: var(--color-black-60);
+  z-index: 90;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.app__overlay--visible {
+  opacity: 1;
+}
+
+/* --- Responsive: Mobile --- */
+@media (max-width: 768px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .app__hamburger {
+    display: flex;
+  }
+
+  .app__sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 280px;
+    height: 100vh;
+    transition: left 0.25s ease;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .app__sidebar--open {
+    left: 0;
+  }
+
+  .app__overlay--visible {
+    display: block;
+    opacity: 1;
+  }
+
+  .app__content {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .app__content .content {
+    padding: 1.25rem 1rem 3rem;
+    padding-top: 4rem; /* space for hamburger */
+  }
+}
+
+/* === PRINT: SPA Layout Reset ===
+   Loaded from <head>, guaranteed to apply before window.print()
+   Fixes height:100vh + overflow:auto that clip SPA content in print */
+@media print {
+  html, body { height: auto !important; overflow: visible !important; }
+  .app { display: block !important; min-height: 0 !important; grid-template-columns: 1fr !important; }
+  .app__sidebar, .app__hamburger, .app__overlay { display: none !important; }
+  .app__content { height: auto !important; overflow: visible !important; min-height: 0 !important; }
+}

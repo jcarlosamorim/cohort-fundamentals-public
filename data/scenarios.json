@@ -1,0 +1,817 @@
+{
+  "e1-fundacao": [
+    {
+      "id": "fund-terminal-1",
+      "type": "terminal",
+      "title": "Onde Voce Esta?",
+      "description": "Voce acabou de abrir o terminal. Qual comando mostra em que pasta voce esta agora?",
+      "prompt": "meu-projeto-aios $",
+      "answer": "pwd",
+      "alternateAnswers": [],
+      "hint": "3 letras. Print Working Directory.",
+      "successOutput": [
+        "/Users/seu-nome/meu-projeto-aios"
+      ],
+      "explanation": "pwd (Print Working Directory) mostra o caminho completo da pasta onde voce esta. E o primeiro comando que voce deve dominar.",
+      "points": 50
+    },
+    {
+      "id": "fund-sequence-1",
+      "type": "sequence",
+      "title": "Setup do Projeto",
+      "description": "Coloque os comandos na ordem correta para configurar seu projeto:",
+      "items": [
+        { "id": "s1", "label": "touch .claude/CLAUDE.md", "desc": "Cria a memoria", "correctOrder": 4 },
+        { "id": "s2", "label": "mkdir meu-projeto-aios", "desc": "Cria a pasta do projeto", "correctOrder": 1 },
+        { "id": "s3", "label": "mkdir -p .claude", "desc": "Cria a pasta .claude/", "correctOrder": 3 },
+        { "id": "s4", "label": "cd meu-projeto-aios", "desc": "Entra no projeto", "correctOrder": 2 }
+      ],
+      "explanation": "Primeiro cria a pasta (mkdir), entra nela (cd), cria a pasta .claude (mkdir -p), e cria o CLAUDE.md (touch). Estrutura primeiro, memoria depois.",
+      "points": 100
+    },
+    {
+      "id": "fund-mc-1",
+      "type": "multiple-choice",
+      "title": "A Fita de Lucy",
+      "description": "Claude comeca toda conversa nova sem lembrar de nada. Qual arquivo resolve esse problema de memoria?",
+      "options": [
+        { "id": "a", "label": "package.json", "correct": false },
+        { "id": "b", "label": ".claude/CLAUDE.md", "correct": true },
+        { "id": "c", "label": ".gitignore", "correct": false },
+        { "id": "d", "label": "README.md", "correct": false }
+      ],
+      "explanation": "O .claude/CLAUDE.md e a 'fita cassete' de Lucy. Claude le esse arquivo no inicio de toda conversa e LEMBRA quem voce e, como voce trabalha, e o que seu projeto precisa.",
+      "points": 50
+    },
+    {
+      "id": "fund-multiselect-1",
+      "type": "multi-select",
+      "title": "Areas do Claude Code",
+      "description": "Selecione as 4 areas principais da interface do Claude Code:",
+      "requiredCount": 4,
+      "items": [
+        { "id": "sidebar", "label": "Sidebar (navegador de arquivos)", "correct": true },
+        { "id": "chat", "label": "Chat (conversa com Claude)", "correct": true },
+        { "id": "database", "label": "Database viewer", "correct": false },
+        { "id": "permissions", "label": "Permission Bar (controle)", "correct": true },
+        { "id": "output", "label": "Output (resultados)", "correct": true },
+        { "id": "marketplace", "label": "Marketplace de plugins", "correct": false }
+      ],
+      "explanation": "As 4 areas principais sao: Sidebar (navegar arquivos), Chat (conversar com Claude), Permission Bar (aprovar/negar acoes), e Output (ver resultados).",
+      "points": 100
+    },
+    {
+      "id": "fund-branching-1",
+      "type": "branching",
+      "title": "Cenario: Novo Projeto",
+      "description": "Voce esta prestes a comecar um projeto novo. Tome as decisoes certas em cada passo.",
+      "steps": [
+        {
+          "id": "step1",
+          "description": "Voce vai comecar um projeto novo com Claude Code. Qual e a PRIMEIRA coisa que voce faz?",
+          "options": [
+            { "id": "a", "label": "Abrir o Claude Code e comecar a conversar", "correct": false, "feedback": "Sem CLAUDE.md, Claude nao sabe nada sobre voce. Vai ser um estranho." },
+            { "id": "b", "label": "Criar pasta do projeto e .claude/CLAUDE.md", "correct": true, "feedback": "Correto! Primeiro cria a estrutura, depois cria a memoria (CLAUDE.md). Ai sim conversa." },
+            { "id": "c", "label": "Instalar todas as dependencias primeiro", "correct": false, "feedback": "Dependencias vem depois. Estrutura e memoria vem antes." },
+            { "id": "d", "label": "Escrever o codigo direto", "correct": false, "feedback": "Sem estrutura nem memoria? Claude vai se perder e voce tambem." }
+          ]
+        },
+        {
+          "id": "step2",
+          "description": "Voce criou o CLAUDE.md. O que voce escreve nele?",
+          "options": [
+            { "id": "a", "label": "O codigo do projeto inteiro", "correct": false, "feedback": "CLAUDE.md e para contexto, nao codigo. E a memoria, nao o projeto." },
+            { "id": "b", "label": "Quem voce e, como trabalha, o que o projeto faz", "correct": true, "feedback": "Exato! Nome, preferencias, objetivo do projeto. A fita cassete que Claude assiste toda vez que acorda." },
+            { "id": "c", "label": "Uma lista de tarefas", "correct": false, "feedback": "Tarefas mudam. CLAUDE.md e sobre identidade e contexto permanente." },
+            { "id": "d", "label": "Nada, deixar vazio", "correct": false, "feedback": "CLAUDE.md vazio = Lucy sem anotacoes. Comeca do zero toda vez." }
+          ]
+        }
+      ],
+      "explanation": "Sempre: estrutura primeiro (mkdir, cd), depois memoria (CLAUDE.md com seu contexto), ai sim conversa com Claude.",
+      "points": 150
+    }
+  ],
+  "e1-fluxos": [
+    {
+      "id": "flux-mc-1",
+      "type": "multiple-choice",
+      "title": "Cenario: Projeto Lovable",
+      "description": "Uma empresa tem um projeto feito no Lovable, funcionou, mas esta cheio de bugs. O cliente pergunta o que voce pode fazer. Qual a melhor abordagem?",
+      "options": [
+        { "id": "a", "label": "Usar Claude Code para ajustar os codigos", "correct": false },
+        { "id": "b", "label": "Usar modo brownfield para pegar o projeto pronto", "correct": false },
+        { "id": "c", "label": "Chamar brownfield discovery para avaliar debito tecnico", "correct": true },
+        { "id": "d", "label": "Levar pro GitHub e usar CodeRabbit", "correct": false }
+      ],
+      "explanation": "Projetos migrados de Lovable precisam de diagnostico completo antes de qualquer intervencao. O brownfield-discovery usa 6 agentes em 10 fases para mapear todos os debitos tecnicos.",
+      "points": 50
+    },
+    {
+      "id": "flux-multiselect-1",
+      "type": "multi-select",
+      "title": "Agentes do Discovery",
+      "description": "Voce ja esta com o codigo do projeto do cliente. Precisa verificar o debito tecnico. Clique nos 3 agentes que fazem a avaliacao inicial (Fases 1-3):",
+      "requiredCount": 3,
+      "items": [
+        { "id": "dev", "label": "@dev", "subtitle": "Developer" , "correct": false },
+        { "id": "qa", "label": "@qa", "subtitle": "QA Engineer", "correct": false },
+        { "id": "architect", "label": "@architect", "subtitle": "Architect", "correct": true },
+        { "id": "pm", "label": "@pm", "subtitle": "Project Manager", "correct": false },
+        { "id": "po", "label": "@po", "subtitle": "Product Owner", "correct": false },
+        { "id": "sm", "label": "@sm", "subtitle": "Scrum Master", "correct": false },
+        { "id": "analyst", "label": "@analyst", "subtitle": "Analyst", "correct": false },
+        { "id": "devops", "label": "@devops", "subtitle": "DevOps", "correct": false },
+        { "id": "data-engineer", "label": "@data-engineer", "subtitle": "Data Engineer", "correct": true },
+        { "id": "ux-design-expert", "label": "@ux-design-expert", "subtitle": "UX Design Expert", "correct": true },
+        { "id": "aios-developer", "label": "@aios-developer", "subtitle": "AIOS Developer", "correct": false },
+        { "id": "ux-expert", "label": "@ux-expert", "subtitle": "UX Expert", "correct": false }
+      ],
+      "explanation": "Os 3 agentes das Fases 1-3 sao: @architect (sistema e stack), @data-engineer (database e seguranca) e @ux-design-expert (frontend e UX). Cada um avalia sua area em paralelo.",
+      "points": 100
+    },
+    {
+      "id": "flux-sequence-1",
+      "type": "sequence",
+      "title": "Fases do Discovery",
+      "description": "Clique nas macro-fases do brownfield-discovery na sequencia correta:",
+      "items": [
+        { "id": "f1", "label": "Relatorio Executivo", "desc": "@analyst", "correctOrder": 5 },
+        { "id": "f2", "label": "Validacao + QA Gate", "desc": "Fases 5-7", "correctOrder": 3 },
+        { "id": "f3", "label": "Coleta de Dados", "desc": "3 agentes em paralelo", "correctOrder": 1 },
+        { "id": "f4", "label": "Epic + Stories", "desc": "@pm", "correctOrder": 6 },
+        { "id": "f5", "label": "Consolidacao DRAFT", "desc": "@architect", "correctOrder": 2 },
+        { "id": "f6", "label": "Assessment Final", "desc": "@architect", "correctOrder": 4 }
+      ],
+      "explanation": "Coleta (Fases 1-3) → Consolidacao (Fase 4) → Validacao + QA Gate (Fases 5-7) → Assessment Final (Fase 8) → Relatorio Executivo (Fase 9) → Epic + Stories (Fase 10).",
+      "points": 100
+    },
+    {
+      "id": "flux-terminal-1",
+      "type": "terminal",
+      "title": "Inicie o Discovery",
+      "description": "Qual comando o @architect executa para documentar o projeto na Fase 1?",
+      "prompt": "claude-code — aios-project $",
+      "answer": "*document-project",
+      "alternateAnswers": ["@architect *document-project"],
+      "hint": "O comando comeca com * e documenta o projeto",
+      "successOutput": [
+        "Documentando projeto...",
+        "→ docs/architecture/system-architecture.md gerado!"
+      ],
+      "explanation": "O @architect executa *document-project na Fase 1 para documentar stack, estrutura e dependencias do projeto existente.",
+      "points": 50
+    },
+    {
+      "id": "flux-branching-1",
+      "type": "branching",
+      "title": "Cenario: QA Gate",
+      "steps": [
+        {
+          "id": "step1",
+          "description": "O @qa rodou o Quality Gate e retornou NEEDS WORK. O que acontece agora?",
+          "options": [
+            { "id": "a", "label": "Ignora e segue para o Assessment Final", "correct": false, "feedback": "Nao! O QA Gate e obrigatorio. Sem APPROVED, nao avanca." },
+            { "id": "b", "label": "Volta para a Fase 4 (Consolidacao)", "correct": true, "feedback": "Correto! NEEDS WORK = voltar para consolidacao e corrigir." },
+            { "id": "c", "label": "Recomeca todo o discovery do zero", "correct": false, "feedback": "Excessivo. So precisa revisitar a consolidacao." },
+            { "id": "d", "label": "Pede para o @dev corrigir os bugs", "correct": false, "feedback": "O @dev so entra apos o discovery completo." }
+          ]
+        },
+        {
+          "id": "step2",
+          "description": "Apos a correcao, o QA Gate retorna APPROVED. Qual e o proximo passo?",
+          "options": [
+            { "id": "a", "label": "@architect gera o Assessment Final (Fase 8)", "correct": true, "feedback": "Exato! Fase 8: @architect consolida o assessment definitivo." },
+            { "id": "b", "label": "@dev comeca a implementar", "correct": false, "feedback": "Ainda faltam fases. Relatorio executivo e planejamento vem antes." },
+            { "id": "c", "label": "@analyst gera o relatorio executivo", "correct": false, "feedback": "Quase! O @analyst vem na Fase 9, apos o assessment do @architect." },
+            { "id": "d", "label": "@pm cria as stories", "correct": false, "feedback": "Faltam 3 fases antes. Assessment → Relatorio → Stories." }
+          ]
+        }
+      ],
+      "explanation": "O QA Gate e obrigatorio. NEEDS WORK = volta para Fase 4. APPROVED = segue para Fase 8 (Assessment Final pelo @architect).",
+      "points": 150
+    }
+  ],
+  "e3-anatomia-squad": [
+    {
+      "id": "anat-mc-1",
+      "type": "multiple-choice",
+      "title": "O Cerebro do Squad",
+      "description": "Voce vai criar um squad de copywriting. Qual arquivo funciona como o 'contrato + planta da obra' que define quem sao os agentes, quais tasks existem e como o squad opera?",
+      "options": [
+        { "id": "a", "label": "README.md", "correct": false },
+        { "id": "b", "label": "config.yaml", "correct": true },
+        { "id": "c", "label": "agents/copy-chief.md", "correct": false },
+        { "id": "d", "label": "workflows/full-pipeline.yaml", "correct": false }
+      ],
+      "explanation": "O config.yaml e o cerebro central do squad. Assim como o contrato + planta de uma obra, ele define nome, agentes, tasks, workflows e todas as configuracoes. Sem ele, ninguem sabe o que fazer.",
+      "points": 50
+    },
+    {
+      "id": "anat-multiselect-1",
+      "type": "multi-select",
+      "title": "Pecas Obrigatorias",
+      "description": "Um squad precisa funcionar como uma equipe de reforma completa. Selecione as 5 pastas que fazem parte da estrutura padrao de um squad:",
+      "requiredCount": 5,
+      "items": [
+        { "id": "agents", "label": "agents/", "subtitle": "Especialistas", "correct": true },
+        { "id": "tasks", "label": "tasks/", "subtitle": "Ordens de servico", "correct": true },
+        { "id": "workflows", "label": "workflows/", "subtitle": "Cronograma", "correct": true },
+        { "id": "node_modules", "label": "node_modules/", "subtitle": "Dependencias npm", "correct": false },
+        { "id": "checklists", "label": "checklists/", "subtitle": "Vistoria", "correct": true },
+        { "id": "templates", "label": "templates/", "subtitle": "Catalogo", "correct": true },
+        { "id": "src", "label": "src/", "subtitle": "Codigo fonte", "correct": false },
+        { "id": "dist", "label": "dist/", "subtitle": "Build output", "correct": false }
+      ],
+      "explanation": "As 5 pastas essenciais sao: agents/ (os profissionais), tasks/ (ordens de servico), workflows/ (cronograma), checklists/ (vistoria) e templates/ (catalogo de acabamentos). Junto com data/ e skills/, formam a anatomia completa.",
+      "points": 100
+    },
+    {
+      "id": "anat-sequence-1",
+      "type": "sequence",
+      "title": "Montando o Squad",
+      "description": "Voce vai montar um squad do zero. Coloque as pecas na ordem logica de criacao:",
+      "items": [
+        { "id": "p1", "label": "config.yaml", "desc": "Definir nome, agentes e estrutura", "correctOrder": 1 },
+        { "id": "p2", "label": "agents/", "desc": "Criar os especialistas com persona", "correctOrder": 2 },
+        { "id": "p3", "label": "tasks/", "desc": "Definir ordens de servico executaveis", "correctOrder": 3 },
+        { "id": "p4", "label": "workflows/", "desc": "Conectar tasks em cronograma", "correctOrder": 4 },
+        { "id": "p5", "label": "checklists/", "desc": "Criar quality gates de validacao", "correctOrder": 5 }
+      ],
+      "explanation": "Primeiro o contrato (config.yaml), depois os profissionais (agents/), as ordens de servico (tasks/), o cronograma que conecta tudo (workflows/), e por fim a vistoria (checklists/). Assim como numa obra: planta → equipe → servicos → cronograma → inspecao.",
+      "points": 100
+    },
+    {
+      "id": "anat-terminal-1",
+      "type": "terminal",
+      "title": "Ative o Mestre de Obras",
+      "description": "Voce tem um squad de copywriting chamado 'copywriter-os'. Qual comando ativa o agente-chefe (mestre de obras) desse squad?",
+      "prompt": "meu-projeto $",
+      "answer": "/copywriter-os:copy-chief",
+      "alternateAnswers": ["/copywriter-os"],
+      "maxAttempts": 3,
+      "hint": "Use / seguido do nome do squad para invocar uma skill",
+      "successOutput": [
+        "Invocando copywriter-os:copy-chief...",
+        "Copy Chief ready. Como posso ajudar?"
+      ],
+      "explanation": "O /squad:agente invoca diretamente o agente-chefe (orchestrator). Ele e o mestre de obras que coordena todos os outros agentes e roteia pedidos para o especialista certo.",
+      "points": 50
+    },
+    {
+      "id": "anat-branching-1",
+      "type": "branching",
+      "title": "Cenario: Cliente Quer Sales Page",
+      "description": "Um cliente pede uma sales page. Navegue pelo squad de copywriting para entregar o resultado.",
+      "steps": [
+        {
+          "id": "step1",
+          "description": "O cliente disse: 'Preciso de uma sales page para meu curso de fotografia.' Qual peca do squad entra em acao primeiro?",
+          "options": [
+            { "id": "a", "label": "templates/ — pegar o modelo pronto", "correct": false, "feedback": "Templates sao preenchidos DEPOIS. Primeiro precisa do profissional certo e da task." },
+            { "id": "b", "label": "agents/ — o copy-chief roteia pro especialista", "correct": true, "feedback": "Correto! O copy-chief (mestre de obras) recebe o pedido e roteia para o agente especialista, como o gary-halbert." },
+            { "id": "c", "label": "checklists/ — verificar se esta tudo certo", "correct": false, "feedback": "Checklists sao para o FINAL, nao para o inicio. E a vistoria da obra." },
+            { "id": "d", "label": "data/ — consultar frameworks", "correct": false, "feedback": "Data e material de referencia. O agente consulta enquanto trabalha, mas nao e o ponto de entrada." }
+          ]
+        },
+        {
+          "id": "step2",
+          "description": "O gary-halbert foi ativado. Ele precisa seguir um processo passo-a-passo para criar a sales page. Qual peca define esse processo?",
+          "options": [
+            { "id": "a", "label": "tasks/create-sales-page.md", "correct": true, "feedback": "Exato! A task define inputs, passos e output esperado. E a ordem de servico que o agente segue." },
+            { "id": "b", "label": "workflows/full-pipeline.yaml", "correct": false, "feedback": "O workflow orquestra MULTIPLAS tasks em sequencia. Para uma unica tarefa, a task e suficiente." },
+            { "id": "c", "label": "config.yaml", "correct": false, "feedback": "Config define a estrutura, nao o processo de execucao." },
+            { "id": "d", "label": "templates/sales-page-tmpl.md", "correct": false, "feedback": "O template e o MODELO do output, nao o processo. A task referencia o template internamente." }
+          ]
+        },
+        {
+          "id": "step3",
+          "description": "A sales page ficou pronta. Antes de entregar ao cliente, qual peca do squad garante que o resultado tem qualidade?",
+          "options": [
+            { "id": "a", "label": "config.yaml — confere se o squad esta configurado", "correct": false, "feedback": "Config e estrutura, nao validacao de output." },
+            { "id": "b", "label": "data/ — compara com frameworks conhecidos", "correct": false, "feedback": "Data e referencia, nao validacao sistematica." },
+            { "id": "c", "label": "checklists/copy-quality.md — roda o quality gate", "correct": true, "feedback": "Perfeito! O checklist e a vistoria: headline tem beneficio? Body abre com dor? CTA claro? Passa ou nao passa." },
+            { "id": "d", "label": "skills/ — executa um atalho final", "correct": false, "feedback": "Skills sao atalhos de entrada, nao validacao de saida." }
+          ]
+        }
+      ],
+      "explanation": "O fluxo completo: copy-chief recebe o pedido (agents/) → roteia pro especialista → especialista segue a task (tasks/) → usa template como modelo (templates/) → consulta frameworks (data/) → resultado passa no quality gate (checklists/). Todas as pecas trabalhando juntas, como uma equipe de reforma.",
+      "points": 150
+    },
+    {
+      "id": "anat-mc-2",
+      "type": "multiple-choice",
+      "title": "Reforma vs Squad: A Analogia",
+      "description": "Na metafora da reforma, a 'Vistoria / Inspecao' — aquela verificacao de 'passa ou nao passa' antes de entregar — corresponde a qual pasta no squad?",
+      "options": [
+        { "id": "a", "label": "tasks/ — porque verificam se o servico foi feito", "correct": false },
+        { "id": "b", "label": "workflows/ — porque garantem a ordem correta", "correct": false },
+        { "id": "c", "label": "checklists/ — sao os quality gates", "correct": true },
+        { "id": "d", "label": "data/ — porque tem as normas tecnicas", "correct": false }
+      ],
+      "explanation": "Checklists sao a vistoria do squad. Assim como o engenheiro verifica se as tomadas funcionam e os fios seguem norma, os checklists verificam se o output do agente cumpre os criterios de qualidade. Nao passa? Volta pro agente.",
+      "points": 50
+    },
+    {
+      "id": "anat-squadbuilder-1",
+      "type": "squad-builder",
+      "title": "Monte o Squad",
+      "description": "5 clientes precisam de squads diferentes. Para cada pedido, selecione os 8 componentes corretos do baralho. Cada acerto remove a carta da pilha!",
+      "scenarios": [
+        {
+          "id": "sb-copy",
+          "client": "Agencia de Marketing Digital",
+          "request": "Preciso de um squad de copywriting para criar sales pages, emails e anuncios.",
+          "squadName": "copywriter-os",
+          "components": [
+            { "type": "config", "label": "config.yaml", "desc": "Define squad copywriter-os, 5 agentes, 12 tasks" },
+            { "type": "agents", "label": "agents/gary-halbert.md", "desc": "Especialista em direct response e sales pages" },
+            { "type": "tasks", "label": "tasks/create-sales-page.md", "desc": "Processo passo-a-passo para criar sales page" },
+            { "type": "workflows", "label": "workflows/full-pipeline.yaml", "desc": "Pipeline: brief > draft > review > publish" },
+            { "type": "checklists", "label": "checklists/copy-quality.md", "desc": "Quality gate: headline, body, CTA, prova social" },
+            { "type": "templates", "label": "templates/sales-page-tmpl.md", "desc": "Modelo com headline, subhead, bullets, CTA" },
+            { "type": "data", "label": "data/swipe-file.md", "desc": "Colecao de copys premiadas para referencia" },
+            { "type": "skills", "label": "skills/write-copy.md", "desc": "Atalho rapido: /write-copy {tipo} {produto}" }
+          ]
+        },
+        {
+          "id": "sb-legal",
+          "client": "Escritorio de Advocacia",
+          "request": "Quero um squad juridico para analisar contratos e gerar pareceres.",
+          "squadName": "legal-os",
+          "components": [
+            { "type": "config", "label": "config.yaml", "desc": "Define squad legal-os, 4 agentes, 8 tasks" },
+            { "type": "agents", "label": "agents/contract-analyst.md", "desc": "Especialista em analise de clausulas e riscos" },
+            { "type": "tasks", "label": "tasks/analyze-contract.md", "desc": "Processo de analise clausula por clausula" },
+            { "type": "workflows", "label": "workflows/due-diligence.yaml", "desc": "Pipeline: intake > analise > parecer > revisao" },
+            { "type": "checklists", "label": "checklists/compliance.md", "desc": "Quality gate: LGPD, clausulas abusivas, prazos" },
+            { "type": "templates", "label": "templates/parecer-tmpl.md", "desc": "Modelo de parecer juridico estruturado" },
+            { "type": "data", "label": "data/jurisprudencia.md", "desc": "Base de precedentes e decisoes relevantes" },
+            { "type": "skills", "label": "skills/analyze-contract.md", "desc": "Atalho: /analyze-contract {arquivo}" }
+          ]
+        },
+        {
+          "id": "sb-fitness",
+          "client": "Personal Trainer Online",
+          "request": "Preciso de um squad fitness para criar treinos personalizados e acompanhar alunos.",
+          "squadName": "fitness-coach",
+          "components": [
+            { "type": "config", "label": "config.yaml", "desc": "Define squad fitness-coach, 5 agentes, 6 tasks" },
+            { "type": "agents", "label": "agents/treino-architect.md", "desc": "Especialista em periodizacao e programacao" },
+            { "type": "tasks", "label": "tasks/create-workout-plan.md", "desc": "Cria plano de treino baseado no perfil" },
+            { "type": "workflows", "label": "workflows/client-journey.yaml", "desc": "Pipeline: anamnese > plano > acompanhamento" },
+            { "type": "checklists", "label": "checklists/safety-check.md", "desc": "Quality gate: contraindicacoes, carga, progressao" },
+            { "type": "templates", "label": "templates/workout-tmpl.md", "desc": "Modelo de ficha de treino semanal" },
+            { "type": "data", "label": "data/exercise-db.md", "desc": "Base de exercicios com biomechanica e variacoes" },
+            { "type": "skills", "label": "skills/weekly-checkin.md", "desc": "Atalho: /weekly-checkin {aluno}" }
+          ]
+        },
+        {
+          "id": "sb-video",
+          "client": "Youtuber de Tecnologia",
+          "request": "Quero um squad de producao de video para roteiro, edicao e thumbnails.",
+          "squadName": "video-prod",
+          "components": [
+            { "type": "config", "label": "config.yaml", "desc": "Define squad video-prod, 6 agentes, 10 tasks" },
+            { "type": "agents", "label": "agents/script-architect.md", "desc": "Especialista em roteiro com hooks e storytelling" },
+            { "type": "tasks", "label": "tasks/generate-vsl.md", "desc": "Cria roteiro de video com estrutura persuasiva" },
+            { "type": "workflows", "label": "workflows/full-pipeline.yaml", "desc": "Pipeline: roteiro > gravacao > edicao > publish" },
+            { "type": "checklists", "label": "checklists/video-qa.md", "desc": "Quality gate: audio, cortes, pacing, CTA final" },
+            { "type": "templates", "label": "templates/script-tmpl.md", "desc": "Modelo de roteiro com intro/conflito/resolucao" },
+            { "type": "data", "label": "data/hooks-library.md", "desc": "Biblioteca de hooks e aberturas que funcionam" },
+            { "type": "skills", "label": "skills/find-outliers.md", "desc": "Atalho: /find-outliers {canal} {periodo}" }
+          ]
+        },
+        {
+          "id": "sb-finance",
+          "client": "Consultor Financeiro",
+          "request": "Preciso de um squad para organizar financas pessoais e criar dashboards.",
+          "squadName": "personal-finance",
+          "components": [
+            { "type": "config", "label": "config.yaml", "desc": "Define squad personal-finance, 4 agentes, 6 tasks" },
+            { "type": "agents", "label": "agents/finance-chief.md", "desc": "Especialista em planejamento financeiro pessoal" },
+            { "type": "tasks", "label": "tasks/sync-bank-data.md", "desc": "Sincroniza transacoes bancarias automaticamente" },
+            { "type": "workflows", "label": "workflows/monthly-review.yaml", "desc": "Pipeline: sync > categorizar > analisar > report" },
+            { "type": "checklists", "label": "checklists/budget-check.md", "desc": "Quality gate: categorias, limites, metas" },
+            { "type": "templates", "label": "templates/report-tmpl.md", "desc": "Modelo de relatorio financeiro mensal" },
+            { "type": "data", "label": "data/categories.md", "desc": "Taxonomia de categorias de gastos" },
+            { "type": "skills", "label": "skills/troubleshoot.md", "desc": "Atalho: /troubleshoot {problema}" }
+          ]
+        }
+      ],
+      "points": 300
+    }
+  ],
+  "e3-estrutura-aios": [
+    {
+      "id": "aios-mc-1",
+      "type": "multiple-choice",
+      "title": "O Sistema Operacional",
+      "description": "O .aios-core/ e a pasta central do framework AIOS. Qual a melhor descricao do que ele faz?",
+      "options": [
+        { "id": "a", "label": "Armazena o codigo-fonte do projeto", "correct": false },
+        { "id": "b", "label": "Define agentes, tasks, workflows e templates que a IA usa para trabalhar", "correct": true },
+        { "id": "c", "label": "Guarda as credenciais e chaves de API", "correct": false },
+        { "id": "d", "label": "Compila o projeto para producao", "correct": false }
+      ],
+      "explanation": "O .aios-core/ e o sistema operacional dos seus agentes. Ele contem agents/ (quem faz), tasks/ (como faz), workflows/ (em que ordem), templates/ (com que formato) e mais. A IA le essa estrutura e sabe exatamente como operar.",
+      "points": 50
+    },
+    {
+      "id": "aios-sequence-1",
+      "type": "sequence",
+      "title": "Ciclo de Desenvolvimento",
+      "description": "No AIOS, cada story passa por 5 agentes em sequencia. Coloque na ordem correta:",
+      "items": [
+        { "id": "s1", "label": "@pm — Define requisitos", "desc": "PRD e escopo", "correctOrder": 1 },
+        { "id": "s2", "label": "@architect — Projeta arquitetura", "desc": "Stack e estrutura", "correctOrder": 2 },
+        { "id": "s3", "label": "@dev — Implementa codigo", "desc": "Desenvolvimento", "correctOrder": 3 },
+        { "id": "s4", "label": "@qa — Valida qualidade", "desc": "Testes e revisao", "correctOrder": 4 },
+        { "id": "s5", "label": "@devops — Faz deploy", "desc": "Push e release", "correctOrder": 5 }
+      ],
+      "explanation": "O Story Development Cycle segue sempre: @pm (requisitos) → @architect (arquitetura) → @dev (codigo) → @qa (qualidade) → @devops (deploy). Cada agente tem sua responsabilidade clara — ninguem pula etapa.",
+      "points": 100
+    },
+    {
+      "id": "aios-mc-2",
+      "type": "multiple-choice",
+      "title": "Claude Code Sozinho vs Com AIOS",
+      "description": "O Claude Code sozinho e excelente para tarefas isoladas. Mas quando o projeto cresce, qual problema aparece PRIMEIRO?",
+      "options": [
+        { "id": "a", "label": "O Claude fica mais lento", "correct": false },
+        { "id": "b", "label": "Falta de processo — cada conversa comeca do zero sem padrao", "correct": true },
+        { "id": "c", "label": "O modelo de IA nao suporta projetos grandes", "correct": false },
+        { "id": "d", "label": "O terminal nao funciona com muitos arquivos", "correct": false }
+      ],
+      "explanation": "Claude Code e poderoso, mas sem processo voce depende da sua memoria e disciplina. Cada conversa nova e uma folha em branco. O AIOS resolve isso com agents (quem faz), tasks (como faz) e workflows (em que ordem) — processo sistematizado.",
+      "points": 50
+    },
+    {
+      "id": "aios-branching-1",
+      "type": "branching",
+      "title": "Cenario: Novo Feature no Projeto",
+      "description": "Seu projeto cresceu e o cliente pediu uma feature complexa. Tome as decisoes certas.",
+      "steps": [
+        {
+          "id": "step1",
+          "description": "O cliente pediu um sistema de notificacoes. Com AIOS, qual e o primeiro passo?",
+          "options": [
+            { "id": "a", "label": "Abrir o Claude Code e comecar a codar", "correct": false, "feedback": "Sem requisitos definidos, voce vai construir a coisa errada. Processo primeiro." },
+            { "id": "b", "label": "Ativar @pm para definir os requisitos no PRD", "correct": true, "feedback": "Correto! O @pm mapeia requisitos, escopo e criterios de aceitacao. So depois disso o codigo comeca." },
+            { "id": "c", "label": "Criar um branch no Git e testar ideias", "correct": false, "feedback": "Branch sem requisitos = trabalho jogado fora. Defina o que antes do como." },
+            { "id": "d", "label": "Pesquisar bibliotecas de notificacao no npm", "correct": false, "feedback": "Pesquisa de stack e papel do @architect, e vem DEPOIS dos requisitos do @pm." }
+          ]
+        },
+        {
+          "id": "step2",
+          "description": "O @pm definiu os requisitos. Quem entra agora?",
+          "options": [
+            { "id": "a", "label": "@dev — ja pode comecar a codar", "correct": false, "feedback": "Pular a arquitetura = retrabalho. O @architect precisa definir a estrutura primeiro." },
+            { "id": "b", "label": "@architect — projeta a solucao tecnica", "correct": true, "feedback": "Exato! O @architect define stack, APIs, banco e estrutura. O @dev implementa o que o @architect projetou." },
+            { "id": "c", "label": "@qa — ja pode preparar os testes", "correct": false, "feedback": "QA vem depois da implementacao. Sem codigo, nao tem o que testar." },
+            { "id": "d", "label": "@devops — configura o deploy", "correct": false, "feedback": "Deploy e a ultima etapa. Tem muita coisa antes disso." }
+          ]
+        }
+      ],
+      "explanation": "O ciclo sempre segue: @pm (requisitos) → @architect (arquitetura) → @dev (codigo) → @qa (qualidade) → @devops (deploy). Pular etapas gera retrabalho e bugs.",
+      "points": 150
+    }
+  ],
+  "e3-dissecando-aios": [
+    {
+      "id": "dissec-mc-1",
+      "type": "multiple-choice",
+      "title": "A Ponte .claude/",
+      "description": "A pasta .claude/ fica na raiz do projeto e funciona como ponte entre o Claude Code e o AIOS. Qual arquivo dentro dela e a 'memoria permanente' que Claude le toda vez que acorda?",
+      "options": [
+        { "id": "a", "label": "settings.json", "correct": false },
+        { "id": "b", "label": "CLAUDE.md", "correct": true },
+        { "id": "c", "label": "commands/", "correct": false },
+        { "id": "d", "label": "rules/", "correct": false }
+      ],
+      "explanation": "O CLAUDE.md e a memoria permanente. Claude le esse arquivo no inicio de TODA conversa — e por isso que ele sabe quem voce e, como seu projeto funciona e quais padroes seguir. Sem ele, cada conversa comeca do zero.",
+      "points": 50
+    },
+    {
+      "id": "dissec-multiselect-1",
+      "type": "multi-select",
+      "title": "Dentro do .aios-core/",
+      "description": "O .aios-core/ e o sistema operacional dos agentes. Selecione as 4 pastas que existem DENTRO dele:",
+      "requiredCount": 4,
+      "items": [
+        { "id": "core", "label": "core/", "subtitle": "Constituicao e regras", "correct": true },
+        { "id": "development", "label": "development/", "subtitle": "Tasks, scripts, utils", "correct": true },
+        { "id": "product", "label": "product/", "subtitle": "Agents e templates", "correct": true },
+        { "id": "src", "label": "src/", "subtitle": "Codigo-fonte", "correct": false },
+        { "id": "quality", "label": "quality/", "subtitle": "QA e validacao", "correct": true },
+        { "id": "dist", "label": "dist/", "subtitle": "Build output", "correct": false },
+        { "id": "node_modules", "label": "node_modules/", "subtitle": "Dependencias npm", "correct": false }
+      ],
+      "explanation": "As 4 pastas do .aios-core/ sao: core/ (constituicao e regras do sistema), development/ (tasks, scripts e utils do motor de execucao), product/ (agents e templates da equipe) e quality/ (QA, checklists e validacao). Junto com core-config.yaml, formam o SO completo.",
+      "points": 100
+    },
+    {
+      "id": "dissec-sequence-1",
+      "type": "sequence",
+      "title": "Hierarquia do Sistema",
+      "description": "Quando Claude Code inicia, ele le os arquivos numa ordem logica. Coloque na sequencia correta:",
+      "items": [
+        { "id": "h1", "label": ".claude/CLAUDE.md", "desc": "Memoria permanente", "correctOrder": 1 },
+        { "id": "h2", "label": ".claude/rules/", "desc": "Regras operacionais", "correctOrder": 2 },
+        { "id": "h3", "label": ".aios-core/core/", "desc": "Constituicao do sistema", "correctOrder": 3 },
+        { "id": "h4", "label": ".aios-core/product/agents/", "desc": "Definicoes dos agentes", "correctOrder": 4 },
+        { "id": "h5", "label": ".aios-core/development/tasks/", "desc": "Workflows executaveis", "correctOrder": 5 }
+      ],
+      "explanation": "A hierarquia segue do geral para o especifico: primeiro a memoria (.claude/CLAUDE.md), depois as regras (.claude/rules/), a constituicao do sistema (.aios-core/core/), os agentes (.aios-core/product/agents/) e finalmente as tasks executaveis (.aios-core/development/tasks/).",
+      "points": 100
+    },
+    {
+      "id": "dissec-mc-2",
+      "type": "multiple-choice",
+      "title": "A Constituicao",
+      "description": "Dentro de .aios-core/core/ existe a 'constituicao' do sistema. O que ela define?",
+      "options": [
+        { "id": "a", "label": "As credenciais e chaves de API", "correct": false },
+        { "id": "b", "label": "As leis que TODOS os agentes devem seguir — padrao de qualidade, seguranca e processo", "correct": true },
+        { "id": "c", "label": "A lista de agentes disponiveis", "correct": false },
+        { "id": "d", "label": "Os templates de documentos", "correct": false }
+      ],
+      "explanation": "A constituicao em core/ define as leis fundamentais: padrao de qualidade, regras de seguranca, processo obrigatorio. Nenhum agente pode violar essas regras — assim como leis de um pais, elas estao acima de qualquer individuo.",
+      "points": 50
+    },
+    {
+      "id": "dissec-branching-1",
+      "type": "branching",
+      "title": "Cenario: Navegando o .aios-core/",
+      "description": "Voce precisa encontrar informacoes especificas dentro do .aios-core/. Navegue pelas pastas certas.",
+      "steps": [
+        {
+          "id": "step1",
+          "description": "Voce quer ver a lista de todos os agentes disponiveis e suas personas. Em qual pasta voce procura?",
+          "options": [
+            { "id": "a", "label": ".aios-core/core/", "correct": false, "feedback": "Core tem as leis do sistema, nao as definicoes dos agentes." },
+            { "id": "b", "label": ".aios-core/product/agents/", "correct": true, "feedback": "Correto! Cada agente tem seu arquivo .md em product/agents/ com persona, comandos e dependencias." },
+            { "id": "c", "label": ".aios-core/development/tasks/", "correct": false, "feedback": "Tasks sao as ordens de servico. Os agentes ficam em product/agents/." },
+            { "id": "d", "label": ".claude/commands/", "correct": false, "feedback": "Commands sao atalhos do Claude Code, nao definicoes de agentes." }
+          ]
+        },
+        {
+          "id": "step2",
+          "description": "Agora voce quer criar um documento novo usando um modelo padrao. Onde estao os templates?",
+          "options": [
+            { "id": "a", "label": ".aios-core/product/templates/", "correct": true, "feedback": "Exato! Templates ficam em product/templates/ — sao os modelos que os agentes usam para gerar documentos padronizados." },
+            { "id": "b", "label": ".aios-core/development/scripts/", "correct": false, "feedback": "Scripts sao codigo de automacao, nao templates de documentos." },
+            { "id": "c", "label": ".aios-core/core/", "correct": false, "feedback": "Core tem a constituicao, nao templates." },
+            { "id": "d", "label": ".claude/rules/", "correct": false, "feedback": "Rules sao regras operacionais do Claude Code, nao modelos de documentos." }
+          ]
+        }
+      ],
+      "explanation": "A organizacao e logica: product/ tem o que a equipe usa (agents/, templates/), development/ tem o motor (tasks/, scripts/, utils/), core/ tem as leis, e quality/ tem validacao. Saber navegar e essencial.",
+      "points": 150
+    }
+  ],
+  "e4-identidade": [
+    {
+      "id": "e4-identidade-branching-1",
+      "type": "branching",
+      "title": "Teste de Identidade AIOS",
+      "description": "Responda 4 situacoes do dia-a-dia e descubra se voce e mais Maker ou Thinker.",
+      "steps": [
+        {
+          "id": "step1",
+          "description": "Voce teve uma ideia de app. Qual e o seu PRIMEIRO instinto?",
+          "options": [
+            { "id": "a", "label": "Abrir o terminal e comecar a construir um prototipo", "correct": true, "feedback": "Instinto Maker! Voce quer ver funcionando o mais rapido possivel." },
+            { "id": "b", "label": "Abrir um documento e mapear os requisitos", "correct": false, "feedback": "Instinto Thinker! Voce quer planejar antes de construir." },
+            { "id": "c", "label": "Pesquisar concorrentes e mercado", "correct": false, "feedback": "Instinto Thinker! Analise e estrategia antes de acao." },
+            { "id": "d", "label": "Fazer deploy de uma versao minima pra testar", "correct": true, "feedback": "Instinto Maker total! Testar na pratica e a sua praia." }
+          ]
+        },
+        {
+          "id": "step2",
+          "description": "O cliente pediu um projeto complexo. O que voce faz?",
+          "options": [
+            { "id": "a", "label": "Divide em tarefas menores e comeca a primeira", "correct": true, "feedback": "Maker: divide e conquista. Acao imediata." },
+            { "id": "b", "label": "Cria um documento detalhado com todo o escopo", "correct": false, "feedback": "Thinker: documenta tudo antes de mover uma peca." },
+            { "id": "c", "label": "Faz um brainstorming das melhores abordagens", "correct": false, "feedback": "Thinker: explora possibilidades antes de escolher." },
+            { "id": "d", "label": "Configura o ambiente e faz o setup tecnico", "correct": true, "feedback": "Maker: mao na massa desde o primeiro minuto." }
+          ]
+        },
+        {
+          "id": "step3",
+          "description": "Voce terminou um projeto. O que te da mais satisfacao?",
+          "options": [
+            { "id": "a", "label": "Ver o projeto rodando ao vivo, no ar", "correct": true, "feedback": "Maker: o deploy e a recompensa. Ver funcionando e tudo." },
+            { "id": "b", "label": "Ter um documento completo que guia qualquer pessoa", "correct": false, "feedback": "Thinker: a documentacao E o produto pra voce." },
+            { "id": "c", "label": "Saber que o plano foi seguido sem desvios", "correct": false, "feedback": "Thinker: processo e qualidade acima de velocidade." },
+            { "id": "d", "label": "Mostrar o resultado para alguem e ver a reacao", "correct": true, "feedback": "Maker: resultado visivel, tangivel, demonstravel." }
+          ]
+        },
+        {
+          "id": "step4",
+          "description": "Qual frase define melhor voce?",
+          "options": [
+            { "id": "a", "label": "Feito e melhor que perfeito", "correct": true, "feedback": "Maker classico: entrega rapido, melhora depois." },
+            { "id": "b", "label": "Medir duas vezes, cortar uma", "correct": false, "feedback": "Thinker classico: planejamento evita retrabalho." },
+            { "id": "c", "label": "Uma boa estrategia bate qualquer execucao", "correct": false, "feedback": "Thinker puro: direcao e mais importante que velocidade." },
+            { "id": "d", "label": "Codigo no ar vale mais que PRD na gaveta", "correct": true, "feedback": "Maker puro: resultado pratico e o que conta." }
+          ]
+        }
+      ],
+      "explanation": "Se voce escolheu mais opcoes A e D: voce e mais MAKER. Opcoes B e C: mais THINKER. Lembre: ninguem e 100% um ou outro. O AIOS tem fluxos para os dois!",
+      "points": 200
+    },
+    {
+      "id": "e4-identidade-mc-1",
+      "type": "multiple-choice",
+      "title": "Agentes do Maker",
+      "description": "O Maker quer construir, testar e colocar no ar. Qual trio de agentes e o 'dream team' do Maker?",
+      "options": [
+        { "id": "a", "label": "@dev (Dex) + @qa (Quinn) + @devops (Gage)", "correct": true },
+        { "id": "b", "label": "@pm (Morgan) + @analyst + @architect (Aria)", "correct": false },
+        { "id": "c", "label": "@sm (River) + @po (Pax) + @pm (Morgan)", "correct": false },
+        { "id": "d", "label": "@architect (Aria) + @dev (Dex) + @analyst", "correct": false }
+      ],
+      "explanation": "O dream team do Maker: @dev (implementa), @qa (valida qualidade) e @devops (faz deploy). Construir, verificar, colocar no ar. O ciclo do Maker.",
+      "points": 50
+    },
+    {
+      "id": "e4-identidade-mc-2",
+      "type": "multiple-choice",
+      "title": "Agentes do Thinker",
+      "description": "O Thinker quer planejar, documentar e estruturar. Qual trio de agentes e o 'dream team' do Thinker?",
+      "options": [
+        { "id": "a", "label": "@dev (Dex) + @qa (Quinn) + @devops (Gage)", "correct": false },
+        { "id": "b", "label": "@pm (Morgan) + @analyst + @architect (Aria)", "correct": true },
+        { "id": "c", "label": "@sm (River) + @dev (Dex) + @devops (Gage)", "correct": false },
+        { "id": "d", "label": "@qa (Quinn) + @po (Pax) + @data-engineer", "correct": false }
+      ],
+      "explanation": "O dream team do Thinker: @pm (requisitos e PRD), @analyst (pesquisa e brainstorming) e @architect (arquitetura tecnica). Planejar, pesquisar, projetar. O ciclo do Thinker.",
+      "points": 50
+    }
+  ],
+  "e4-maker": [
+    {
+      "id": "e4-maker-sequence-1",
+      "type": "sequence",
+      "title": "Ordem do Fluxo Maker",
+      "description": "O Maker segue o Story Development Cycle (SDC). Coloque os 5 passos na ordem correta:",
+      "items": [
+        { "id": "m1", "label": "@sm cria a story", "desc": "A receita do prato", "correctOrder": 1 },
+        { "id": "m2", "label": "@po valida a story", "desc": "Aprovacao do cardapio", "correctOrder": 2 },
+        { "id": "m3", "label": "@dev implementa", "desc": "O chef cozinha", "correctOrder": 3 },
+        { "id": "m4", "label": "@qa faz QA Gate", "desc": "Vistoria do prato", "correctOrder": 4 },
+        { "id": "m5", "label": "@devops faz deploy", "desc": "Serviu na mesa", "correctOrder": 5 }
+      ],
+      "explanation": "O SDC sempre segue: @sm (cria story) → @po (valida) → @dev (implementa) → @qa (verifica qualidade) → @devops (deploy). Como um restaurante: receita → aprovacao → cozinha → vistoria → mesa.",
+      "points": 100
+    },
+    {
+      "id": "e4-maker-mc-1",
+      "type": "multiple-choice",
+      "title": "Modo de Desenvolvimento",
+      "description": "Voce recebeu uma story simples e clara: 'Adicionar botao de logout no header'. Qual modo do @dev e mais adequado?",
+      "options": [
+        { "id": "a", "label": "YOLO — autonomo, 0-1 prompts", "correct": true },
+        { "id": "b", "label": "Interactive — guiado, 5-10 prompts", "correct": false },
+        { "id": "c", "label": "Pre-Flight — todas perguntas antes", "correct": false },
+        { "id": "d", "label": "Manual — voce escreve o codigo", "correct": false }
+      ],
+      "explanation": "YOLO e para stories simples e claras onde nao ha ambiguidade. O @dev decide tudo sozinho e entrega rapido. Para stories complexas ou quando voce quer aprender, use Interactive ou Pre-Flight.",
+      "points": 50
+    },
+    {
+      "id": "e4-maker-branching-1",
+      "type": "branching",
+      "title": "Cenario: QA Gate Falhou",
+      "description": "Voce implementou a feature de login. O @qa rodou o QA Gate e retornou FAIL. Tome as decisoes certas.",
+      "steps": [
+        {
+          "id": "step1",
+          "description": "O @qa retornou FAIL com feedback: 'Sem testes unitarios para recuperacao de senha'. O que voce faz?",
+          "options": [
+            { "id": "a", "label": "Ignora e pede pro @devops fazer deploy mesmo assim", "correct": false, "feedback": "NUNCA! O QA Gate e obrigatorio. Sem PASS, nao tem deploy." },
+            { "id": "b", "label": "Pede pro @dev adicionar os testes que faltam", "correct": true, "feedback": "Correto! O @dev recebe o feedback especifico e corrige. Depois roda o QA Gate de novo." },
+            { "id": "c", "label": "Recria a story do zero", "correct": false, "feedback": "Excessivo. O QA Gate aponta exatamente o que falta — so precisa corrigir." },
+            { "id": "d", "label": "Muda o criterio de qualidade pra nao exigir testes", "correct": false, "feedback": "Nunca baixe o padrao de qualidade. Corrija o codigo, nao o criterio." }
+          ]
+        },
+        {
+          "id": "step2",
+          "description": "O @dev adicionou os testes. O @qa roda novamente e retorna PASS (7/7). Qual e o proximo passo?",
+          "options": [
+            { "id": "a", "label": "@devops faz push + deploy", "correct": true, "feedback": "Exato! Com PASS do QA Gate, o @devops pode fazer push com seguranca. Deploy autorizado!" },
+            { "id": "b", "label": "Roda o QA Gate mais uma vez pra ter certeza", "correct": false, "feedback": "Desnecessario. PASS e PASS. Confia no processo." },
+            { "id": "c", "label": "@architect revisa a arquitetura", "correct": false, "feedback": "Arquitetura ja foi definida antes. Nesta fase, e so deploy." },
+            { "id": "d", "label": "@pm valida os requisitos novamente", "correct": false, "feedback": "Requisitos ja foram validados pela story. QA Gate cobre a implementacao." }
+          ]
+        }
+      ],
+      "explanation": "Quando o QA Gate retorna FAIL, o @dev corrige o problema especifico e roda novamente. So com PASS o @devops faz deploy. O processo protege a qualidade.",
+      "points": 150
+    },
+    {
+      "id": "e4-maker-terminal-1",
+      "type": "terminal",
+      "title": "Ative o Dev",
+      "description": "Voce quer comecar a implementar uma story. Qual comando ativa o agente desenvolvedor?",
+      "prompt": "meu-projeto $",
+      "answer": "@dev",
+      "alternateAnswers": ["@dev *develop"],
+      "hint": "Use @ seguido do nome do agente",
+      "successOutput": [
+        "Ativando @dev (Dex)...",
+        "Developer ready. Qual story devo implementar?"
+      ],
+      "explanation": "O @dev e o agente que implementa codigo. Ative com @dev e ele entra em modo de desenvolvimento, pronto para receber uma story.",
+      "points": 50
+    }
+  ],
+  "e4-thinker": [
+    {
+      "id": "e4-thinker-sequence-1",
+      "type": "sequence",
+      "title": "Ordem do Fluxo Thinker",
+      "description": "O Thinker segue o Spec Pipeline. Coloque os 5 passos na ordem correta:",
+      "items": [
+        { "id": "t1", "label": "Elicitacao + Brief", "desc": "@pm coleta requisitos", "correctOrder": 1 },
+        { "id": "t2", "label": "PRD completo", "desc": "@pm gera documento", "correctOrder": 2 },
+        { "id": "t3", "label": "Arquitetura tecnica", "desc": "@architect projeta", "correctOrder": 3 },
+        { "id": "t4", "label": "Sharding em stories", "desc": "@pm quebra o PRD", "correctOrder": 4 },
+        { "id": "t5", "label": "Stories pro Maker", "desc": "Pronto para SDC", "correctOrder": 5 }
+      ],
+      "explanation": "O Spec Pipeline: Elicitacao (captura tudo) → PRD (documenta tudo) → Arquitetura (projeta tudo) → Sharding (quebra em pedacos) → Stories prontas para o Maker executar.",
+      "points": 100
+    },
+    {
+      "id": "e4-thinker-mc-1",
+      "type": "multiple-choice",
+      "title": "O Papel do Architect",
+      "description": "O @architect (Aria) recebe o PRD do @pm. O que ela faz com ele?",
+      "options": [
+        { "id": "a", "label": "Implementa o codigo do projeto", "correct": false },
+        { "id": "b", "label": "Transforma requisitos em decisoes tecnicas: stack, estrutura, integracoes", "correct": true },
+        { "id": "c", "label": "Valida se o PRD esta completo", "correct": false },
+        { "id": "d", "label": "Faz deploy do projeto", "correct": false }
+      ],
+      "explanation": "O @architect transforma o PRD (O QUE construir) em arquitetura (COMO construir): qual tecnologia, qual estrutura, quais integracoes. O Thinker nao precisa saber codigo — precisa saber que o PRD guia tudo.",
+      "points": 50
+    },
+    {
+      "id": "e4-thinker-branching-1",
+      "type": "branching",
+      "title": "Cenario: Cliente Quer App de Delivery",
+      "description": "Um cliente pede um app de delivery. Navegue pelo fluxo Thinker para entregar o blueprint.",
+      "steps": [
+        {
+          "id": "step1",
+          "description": "O cliente disse: 'Quero um app de delivery com taxa zero para restaurantes pequenos.' Qual e o primeiro passo no fluxo Thinker?",
+          "options": [
+            { "id": "a", "label": "Pedir pro @dev comecar a codar o app", "correct": false, "feedback": "Sem requisitos? O @dev vai construir a coisa errada. Thinker primeiro, Maker depois." },
+            { "id": "b", "label": "Ativar @pm para elicitacao estruturada", "correct": true, "feedback": "Correto! O @pm faz as perguntas certas: publico? dor? diferencial? metricas? Nada fica esquecido." },
+            { "id": "c", "label": "Pesquisar os concorrentes no mercado", "correct": false, "feedback": "Pesquisa e importante, mas vem DENTRO da elicitacao do @pm. Ele ja pergunta sobre concorrentes." },
+            { "id": "d", "label": "Definir a tecnologia a ser usada", "correct": false, "feedback": "Tecnologia e decisao do @architect, e vem DEPOIS do PRD. Requisitos primeiro." }
+          ]
+        },
+        {
+          "id": "step2",
+          "description": "O @pm gerou o PRD com 12 user stories e 8 requisitos funcionais. O PRD e grande demais para um agente so executar. O que voce faz?",
+          "options": [
+            { "id": "a", "label": "Manda o PRD inteiro pro @dev e pede 'faz tudo'", "correct": false, "feedback": "PRD inteiro num contexto so = perda de qualidade. Contextos menores = resultados melhores." },
+            { "id": "b", "label": "Executa *shard-doc para quebrar em stories executaveis", "correct": true, "feedback": "Perfeito! O sharding quebra o PRD em stories independentes, cada uma executavel pelo Maker no SDC." },
+            { "id": "c", "label": "Resume o PRD para ficar menor", "correct": false, "feedback": "Resumir perde detalhes importantes. O sharding preserva tudo, so organiza em pedacos menores." },
+            { "id": "d", "label": "Deleta as user stories menos importantes", "correct": false, "feedback": "Cortar escopo pode ser necessario, mas a decisao vem do @po, nao do desenvolvedor." }
+          ]
+        },
+        {
+          "id": "step3",
+          "description": "Apos o sharding, voce tem 8 stories prontas. O que acontece agora?",
+          "options": [
+            { "id": "a", "label": "O Thinker entrega as stories para o Maker executar o SDC", "correct": true, "feedback": "Exato! Aqui os dois mundos se encontram. O Thinker planejou, o Maker executa. AIOS conecta os dois." },
+            { "id": "b", "label": "O Thinker implementa as stories ele mesmo", "correct": false, "feedback": "O Thinker planeja, nao implementa. Cada um no que e melhor." },
+            { "id": "c", "label": "Volta pro @pm para refazer o PRD", "correct": false, "feedback": "O PRD ja esta pronto e shardado. Hora de executar, nao de replanejar." },
+            { "id": "d", "label": "Faz deploy direto sem implementar", "correct": false, "feedback": "Stories sao especificacoes, nao codigo. Precisam ser implementadas pelo @dev primeiro." }
+          ]
+        }
+      ],
+      "explanation": "O fluxo Thinker: @pm (elicitacao) → PRD (documento) → @architect (arquitetura) → sharding (stories) → entrega pro Maker. O Thinker nao escreve codigo — ele escreve a DIRECAO.",
+      "points": 150
+    },
+    {
+      "id": "e4-thinker-multiselect-1",
+      "type": "multi-select",
+      "title": "O Que Um Bom PRD Tem",
+      "description": "Selecione os 4 elementos essenciais de um PRD completo:",
+      "requiredCount": 4,
+      "items": [
+        { "id": "overview", "label": "Overview", "subtitle": "O que e e para quem", "correct": true },
+        { "id": "user-stories", "label": "User Stories", "subtitle": "Como usuario, quero X para Y", "correct": true },
+        { "id": "code", "label": "Codigo-fonte", "subtitle": "Implementacao tecnica", "correct": false },
+        { "id": "fr", "label": "Requisitos Funcionais", "subtitle": "O sistema DEVE fazer X", "correct": true },
+        { "id": "nfr", "label": "Requisitos Nao-Funcionais", "subtitle": "Performance, seguranca", "correct": true },
+        { "id": "deploy", "label": "Deploy config", "subtitle": "Configuracao de servidor", "correct": false }
+      ],
+      "explanation": "Um PRD completo tem: Overview (visao geral), User Stories (perspectiva do usuario), Requisitos Funcionais (o que o sistema faz) e Requisitos Nao-Funcionais (como o sistema se comporta). Codigo e deploy NAO fazem parte do PRD — eles vem DEPOIS.",
+      "points": 100
+    }
+  ]
+}

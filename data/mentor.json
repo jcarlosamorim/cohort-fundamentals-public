@@ -1,0 +1,28 @@
+{
+  "mentor": {
+    "id": "jose-amorim",
+    "name": "Jose Carlos Amorim",
+    "title": "Arquiteto de Sistemas AIOS",
+    "bio": "Criador do AIOS Framework. Especialista em orquestração de agentes e automação de sistemas complexos.",
+    "expertise": [
+      "AIOS Framework Architecture",
+      "Agent Design & Orchestration",
+      "Workflow Automation",
+      "System Design",
+      "Quality Gates & Validation"
+    ],
+    "social": {
+      "linkedin": "https://linkedin.com/in/josecarlosamorim",
+      "twitter": "@josecarlosamorim",
+      "website": "https://aios.com"
+    },
+    "cohort": {
+      "type": "Fundamentals",
+      "level": "E1-E8",
+      "duration_weeks": 4,
+      "schedule": "Quintas e Segundas às 18:00"
+    },
+    "big_idea": "Do Universo à Fábrica - Domine os 8 pilares fundamentais do AIOS",
+    "promise": "Ao final de 4 semanas, você terá construído seu primeiro squad funcional com agents, tasks, PRD e subagentes."
+  }
+}

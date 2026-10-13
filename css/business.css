@@ -1,0 +1,1107 @@
+/* ==========================================================================
+   BUSINESS - Revenue Operating System page styles
+   Sections: Offer, Core Four, Pipeline (Kanban), Lead Search, Roadmap
+   Uses design tokens from tokens.css. Supports dark/light themes.
+   ========================================================================== */
+
+/* ── Layout ────────────────────────────────────────────────────────────── */
+
+.biz-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ── Empty State ───────────────────────────────────────────────────────── */
+
+.biz-empty {
+  padding: 3rem 1.5rem;
+}
+
+.biz-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-pink);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.biz-cta-btn:hover { opacity: 0.85; }
+
+/* ── Section Label (shared) ────────────────────────────────────────────── */
+
+.biz-content .section-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.75rem;
+}
+.biz-content .section-label svg {
+  opacity: 0.6;
+}
+
+/* ── Suggestion Reasoning ─────────────────────────────────────────────── */
+
+.biz-reasoning {
+  margin-top: 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-secondary);
+  overflow: hidden;
+  animation: biz-fade-in 0.3s ease;
+}
+
+.biz-reasoning__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.biz-reasoning__header:hover { color: var(--color-text-secondary); }
+.biz-reasoning__header svg:first-child { opacity: 0.5; }
+
+.biz-reasoning__chevron {
+  margin-left: auto;
+  transition: transform 0.2s;
+}
+.biz-reasoning--collapsed .biz-reasoning__chevron {
+  transform: rotate(-90deg);
+}
+.biz-reasoning--collapsed .biz-reasoning__body {
+  display: none;
+}
+
+.biz-reasoning__body {
+  padding: 0 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.biz-reasoning__item {
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--color-border);
+}
+.biz-reasoning__item:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.biz-reasoning__label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-accent-gold);
+  margin-bottom: 0.25rem;
+}
+
+.biz-reasoning__text {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+}
+
+/* ── Offer Card ────────────────────────────────────────────────────────── */
+
+.biz-offer-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
+
+.biz-offer-field {
+  margin-bottom: 1rem;
+}
+.biz-offer-field:last-child { margin-bottom: 0; }
+
+.biz-offer-field label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+}
+
+.biz-offer-field input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-primary);
+  font-size: 0.85rem;
+  font-family: var(--font-family);
+  transition: border-color 0.15s;
+}
+.biz-offer-field input:focus {
+  outline: none;
+  border-color: var(--color-accent-gold);
+}
+.biz-offer-field input[type="number"] {
+  max-width: 160px;
+}
+
+.biz-offer-field textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-primary);
+  font-size: 0.85rem;
+  font-family: var(--font-family);
+  transition: border-color 0.15s;
+  resize: vertical;
+  min-height: 60px;
+}
+.biz-offer-field textarea:focus {
+  outline: none;
+  border-color: var(--color-accent-gold);
+}
+
+.biz-offer-field select {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-primary);
+  font-size: 0.85rem;
+  font-family: var(--font-family);
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.biz-offer-field select:focus {
+  outline: none;
+  border-color: var(--color-accent-gold);
+}
+
+.biz-offer-hint {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+  margin-bottom: 0.35rem;
+}
+
+.biz-offer-row {
+  display: flex;
+  gap: 1rem;
+}
+.biz-offer-row .biz-offer-field { flex: 1; }
+
+/* Offer bottom: Value Score + Analyze button */
+.biz-offer-bottom {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* Value Score bar */
+.biz-value-score {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+.biz-value-score__label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+.biz-value-score__bar {
+  flex: 1;
+  height: 8px;
+  background: var(--color-white-10);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.biz-value-score__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-accent-green), var(--color-accent-gold));
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+.biz-value-score__num {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--color-accent-gold);
+  min-width: 2.5rem;
+  text-align: right;
+}
+
+/* Analysis Result */
+.biz-analysis {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border);
+}
+.biz-analysis__header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+.biz-analysis__header svg { opacity: 0.5; }
+
+.biz-analysis__scores {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+.biz-analysis__score-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.biz-analysis__score-row--weak {
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.6rem;
+  margin: 0 -0.6rem;
+}
+.biz-analysis__score-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 180px;
+  font-size: 0.73rem;
+  color: var(--color-text-secondary);
+}
+.biz-analysis__weak-badge {
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.1rem 0.35rem;
+  border-radius: 999px;
+  background: rgba(239,68,68,0.15);
+  color: var(--color-danger, #ef4444);
+  border: 1px solid rgba(239,68,68,0.25);
+}
+.biz-analysis__score-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--color-white-10);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.biz-analysis__score-fill {
+  height: 100%;
+  background: var(--color-accent-green);
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+.biz-analysis__score-row--weak .biz-analysis__score-fill {
+  background: var(--color-danger, #ef4444);
+}
+.biz-analysis__score-num {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  min-width: 2.5rem;
+  text-align: right;
+}
+
+.biz-analysis__formula {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  padding: 0.5rem 0.7rem;
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-sm);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.biz-analysis__formula strong {
+  color: var(--color-accent-gold);
+  font-size: 0.85rem;
+}
+
+.biz-analysis__diagnosis {
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0 0 1rem;
+}
+
+.biz-analysis__suggestions {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem;
+}
+.biz-analysis__suggestions-title {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--color-accent-green);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+.biz-analysis__suggestions-title svg { flex-shrink: 0; }
+.biz-analysis__suggestions-list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+.biz-analysis__suggestions-list li {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+  margin-bottom: 0.35rem;
+}
+.biz-analysis__suggestions-list li:last-child { margin-bottom: 0; }
+
+/* Analysis error */
+.biz-analysis-error {
+  margin-top: 0.75rem;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.75rem;
+  color: var(--color-danger, #ef4444);
+  background: rgba(239,68,68,0.08);
+  border: 1px solid rgba(239,68,68,0.2);
+  border-radius: var(--radius-sm);
+}
+
+/* ── Core Four ─────────────────────────────────────────────────────────── */
+
+.biz-cf-intro {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0 0 1rem;
+}
+.biz-cf-intro strong {
+  color: var(--color-accent-gold);
+}
+
+.biz-corefour-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.biz-cf-item {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.15rem;
+  transition: border-color 0.15s;
+  display: flex;
+  flex-direction: column;
+}
+.biz-cf-item--primary {
+  border-color: var(--color-accent-gold-30);
+}
+.biz-cf-item--locked {
+  opacity: 0.55;
+}
+
+.biz-cf-item__header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+.biz-cf-item__header svg {
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.biz-cf-badge {
+  margin-left: auto;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.4rem;
+  border-radius: 999px;
+  background: var(--color-accent-gold-10);
+  color: var(--color-accent-gold);
+  border: 1px solid var(--color-accent-gold-20);
+}
+.biz-cf-badge--locked {
+  background: var(--color-white-5);
+  color: var(--color-text-muted);
+  border-color: var(--color-border);
+}
+
+/* Meta fixa em destaque */
+.biz-cf-goal {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+.biz-cf-goal__number {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  font-family: var(--font-mono);
+  line-height: 1;
+}
+.biz-cf-item--primary .biz-cf-goal__number {
+  color: var(--color-accent-gold);
+}
+.biz-cf-goal__unit {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Descricao do canal */
+.biz-cf-desc {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0 0 0.85rem;
+  flex: 1;
+}
+
+/* Projecao de futuro */
+.biz-cf-projection {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.8rem;
+  margin-top: auto;
+}
+.biz-cf-projection__header {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--color-accent-green);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.4rem;
+}
+.biz-cf-projection__header svg {
+  flex-shrink: 0;
+}
+.biz-cf-projection__text {
+  font-size: 0.73rem;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Canal travado */
+.biz-cf-locked-msg {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-bottom: 0.85rem;
+}
+.biz-cf-locked-msg svg {
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+/* ── Kanban ─────────────────────────────────────────────────────────────── */
+
+.biz-kanban {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.biz-kanban-col {
+  flex: 1;
+  min-width: 160px;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.5rem;
+  transition: border-color 0.15s, background 0.15s;
+}
+.biz-kanban-col--dragover {
+  border-color: var(--color-accent-gold);
+  background: var(--color-accent-gold-10);
+}
+
+.biz-kanban-col__header {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.25rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+.biz-kanban-col__header svg { opacity: 0.5; }
+
+.biz-kanban-col__count {
+  margin-left: auto;
+  background: var(--color-white-10);
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  font-size: 0.6rem;
+}
+
+.biz-kanban-col__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-height: 60px;
+}
+
+/* Kanban Card */
+.biz-kanban-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem;
+  cursor: grab;
+  transition: box-shadow 0.15s, opacity 0.15s;
+}
+.biz-kanban-card:hover {
+  box-shadow: var(--shadow-md);
+}
+.biz-kanban-card--dragging {
+  opacity: 0.4;
+}
+
+.biz-kanban-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-bottom: 0.25rem;
+}
+.biz-kanban-card__header svg { opacity: 0.4; flex-shrink: 0; }
+.biz-kanban-card__header strong {
+  font-size: 0.75rem;
+  color: var(--color-text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.biz-kanban-card__delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.15rem;
+  opacity: 0;
+  transition: opacity 0.15s;
+  color: var(--color-danger);
+  flex-shrink: 0;
+}
+.biz-kanban-card:hover .biz-kanban-card__delete { opacity: 0.7; }
+.biz-kanban-card__delete:hover { opacity: 1; }
+
+.biz-kanban-card__handle {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.2rem;
+}
+.biz-kanban-card__bio {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+  margin-bottom: 0.2rem;
+}
+.biz-kanban-card__followers {
+  font-size: 0.6rem;
+  color: var(--color-text-muted);
+}
+.biz-kanban-card__msg-badge {
+  display: inline-block;
+  margin-top: 0.3rem;
+  font-size: 0.55rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.4rem;
+  border-radius: 999px;
+  background: var(--color-accent-green-10);
+  color: var(--color-accent-green);
+  border: 1px solid var(--color-accent-green-20);
+}
+
+/* ── Pipeline Header + Add Button ──────────────────────────────────────── */
+
+.biz-pipeline-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+.biz-pipeline-header .section-label { margin-bottom: 0; }
+
+.biz-pipeline-add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.85rem;
+  background: var(--color-accent-green-10);
+  border: 1px solid var(--color-accent-green-20);
+  border-radius: var(--radius-sm);
+  color: var(--color-accent-green);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: var(--font-family);
+}
+.biz-pipeline-add-btn:hover {
+  background: rgba(34,197,94,0.15);
+  border-color: var(--color-accent-green);
+}
+
+/* ── Pipeline Form (Add/Edit) ──────────────────────────────────────────── */
+
+.biz-pipeline-form {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-accent-gold-30);
+  border-radius: var(--radius-lg);
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.biz-pipeline-form__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.biz-pipeline-form__close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  padding: 0.2rem;
+  transition: color 0.15s;
+}
+.biz-pipeline-form__close:hover { color: var(--color-text-primary); }
+
+.biz-pipeline-form__body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.biz-pipeline-form__row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.biz-pipeline-form__field {
+  flex: 1;
+}
+.biz-pipeline-form__field label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.3rem;
+}
+.biz-pipeline-form__field input,
+.biz-pipeline-form__field select,
+.biz-pipeline-form__field textarea {
+  width: 100%;
+  padding: 0.5rem 0.65rem;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-primary);
+  font-size: 0.8rem;
+  font-family: var(--font-family);
+  transition: border-color 0.15s;
+  resize: vertical;
+}
+.biz-pipeline-form__field input:focus,
+.biz-pipeline-form__field select:focus,
+.biz-pipeline-form__field textarea:focus {
+  outline: none;
+  border-color: var(--color-accent-gold);
+}
+.biz-pipeline-form__field select {
+  cursor: pointer;
+}
+.biz-pipeline-form__field input[type="number"] {
+  max-width: 140px;
+}
+
+.biz-pipeline-form__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.biz-pipeline-form__cancel {
+  padding: 0.45rem 0.9rem;
+  background: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-family);
+  transition: all 0.15s;
+}
+.biz-pipeline-form__cancel:hover {
+  border-color: var(--color-text-muted);
+  color: var(--color-text-secondary);
+}
+
+.biz-pipeline-form__save {
+  padding: 0.45rem 1.1rem;
+  background: var(--color-accent-gold);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: #000;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: var(--font-family);
+  transition: opacity 0.15s;
+}
+.biz-pipeline-form__save:hover { opacity: 0.85; }
+
+/* ── Card Edit Button ──────────────────────────────────────────────────── */
+
+.biz-kanban-card__edit {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.15rem;
+  opacity: 0;
+  transition: opacity 0.15s;
+  color: var(--color-accent-gold);
+  flex-shrink: 0;
+}
+.biz-kanban-card:hover .biz-kanban-card__edit { opacity: 0.7; }
+.biz-kanban-card__edit:hover { opacity: 1; }
+
+/* ── Apify Instruction Card ───────────────────────────────────────────── */
+
+.biz-apify-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
+
+.biz-apify-card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+.biz-apify-card__header svg { opacity: 0.5; flex-shrink: 0; }
+.biz-apify-card__header strong {
+  font-size: 0.85rem;
+  color: var(--color-text-primary);
+  display: block;
+}
+.biz-apify-card__subtitle {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  display: block;
+  margin-top: 0.1rem;
+}
+
+.biz-apify-card__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.biz-apify-step {
+  display: flex;
+  gap: 0.75rem;
+}
+.biz-apify-step__num {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent-gold-10);
+  border: 1px solid var(--color-accent-gold-20);
+  border-radius: 50%;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--color-accent-gold);
+}
+.biz-apify-step strong {
+  font-size: 0.78rem;
+  color: var(--color-text-primary);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+.biz-apify-step p {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+.biz-apify-step ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1rem;
+  list-style: disc;
+}
+.biz-apify-step li {
+  font-size: 0.73rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin-bottom: 0.15rem;
+}
+.biz-apify-step code {
+  font-size: 0.72rem;
+  background: var(--color-white-10);
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  color: var(--color-accent-gold);
+  font-family: var(--font-mono);
+}
+
+.biz-apify-card__tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  padding: 0.75rem;
+  background: var(--color-accent-gold-10);
+  border: 1px solid var(--color-accent-gold-20);
+  border-radius: var(--radius-sm);
+  font-size: 0.73rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+}
+.biz-apify-card__tip svg {
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  color: var(--color-accent-gold);
+}
+
+/* ── Roadmap 30-60-90 ──────────────────────────────────────────────────── */
+
+.biz-roadmap-progress {
+  margin-bottom: 1.25rem;
+}
+.biz-roadmap-progress__bar {
+  height: 8px;
+  background: var(--color-white-10);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.4rem;
+}
+.biz-roadmap-progress__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-accent-green), var(--color-accent-gold), var(--color-pink));
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+.biz-roadmap-progress__label {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  text-align: right;
+}
+
+.biz-roadmap-phases {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.biz-roadmap-phase {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.biz-roadmap-phase--active {
+  border-color: var(--color-accent-gold-30);
+}
+
+.biz-roadmap-phase__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 0.85rem;
+  border-left: 3px solid var(--color-border);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+.biz-roadmap-phase--active .biz-roadmap-phase__header {
+  color: var(--color-text-primary);
+}
+
+.biz-roadmap-phase__count {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  background: var(--color-white-10);
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+}
+
+.biz-roadmap-phase__items {
+  padding: 0 0.85rem 0.7rem;
+}
+
+.biz-roadmap-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0;
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.biz-roadmap-item:hover {
+  color: var(--color-text-primary);
+}
+.biz-roadmap-item input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-border-light);
+  border-radius: 4px;
+  background: var(--color-bg-secondary);
+  cursor: pointer;
+  flex-shrink: 0;
+  position: relative;
+  transition: all 0.15s;
+}
+.biz-roadmap-item input[type="checkbox"]:checked {
+  background: var(--color-accent-green);
+  border-color: var(--color-accent-green);
+}
+.biz-roadmap-item input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 0px;
+  width: 6px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.biz-roadmap-item input[type="checkbox"]:checked + span {
+  text-decoration: line-through;
+  color: var(--color-text-muted);
+}
+
+/* ── Animations ────────────────────────────────────────────────────────── */
+
+@keyframes biz-fade-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .biz-corefour-grid {
+    grid-template-columns: 1fr;
+  }
+  .biz-offer-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .biz-offer-bottom {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  .biz-analysis__score-label {
+    min-width: 120px;
+    font-size: 0.65rem;
+  }
+  .biz-analysis__score-row--weak {
+    margin: 0 -0.3rem;
+    padding: 0.4rem 0.3rem;
+  }
+  .biz-kanban {
+    gap: 0.4rem;
+  }
+  .biz-kanban-col {
+    min-width: 130px;
+  }
+  .biz-pipeline-form__row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .biz-pipeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}

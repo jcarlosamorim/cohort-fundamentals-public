@@ -1,0 +1,115 @@
+[
+  {
+    "id": "squad-creator-pro",
+    "title": "Squad Creator PRO",
+    "description": "A ferramenta mais poderosa do AIOS: cria squads completos de agentes baseados em elite minds reais.",
+    "type": "ZIP",
+    "size": "1.4 MB",
+    "filename": "squad-creator-pro.zip",
+    "icon": "tool",
+    "color": "gold",
+    "rating": "97",
+    "rarity": "LEGENDARY",
+    "stats": [
+      { "label": "SQD", "value": "31+" },
+      { "label": "AGT", "value": "206" },
+      { "label": "CMD", "value": "5" },
+      { "label": "FID", "value": "95%" }
+    ],
+    "howToUse": [
+      "Ative o squad creator: @squad-creator",
+      "Crie um squad completo: *create-squad",
+      "Clone um expert especifico: *clone-mind {nome}",
+      "Valide um squad existente: *validate-squad {nome}",
+      "Escolha entre modo YOLO (sem materiais, 60-75% fidelidade) ou QUALITY (com materiais, 85-95% fidelidade)",
+      "Consulte docs/POR-ONDE-COMECAR.md para o guia inicial completo"
+    ],
+    "howToInstall": [
+      "Diga ao Claude para instalar o squad-creator-pro que esta na pasta Downloads"
+    ]
+  },
+  {
+    "id": "content-distillery",
+    "title": "Content Distillery",
+    "description": "Transforma lives longas do YouTube (1-4h) em 60+ pecas de conteudo estruturadas.",
+    "type": "ZIP",
+    "size": "281 KB",
+    "filename": "content-distillery.zip",
+    "icon": "package",
+    "color": "purple",
+    "rating": "91",
+    "rarity": "EPIC",
+    "stats": [
+      { "label": "AGT", "value": "9" },
+      { "label": "OUT", "value": "60+" },
+      { "label": "CMD", "value": "5" },
+      { "label": "PIP", "value": "6" }
+    ],
+    "howToUse": [
+      "Pipeline completo (um comando): @content-distillery:distillery-chief *distill https://youtube.com/watch?v=VIDEO_ID",
+      "Apenas extracao de frameworks: @content-distillery:distillery-chief *extract https://youtube.com/watch?v=VIDEO_ID",
+      "Derivar conteudo de frameworks existentes: @content-distillery:distillery-chief *derive outputs/distillery/SLUG/frameworks.yaml",
+      "Comparar fontes: @content-distillery:distillery-chief *compare outputs/distillery/SLUG_A/ outputs/distillery/SLUG_B/",
+      "Checar status: @content-distillery:distillery-chief *status"
+    ],
+    "howToInstall": [
+      "Diga ao Claude para instalar o content-distillery que esta na pasta Downloads"
+    ]
+  },
+  {
+    "id": "design",
+    "title": "Design Squad",
+    "description": "Squad completo de design com 10 experts clonados: Chris Do, Brad Frost, Aaron Draplin, Marty Neumeier, Dave Malouf e mais. Branding, Design System, Fotografia e Producao Visual.",
+    "type": "ZIP",
+    "size": "677 KB",
+    "filename": "design.zip",
+    "icon": "template",
+    "color": "pink",
+    "rating": "93",
+    "rarity": "EPIC",
+    "stats": [
+      { "label": "AGT", "value": "10" },
+      { "label": "TSK", "value": "60+" },
+      { "label": "WFL", "value": "5" },
+      { "label": "DOM", "value": "4" }
+    ],
+    "howToUse": [
+      "Ative o design chief: @design:design-chief",
+      "Para branding e naming: @design:marty-neumeier",
+      "Para fotografia: @design:joe-mcnally ou @design:peter-mckinnon",
+      "Para Design System e componentes: @design:brad-frost",
+      "Para strategy criativa e posicionamento: @design:chris-do"
+    ],
+    "howToInstall": [
+      "Diga ao Claude para instalar o design que esta na pasta Downloads"
+    ]
+  },
+  {
+    "id": "jose-amorim-mind",
+    "title": "Jose Amorim Mind",
+    "description": "Mind Mapping MMOS com metodologia DNA Mental 3.0 e analise de 8 camadas cognitivas.",
+    "type": "ZIP",
+    "size": "339 KB",
+    "filename": "jose_amorim.zip",
+    "icon": "book",
+    "color": "green",
+    "rating": "84",
+    "rarity": "RARE",
+    "stats": [
+      { "label": "LAY", "value": "8" },
+      { "label": "PHS", "value": "5" },
+      { "label": "CMD", "value": "5" },
+      { "label": "DNA", "value": "3.0" }
+    ],
+    "howToUse": [
+      "Extraia na pasta outputs/minds/ do seu projeto AIOS",
+      "Execute a avaliacao de viabilidade: Phase 0 (APEX scorecard + ICP match)",
+      "Colete fontes na pasta sources/ (artigos, videos, entrevistas, PDFs)",
+      "Siga o pipeline MMOS: Research -> Analysis -> Synthesis -> Implementation -> Testing",
+      "Este e um caso especial (individuo privado) - requer entrevistas diretas ao inves de fontes publicas"
+    ],
+    "howToInstall": [
+      "Diga ao Claude para instalar o jose_amorim que esta na pasta Downloads"
+    ]
+  }
+]

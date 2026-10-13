@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PREVIEW - AIOS Cohort Fundamentals</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/tokens.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/calendar.css">
+    <link rel="stylesheet" href="css/overview.css">
+    <link rel="stylesheet" href="css/gamification.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+    <div class="app">
+        <!-- Mobile hamburger -->
+        <button class="app__hamburger" id="hamburger" aria-label="Abrir menu">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <line x1="3" y1="12" x2="21" y2="12"/>
+                <line x1="3" y1="18" x2="21" y2="18"/>
+            </svg>
+        </button>
+
+        <!-- Sidebar -->
+        <aside class="app__sidebar" id="sidebar"></aside>
+
+        <!-- Mobile overlay -->
+        <div class="app__overlay" id="overlay"></div>
+
+        <!-- Content area -->
+        <main class="app__content" id="content"></main>
+    </div>
+
+    <!-- ============================================
+         MOCK MODULES (bypass Supabase auth)
+         ============================================ -->
+    <script>
+        // Mock Auth - returns fake user, no Supabase needed
+        const Auth = (() => {
+            const fakeUser = { id: 'preview-user', email: 'preview@local.dev' };
+            return {
+                init: async () => fakeUser,
+                getClient: () => null,
+                getUser: () => fakeUser,
+                signInWithMagicLink: async () => ({}),
+                signOut: async () => {},
+                onAuthChange: () => {}
+            };
+        })();
+
+        // Mock AuthUI - simplified user badge
+        const AuthUI = (() => ({
+            renderLoginPage: () => {},
+            renderUserBadge: (container) => {
+                if (!container) return;
+                const badge = document.createElement('div');
+                badge.className = 'user-badge';
+                badge.innerHTML = `
+                    <div class="user-badge__avatar">PV</div>
+                    <div class="user-badge__info">
+                        <div class="user-badge__email">preview@local.dev</div>
+                    </div>`;
+                container.appendChild(badge);
+            }
+        }))();
+
+        // Mock Persistence - all no-ops, no Supabase needed
+        const Persistence = (() => ({
+            loadAll: async () => {},
+            loadProgress: async () => [],
+            loadScenarioResults: async () => [],
+            isScenarioCompleted: () => false,
+            saveScenarioResult: async () => {},
+            saveTimeSpent: async () => {},
+            getCompletedEncontroCount: () => 0,
+            getScenariosByPage: () => [],
+            loadNote: async () => '',
+            saveNoteDebounced: () => {}
+        }))();
+    </script>
+
+    <!-- Real modules (no Supabase SDK needed) -->
+    <script src="js/router.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/modals.js"></script>
+    <script src="js/gamification.js"></script>
+
+    <script>
+        // Boot: skip auth, go straight to app
+        (async () => {
+            await Calendar.init();
+            await Sidebar.init();
+            Router.init();
+            await Gamification.init();
+        })();
+    </script>
+
+</body>
+</html>

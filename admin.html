@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin — Gestão de Usuários</title>
+<style>
+  :root {
+    --bg: #14110f;
+    --surface: #1e1a17;
+    --surface-2: #262019;
+    --border: #3a312a;
+    --text: #f2ece4;
+    --muted: #9c9188;
+    --accent: #c1552e;
+    --accent-hover: #d4653b;
+    --ok: #4cc98a;
+    --err: #e5645a;
+    --radius: 12px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    background: var(--bg); color: var(--text);
+    line-height: 1.5; padding: 24px; min-height: 100vh;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; }
+  header.top { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+  header.top h1 { font-size: 22px; font-weight: 650; letter-spacing: -0.02em; }
+  header.top .sub { color: var(--muted); font-size: 13px; }
+  .pill { font-size: 12px; color: var(--muted); border: 1px solid var(--border); padding: 4px 10px; border-radius: 999px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 18px; }
+  .card h2 { font-size: 15px; font-weight: 600; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+  .card h2 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+  label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .row > .field { flex: 1; min-width: 200px; }
+  input {
+    width: 100%; background: var(--surface-2); border: 1px solid var(--border);
+    color: var(--text); border-radius: 8px; padding: 11px 12px; font-size: 14px; font-family: inherit;
+  }
+  input:focus { outline: none; border-color: var(--accent); }
+  .pw-wrap { position: relative; }
+  .pw-wrap button.toggle { position: absolute; right: 8px; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--muted); cursor: pointer; font-size: 12px; padding: 4px 6px; }
+  button.btn {
+    background: var(--accent); color: #fff; border: none; border-radius: 8px;
+    padding: 11px 18px; font-size: 14px; font-weight: 600; cursor: pointer; font-family: inherit;
+    transition: background .15s; white-space: nowrap;
+  }
+  button.btn:hover { background: var(--accent-hover); }
+  button.btn:disabled { opacity: .5; cursor: not-allowed; }
+  button.btn.ghost { background: transparent; border: 1px solid var(--border); color: var(--text); }
+  button.btn.ghost:hover { background: var(--surface-2); }
+  button.btn.sm { padding: 6px 12px; font-size: 12px; }
+  .actions { margin-top: 14px; display: flex; gap: 10px; align-items: center; }
+  .msg { font-size: 13px; padding: 10px 12px; border-radius: 8px; margin-top: 12px; display: none; }
+  .msg.show { display: block; }
+  .msg.ok { background: rgba(76,201,138,.12); color: var(--ok); border: 1px solid rgba(76,201,138,.3); }
+  .msg.err { background: rgba(229,100,90,.12); color: var(--err); border: 1px solid rgba(229,100,90,.3); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 500; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; }
+  td.email { font-weight: 500; }
+  td .meta { color: var(--muted); font-size: 11px; }
+  .search { margin-bottom: 12px; }
+  .table-scroll { overflow-x: auto; max-height: 420px; overflow-y: auto; }
+  .count { color: var(--muted); font-size: 12px; font-weight: 400; margin-left: auto; }
+  /* login gate */
+  #gate { max-width: 380px; margin: 12vh auto 0; }
+  .hidden { display: none !important; }
+  .foot { color: var(--muted); font-size: 11px; text-align: center; margin-top: 24px; }
+</style>
+</head>
+<body>
+
+<!-- Portão de acesso -->
+<div id="gate" class="wrap">
+  <div class="card">
+    <h2><span class="dot"></span> Acesso administrativo</h2>
+    <label for="gateKey">Admin key</label>
+    <div class="pw-wrap">
+      <input type="password" id="gateKey" placeholder="cole a chave de admin" autocomplete="off">
+      <button class="toggle" type="button" data-target="gateKey">ver</button>
+    </div>
+    <div class="actions"><button class="btn" id="gateBtn" style="width:100%">Entrar</button></div>
+    <div class="msg err" id="gateMsg"></div>
+  </div>
+</div>
+
+<!-- Painel -->
+<div id="panel" class="wrap hidden">
+  <header class="top">
+    <div>
+      <h1>Gestão de Usuários</h1>
+      <div class="sub">Cohort Fundamentals · Supabase Auth</div>
+    </div>
+    <button class="btn ghost sm" id="logoutBtn">Sair</button>
+  </header>
+
+  <!-- Adicionar -->
+  <div class="card">
+    <h2><span class="dot"></span> Adicionar usuário</h2>
+    <div class="row">
+      <div class="field">
+        <label for="newEmail">E-mail</label>
+        <input type="email" id="newEmail" placeholder="pessoa@email.com" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="newPass">Senha</label>
+        <div class="pw-wrap">
+          <input type="text" id="newPass" placeholder="mín. 6 caracteres" autocomplete="off">
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn" id="createBtn">Criar usuário</button>
+      <span class="sub">O e-mail já entra confirmado (loga direto).</span>
+    </div>
+    <div class="msg" id="createMsg"></div>
+  </div>
+
+  <!-- Resetar -->
+  <div class="card">
+    <h2><span class="dot"></span> Resetar senha</h2>
+    <div class="row">
+      <div class="field">
+        <label for="resetEmail">E-mail do usuário</label>
+        <input type="email" id="resetEmail" placeholder="pessoa@email.com" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="resetPass">Nova senha</label>
+        <div class="pw-wrap">
+          <input type="text" id="resetPass" placeholder="mín. 6 caracteres" autocomplete="off">
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn" id="resetBtn">Resetar senha</button>
+    </div>
+    <div class="msg" id="resetMsg"></div>
+  </div>
+
+  <!-- Lista -->
+  <div class="card">
+    <h2><span class="dot"></span> Usuários <span class="count" id="userCount"></span></h2>
+    <input class="search" type="text" id="search" placeholder="filtrar por e-mail…" autocomplete="off">
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>E-mail</th><th>Criado</th><th>Último login</th><th></th></tr></thead>
+        <tbody id="userRows"></tbody>
+      </table>
+    </div>
+    <div class="msg" id="listMsg"></div>
+  </div>
+
+  <div class="foot">Sessão guardada apenas nesta aba. A chave nunca é gravada em disco.</div>
+</div>
+
+<script>
+(function () {
+  var KEY_STORE = 'cohort_admin_key';
+  var API = '/api/admin/users';
+  var adminKey = sessionStorage.getItem(KEY_STORE) || '';
+  var allUsers = [];
+
+  function $(id) { return document.getElementById(id); }
+  function fmtDate(s) {
+    if (!s) return '—';
+    try { var d = new Date(s); return d.toLocaleDateString('pt-BR') + ' ' + d.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }); }
+    catch (e) { return s; }
+  }
+  function showMsg(el, text, kind) {
+    el.textContent = text;
+    el.className = 'msg show ' + (kind || 'ok');
+  }
+  function hideMsg(el) { el.className = 'msg'; }
+
+  async function api(method, payload) {
+    var opts = { method: method, headers: { 'x-admin-key': adminKey } };
+    if (payload) { opts.headers['Content-Type'] = 'application/json'; opts.body = JSON.stringify(payload); }
+    var resp = await fetch(API, opts);
+    var data = await resp.json().catch(function () { return {}; });
+    return { status: resp.status, ok: resp.ok, data: data };
+  }
+
+  // password reveal toggles
+  document.querySelectorAll('.toggle').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var t = $(b.getAttribute('data-target'));
+      if (!t) return;
+      if (t.type === 'password') { t.type = 'text'; b.textContent = 'ocultar'; }
+      else { t.type = 'password'; b.textContent = 'ver'; }
+    });
+  });
+
+  function renderUsers(filter) {
+    var rows = $('userRows');
+    rows.innerHTML = '';
+    var f = (filter || '').toLowerCase();
+    var list = allUsers.filter(function (u) { return !f || (u.email || '').toLowerCase().indexOf(f) !== -1; });
+    $('userCount').textContent = list.length + (f ? ' de ' + allUsers.length : '') + ' contas';
+    list.forEach(function (u) {
+      var tr = document.createElement('tr');
+      var tdEmail = document.createElement('td');
+      tdEmail.className = 'email';
+      tdEmail.textContent = u.email || '(sem e-mail)';
+      if (!u.confirmed) { var span = document.createElement('span'); span.className = 'meta'; span.textContent = ' · não confirmado'; tdEmail.appendChild(span); }
+      var tdCreated = document.createElement('td'); tdCreated.innerHTML = '<span class="meta">' + fmtDate(u.created_at) + '</span>';
+      var tdLogin = document.createElement('td'); tdLogin.innerHTML = '<span class="meta">' + fmtDate(u.last_sign_in_at) + '</span>';
+      var tdAct = document.createElement('td');
+      var btn = document.createElement('button'); btn.className = 'btn ghost sm'; btn.textContent = 'resetar';
+      btn.addEventListener('click', function () { $('resetEmail').value = u.email; $('resetPass').focus(); $('resetPass').scrollIntoView({ behavior: 'smooth', block: 'center' }); });
+      tdAct.appendChild(btn);
+      tr.appendChild(tdEmail); tr.appendChild(tdCreated); tr.appendChild(tdLogin); tr.appendChild(tdAct);
+      rows.appendChild(tr);
+    });
+  }
+
+  async function loadUsers() {
+    var r = await api('GET');
+    if (!r.ok) { showMsg($('listMsg'), r.data.error || ('Falha ao listar (HTTP ' + r.status + ')'), 'err'); return; }
+    allUsers = r.data.users || [];
+    hideMsg($('listMsg'));
+    renderUsers($('search').value);
+  }
+
+  function enterPanel() {
+    $('gate').classList.add('hidden');
+    $('panel').classList.remove('hidden');
+    loadUsers();
+  }
+
+  // Gate
+  async function tryEnter() {
+    var k = $('gateKey').value.trim();
+    if (!k) return;
+    adminKey = k;
+    var r = await api('GET');
+    if (r.status === 401) { showMsg($('gateMsg'), 'Chave inválida.', 'err'); adminKey = ''; return; }
+    if (!r.ok) { showMsg($('gateMsg'), r.data.error || ('Erro HTTP ' + r.status), 'err'); return; }
+    sessionStorage.setItem(KEY_STORE, adminKey);
+    allUsers = r.data.users || [];
+    enterPanel();
+  }
+  $('gateBtn').addEventListener('click', tryEnter);
+  $('gateKey').addEventListener('keydown', function (e) { if (e.key === 'Enter') tryEnter(); });
+
+  $('logoutBtn').addEventListener('click', function () {
+    sessionStorage.removeItem(KEY_STORE); adminKey = '';
+    $('panel').classList.add('hidden'); $('gate').classList.remove('hidden'); $('gateKey').value = '';
+  });
+
+  // Criar
+  $('createBtn').addEventListener('click', async function () {
+    var email = $('newEmail').value.trim();
+    var pass = $('newPass').value;
+    hideMsg($('createMsg'));
+    if (!email || pass.length < 6) { showMsg($('createMsg'), 'Informe e-mail e senha de ao menos 6 caracteres.', 'err'); return; }
+    var btn = this; btn.disabled = true; btn.textContent = 'Criando…';
+    var r = await api('POST', { email: email, password: pass });
+    btn.disabled = false; btn.textContent = 'Criar usuário';
+    if (!r.ok) { showMsg($('createMsg'), r.data.error || ('Falha (HTTP ' + r.status + ')'), 'err'); return; }
+    showMsg($('createMsg'), 'Usuário criado: ' + r.data.user.email, 'ok');
+    $('newEmail').value = ''; $('newPass').value = '';
+    loadUsers();
+  });
+
+  // Resetar
+  $('resetBtn').addEventListener('click', async function () {
+    var email = $('resetEmail').value.trim();
+    var pass = $('resetPass').value;
+    hideMsg($('resetMsg'));
+    if (!email || pass.length < 6) { showMsg($('resetMsg'), 'Informe e-mail e senha de ao menos 6 caracteres.', 'err'); return; }
+    if (!confirm('Resetar a senha de ' + email + ' para a nova senha informada?')) return;
+    var btn = this; btn.disabled = true; btn.textContent = 'Resetando…';
+    var r = await api('PUT', { email: email, password: pass });
+    btn.disabled = false; btn.textContent = 'Resetar senha';
+    if (!r.ok) { showMsg($('resetMsg'), r.data.error || ('Falha (HTTP ' + r.status + ')'), 'err'); return; }
+    showMsg($('resetMsg'), 'Senha atualizada para ' + (r.data.user.email || email) + '.', 'ok');
+    $('resetPass').value = '';
+  });
+
+  $('search').addEventListener('input', function () { renderUsers(this.value); });
+
+  // auto-entrar se ja houver chave nesta aba
+  if (adminKey) { tryEnter(); }
+})();
+</script>
+</body>
+</html>

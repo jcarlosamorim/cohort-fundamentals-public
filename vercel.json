@@ -1,0 +1,55 @@
+{
+  "functions": {
+    "api/analyze.js": {
+      "maxDuration": 300
+    },
+    "api/aurora.js": {
+      "maxDuration": 120
+    },
+    "api/error-diagnose.js": {
+      "maxDuration": 120
+    },
+    "api/offer-analysis.js": {
+      "maxDuration": 60
+    },
+    "api/offer-suggest.js": {
+      "maxDuration": 60
+    },
+    "api/cron/diagnose-errors.js": {
+      "maxDuration": 300
+    },
+    "api/cron/token-report.js": {
+      "maxDuration": 120
+    }
+  },
+  "crons": [
+    {
+      "path": "/api/cron/diagnose-errors",
+      "schedule": "0 8 * * *"
+    },
+    {
+      "path": "/api/cron/token-report",
+      "schedule": "0 9 * * *"
+    }
+  ],
+  "rewrites": [
+    { "source": "/scripts/quiz-solver.bookmarklet.js", "destination": "/404" },
+    { "source": "/admin", "destination": "/admin.html" },
+    { "source": "/((?!api|css|js|data|pages|downloads|.*\\..*).*)", "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-XSS-Protection", "value": "0" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://www.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://*.supabase.co wss://*.supabase.co https://www.clarity.ms https://*.clarity.ms; worker-src 'self' blob:; frame-ancestors 'none'" },
+        { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" },
+        { "key": "X-Powered-By", "value": "" }
+      ]
+    }
+  ]
+}
